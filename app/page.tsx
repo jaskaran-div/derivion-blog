@@ -116,7 +116,7 @@ export default function HomePage() {
         {/* STATS BAR */}
         <div className="da-stats-bar">
           {[
-            { v: '5', l: 'Active Dispatches' },
+            { v: `${blogs.length}`, l: 'Active Dispatches' },
             { v: '100%', l: 'Regulatory Verified' },
             { v: 'ISFT', l: 'Research Syndicate' },
             { v: 'Bi-Weekly', l: 'Publication Cadence' },
@@ -135,7 +135,7 @@ export default function HomePage() {
               <span className="dot-ochre" /> THE HEDGE FRONT · ACTIVE DISPATCHES
             </div>
             <Link href="/blogs" style={{ fontSize: '11px', color: 'var(--ochre-dark)', fontWeight: 700 }}>
-              View All 5 Dispatches →
+              View All {allBlogs.length} Dispatches →
             </Link>
           </div>
 

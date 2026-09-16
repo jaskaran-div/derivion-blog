@@ -81,7 +81,7 @@ export default function Footer() {
                 The Hedge Front / ISFT Desk
               </div>
               <div className="da-footer__card-email">
-                desk@derivionacademy.in
+                info@derivion.in
               </div>
               <div className="da-footer__card-meta">
                 Ref: ISSN 2841-9042 · Global Edition

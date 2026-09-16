@@ -10,6 +10,7 @@ const categoryMap: Record<string, string[]> = {
   'Exchange Architecture': ['Calcutta Stock Exchange', 'SEBI', 'Regional Exchanges', 'GIFT City', 'Capital Markets'],
   'Financial Education': ['Financial Education', 'Trading Desks', 'NAAC Benchmarks', 'NIRF Optimization'],
   'F&O Derivatives': ['F&O Trading', 'Career Development', 'Risk Psychology', 'Prop Desks', 'Nifty Spreads'],
+  'Trading Psychology': ['Trading Psychology', 'Drawdown Recovery', 'Risk Management', 'Anti-Fragility', 'Discipline'],
 };
 
 export default function CreatorBlogsPage() {
