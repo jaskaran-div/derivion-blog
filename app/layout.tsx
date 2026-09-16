@@ -6,9 +6,9 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   title: {
     template: '%s | DerivionAcademy.in',
-    default: 'DerivionAcademy.in – Institutional Intelligence & Quantitative Analysis',
+    default: 'DerivionAcademy – Institutional Intelligence & Quantitative Analysis',
   },
-  description: 'DerivionAcademy.in is an authoritative digital chronicle and research bureau providing institutional analysis, quantitative intelligence, and sovereign market intelligence.',
+  description: 'DerivionAcademy is an authoritative digital chronicle and research bureau providing institutional analysis, quantitative intelligence, and sovereign market intelligence.',
   keywords: ['sovereign debt', 'quantitative analysis', 'institutional intelligence', 'geopolitics', 'monetary policy'],
   authors: [{ name: 'DerivionAcademy Editorial Board' }],
   openGraph: {
