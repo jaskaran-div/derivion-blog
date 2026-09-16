@@ -1,79 +1,109 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { blogs } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: 'DerivionAcademy.in – Institutional Intelligence & Quantitative Analysis',
+  title: 'DerivionAcademy.in – The Hedge Front & Quantitative Intelligence',
   description: 'The authoritative digital chronicle and research bureau providing institutional analysis, quantitative derivative intelligence, and sovereign market reports.',
 };
 
 export default function HomePage() {
+  const blog1 = blogs[0]; // Why Forex Dreams Need a Legal Reality Check
+  const blog2 = blogs[1]; // How to resurrect a Stock Exchange; the Kolkata way
+  const blog3 = blogs[2]; // Why the Calcutta Stock Exchange Died so GIFT City Could Fly
+  const allBlogs = blogs;
+
   return (
     <div style={{ background: 'var(--bg-page)', minHeight: '100vh', paddingBottom: '60px' }}>
 
       {/* ============================================================
-          HERO – Magazine Grid (inspired by indise. layout)
+          HERO – Magazine Grid (Inspired by Indise Editorial)
           Left: 2 stacked story cards | Right: 1 large featured story
+          Fully Responsive for Mobile & Desktop
           ============================================================ */}
       <section className="da-hero">
         <div className="da-hero__grid">
 
           {/* LEFT COLUMN – 2 stacked cards */}
           <div className="da-hero__left">
-            {/* Card 1 */}
-            <Link href="/articles/the-architecture-of-sovereign-indebtedness" className="da-hero__card da-hero__card--sm">
+            {/* Card 1: Blog 2 */}
+            <Link href={`/blogs/${blog2.slug}`} className="da-hero__card da-hero__card--sm">
               <Image
                 src="/hero-card1.jpg"
-                alt="Financial analyst reviewing market reports"
+                alt="Calcutta Stock Exchange Revival Analysis"
                 fill
                 className="da-hero__card-img"
                 priority
               />
               <div className="da-hero__card-overlay" />
               <div className="da-hero__card-body">
-                <span className="da-hero__card-tag">MACRO & DEBT</span>
-                <h3 className="da-hero__card-title">The Architecture of Sovereign Indebtedness: Bilateral Swap Lines as Monetary Hegemony</h3>
+                <span className="da-hero__card-tag">EXCHANGE INFRASTRUCTURE</span>
+                <h3 className="da-hero__card-title">
+                  {blog2.title}
+                </h3>
+                <span style={{ fontSize: '10px', color: 'rgba(255,255,255,0.75)', marginTop: '4px', display: 'block' }}>
+                  By {blog2.author.name} • {blog2.readTime || '8 min read'}
+                </span>
               </div>
             </Link>
 
-            {/* Card 2 */}
-            <Link href="/news/transatlantic-term-premium-divergence" className="da-hero__card da-hero__card--sm">
+            {/* Card 2: Blog 3 */}
+            <Link href={`/blogs/${blog3.slug}`} className="da-hero__card da-hero__card--sm">
               <Image
                 src="/hero-card2.jpg"
-                alt="Economists discussing charts in boardroom"
+                alt="GIFT City vs Lyons Range Risk Analysis"
                 fill
                 className="da-hero__card-img"
               />
               <div className="da-hero__card-overlay" />
               <div className="da-hero__card-body">
-                <span className="da-hero__card-tag">AI INFRASTRUCTURE</span>
-                <h3 className="da-hero__card-title">HBM4 Next-Gen Stacks: Sovereign Foundry Yields Confront Thermodynamic Ceilings</h3>
+                <span className="da-hero__card-tag">SYSTEMIC RISK & CLEARING</span>
+                <h3 className="da-hero__card-title">
+                  {blog3.title}
+                </h3>
+                <span style={{ fontSize: '10px', color: 'rgba(255,255,255,0.75)', marginTop: '4px', display: 'block' }}>
+                  By {blog3.author.name} • {blog3.readTime || '9 min read'}
+                </span>
               </div>
             </Link>
           </div>
 
-          {/* RIGHT COLUMN – Large featured card (div wrapper avoids nested <a> tags) */}
+          {/* RIGHT COLUMN – Large featured card (Blog 1) */}
           <div className="da-hero__card da-hero__card--featured">
             <Image
               src="/hero-featured.jpg"
-              alt="Professional researcher at work"
+              alt="Forex Legal Reality Check"
               fill
               className="da-hero__card-img"
               priority
             />
             <div className="da-hero__card-overlay da-hero__card-overlay--featured" />
             <div className="da-hero__card-body da-hero__card-body--featured">
-              <span className="da-hero__card-tag">INSTITUTIONAL INTELLIGENCE</span>
+              <span className="da-hero__card-tag">THE HEDGE FRONT · COVER STORY</span>
               <h2 className="da-hero__featured-title">
-                Everything you need to know about Sovereign Debt Clearance for your research
+                {blog1.title}
               </h2>
+              <p style={{
+                color: 'rgba(248, 250, 252, 0.88)',
+                fontSize: 'clamp(12.5px, 1.4vw, 14.5px)',
+                lineHeight: 1.6,
+                marginBottom: '18px',
+                maxWidth: '680px',
+                display: '-webkit-box',
+                WebkitLineClamp: 3,
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden',
+              }}>
+                {blog1.excerpt}
+              </p>
               <div className="da-hero__featured-meta">
-                <Link href="/news/strait-transit-rerouting-freight-hedging" className="da-hero__read-btn">
-                  Read Article →
+                <Link href={`/blogs/${blog1.slug}`} className="da-hero__read-btn">
+                  Read Dispatch →
                 </Link>
                 <span className="da-hero__author">
-                  <span className="da-hero__author-avatar">VS</span>
-                  by Dr. Vikram Singhania
+                  <span className="da-hero__author-avatar">HF</span>
+                  by {blog1.author.name}
                 </span>
               </div>
             </div>
@@ -86,11 +116,11 @@ export default function HomePage() {
         {/* STATS BAR */}
         <div className="da-stats-bar">
           {[
-            { v: '48', l: 'Verified Fellows' },
-            { v: '6', l: 'Content Verticals' },
-            { v: '142+', l: 'Special Reports' },
-            { v: 'Bi-Weekly', l: 'Dispatch Cadence' },
-          ].map(s => (
+            { v: '5', l: 'Active Dispatches' },
+            { v: '100%', l: 'Regulatory Verified' },
+            { v: 'ISFT', l: 'Research Syndicate' },
+            { v: 'Bi-Weekly', l: 'Publication Cadence' },
+          ].map((s) => (
             <div key={s.l} className="da-stats-bar__item">
               <div className="da-stats-bar__value">{s.v}</div>
               <div className="da-stats-bar__label">{s.l}</div>
@@ -98,380 +128,218 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* 2. COVER TREATISE HIGHLIGHT */}
+        {/* 2. LEAD THE HEDGE FRONT SECTION */}
         <section style={{ marginBottom: '48px' }}>
           <div className="section-header-row">
             <div className="section-label-gold">
-              <span className="dot-ochre" /> LEAD ACADEMIC TREATISE
+              <span className="dot-ochre" /> THE HEDGE FRONT · ACTIVE DISPATCHES
             </div>
-            <Link href="/articles" style={{ fontSize: '11px', color: 'var(--ochre-dark)', fontWeight: 700 }}>
-              View All Treatises →
-            </Link>
-          </div>
-
-          <div style={{
-            background: '#ffffff',
-            border: '1px solid var(--border-light)',
-            borderRadius: 'var(--radius-md)',
-            padding: '32px',
-            display: 'grid',
-            gridTemplateColumns: '1.4fr 1fr',
-            gap: '36px',
-            boxShadow: 'var(--shadow-card)',
-          }}>
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <span style={{
-                  background: '#0f172a',
-                  color: '#ffffff',
-                  fontSize: '8.5px',
-                  fontWeight: 700,
-                  padding: '3px 8px',
-                  borderRadius: 'var(--radius-xs)',
-                }}>
-                  OCTOBER 2024
-                </span>
-                <span style={{ fontSize: '9.5px', color: 'var(--ochre-dark)', fontWeight: 700 }}>
-                  42 MIN READ • 11,400 WORDS
-                </span>
-              </div>
-
-              <h2 style={{ fontSize: '24px', fontWeight: 800, color: 'var(--ink-black)', lineHeight: 1.25, marginBottom: '12px' }}>
-                The Architecture of Sovereign Indebtedness: Bilateral Swap Lines as Monetary Hegemony
-              </h2>
-
-              <p style={{ fontSize: '13px', color: 'var(--ink-secondary)', lineHeight: 1.65, marginBottom: '18px' }}>
-                An empirical deconstruction of post-Bretton Woods central bank liquidity plumbing. How bilateral Federal Reserve swap lines and offshore repo facilities forged an invisible, extraterritorial safety net that reorders sovereign fiscal autonomy during global systemic liquidity shocks.
-              </p>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div className="avatar-circle">AS</div>
-                <div>
-                  <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--ink-black)' }}>
-                    Prof. Alistair Sterling
-                  </div>
-                  <div style={{ fontSize: '10.5px', color: 'var(--ink-muted)' }}>
-                    Chair of Macrofinancial History, Oxford & Derivion
-                  </div>
-                </div>
-                <Link
-                  href="/articles/the-architecture-of-sovereign-indebtedness"
-                  className="btn-black"
-                  style={{ marginLeft: 'auto', fontSize: '11px' }}
-                >
-                  Read Full Treatise →
-                </Link>
-              </div>
-            </div>
-
-            <div style={{
-              background: '#f8fafc',
-              border: '1px solid var(--border-light)',
-              borderRadius: 'var(--radius-sm)',
-              padding: '24px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-            }}>
-              <div>
-                <div style={{ fontSize: '9.5px', color: 'var(--ochre-dark)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '12px' }}>
-                  KEY SECTIONS INDEXED
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '11.5px', color: 'var(--ink-secondary)' }}>
-                  <div>• The Geopolitics of Liquidity: From Gold Anchors to Balance Sheet Facilities</div>
-                  <div>• The Offshore Eurodollar Clearing Architecture and Collateral Scarcity</div>
-                  <div>• Econometric Analysis of 2008 & 2020 Cross-Currency Swap Basis Spikes</div>
-                  <div>• The Weaponization of Repo: Exclusion as the Ultimate Sovereign Sanction</div>
-                </div>
-              </div>
-              <div style={{ fontSize: '10px', color: 'var(--ink-muted)', marginTop: '16px', borderTop: '1px solid var(--border-light)', paddingTop: '10px' }}>
-                DOI: 10.1093/deriv.2024.108 • 48 Citations Indexed
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. LATEST NEWS SPOTLIGHT */}
-        <section style={{ marginBottom: '48px' }}>
-          <div className="section-header-row">
-            <div className="section-label-gold">
-              <span className="dot-green" /> BREAKING INTELLIGENCE & NEWS DISPATCHES
-            </div>
-            <Link href="/news" style={{ fontSize: '11px', color: 'var(--ochre-dark)', fontWeight: 700 }}>
-              All 455 Dispatches →
+            <Link href="/blogs" style={{ fontSize: '11px', color: 'var(--ochre-dark)', fontWeight: 700 }}>
+              View All 5 Dispatches →
             </Link>
           </div>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '20px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
+            gap: '24px',
           }}>
-            {[
-              {
-                tag: 'AI Infrastructure',
-                title: 'HBM4 Next-Gen Stacks: Sovereign Foundry Yields Confront Thermodynamic Ceilings',
-                excerpt: 'Advanced packaging bottlenecks in East Asian fabrication facilities have triggered unprecedented capital relocation toward proprietary liquid-cooling testbenches.',
-                author: 'Dr. Vikram Singhania',
-                slug: 'hbm4-next-gen-stacks-thermodynamic-ceilings',
-                bg: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
-              },
-              {
-                tag: 'Macro & Debt',
-                title: 'The Transatlantic Term Premium Divergence: Sovereign Balance Sheets Under QT',
-                excerpt: 'With US debt issuance hitting quarterly records, structural buyers demand heightened inflation-risk protection, widening the spread over core French and German bund facilities.',
-                author: 'Elena Weber',
-                slug: 'transatlantic-term-premium-divergence',
-                bg: 'linear-gradient(135deg, #334155 0%, #1e293b 100%)',
-              },
-              {
-                tag: 'Trade & Logistics',
-                title: 'Strait Transit Re-routing: Bulk Carrier Arbitrage in Cape of Good Hope Freight Hedging',
-                excerpt: 'Insurance swap rate spikes continue to force container trajectories, reshaping bunker fuel liquidity pools across Singapore and Port Louis storage terminals.',
-                author: 'Aris Moros',
-                slug: 'strait-transit-rerouting-freight-hedging',
-                bg: 'linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%)',
-              },
-            ].map((item, idx) => (
-              <div key={idx} className="editorial-card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <div style={{
-                    height: '140px',
-                    background: item.bg,
-                    padding: '12px',
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                  }}>
+            {allBlogs.map((blog) => (
+              <article key={blog.id} className="editorial-card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div style={{ padding: '24px 24px 16px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
                     <span style={{
-                      fontSize: '8px',
-                      color: '#ffffff',
-                      background: 'rgba(0,0,0,0.65)',
-                      padding: '3px 8px',
-                      borderRadius: 'var(--radius-xs)',
+                      fontSize: '9px',
                       fontWeight: 700,
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase',
+                      color: 'var(--ochre-dark)',
+                      background: 'var(--ochre-bg)',
+                      border: '1px solid var(--ochre-border)',
+                      padding: '2px 8px',
+                      borderRadius: 'var(--radius-xs)',
                     }}>
-                      SPOTLIGHT • {item.tag}
+                      {blog.columnName}
+                    </span>
+                    <span style={{ fontSize: '10.5px', color: 'var(--ink-muted)' }}>
+                      {blog.readTime || '6 min read'}
                     </span>
                   </div>
 
-                  <div style={{ padding: '20px' }}>
-                    <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--ink-black)', lineHeight: 1.3, marginBottom: '8px' }}>
-                      {item.title}
-                    </h3>
-                    <p style={{ fontSize: '12px', color: 'var(--ink-secondary)', lineHeight: 1.55 }}>
-                      {item.excerpt}
-                    </p>
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: 'clamp(17px, 2vw, 20px)',
+                    fontWeight: 700,
+                    color: 'var(--ink-black)',
+                    lineHeight: 1.35,
+                    marginBottom: '10px',
+                  }}>
+                    <Link href={`/blogs/${blog.slug}`} style={{ color: 'inherit' }}>
+                      {blog.title}
+                    </Link>
+                  </h3>
+
+                  <p style={{
+                    fontSize: '12.5px',
+                    color: 'var(--ink-secondary)',
+                    lineHeight: 1.6,
+                    marginBottom: '16px',
+                    display: '-webkit-box',
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
+                  }}>
+                    {blog.excerpt}
+                  </p>
+
+                  <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                    {blog.tags.slice(0, 3).map((tag) => (
+                      <span key={tag} style={{
+                        fontSize: '9.5px',
+                        color: 'var(--ink-secondary)',
+                        background: '#f1f5f9',
+                        border: '1px solid #e2e8f0',
+                        padding: '2px 8px',
+                        borderRadius: 'var(--radius-xs)',
+                      }}>
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
                 <div style={{
-                  padding: '12px 20px',
+                  padding: '14px 24px',
+                  background: '#fbfbfa',
                   borderTop: '1px solid var(--border-light)',
                   display: 'flex',
-                  justifyContent: 'space-between',
                   alignItems: 'center',
-                  fontSize: '11px',
+                  justifyContent: 'space-between',
                 }}>
-                  <span style={{ color: 'var(--ink-muted)' }}>By {item.author}</span>
-                  <Link href={`/news/${item.slug}`} style={{ color: 'var(--ochre-dark)', fontWeight: 700 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <div className="avatar-circle" style={{ width: '28px', height: '28px', fontSize: '10px' }}>
+                      {blog.author.initials}
+                    </div>
+                    <div>
+                      <div style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--ink-black)' }}>
+                        {blog.author.name}
+                      </div>
+                      <div style={{ fontSize: '9.5px', color: 'var(--ink-muted)' }}>
+                        {blog.date}
+                      </div>
+                    </div>
+                  </div>
+
+                  <Link href={`/blogs/${blog.slug}`} style={{ fontSize: '12px', fontWeight: 700, color: 'var(--ochre-dark)' }}>
                     Read Dispatch →
                   </Link>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </section>
 
-        {/* 4. PINNACLE FELLOW COLUMNS */}
+        {/* 3. EDITORIAL VERTICALS PIPELINE BANNER */}
         <section style={{ marginBottom: '48px' }}>
-          <div className="section-header-row">
-            <div className="section-label-gold">
-              <span className="dot-ochre" /> PINNACLE FELLOW NEWSLETTERS & COLUMNS
+          <div style={{
+            background: '#ffffff',
+            border: '1px solid var(--border-light)',
+            borderRadius: 'var(--radius-lg)',
+            padding: 'clamp(24px, 4vw, 36px)',
+            boxShadow: 'var(--shadow-card)',
+          }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              fontSize: '10px',
+              fontWeight: 700,
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: 'var(--ochre-dark)',
+              marginBottom: '10px',
+            }}>
+              <span className="dot-ochre" /> CHRONICLE VERTICALS STATUS
             </div>
-            <Link href="/blogs" style={{ fontSize: '11px', color: 'var(--ochre-dark)', fontWeight: 700 }}>
-              All 48 Fellow Hubs →
+            <h3 style={{
+              fontFamily: 'var(--font-serif)',
+              fontSize: 'clamp(20px, 2.5vw, 26px)',
+              fontWeight: 700,
+              color: 'var(--ink-black)',
+              lineHeight: 1.3,
+              marginBottom: '10px',
+            }}>
+              We are gathering interesting & latest info for you
+            </h3>
+            <p style={{
+              fontSize: '13.5px',
+              color: 'var(--ink-secondary)',
+              lineHeight: 1.65,
+              maxWidth: '780px',
+              marginBottom: '20px',
+            }}>
+              Our research fellows, economists, and market analysts are actively preparing upcoming peer-reviewed treatises for News & Insights, Longform Treatises, The Magazine, and Special Reports. In the interim, explore our active publications in Creator Blogs.
+            </p>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
+              gap: '14px',
+              marginBottom: '20px',
+            }}>
+              {[
+                { title: 'News & Insights', path: '/news', status: 'In Preparation' },
+                { title: 'Longform Treatises', path: '/articles', status: 'In Preparation' },
+                { title: 'The Magazine', path: '/magazine', status: 'In Preparation' },
+                { title: 'Special Reports', path: '/special-reports', status: 'In Preparation' },
+              ].map((v) => (
+                <Link key={v.title} href={v.path} style={{
+                  padding: '14px 16px',
+                  background: '#f8fafc',
+                  border: '1px solid var(--border-light)',
+                  borderRadius: 'var(--radius-md)',
+                  transition: 'all 0.15s ease',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '4px',
+                }}>
+                  <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--ink-black)' }}>
+                    {v.title}
+                  </div>
+                  <div style={{ fontSize: '10px', color: '#2563eb', fontWeight: 600 }}>
+                    ● {v.status} →
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <Link href="/blogs" className="btn-black" style={{ borderRadius: '9999px', padding: '8px 22px' }}>
+              Explore Active Creator Blogs →
             </Link>
           </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '20px',
-          }}>
-            {[
-              {
-                badge: 'SUBSTACK • 14.2K READERS',
-                cadence: 'Weekly',
-                initials: 'VS',
-                name: 'Dr. Vikram Singhania',
-                title: 'The Silicon Foundry Ledger',
-                desc: 'Unpacking extreme ultraviolet lithography bottlenecks, wafer-scale thermodynamic dissipation, and state-backed foundry capital expenditure strategies.',
-                slug: 'silicon-foundry-ledger',
-              },
-              {
-                badge: 'SUBSTACK • 21.8K READERS',
-                cadence: 'Twice Monthly',
-                initials: 'EW',
-                name: 'Elena Weber',
-                title: 'The Yield Arbitrage Journal',
-                desc: 'Weekly dissections of G10 sovereign debt issuance, shadow liquidity dynamics, cross-currency basis swaps, and European debt divergence.',
-                slug: 'yield-arbitrage-journal',
-              },
-              {
-                badge: 'COLUMN • 9.4K READERS',
-                cadence: 'Weekly',
-                initials: 'AM',
-                name: 'Aris Moros',
-                title: 'Chokepoint Chronology',
-                desc: 'Geopolitical logistics, bulk carrier transit arbitrage in the Bab-el-Mandeb, vessel telemetry data, and global bunker fuel pricing spikes.',
-                slug: 'chokepoint-chronology',
-              },
-            ].map(col => (
-              <div key={col.slug} className="editorial-card" style={{ borderTop: '3px solid #b48328', padding: '22px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '14px' }}>
-                  <span style={{ fontSize: '8.5px', background: '#fefce8', color: '#854d0e', border: '1px solid #fde047', padding: '2px 8px', borderRadius: 'var(--radius-xs)', fontWeight: 700 }}>
-                    {col.badge}
-                  </span>
-                  <span style={{ fontSize: '9.5px', color: 'var(--ochre-dark)', fontWeight: 600 }}>{col.cadence}</span>
-                </div>
-
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                  <div className="avatar-circle" style={{ width: '32px', height: '32px', fontSize: '11px' }}>{col.initials}</div>
-                  <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--ink-black)' }}>{col.name}</div>
-                </div>
-
-                <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--ink-black)', marginBottom: '8px', lineHeight: 1.25 }}>
-                  {col.title}
-                </h3>
-                <p style={{ fontSize: '12px', color: 'var(--ink-secondary)', lineHeight: 1.55, marginBottom: '18px' }}>
-                  {col.desc}
-                </p>
-
-                <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: '12px', textAlign: 'right' }}>
-                  <Link href={`/blogs/${col.slug}`} style={{ fontSize: '11px', color: 'var(--ochre-dark)', fontWeight: 700 }}>
-                    View Column →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
         </section>
 
-        {/* 5. MAGAZINE ARCHIVE & SPECIAL REPORTS SPLIT */}
-        <section style={{ marginBottom: '48px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
-            {/* The Magazine */}
-            <div style={{
-              background: '#ffffff',
-              border: '1px solid var(--border-light)',
-              borderRadius: 'var(--radius-md)',
-              padding: '30px',
-              boxShadow: 'var(--shadow-card)',
-            }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-                <span className="eyebrow-text">THE MAGAZINE • ISSUE NO. 42</span>
-                <Link href="/magazine" style={{ fontSize: '11px', color: 'var(--ochre-dark)', fontWeight: 700 }}>Archive →</Link>
-              </div>
-
-              <h3 style={{ fontSize: '22px', fontWeight: 800, color: 'var(--ink-black)', marginBottom: '10px' }}>
-                The Reclaimed Commons
-              </h3>
-              <p style={{ fontSize: '12.5px', color: 'var(--ink-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
-                184-page physical print volume on public sovereign territory, municipal air rights, and Venetian Republic archival cadastral maps.
-              </p>
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <Link href="/magazine/issue-42-the-reclaimed-commons" className="btn-black" style={{ fontSize: '11px' }}>
-                  Acquire Physical Folio ($72)
-                </Link>
-                <Link href="/magazine" className="btn-white" style={{ fontSize: '11px' }}>
-                  Browse All 184 Volumes
-                </Link>
-              </div>
-            </div>
-
-            {/* Special Reports */}
-            <div style={{
-              background: '#0c1729',
-              borderRadius: 'var(--radius-md)',
-              padding: '30px',
-              color: '#ffffff',
-              boxShadow: 'var(--shadow-card)',
-            }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-                <span style={{ fontSize: '9px', color: '#fef08a', letterSpacing: '0.12em', fontWeight: 700 }}>
-                  DECLASSIFIED DOSSIER // REPORT #88
-                </span>
-                <Link href="/special-reports" style={{ fontSize: '11px', color: '#fef08a', fontWeight: 700 }}>Reports →</Link>
-              </div>
-
-              <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#ffffff', marginBottom: '10px' }}>
-                The Post-Dollar Clearing Architecture
-              </h3>
-              <p style={{ fontSize: '12.5px', color: '#cbd5e1', lineHeight: 1.6, marginBottom: '20px' }}>
-                Tracking $9.4 Trillion in non-Western multilateral currency swap facilities across 42 jurisdictions and shadow reserve accumulation.
-              </p>
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <Link href="/special-reports/post-dollar-clearing-architecture" className="btn-ochre" style={{ fontSize: '11px' }}>
-                  Access Dossier (PDF)
-                </Link>
-                <Link href="/special-reports" className="btn-white" style={{ background: 'rgba(255,255,255,0.1)', color: '#ffffff', borderColor: 'rgba(255,255,255,0.2)', fontSize: '11px' }}>
-                  View All Audits
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 6. NAVY CTA BANNER */}
+        {/* 4. NEWSLETTER / DISPATCH ALERTS BANNER */}
         <div className="navy-cta-banner">
           <div>
             <div className="navy-cta-eyebrow">
-              RESEARCH FELLOWSHIP PROGRAM
+              THE HEDGE FRONT · DISPATCH SYNDICATE
             </div>
             <h2 className="navy-cta-title">
-              Publish your quantitative research through the Derivion Syndicate
+              Stay ahead with verified financial intelligence.
             </h2>
             <p className="navy-cta-desc">
-              We provide verified financial economists, hardware architects, and policy historians with peer review, editing desks, cryptographic verification, and instant institutional distribution.
+              Receive notifications whenever a new regulatory breakdown, market structure thesis, or F&O dispatch is released by ISFT fellows.
             </p>
           </div>
-          <div>
-            <button
-              type="button"
-              className="btn-ochre"
-              style={{ whiteSpace: 'nowrap', padding: '10px 24px' }}
-            >
-              Inquire for Fellowship
-            </button>
+          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', flexShrink: 0 }}>
+            <Link href="/blogs" className="btn-ochre" style={{ borderRadius: 'var(--radius-full)', padding: '10px 24px' }}>
+              Read The Hedge Front
+            </Link>
           </div>
         </div>
-      </div>
 
-      <style>{`
-        @media (max-width: 900px) {
-          section > div[style*='grid-template-columns: 1fr 1fr'] {
-            grid-template-columns: 1fr !important;
-          }
-          section > div[style*='grid-template-columns: 1.4fr 1fr'] {
-            grid-template-columns: 1fr !important;
-          }
-        }
-        @media (max-width: 768px) {
-          .da-hero__grid {
-            grid-template-columns: 1fr !important;
-            height: auto !important;
-          }
-          .da-hero__left {
-            grid-template-rows: 220px 220px !important;
-          }
-          .da-hero__card--featured {
-            min-height: 400px !important;
-          }
-          .da-stats-bar {
-            grid-template-columns: 1fr 1fr !important;
-          }
-        }
-      `}</style>
+      </div>
     </div>
   );
 }

@@ -2,148 +2,88 @@
 import Link from 'next/link';
 
 const departments = [
-  'Macro Strategy',
-  'Quantitative Assets',
-  'Equities & Rates',
-  'Energy & Freight',
-  'Sovereign Debt',
+  { name: 'The Hedge Front', href: '/blogs' },
+  { name: 'Regulatory Intelligence', href: '/blogs/why-forex-dreams-need-a-legal-reality-check' },
+  { name: 'Exchange Infrastructure', href: '/blogs/how-to-resurrect-a-stock-exchange-the-kolkata-way' },
+  { name: 'Risk & Clearing Desks', href: '/blogs/why-the-calcutta-stock-exchange-died-so-gift-city-could-fly' },
+  { name: 'Quantitative Education', href: '/blogs/the-great-employability-reset-bridging-the-experience-paradox-in-financial-education' },
 ];
 
-const bureaus = [
-  'Editorial Board',
-  'Research Fellows',
-  'Ethics Charter',
-  'London Desk',
-  'Mumbai Desk',
+const quickLinks = [
+  { name: 'Creator Blogs', href: '/blogs' },
+  { name: 'News & Insights', href: '/news' },
+  { name: 'Longform Treatises', href: '/articles' },
+  { name: 'The Magazine', href: '/magazine' },
+  { name: 'Special Reports', href: '/special-reports' },
 ];
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#ffffff', borderTop: '1px solid var(--border-light)', marginTop: '60px', padding: '52px 0 28px' }}>
+    <footer className="da-footer">
       <div className="container">
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1.4fr 1fr 1fr 1.3fr',
-          gap: '44px',
-          paddingBottom: '44px',
-          borderBottom: '1px solid var(--border-light)',
-        }}>
+        <div className="da-footer__grid">
           {/* Col 1: Brand */}
-          <div>
-            <Link href="/" style={{
-              fontSize: '18px',
-              fontWeight: 800,
-              color: '#0f172a',
-              letterSpacing: '0.02em',
-              display: 'inline-block',
-              marginBottom: '14px',
-            }}>
+          <div className="da-footer__col-brand">
+            <Link href="/" className="da-footer__brand-title">
               DERIVIONACADEMY.IN
             </Link>
-            <p style={{
-              fontSize: '12px',
-              color: 'var(--ink-secondary)',
-              lineHeight: 1.65,
-              maxWidth: '300px',
-              marginBottom: '16px',
-            }}>
+            <p className="da-footer__brand-desc">
               An authoritative digital chronicle and research bureau providing institutional analysis, quantitative derivative intelligence, and sovereign market reports.
             </p>
-            <div style={{
-              fontSize: '9.5px',
-              color: 'var(--ochre-dark)',
-              letterSpacing: '0.06em',
-              fontWeight: 700,
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-            }}>
-              <span className="dot-ochre" style={{ width: '5px', height: '5px' }} /> Verified Independent Intelligence
+            <div className="da-footer__brand-badge">
+              <span className="dot-ochre" style={{ width: '6px', height: '6px' }} />
+              Verified Independent Intelligence
             </div>
           </div>
 
-          {/* Col 2: Departments */}
-          <div>
-            <div style={{
-              fontSize: '9.5px',
-              letterSpacing: '0.12em',
-              fontWeight: 700,
-              color: 'var(--ink-muted)',
-              textTransform: 'uppercase',
-              marginBottom: '16px',
-            }}>
-              Departments
+          {/* Col 2: The Hedge Front Desks */}
+          <div className="da-footer__col">
+            <div className="da-footer__heading">
+              Active Desks
             </div>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: '9px', listStyle: 'none' }}>
-              {departments.map(d => (
-                <li key={d}>
-                  <Link href="#" style={{ fontSize: '12px', color: 'var(--ink-secondary)', transition: 'color 0.15s' }}>
-                    {d}
+            <ul className="da-footer__list">
+              {departments.map((d) => (
+                <li key={d.name}>
+                  <Link href={d.href} className="da-footer__link">
+                    {d.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Col 3: Masthead & Bureau */}
-          <div>
-            <div style={{
-              fontSize: '9.5px',
-              letterSpacing: '0.12em',
-              fontWeight: 700,
-              color: 'var(--ink-muted)',
-              textTransform: 'uppercase',
-              marginBottom: '16px',
-            }}>
-              Masthead & Bureau
+          {/* Col 3: Sections */}
+          <div className="da-footer__col">
+            <div className="da-footer__heading">
+              Chronicle Verticals
             </div>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: '9px', listStyle: 'none' }}>
-              {bureaus.map(b => (
-                <li key={b}>
-                  <Link href="#" style={{ fontSize: '12px', color: 'var(--ink-secondary)', transition: 'color 0.15s' }}>
-                    {b}
+            <ul className="da-footer__list">
+              {quickLinks.map((q) => (
+                <li key={q.name}>
+                  <Link href={q.href} className="da-footer__link">
+                    {q.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Col 4: Institutional Registry & Bureau Desk */}
-          <div>
-            <div style={{
-              fontSize: '9.5px',
-              letterSpacing: '0.12em',
-              fontWeight: 700,
-              color: 'var(--ink-muted)',
-              textTransform: 'uppercase',
-              marginBottom: '16px',
-            }}>
+          {/* Col 4: Institutional Registry */}
+          <div className="da-footer__col">
+            <div className="da-footer__heading">
               Institutional Registry
             </div>
-            <p style={{
-              fontSize: '12px',
-              color: 'var(--ink-secondary)',
-              lineHeight: 1.6,
-              marginBottom: '14px',
-            }}>
-              Official repository of sovereign risk treatises, peer-reviewed econometric models, and print folios.
+            <p className="da-footer__reg-desc">
+              Official repository of sovereign risk treatises, peer-reviewed econometric models, and market infrastructure studies.
             </p>
-            <div style={{
-              background: '#f8fafc',
-              border: '1px solid var(--border-light)',
-              borderRadius: 'var(--radius-md)',
-              padding: '12px 14px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '6px',
-            }}>
-              <div style={{ fontSize: '10.5px', fontWeight: 700, color: '#0f172a' }}>
-                Editorial & Syndicate Desk
+            <div className="da-footer__card">
+              <div className="da-footer__card-title">
+                The Hedge Front / ISFT Desk
               </div>
-              <div style={{ fontSize: '11px', color: 'var(--ochre-dark)', fontWeight: 600 }}>
+              <div className="da-footer__card-email">
                 desk@derivionacademy.in
               </div>
-              <div style={{ fontSize: '9.5px', color: 'var(--ink-muted)', marginTop: '2px' }}>
+              <div className="da-footer__card-meta">
                 Ref: ISSN 2841-9042 · Global Edition
               </div>
             </div>
@@ -151,35 +91,148 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          paddingTop: '20px',
-          fontSize: '10.5px',
-          color: 'var(--ink-muted)',
-          flexWrap: 'wrap',
-          gap: '12px',
-        }}>
+        <div className="da-footer__bottom">
           <div>
-            © 2024 DERIVIONACADEMY.IN. All editorial rights reserved. ISSN 2841-9042.
+            © {new Date().getFullYear()} DERIVIONACADEMY.IN. All editorial rights reserved. ISSN 2841-9042.
           </div>
           <div>
-            DELIVERED VIA ENCRYPTED HIGH-YIELD FEEDS
+            THE HEDGE FRONT · POWERED BY ISFT
           </div>
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 900px) {
-          footer .container > div[style*='grid-template-columns'] {
-            grid-template-columns: 1fr 1fr !important;
-            gap: 28px !important;
+      <style jsx>{`
+        .da-footer {
+          background: #ffffff;
+          border-top: 1px solid var(--border-light);
+          margin-top: 60px;
+          padding: clamp(36px, 5vw, 56px) 0 24px;
+        }
+
+        .da-footer__grid {
+          display: grid;
+          grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+          gap: clamp(24px, 3.5vw, 44px);
+          padding-bottom: clamp(24px, 4vw, 40px);
+          border-bottom: 1px solid var(--border-light);
+        }
+
+        .da-footer__brand-title {
+          font-size: clamp(16px, 2vw, 18px);
+          font-weight: 800;
+          color: #0f172a;
+          letter-spacing: 0.02em;
+          display: inline-block;
+          margin-bottom: 12px;
+        }
+
+        .da-footer__brand-desc {
+          font-size: 12px;
+          color: var(--ink-secondary);
+          line-height: 1.65;
+          max-width: 320px;
+          margin-bottom: 16px;
+        }
+
+        .da-footer__brand-badge {
+          font-size: 10px;
+          color: var(--ochre-dark);
+          letter-spacing: 0.06em;
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+
+        .da-footer__heading {
+          font-size: 10px;
+          letter-spacing: 0.12em;
+          font-weight: 700;
+          color: var(--ink-muted);
+          text-transform: uppercase;
+          margin-bottom: 14px;
+        }
+
+        .da-footer__list {
+          display: flex;
+          flex-direction: column;
+          gap: 9px;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .da-footer__link {
+          font-size: 12px;
+          color: var(--ink-secondary);
+          transition: color 0.15s ease;
+        }
+
+        .da-footer__link:hover {
+          color: var(--ink-black);
+        }
+
+        .da-footer__reg-desc {
+          font-size: 12px;
+          color: var(--ink-secondary);
+          line-height: 1.6;
+          margin-bottom: 14px;
+        }
+
+        .da-footer__card {
+          background: #f8fafc;
+          border: 1px solid var(--border-light);
+          border-radius: var(--radius-md);
+          padding: 12px 14px;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .da-footer__card-title {
+          font-size: 10.5px;
+          font-weight: 700;
+          color: #0f172a;
+        }
+
+        .da-footer__card-email {
+          font-size: 11px;
+          color: var(--ochre-dark);
+          font-weight: 600;
+        }
+
+        .da-footer__card-meta {
+          font-size: 9.5px;
+          color: var(--ink-muted);
+          margin-top: 2px;
+        }
+
+        .da-footer__bottom {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 20px;
+          font-size: 10.5px;
+          color: var(--ink-muted);
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        @media (max-width: 992px) {
+          .da-footer__grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
           }
         }
+
         @media (max-width: 580px) {
-          footer .container > div[style*='grid-template-columns'] {
-            grid-template-columns: 1fr !important;
+          .da-footer__grid {
+            grid-template-columns: 1fr;
+            gap: 28px;
+          }
+          .da-footer__bottom {
+            flex-direction: column;
+            align-items: flex-start;
           }
         }
       `}</style>

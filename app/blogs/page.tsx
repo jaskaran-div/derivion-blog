@@ -1,534 +1,482 @@
 'use client';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import { blogs, BlogColumn } from '@/lib/data';
+import EmptyState from '@/components/EmptyState';
 
-interface PinnacleFellow {
-  id: string;
-  slug: string;
-  badge: string;
-  cadence: string;
-  initials: string;
-  name: string;
-  role: string;
-  title: string;
-  excerpt: string;
-  latest: string;
-}
-
-interface CreatorNotebook {
-  id: string;
-  slug: string;
-  category: string;
-  dispatches: string;
-  title: string;
-  author: string;
-  excerpt: string;
-  updated: string;
-}
-
-const pinnacleFellows: PinnacleFellow[] = [
-  {
-    id: 'pf1',
-    slug: 'silicon-foundry-ledger',
-    badge: 'SUBSTACK • 14.2K READERS',
-    cadence: 'Weekly',
-    initials: 'VS',
-    name: 'Dr. Vikram Singhania',
-    role: 'Chair, Computational Materials Desk',
-    title: 'The Silicon Foundry Ledger',
-    excerpt: 'Unpacking extreme ultraviolet lithography bottlenecks, wafer-scale thermodynamic dissipation, and state-backed foundry capital expenditure strategies.',
-    latest: 'Yesterday',
-  },
-  {
-    id: 'pf2',
-    slug: 'yield-arbitrage-journal',
-    badge: 'SUBSTACK • 21.8K READERS',
-    cadence: 'Twice Monthly',
-    initials: 'EW',
-    name: 'Elena Weber',
-    role: 'Senior Fellow, Sovereign Debt & Yields',
-    title: 'The Yield Arbitrage Journal',
-    excerpt: 'Weekly dissections of G10 sovereign debt issuance, shadow liquidity dynamics, cross-currency basis swaps, and European debt divergence.',
-    latest: '3 days ago',
-  },
-  {
-    id: 'pf3',
-    slug: 'chokepoint-chronology',
-    badge: 'COLUMN • 9.4K READERS',
-    cadence: 'Weekly',
-    initials: 'AM',
-    name: 'Aris Moros',
-    role: 'Maritime Security Analyst, Piraeus',
-    title: 'Chokepoint Chronology',
-    excerpt: 'Geopolitical logistics, bulk carrier transit arbitrage in the Bab-el-Mandeb, vessel telemetry data, and global bunker fuel pricing spikes.',
-    latest: 'Oct 28',
-  },
-];
-
-const creatorNotebooks: CreatorNotebook[] = [
-  {
-    id: 'cn1',
-    slug: 'marginal-liquidity-notes',
-    category: 'MACROECONOMICS',
-    dispatches: '18 Dispatches',
-    title: 'Marginal Liquidity Notes',
-    author: 'by Dr. Julian Vance • Tokyo Desk',
-    excerpt: 'Investigating overnight repo mechanics, Bank of Japan balance sheet shifts, and the unwinding of cross-border carry trades.',
-    updated: 'Updated 4h ago',
-  },
-  {
-    id: 'cn2',
-    slug: 'vol-surface-decomposition-latest',
-    category: 'QUANT & ASSETS',
-    dispatches: '32 Dispatches',
-    title: 'Vol Surface Decomposition',
-    author: 'by Marcus Finch • Chicago Bureau',
-    excerpt: 'Systematic options dispersion models, VIX term-structure anomalies, and gamma imbalances across sovereign ETF complexes.',
-    updated: 'Updated Oct 27',
-  },
-  {
-    id: 'cn3',
-    slug: 'the-fuel-factor',
-    category: 'ENERGY & COMMODITIES',
-    dispatches: '24 Dispatches',
-    title: 'The Fuel Factor',
-    author: 'by Claire Fontenot • Paris Energy Bureau',
-    excerpt: 'Nuclear enrichment supply curves, uranium triuranium octoxide contracts, and European electricity grid interconnection economics.',
-    updated: 'Updated Oct 26',
-  },
-  {
-    id: 'cn4',
-    slug: 'deep-cable-cartography',
-    category: 'INFRASTRUCTURE',
-    dispatches: '15 Dispatches',
-    title: 'Deep Cable Cartography',
-    author: 'by Dr. S. Thoma • London Research Unit',
-    excerpt: 'Undersea fiber optics, HVDC grid interconnections across the North Sea, and sovereign terrestrial transmission bottlenecks.',
-    updated: 'Updated Oct 25',
-  },
-  {
-    id: 'cn5',
-    slug: 'peptide-economics',
-    category: 'BIOTECH & CAPITAL',
-    dispatches: '11 Dispatches',
-    title: 'Peptide Economics',
-    author: 'by Dr. Ananya Sen • Zurich BioDesk',
-    excerpt: 'GLP-1 manufacturing yield challenges, oral peptide patent expiration schedules, and healthcare sovereign fund deployments.',
-    updated: 'Updated Oct 24',
-  },
-  {
-    id: 'cn6',
-    slug: 'state-balance-sheets',
-    category: 'SOVEREIGN WEALTH',
-    dispatches: '19 Dispatches',
-    title: 'State Balance Sheets',
-    author: 'by Tariq Al-Mansoor • Abu Dhabi Bureau',
-    excerpt: 'Tracking direct allocations into semiconductor mezzanine tranches and sovereign capital recycling across ASEAN corridors.',
-    updated: 'Updated Oct 22',
-  },
-];
-
-const categoryPills = [
-  'All Creators (48)',
-  'Macro Theorists (14)',
-  'Algorithmic Physics (9)',
-  'Energy Geopolitics (11)',
-  'Maritime & Logistics (7)',
-  'Archival Cryptography (7)',
-];
+const categoryMap: Record<string, string[]> = {
+  'All Blogs': [],
+  'Forex & Regulations': ['Forex', 'RBI Regulations', 'FEMA', 'Currency Derivatives'],
+  'Exchange Architecture': ['Calcutta Stock Exchange', 'SEBI', 'Regional Exchanges', 'GIFT City', 'Capital Markets'],
+  'Financial Education': ['Financial Education', 'Trading Desks', 'NAAC Benchmarks', 'NIRF Optimization'],
+  'F&O Derivatives': ['F&O Trading', 'Career Development', 'Risk Psychology', 'Prop Desks', 'Nifty Spreads'],
+};
 
 export default function CreatorBlogsPage() {
-  const [activeCategory, setActiveCategory] = useState('All Creators (48)');
-  const [sortBy, setSortBy] = useState('Most Recent Dispatch');
-  const [currentPage, setCurrentPage] = useState(1);
+  const [activeCategory, setActiveCategory] = useState('All Blogs');
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredNotebooks = useMemo(() => {
-    if (activeCategory.startsWith('All')) return creatorNotebooks;
-    const cat = activeCategory.split(' ')[0].toLowerCase();
-    return creatorNotebooks.filter(c =>
-      c.category.toLowerCase().includes(cat) || c.title.toLowerCase().includes(cat)
-    );
-  }, [activeCategory]);
+  const filteredBlogs = useMemo(() => {
+    return blogs.filter((blog) => {
+      // Category filter
+      if (activeCategory !== 'All Blogs') {
+        const requiredTags = categoryMap[activeCategory] || [];
+        const hasTag = requiredTags.some((tag) => blog.tags.includes(tag));
+        if (!hasTag) return false;
+      }
+
+      // Search query filter
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase();
+        const matchesTitle = blog.title.toLowerCase().includes(q);
+        const matchesExcerpt = blog.excerpt.toLowerCase().includes(q);
+        const matchesBody = blog.body.toLowerCase().includes(q);
+        const matchesTags = blog.tags.some((t) => t.toLowerCase().includes(q));
+        const matchesAuthor = blog.author.name.toLowerCase().includes(q);
+        if (!matchesTitle && !matchesExcerpt && !matchesBody && !matchesTags && !matchesAuthor) {
+          return false;
+        }
+      }
+
+      return true;
+    });
+  }, [activeCategory, searchQuery]);
+
+  // Featured blog (usually blog-1 or first matching)
+  const featuredBlog = filteredBlogs[0];
+  const secondaryBlogs = filteredBlogs.slice(1);
 
   return (
-    <div style={{ background: 'var(--bg-page)', minHeight: '100vh', padding: '36px 0 60px' }}>
+    <div style={{ background: 'var(--bg-page)', minHeight: '100vh', padding: '36px 0 80px' }}>
       <div className="container">
-        {/* TOP HEADER ROW */}
+        {/* Breadcrumb */}
         <div style={{
           display: 'flex',
-          alignItems: 'flex-start',
-          justifyContent: 'space-between',
-          gap: '30px',
-          marginBottom: '28px',
-          flexWrap: 'wrap'
+          alignItems: 'center',
+          gap: '8px',
+          fontSize: '11px',
+          color: 'var(--ink-muted)',
+          marginBottom: '20px',
         }}>
-          <div>
-            <div className="eyebrow-text">
-              ACADEMY FELLOWS & INDEPENDENT AUTHORS • ESSAYS & SUBSTACK DISPATCHES
-            </div>
-            <h1 className="page-title">
-              Creator Columns & Dedicated Blogs
-            </h1>
-            <p className="page-subtitle">
-              Unfiltered research notebooks, specialized domain blogs, and thematic dispatches authored by Derivion Academy senior fellows, algorithmic theorists, and sovereign debt historians.
-            </p>
-          </div>
-
-          {/* TELEMETRY BOX */}
-          <div className="telemetry-box" style={{ flexShrink: 0 }}>
-            <div className="telemetry-cell">
-              <div className="telemetry-label">
-                <span className="dot-green" /> DISPATCH TELEMETRY
-              </div>
-              <div className="telemetry-value">
-                ACTIVE SYNDICATION
-              </div>
-            </div>
-            <div className="telemetry-cell">
-              <div className="telemetry-label">
-                ROSTER / CADENCE
-              </div>
-              <div className="telemetry-value">
-                48 FELLOWS • BI-WEEKLY
-              </div>
-            </div>
-            <div className="telemetry-cell" style={{ background: '#fefce8' }}>
-              <div className="telemetry-label" style={{ color: '#854d0e' }}>
-                VOL. IV • Q4 2024
-              </div>
-              <div className="telemetry-value" style={{ color: '#713f12', fontSize: '9px' }}>
-                ISSN 2841-9042
-              </div>
-            </div>
-          </div>
+          <Link href="/">Home</Link> <span>›</span>
+          <span style={{ color: 'var(--ink-black)', fontWeight: 600 }}>Creator Blogs</span>
         </div>
 
-        {/* CATEGORY FILTER PILLS */}
-        <div className="filter-pills-bar">
-          {categoryPills.map(cat => (
-            <button
-              key={cat}
-              type="button"
-              className={`filter-pill ${activeCategory === cat ? 'active' : ''}`}
-              onClick={() => setActiveCategory(cat)}
-            >
-              {cat}
-            </button>
-          ))}
-
-          <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ fontSize: '11px', color: 'var(--ink-muted)' }}>Sort by:</span>
-            <select
-              value={sortBy}
-              onChange={e => setSortBy(e.target.value)}
-              className="filter-select"
-            >
-              <option>Most Recent Dispatch</option>
-              <option>Readership Scale</option>
-              <option>Alphabetical</option>
-            </select>
+        {/* Page Header */}
+        <div style={{ marginBottom: '28px' }}>
+          <div className="eyebrow-text">
+            THE HEDGE FRONT · DISPATCHES & EDITORIAL ESSAYS
           </div>
+          <h1 className="page-title">
+            The Hedge Front & Creator Blogs
+          </h1>
+          <p className="page-subtitle">
+            First-person research essays, regulatory investigations, and market structure dispatches curated by the ISFT Editorial Desk.
+          </p>
         </div>
 
-        {/* SECTION 1: PINNACLE FELLOW NEWSLETTERS */}
-        <div style={{ marginBottom: '44px' }}>
-          <div className="section-header-row">
-            <div className="section-label-gold">
-              <span className="dot-gold" /> PINNACLE FELLOW NEWSLETTERS
-            </div>
-            <div className="section-label-muted">
-              CURATED BY EDITORIAL BOARD
-            </div>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '20px',
-          }}>
-            {pinnacleFellows.map(fellow => (
-              <div
-                key={fellow.id}
-                className="editorial-card"
-                style={{
-                  borderTop: '3px solid #b48328',
-                  padding: '20px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                }}
+        {/* Search & Filter Bar */}
+        <div className="blogs-filter-container">
+          <div className="filter-pills-bar" style={{ margin: 0, border: 'none', padding: 0 }}>
+            {Object.keys(categoryMap).map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`filter-pill ${activeCategory === cat ? 'active' : ''}`}
               >
-                <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-                    <span style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '9px',
-                      fontWeight: 700,
-                      background: '#fefce8',
-                      border: '1px solid #fde047',
-                      color: '#854d0e',
-                      padding: '2px 8px',
-                      borderRadius: 'var(--radius-sm)',
-                      letterSpacing: '0.04em',
-                    }}>
-                      {fellow.badge}
-                    </span>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '9.5px', color: 'var(--gold-dark)', fontWeight: 600 }}>
-                      {fellow.cadence}
-                    </span>
-                  </div>
+                {cat}
+              </button>
+            ))}
+          </div>
 
-                  {/* Author Header */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                    <div className="avatar-circle">
-                      {fellow.initials}
-                    </div>
-                    <div>
-                      <div style={{ fontFamily: 'var(--font-serif)', fontSize: '15px', fontWeight: 700, color: 'var(--ink-primary)' }}>
-                        {fellow.name}
-                      </div>
-                      <div style={{ fontSize: '10.5px', color: 'var(--ink-muted)' }}>
-                        {fellow.role}
-                      </div>
-                    </div>
-                  </div>
+          <div className="blogs-search-wrapper">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--ink-muted)' }}>
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+            <input
+              type="text"
+              placeholder="Search blogs, topics, regulations..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="blogs-search-input"
+            />
+            {searchQuery && (
+              <button onClick={() => setSearchQuery('')} className="blogs-search-clear">
+                ✕
+              </button>
+            )}
+          </div>
+        </div>
 
-                  {/* Title & Excerpt */}
-                  <h3 style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '18px',
-                    fontWeight: 700,
-                    color: 'var(--ink-primary)',
-                    lineHeight: 1.25,
-                    marginBottom: '10px',
-                  }}>
-                    {fellow.title}
-                  </h3>
-                  <p style={{
-                    fontSize: '12px',
-                    lineHeight: 1.6,
-                    color: 'var(--ink-secondary)',
-                    marginBottom: '20px',
-                  }}>
-                    {fellow.excerpt}
-                  </p>
-                </div>
-
-                {/* Footer */}
+        {/* Content Area */}
+        {filteredBlogs.length === 0 ? (
+          <EmptyState
+            sectionName="Creator Blogs"
+            categoryName={activeCategory !== 'All Blogs' ? activeCategory : undefined}
+            title="We are gathering interesting and latest info for you"
+            description={`No publications found matching "${searchQuery || activeCategory}". Our editorial desk is compiling fresh research on this topic. Check back shortly!`}
+            actionText="Clear Search & View All Blogs"
+            actionHref="/blogs"
+          />
+        ) : (
+          <div>
+            {/* FEATURED LEAD BLOG */}
+            {featuredBlog && (
+              <section style={{ marginBottom: '40px' }}>
                 <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  paddingTop: '12px',
-                  borderTop: '1px solid var(--border-light)',
-                  fontFamily: 'var(--font-mono)',
                   fontSize: '10px',
-                }}>
-                  <span style={{ color: 'var(--ink-muted)' }}>
-                    Latest: {fellow.latest}
-                  </span>
-                  <Link
-                    href={`/blogs/${fellow.slug}`}
-                    style={{
-                      color: 'var(--gold-dark)',
-                      fontWeight: 700,
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '4px',
-                    }}
-                  >
-                    View Column →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* SECTION 2: ALL CREATOR PUBLICATIONS & NOTEBOOKS */}
-        <div>
-          <div className="section-header-row">
-            <div>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '20px', fontWeight: 700, color: 'var(--ink-primary)' }}>
-                All Creator Publications & Notebooks
-              </h2>
-              <div style={{ fontSize: '11.5px', color: 'var(--ink-muted)', marginTop: '2px' }}>
-                Explore recent long-form notes and personal analytical blogs from our research roster.
-              </div>
-            </div>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--ink-muted)' }}>
-              Showing 1-9 of 48 Creator Hubs
-            </div>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-            gap: '18px',
-          }}>
-            {filteredNotebooks.map(nb => (
-              <div
-                key={nb.id}
-                className="editorial-card"
-                style={{
-                  padding: '20px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                }}
-              >
-                <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                    <span style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '8.5px',
-                      fontWeight: 600,
-                      color: 'var(--ink-muted)',
-                      border: '1px solid var(--border-light)',
-                      padding: '2px 6px',
-                      borderRadius: 'var(--radius-sm)',
-                      letterSpacing: '0.04em',
-                    }}>
-                      {nb.category}
-                    </span>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--ink-muted)' }}>
-                      {nb.dispatches}
-                    </span>
-                  </div>
-
-                  <h3 style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '17px',
-                    fontWeight: 700,
-                    color: 'var(--ink-primary)',
-                    marginBottom: '4px',
-                  }}>
-                    {nb.title}
-                  </h3>
-
-                  <div style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '10.5px',
-                    color: 'var(--gold-dark)',
-                    marginBottom: '10px',
-                    fontWeight: 500,
-                  }}>
-                    {nb.author}
-                  </div>
-
-                  <p style={{
-                    fontSize: '12px',
-                    color: 'var(--ink-secondary)',
-                    lineHeight: 1.6,
-                    marginBottom: '20px',
-                  }}>
-                    {nb.excerpt}
-                  </p>
-                </div>
-
-                <div style={{
+                  fontWeight: 700,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: 'var(--ochre-dark)',
+                  marginBottom: '12px',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'space-between',
-                  paddingTop: '12px',
-                  borderTop: '1px solid var(--border-light)',
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '9.5px',
+                  gap: '6px',
                 }}>
-                  <span style={{ color: 'var(--ink-muted)' }}>
-                    {nb.updated}
-                  </span>
-                  <Link
-                    href={`/blogs/${nb.slug}`}
-                    style={{
-                      color: 'var(--ink-primary)',
-                      fontWeight: 700,
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '4px',
-                    }}
-                  >
-                    Explore Blog →
-                  </Link>
+                  <span className="dot-ochre" /> LEAD DISPATCH · THE HEDGE FRONT
                 </div>
-              </div>
-            ))}
-          </div>
 
-          {/* PAGINATION BAR */}
-          <div className="pagination-bar">
-            <div className="pagination-pages">
-              <button
-                type="button"
-                className="page-btn"
-                onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
-              >
-                Previous
-              </button>
-              {[1, 2, 3].map(p => (
-                <button
-                  key={p}
-                  type="button"
-                  className={`page-btn ${currentPage === p ? 'active' : ''}`}
-                  onClick={() => setCurrentPage(p)}
-                >
-                  {p}
-                </button>
-              ))}
-              <span style={{ padding: '0 4px', color: 'var(--ink-muted)' }}>..</span>
-              <button type="button" className="page-btn" onClick={() => setCurrentPage(6)}>
-                6
-              </button>
-              <button
-                type="button"
-                className="page-btn"
-                onClick={() => setCurrentPage(Math.min(6, currentPage + 1))}
-              >
-                Next
-              </button>
-            </div>
+                <div className="featured-blog-card">
+                  <div className="featured-blog-content">
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px', flexWrap: 'wrap' }}>
+                      <span className="featured-blog-badge">
+                        {featuredBlog.columnName}
+                      </span>
+                      <span style={{ fontSize: '11px', color: 'var(--ink-muted)' }}>
+                        {featuredBlog.date}
+                      </span>
+                      <span style={{ fontSize: '11px', color: 'var(--ink-muted)' }}>•</span>
+                      <span style={{ fontSize: '11px', color: 'var(--ink-muted)' }}>
+                        {featuredBlog.readTime || '6 min read'}
+                      </span>
+                    </div>
 
-            <button
-              type="button"
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '10.5px',
-                color: 'var(--ink-primary)',
-                fontWeight: 600,
-                display: 'flex',
-                alignItems: 'center',
-                gap: '4px',
-              }}
-            >
-              Load All 48 Columns Ledger ↓
-            </button>
-          </div>
-        </div>
+                    <h2 className="featured-blog-title">
+                      <Link href={`/blogs/${featuredBlog.slug}`}>
+                        {featuredBlog.title}
+                      </Link>
+                    </h2>
 
-        {/* NAVY CTA BANNER */}
-        <div className="navy-cta-banner">
-          <div>
-            <div className="navy-cta-eyebrow">
-              RESEARCH FELLOWSHIP PROGRAM
-            </div>
-            <h2 className="navy-cta-title">
-              Publish your quantitative research through the Derivion Syndicate
-            </h2>
-            <p className="navy-cta-desc">
-              We provide verified financial economists, hardware architects, and policy historians with peer review, editing desks, cryptographic verification, and instant institutional distribution.
-            </p>
+                    <p className="featured-blog-excerpt">
+                      {featuredBlog.excerpt}
+                    </p>
+
+                    <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '22px' }}>
+                      {featuredBlog.tags.map((tag) => (
+                        <span key={tag} className="blog-tag">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="featured-blog-footer">
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <div className="avatar-circle" style={{ width: '34px', height: '34px', fontSize: '11px' }}>
+                          {featuredBlog.author.initials}
+                        </div>
+                        <div>
+                          <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--ink-black)' }}>
+                            {featuredBlog.author.name}
+                          </div>
+                          <div style={{ fontSize: '10.5px', color: 'var(--ink-muted)' }}>
+                            {featuredBlog.author.role}
+                          </div>
+                        </div>
+                      </div>
+
+                      <Link href={`/blogs/${featuredBlog.slug}`} className="btn-black" style={{ padding: '8px 20px', borderRadius: '9999px' }}>
+                        Read Dispatch →
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* SECONDARY BLOGS GRID */}
+            {secondaryBlogs.length > 0 && (
+              <section>
+                <div style={{
+                  fontSize: '10px',
+                  fontWeight: 700,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: 'var(--ink-muted)',
+                  marginBottom: '16px',
+                }}>
+                  ADDITIONAL DISPATCHES ({secondaryBlogs.length})
+                </div>
+
+                <div className="blogs-grid">
+                  {secondaryBlogs.map((b) => (
+                    <article key={b.id} className="blog-card">
+                      <div className="blog-card__inner">
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
+                          <span className="blog-column-pill">
+                            {b.columnName}
+                          </span>
+                          <span style={{ fontSize: '10.5px', color: 'var(--ink-muted)' }}>
+                            {b.readTime || '6 min read'}
+                          </span>
+                        </div>
+
+                        <h3 className="blog-card__title">
+                          <Link href={`/blogs/${b.slug}`}>
+                            {b.title}
+                          </Link>
+                        </h3>
+
+                        <p className="blog-card__excerpt">
+                          {b.excerpt}
+                        </p>
+
+                        <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '18px' }}>
+                          {b.tags.slice(0, 3).map((tag) => (
+                            <span key={tag} className="blog-tag">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="blog-card__footer">
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <div className="avatar-circle" style={{ width: '28px', height: '28px', fontSize: '10px' }}>
+                            {b.author.initials}
+                          </div>
+                          <div>
+                            <div style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--ink-black)' }}>
+                              {b.author.name}
+                            </div>
+                            <div style={{ fontSize: '9.5px', color: 'var(--ink-muted)' }}>
+                              {b.date}
+                            </div>
+                          </div>
+                        </div>
+
+                        <Link href={`/blogs/${b.slug}`} className="blog-card__read-link">
+                          Read →
+                        </Link>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
-          <div>
-            <button
-              type="button"
-              className="btn-gold"
-              style={{ whiteSpace: 'nowrap', padding: '10px 22px' }}
-            >
-              Inquire for Fellowship
-            </button>
-          </div>
-        </div>
+        )}
       </div>
+
+      <style jsx>{`
+        .blogs-filter-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+          flex-wrap: wrap;
+          margin-bottom: 32px;
+          padding-bottom: 16px;
+          border-bottom: 1px solid var(--border-light);
+        }
+
+        .blogs-search-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          background: #ffffff;
+          border: 1px solid var(--border-light);
+          border-radius: var(--radius-full);
+          padding: 6px 14px;
+          width: 100%;
+          max-width: 320px;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+          transition: border-color 0.15s ease;
+        }
+
+        .blogs-search-wrapper:focus-within {
+          border-color: var(--ochre);
+        }
+
+        .blogs-search-input {
+          border: none;
+          outline: none;
+          background: transparent;
+          font-size: 12px;
+          color: var(--ink-black);
+          width: 100%;
+        }
+
+        .blogs-search-clear {
+          color: var(--ink-muted);
+          font-size: 11px;
+          padding: 2px 6px;
+        }
+
+        .featured-blog-card {
+          background: #ffffff;
+          border: 1px solid var(--border-light);
+          border-radius: var(--radius-lg);
+          padding: clamp(24px, 4vw, 36px);
+          box-shadow: var(--shadow-card);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .featured-blog-card:hover {
+          box-shadow: var(--shadow-hover);
+        }
+
+        .featured-blog-badge {
+          font-size: 9.5px;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          background: #eff6ff;
+          color: #2563eb;
+          border: 1px solid #bfdbfe;
+          padding: 3px 10px;
+          border-radius: 9999px;
+        }
+
+        .featured-blog-title {
+          font-family: var(--font-serif);
+          font-size: clamp(22px, 3.2vw, 32px);
+          font-weight: 800;
+          color: var(--ink-black);
+          line-height: 1.25;
+          margin-bottom: 14px;
+          letter-spacing: -0.01em;
+        }
+
+        .featured-blog-title a:hover {
+          color: var(--ochre-dark);
+        }
+
+        .featured-blog-excerpt {
+          font-size: clamp(13.5px, 1.8vw, 15px);
+          line-height: 1.65;
+          color: var(--ink-secondary);
+          margin-bottom: 20px;
+          max-width: 880px;
+        }
+
+        .featured-blog-footer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 18px;
+          border-top: 1px solid var(--border-light);
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+
+        .blog-tag {
+          font-size: 10px;
+          color: var(--ink-secondary);
+          background: #f1f5f9;
+          border: 1px solid #e2e8f0;
+          padding: 2px 8px;
+          border-radius: var(--radius-xs);
+        }
+
+        .blogs-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+          gap: 24px;
+        }
+
+        .blog-card {
+          background: #ffffff;
+          border: 1px solid var(--border-light);
+          border-radius: var(--radius-md);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          box-shadow: var(--shadow-card);
+          transition: all 0.2s ease;
+          overflow: hidden;
+        }
+
+        .blog-card:hover {
+          transform: translateY(-2px);
+          border-color: #cbd5e1;
+          box-shadow: var(--shadow-hover);
+        }
+
+        .blog-card__inner {
+          padding: 24px 24px 16px;
+        }
+
+        .blog-column-pill {
+          font-size: 9px;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: #0f172a;
+          background: #f8fafc;
+          border: 1px solid var(--border-light);
+          padding: 2px 8px;
+          border-radius: 4px;
+        }
+
+        .blog-card__title {
+          font-family: var(--font-serif);
+          font-size: clamp(17px, 2vw, 20px);
+          font-weight: 700;
+          color: var(--ink-black);
+          line-height: 1.35;
+          margin-bottom: 10px;
+        }
+
+        .blog-card__title a:hover {
+          color: var(--ochre-dark);
+        }
+
+        .blog-card__excerpt {
+          font-size: 12.5px;
+          color: var(--ink-secondary);
+          line-height: 1.6;
+          margin-bottom: 16px;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .blog-card__footer {
+          padding: 14px 24px;
+          background: #fbfbfa;
+          border-top: 1px solid var(--border-light);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .blog-card__read-link {
+          font-size: 12px;
+          font-weight: 700;
+          color: var(--ochre-dark);
+          transition: transform 0.15s ease;
+        }
+
+        .blog-card__read-link:hover {
+          transform: translateX(2px);
+        }
+
+        @media (max-width: 768px) {
+          .blogs-filter-container {
+            flex-direction: column;
+            align-items: stretch;
+          }
+          .blogs-search-wrapper {
+            max-width: 100%;
+          }
+          .blogs-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
     </div>
   );
 }
