@@ -105,9 +105,157 @@ export interface SpecialReport {
 export const articles: Article[] = [];
 
 // ============================================================
-// NEWS ITEMS (Cleared as requested - gathering latest info)
+// NEWS ITEMS
 // ============================================================
-export const newsItems: NewsItem[] = [];
+export const newsItems: NewsItem[] = [
+  {
+    id: 'n1',
+    slug: 'morning-dispatch-fed-hike-boe-iran-sep-17-2026',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'Morning Dispatch: Fed Hikes 25bps, BOE Faces Pressure & Iran Ceasefire Signals',
+    excerpt: 'Markets whipsawed after Warsh\'s hawkish FOMC meeting — equities hit July lows, 2-year yields peaked at 2024 highs, and gold reversed losses. Thursday brings the BOE decision, Iran peace signals from Trump, and a packed economic calendar.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'September 17, 2026',
+    tags: ['Federal Reserve', 'BOE', 'Iran', 'Rate Hike', 'Dollar', 'Treasuries', 'Gold', 'Macro'],
+    dataTag: 'LIVE WIRE',
+    featured: true,
+    body: `## Morning Briefing · Thursday, September 17, 2026
+
+> **Editor's Note:** Markets awaited Warsh and his Fed — and they were not disappointed. Everything moved. Thursday wakes up to even more movement as Trump plays his Iran "get out of jail" card. For day traders: do not be greedy, do not carry a strong view. Jump on the move, ride the big whale into shore, hop off, and wait for the next fish. Keep it simple.
+
+---
+
+### Wednesday Recap: The Fed Pulls the Trigger
+
+Wednesday saw traders drive equities to their **lowest level since July** on bets the Fed will keep raising rates to combat inflation.
+
+**Key moves:**
+- **Short-dated Treasuries underperformed** — 2-year yields hit their highest since 2024
+- **The dollar climbed** sharply
+- **Money markets** priced in a **50% probability of an October rate hike**
+- **4 FOMC members** even voted for **4 hikes in 2026** — an extremely hawkish signal
+
+The dot plot was the critical read — and may be the last one of this cycle. The vote was unanimous at 25 basis points, but the internal hawkishness of the committee was the real story.
+
+> *"This will without doubt test the new relationship between Warsh and Trump — who wants immediate lower rates before the mid-term elections."*
+
+**Warsh's press conference** was described by traders as almost a "car crash speech." Yet after he sat down, markets recovered sharply. Gold reversed its losses. Indices rode a rollercoaster and are back **in the green Thursday morning**.
+
+<!-- IMAGE_PLACEHOLDER: chart-equities-wednesday -->
+
+---
+
+### Thursday: The BOE Steps Into the Ring
+
+Bailey and the Bank of England face a nightmare job. Thursday's MPC decision is expected to hold rates **unchanged (6-3 vote)** — but the pressure is unmistakably mounting.
+
+**BOE must acknowledge:**
+- UK inflation is moving higher, driven by the energy shock
+- The UK debt bubble is expanding
+- The Iran war has now become a domestic inflation catalyst
+
+---
+
+### News from the Trenches
+
+| Headline | Source |
+|----------|--------|
+| BOE set to resist rate hike but pressure is mounting | [Livesquawk](https://www.livesquawk.com/report/special_boe-set-to-resist-the-urge-to-hike-but-pressure-is-mounting) |
+| Energy shock pushes UK inflation higher ahead of BOE decision | [Livesquawk](https://www.livesquawk.com/report/special_energy-shock-pushes-uk-inflation-higher-ahead-of-boe-rate-decision) |
+| Saudis pound Yemen; Houthis fire at Saudi as Middle East war spreads | Reuters |
+| Trump to hold talks with Gulf leaders next week | [Axios](https://www.axios.com/2026/09/16/trump-iran-talks-gulf-leaders-un) |
+| Rate hike puts Trump & Fed on collision course | [Bloomberg](https://www.bloomberg.com/news/articles/2026-09-16/the-fed-s-unanimous-25-basis-point-hike-puts-trump-and-warsh-on-collision-course) |
+| Global bonds recover as Warsh's inflation fight calms markets | Bloomberg |
+| BOJ faces higher bar to support yen after Fed's hawkish hike | [Bloomberg](https://www.bloomberg.com/news/articles/2026-09-17/boj-faces-higher-bar-to-support-yen-after-fed-s-hawkish-hike) |
+
+---
+
+### Middle East & Geopolitical Flash
+
+**Trump Statement:** *"Hopefully towards the end of the Iran war — Iran are not ready to make a deal."*
+
+According to 3 senior sources, President Trump is expected to hold a meeting with Gulf leaders on the sidelines of the **UN General Assembly in New York next Thursday**. The meeting will focus on US post-war strategy. Israel PM Netanyahu is also interested in meeting Trump in NY but nothing is yet scheduled.
+
+<!-- IMAGE_PLACEHOLDER: middle-east-map -->
+
+---
+
+### Asian Session Overview
+
+A quiet Asian session as markets digested the FOMC decision. Initial reactions faded:
+
+- **2-year Treasury yield** fell 2bps to **4.72%** after hitting multi-year highs
+- **10-year and 30-year yields** both declined 3bps
+- **S&P 500 and Nasdaq 100 futures** rose more than **0.5%**
+- **Brent crude** recovered to ~**$105.70/bbl** — WTI moved back above **$102**
+- **Gold** briefly rebounded to **$4,310/oz** before slipping back below $4,300; remains modestly positive on the day
+- **Dollar** held gains despite lower yields
+
+An early decline in crude proved short-lived, triggered by the Axios report that Trump would meet Gulf leaders to discuss Iran — with comments that the conflict could end "very soon."
+
+---
+
+### Today's Focus Events — Thursday, September 17
+
+#### 🇪🇺 EU Session
+| Time (UTC) | Event |
+|-----------|-------|
+| 07:45 | ECB Moulin speaks (Dove) |
+| 08:00 | ECB Lane speaks (Dove) |
+| 10:00 | EUR: CPI Final |
+| 11:00 | ECB Rehn speaks (Super Dove) |
+| 12:00 | 🇬🇧 **UK: BOE Rate Decision** |
+
+#### 🇺🇸 US Session
+| Time (UTC) | Event |
+|-----------|-------|
+| 12:00 | CAN: CFIB Business Barometer |
+| 13:30 | US: Initial Jobless Claims, Philly Fed, Housing Starts |
+| 15:00 | US: Pending Home Sales |
+
+#### Bond Supply
+| Time | Issuer | Details |
+|------|--------|---------|
+| 09:30 | 🇪🇸 Spain | 6y, 8y, 10y SPGB — total €6.00BN |
+| 09:50 | 🇫🇷 France | 3y, 4y, 5y, 6y OATs + new 10y linker — total €13.00BN |
+| 17:00 | 🇨🇦 Canada | 33y GCAN — $CAD 3.00BN |
+
+---
+
+### Thursday's Press Roundup
+
+**The Times:** The US Federal Reserve has raised interest rates for the first time in three years, forced to act against rising inflation caused by the White House's war with Iran.
+
+**The Guardian:** Andy Burnham said 'difficult decisions' will be needed in next month's budget after energy prices — driven by the Iran war — pushed UK inflation above 3%.
+
+**The Times:** Barratt Redrow will build fewer homes than forecast due to 'continuing planning delays' Labour had promised to iron out.
+
+**The Times:** Morrisons hails best quarter in over a year — like-for-like sales rose 3.2% in the three months to 26 July, driven by heatwaves and the football World Cup.
+
+**The Guardian:** Entain (Ladbrokes owner) is preparing to cut 400 jobs, weeks after posting better-than-expected first-half profit.
+
+**Financial Times:** Bold promises by Anthropic and OpenAI bosses to constrain AI development are creating internal tensions over security and governance.
+
+**The Daily Telegraph:** Hugo Boss has appointed Michael Murray (Frasers' CEO) as its new chairman, tightening Mike Ashley's grip on the German fashion brand.
+
+**The Times:** Revolut founder Nik Storonsky has denied owing commission to yacht broker Cecil Wright & Partners over his €350m superyacht purchase.
+
+**Financial Times:** NZ Superannuation Fund — the world's best-performing sovereign wealth fund — expects equity outperformance to ease after 14% growth, despite being underweight on US tech.
+
+**The Daily Telegraph:** John Healey has appointed Paul Nowak (TUC General Secretary) to the Bank of England's Court of Directors for a four-year term.
+
+---
+
+*Market data and intelligence sourced from Bloomberg, Reuters, Livesquawk, Axios, and The Hedge Front desk. This dispatch is for informational purposes only and does not constitute investment advice.*`,
+  },
+];
+
 
 // ============================================================
 // MAGAZINE ISSUES (Cleared as requested - gathering latest info)

@@ -1,114 +1,163 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import { blogs } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'DerivionAcademy.in – The Hedge Front & Quantitative Intelligence',
   description: 'The authoritative digital chronicle and research bureau providing institutional analysis, quantitative derivative intelligence, and sovereign market reports.',
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
 };
 
 export default function HomePage() {
   const blog1 = blogs[0]; // Why Forex Dreams Need a Legal Reality Check
-  const blog2 = blogs[1]; // How to resurrect a Stock Exchange; the Kolkata way
-  const blog3 = blogs[2]; // Why the Calcutta Stock Exchange Died so GIFT City Could Fly
   const allBlogs = blogs;
 
   return (
     <div style={{ background: 'var(--bg-page)', minHeight: '100vh', paddingBottom: '60px' }}>
 
       {/* ============================================================
-          HERO – Magazine Grid (Inspired by Indise Editorial)
-          Left: 2 stacked story cards | Right: 1 large featured story
-          Fully Responsive for Mobile & Desktop
+          HERO – Two-Column Modern Layout
+          Left: Badge + Headline + CTA + SVG Illustration
+          Right: Two stacked info cards (no stock photos)
           ============================================================ */}
-      <section className="da-hero">
-        <div className="da-hero__grid">
+      <section className="da-hero-v2">
+        <div className="da-hero-v2__inner">
 
-          {/* LEFT COLUMN – 2 stacked cards */}
-          <div className="da-hero__left">
-            {/* Card 1: Blog 2 */}
-            <Link href={`/blogs/${blog2.slug}`} className="da-hero__card da-hero__card--sm">
-              <Image
-                src="/hero-card1.jpg"
-                alt="Calcutta Stock Exchange Revival Analysis"
-                fill
-                className="da-hero__card-img"
-                priority
-              />
-              <div className="da-hero__card-overlay" />
-              <div className="da-hero__card-body">
-                <span className="da-hero__card-tag">EXCHANGE INFRASTRUCTURE</span>
-                <h3 className="da-hero__card-title">
-                  {blog2.title}
-                </h3>
-                <span style={{ fontSize: '10px', color: 'rgba(255,255,255,0.75)', marginTop: '4px', display: 'block' }}>
-                  By {blog2.author.name} • {blog2.readTime || '8 min read'}
-                </span>
-              </div>
-            </Link>
+          {/* LEFT – Text + Illustration */}
+          <div className="da-hero-v2__left">
+            {/* Announcement Badge */}
+            <div className="da-hero-v2__badge">
+              <span className="da-hero-v2__badge-dot" />
+              New Dispatch · {blog1.columnName}
+            </div>
 
-            {/* Card 2: Blog 3 */}
-            <Link href={`/blogs/${blog3.slug}`} className="da-hero__card da-hero__card--sm">
-              <Image
-                src="/hero-card2.jpg"
-                alt="GIFT City vs Lyons Range Risk Analysis"
-                fill
-                className="da-hero__card-img"
-              />
-              <div className="da-hero__card-overlay" />
-              <div className="da-hero__card-body">
-                <span className="da-hero__card-tag">SYSTEMIC RISK & CLEARING</span>
-                <h3 className="da-hero__card-title">
-                  {blog3.title}
-                </h3>
-                <span style={{ fontSize: '10px', color: 'rgba(255,255,255,0.75)', marginTop: '4px', display: 'block' }}>
-                  By {blog3.author.name} • {blog3.readTime || '9 min read'}
-                </span>
-              </div>
-            </Link>
-          </div>
+            {/* Main Headline */}
+            <h1 className="da-hero-v2__headline">
+              Institutional intelligence,<br />
+              <span className="da-hero-v2__headline-accent">decoded for India.</span>
+            </h1>
 
-          {/* RIGHT COLUMN – Large featured card (Blog 1) */}
-          <div className="da-hero__card da-hero__card--featured">
-            <Image
-              src="/hero-featured.jpg"
-              alt="Forex Legal Reality Check"
-              fill
-              className="da-hero__card-img"
-              priority
-            />
-            <div className="da-hero__card-overlay da-hero__card-overlay--featured" />
-            <div className="da-hero__card-body da-hero__card-body--featured">
-              <span className="da-hero__card-tag">THE HEDGE FRONT · COVER STORY</span>
-              <h2 className="da-hero__featured-title">
-                {blog1.title}
-              </h2>
-              <p style={{
-                color: 'rgba(248, 250, 252, 0.88)',
-                fontSize: 'clamp(12.5px, 1.4vw, 14.5px)',
-                lineHeight: 1.6,
-                marginBottom: '18px',
-                maxWidth: '680px',
-                display: '-webkit-box',
-                WebkitLineClamp: 3,
-                WebkitBoxOrient: 'vertical',
-                overflow: 'hidden',
-              }}>
-                {blog1.excerpt}
-              </p>
-              <div className="da-hero__featured-meta">
-                <Link href={`/blogs/${blog1.slug}`} className="da-hero__read-btn">
-                  Read Dispatch →
-                </Link>
-                <span className="da-hero__author">
-                  <span className="da-hero__author-avatar">HF</span>
-                  by {blog1.author.name}
-                </span>
-              </div>
+            <p className="da-hero-v2__subtext">
+              Peer-reviewed financial analysis, sovereign market intelligence, and quantitative F&O research — from ISFT fellows.
+            </p>
+
+            {/* CTA */}
+            <div className="da-hero-v2__cta-row">
+              <Link href="/blogs" className="da-hero-v2__btn-primary">
+                Read The Hedge Front →
+              </Link>
+              <Link href="/blogs" className="da-hero-v2__btn-ghost">
+                Browse all dispatches
+              </Link>
+            </div>
+
+            {/* SVG Illustration – abstract market/chart graphic */}
+            <div className="da-hero-v2__illustration" aria-hidden="true">
+              <svg viewBox="0 0 520 280" fill="none" xmlns="http://www.w3.org/2000/svg" className="da-hero-v2__svg">
+                {/* Grid lines */}
+                <line x1="0" y1="240" x2="520" y2="240" stroke="#e2e8f0" strokeWidth="1" />
+                <line x1="0" y1="180" x2="520" y2="180" stroke="#e2e8f0" strokeWidth="1" />
+                <line x1="0" y1="120" x2="520" y2="120" stroke="#e2e8f0" strokeWidth="1" />
+                <line x1="0" y1="60" x2="520" y2="60" stroke="#e2e8f0" strokeWidth="1" />
+
+                {/* Chart area fill */}
+                <path d="M40 210 L100 185 L160 195 L220 155 L280 130 L340 105 L400 80 L460 55 L520 40 L520 240 L40 240 Z"
+                  fill="url(#areaGrad)" opacity="0.35" />
+
+                {/* Chart line */}
+                <path d="M40 210 L100 185 L160 195 L220 155 L280 130 L340 105 L400 80 L460 55 L520 40"
+                  stroke="#2563eb" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" fill="none" />
+
+                {/* Dots on chart line */}
+                {[{ x: 40, y: 210 }, { x: 100, y: 185 }, { x: 160, y: 195 }, { x: 220, y: 155 }, { x: 280, y: 130 }, { x: 340, y: 105 }, { x: 400, y: 80 }, { x: 460, y: 55 }, { x: 520, y: 40 }].map((p, i) => (
+                  <circle key={i} cx={p.x} cy={p.y} r="4" fill="#2563eb" stroke="#fff" strokeWidth="2" />
+                ))}
+
+                {/* Floating stat bubble */}
+                <rect x="330" y="62" width="90" height="32" rx="8" fill="#0c1729" />
+                <text x="375" y="82" textAnchor="middle" fill="#93c5fd" fontSize="11" fontWeight="700">+18.4%</text>
+
+                {/* Bar chart group (right side, secondary) */}
+                <rect x="60" y="170" width="18" height="70" rx="4" fill="#bfdbfe" opacity="0.7" />
+                <rect x="90" y="145" width="18" height="95" rx="4" fill="#93c5fd" opacity="0.8" />
+                <rect x="120" y="155" width="18" height="85" rx="4" fill="#60a5fa" opacity="0.7" />
+
+                {/* Candlestick-style bars */}
+                <rect x="380" y="110" width="10" height="50" rx="2" fill="#2563eb" opacity="0.5" />
+                <line x1="385" y1="100" x2="385" y2="170" stroke="#2563eb" strokeWidth="1.5" />
+                <rect x="400" y="95" width="10" height="60" rx="2" fill="#2563eb" opacity="0.6" />
+                <line x1="405" y1="85" x2="405" y2="165" stroke="#2563eb" strokeWidth="1.5" />
+                <rect x="420" y="75" width="10" height="70" rx="2" fill="#1d4ed8" opacity="0.7" />
+                <line x1="425" y1="60" x2="425" y2="155" stroke="#1d4ed8" strokeWidth="1.5" />
+
+                {/* Gradient def */}
+                <defs>
+                  <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#2563eb" stopOpacity="0.5" />
+                    <stop offset="100%" stopColor="#2563eb" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+              </svg>
             </div>
           </div>
 
+          {/* RIGHT – Two stacked cards */}
+          <div className="da-hero-v2__right">
+
+            {/* Card 1 – Latest Dispatch (Navy accent) */}
+            <Link href={`/blogs/${blog1.slug}`} className="da-hero-v2__card da-hero-v2__card--navy">
+              <div className="da-hero-v2__card-eyebrow">Latest Dispatch</div>
+              <div className="da-hero-v2__card-title-lg">{blog1.title}</div>
+              {/* Mini chart SVG */}
+              <div className="da-hero-v2__mini-chart" aria-hidden="true">
+                <svg viewBox="0 0 200 70" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%">
+                  <path d="M0 55 L30 42 L60 48 L90 30 L120 20 L150 12 L200 5"
+                    stroke="rgba(147,197,253,0.9)" strokeWidth="2" fill="none" strokeLinecap="round" />
+                  <path d="M0 55 L30 42 L60 48 L90 30 L120 20 L150 12 L200 5 L200 70 L0 70Z"
+                    fill="url(#navyGrad)" opacity="0.3" />
+                  <circle cx="200" cy="5" r="4" fill="#93c5fd" stroke="#fff" strokeWidth="1.5" />
+                  <rect x="155" y="0" width="44" height="18" rx="6" fill="rgba(255,255,255,0.15)" />
+                  <text x="177" y="12" textAnchor="middle" fill="#fff" fontSize="9" fontWeight="700">LIVE</text>
+                  <defs>
+                    <linearGradient id="navyGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#93c5fd" stopOpacity="0.6" />
+                      <stop offset="100%" stopColor="#93c5fd" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div className="da-hero-v2__card-meta">
+                <span className="da-hero-v2__card-avatar">{blog1.author.initials}</span>
+                <span>{blog1.author.name}</span>
+                <span className="da-hero-v2__card-dot">·</span>
+                <span>{blog1.readTime || '8 min'}</span>
+              </div>
+            </Link>
+
+            {/* Card 2 – Stats/Research card (dark) */}
+            <div className="da-hero-v2__card da-hero-v2__card--dark">
+              <div className="da-hero-v2__card-eyebrow" style={{ color: '#94a3b8' }}>Research Bureau</div>
+              <div className="da-hero-v2__card-title-lg" style={{ fontSize: 'clamp(16px,2vw,20px)' }}>ISFT Dispatch Syndicate</div>
+              {/* Author stack */}
+              <div className="da-hero-v2__authors-row">
+                {blogs.slice(0, 4).map((b, i) => (
+                  <div key={b.id} className="da-hero-v2__author-chip" style={{ zIndex: 10 - i, marginLeft: i === 0 ? 0 : '-10px' }}>
+                    {b.author.initials}
+                  </div>
+                ))}
+                <span className="da-hero-v2__author-count">+{blogs.length} dispatches</span>
+              </div>
+              <p style={{ fontSize: '11.5px', color: '#64748b', lineHeight: 1.55, marginTop: '8px' }}>
+                Quantitative intelligence & regulatory breakdowns from verified ISFT research fellows.
+              </p>
+              <Link href="/blogs" className="da-hero-v2__card-link">Browse all dispatches →</Link>
+            </div>
+
+          </div>
         </div>
       </section>
 

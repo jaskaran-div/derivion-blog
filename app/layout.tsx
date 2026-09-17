@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   description: 'DerivionAcademy is an authoritative digital chronicle and research bureau providing institutional analysis, quantitative intelligence, and sovereign market intelligence.',
   keywords: ['sovereign debt', 'quantitative analysis', 'institutional intelligence', 'geopolitics', 'monetary policy'],
   authors: [{ name: 'DerivionAcademy Editorial Board' }],
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
   openGraph: {
     siteName: 'DerivionAcademy.in',
     type: 'website',
