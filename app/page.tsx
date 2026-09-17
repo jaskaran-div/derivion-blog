@@ -38,7 +38,7 @@ export default function HomePage() {
             {/* Main Headline */}
             <h1 className="da-hero-v2__headline">
               Institutional intelligence,<br />
-              <span className="da-hero-v2__headline-accent">decoded for India.</span>
+              <span className="da-hero-v2__headline-accent">decoded for Everyone.</span>
             </h1>
 
             <p className="da-hero-v2__subtext">
