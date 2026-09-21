@@ -85,6 +85,52 @@ export default async function DetailPage({ params }: { params: Promise<Params> }
   // Parse body as markdown-like sections
   const sections = body.split('\n## ').map((s, i) => (i === 0 ? s : `## ${s}`));
 
+  const renderBodyLine = (line: string, key: string | number) => {
+    const mdImage = line.match(/^!\[.*?\]\((\/images\/[^)]+)\)$/i);
+    if (mdImage) {
+      const isFocusImage = mdImage[1].includes('/images/news/image.png');
+      return (
+        <figure key={key} className={`detail-figure${isFocusImage ? ' detail-figure--focus' : ''}`}>
+          <img
+            src={mdImage[1]}
+            alt={line.replace(/^!\[.*?\]\((\/images\/[^)]+)\)$/, '').trim() || 'Article image'}
+            className={isFocusImage ? 'detail-image--focus' : ''}
+          />
+        </figure>
+      );
+    }
+
+    const htmlImage = line.match(/<img\s+[^>]*src=["']([^"']+)["'][^>]*>/i);
+    if (htmlImage) {
+      const altMatch = line.match(/alt=["']([^"']*)["']/i);
+      const isFocusImage = htmlImage[1].includes('/images/news/image.png');
+      return (
+        <figure key={key} className={`detail-figure${isFocusImage ? ' detail-figure--focus' : ''}`}>
+          <img
+            src={htmlImage[1]}
+            alt={altMatch ? altMatch[1] : 'Article image'}
+            className={isFocusImage ? 'detail-image--focus' : ''}
+          />
+        </figure>
+      );
+    }
+
+    if (line.startsWith('## ')) {
+      return <h2 key={key}>{line.replace('## ', '')}</h2>;
+    }
+    if (line.startsWith('### ')) {
+      return <h3 key={key}>{line.replace('### ', '')}</h3>;
+    }
+    if (line.startsWith('> ')) {
+      return <blockquote key={key}>{line.replace('> ', '')}</blockquote>;
+    }
+    if (line.trim() === '') {
+      return null;
+    }
+
+    return <p key={key}>{line}</p>;
+  };
+
   return (
     <div className="fade-in">
       {/* Breadcrumb */}
@@ -225,19 +271,7 @@ export default async function DetailPage({ params }: { params: Promise<Params> }
                 const lines = section_text.split('\n');
                 return (
                   <div key={idx}>
-                    {lines.map((line, li) => {
-                      if (line.startsWith('## ')) {
-                        return <h2 key={li}>{line.replace('## ', '')}</h2>;
-                      } else if (line.startsWith('### ')) {
-                        return <h3 key={li}>{line.replace('### ', '')}</h3>;
-                      } else if (line.startsWith('> ')) {
-                        return <blockquote key={li}>{line.replace('> ', '')}</blockquote>;
-                      } else if (line.trim() === '') {
-                        return null;
-                      } else {
-                        return <p key={li}>{line}</p>;
-                      }
-                    })}
+                    {lines.map((line, li) => renderBodyLine(line, `${idx}-${li}`))}
                   </div>
                 );
               })}
@@ -342,6 +376,37 @@ export default async function DetailPage({ params }: { params: Promise<Params> }
       </div>
 
       <style>{`
+        .detail-figure {
+          margin: 26px 0;
+          background: rgba(148, 163, 184, 0.06);
+          border: 1px solid rgba(148, 163, 184, 0.18);
+          border-radius: 16px;
+          overflow: hidden;
+        }
+
+        .detail-figure img {
+          display: block;
+          width: auto;
+          max-width: 100%;
+          height: auto;
+          margin: 0 auto;
+          background: rgba(15, 23, 42, 0.04);
+          border-radius: 12px;
+        }
+
+        .detail-figure--focus {
+          margin: 18px 0 10px;
+        }
+
+        .detail-image--focus {
+          width: 100%;
+          max-width: 100%;
+          height: 220px;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 12px;
+        }
+
         @media (max-width: 900px) {
           article + aside { width: 100% !important; }
           .container > div[style*='display: flex'][style*='gap: 48px'] {

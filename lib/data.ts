@@ -109,6 +109,107 @@ export const articles: Article[] = [];
 // ============================================================
 export const newsItems: NewsItem[] = [
   {
+    id: 'n2',
+    slug: 'european-briefing-monday-21-09',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'European Briefing — Monday 21.09',
+    excerpt: 'Equities open positive as investors focus on a potential Trump-Xi summit, lower oil, and calmer geopolitics; German coalition pressure rises after weak state election results.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'September 21, 2026',
+    tags: ['Europe', 'Macro', 'Oil', 'German Politics', 'Trump-Xi', 'Market Outlook'],
+    dataTag: 'LIVE WIRE',
+    featured: true,
+    body: `## Morning Briefing · Monday, September 21, 2026
+
+**MORNING; MONDAY AND INDICES ARE ALL POSITIVE AS WE START THE WEEK** as we all await the Trump/Xi summit in Washington. However oil hits a 1 week low on hopes of boost to diplomacy in Iran war and gold sinks $25.
+
+It seems that Steve Bessent chats with Chinese envoy in New York over the weekend went well on talks on AI threats and trade tariffs. It was a bad weekend for the ruling German party who failed to gain even 5% of the votes and it looks like German Chancellor Friedrich Merz will have to resign or be replaced. The AfD party took most votes but not enough for a majority as other parties refuse to work with them. A bit of a mess.
+
+We wrote on the weekend missive what we expect this week and Monday we have little data to contend with. However I think we get some fresh buying in indices at the open after the "triple witching" on Friday.
+
+### News from the Trenches
+
+European Briefing - Monday 21.09
+
+Headlines
+
+- Oil Hits Over 1-week Low On Hopes Of Boost To Diplomacy In Iran War
+- Houthis Launch Missile At Saudi Capital In Escalation Of Hostilities
+- Iran Warns Against New Escalation By US And Its Allies
+- Ukraine’s Zelenskyy Will Meet Trump During UN Events In New York
+- Russia Moves To Expand Drone Factory In Tatarstan
+- Bessent Hails ‘Very Successful’ China Talks On AI Threats And Trade
+- Trump-Xi Talks Could Mean $6B Of US Natural Gas For China
+- China’s Selective Crop Buying Tests US Trade Truce Before Summit
+- China Keeps Loan Prime Rates Unchanged For 16th Month
+- Fed’s Kashkari Says Inflation Is Still Too High Across US Economy
+- Record Global Debt Requires Urgent Fiscal Action, IMF Chief Says
+- French Finance Ministry Expects Record Debt In 2026, Near 120% Of GDP
+- Merz Vows To Stay On After Worst-Ever German State Result
+- US Diesel Tops $6.50 A Gallon As Wars Worsen Global Fuels Crunch
+- SoftBank Seeks Over $11B In Junk Bond Deal For OpenAI Bet
+- Microsoft’s Nadella To Join OpenAI And Nvidia CEOs At Trump-Xi Meal
+
+### Europe and US Previews
+
+The first day of the week sees only the release Greece Current A/C & US Chicago Fed Nat Activity, however, do have ECB's Kazimir, Lagarde, Cipollone, FED's Goolsbee & BoC's Macklem. Supply comes from Slovakia.
+
+### Asian Overview
+
+A quiet start to the week, with Japanese markets closed and little on the data calendar. Risk appetite was supported by lower oil prices as investors focused on easing concerns over Middle East supply disruptions and intensifying diplomatic efforts to end the US-Iran war. Sentiment also benefited from reports of constructive preliminary discussions between the US's Bessent and China's He Lifeng ahead of the Xi-Trump summit later this week. Also in focus was the meeting between Trump and Xi this week, over the weekend it was reported The US and China have been working to reduce levies on American energy and agricultural products, part of a broader initiative to ease barriers on products from each side under the Board of Trade mechanism. Gold softened slightly, retreating the highs seen late on Friday, last around $4365. Oil down over 2%. Cash USTs are closed until the London open thanks to the Japanese holiday.
+
+### Focus Events, Mon 21st
+
+#### EU Session
+09:00 – ECB Kazimir (Hawk);
+16:00 – ECB Lagarde (No Known Bias);
+16:10 – ECB Cipollone (Dove);
+
+#### US Session
+11:30 – Fed Goolsbee (NV, No Known Bias);
+13:00 – CAN: BBG Nanos Conf;
+13:30 – US: Chicago Fed Nat Activity;
+
+#### Bond Supply Events
+N/A;
+
+
+
+## German state elections: Two states, two extremes
+The AfD has won Mecklenburg-Vorpommern, the Left Party has won Berlin. Neither vote was a referendum on Friedrich Merz's reform agenda – but both make that agenda harder to deliver
+
+<img src="/images/news/unnamed.jpg" alt="German state election coverage detail" />
+A win by the right-wing populist party in one state and a win by a left-wing populist party in another state will make it more challenging for Chancellor Merz to deliver on his reform agenda
+
+##
+Two regional elections, two winners from opposite ends of the political spectrum, and one federal government in Berlin that looks weaker tonight than it did this morning. In Mecklenburg-Vorpommern, the AfD has become the largest party for the first time. In Berlin, the Left Party has won a city-state election for the first time ever. The Chancellor felt compelled to speak within minutes of the exit polls, which tells you most of what you need to know.
+
+## Mecklenburg-Vorpommern: a narrow win with a long shadow
+In Mecklenburg-Vorpommern, the AfD is narrowly ahead of the SPD, with around 37% against 35%. Manuela Schwesig's SPD had closed the gap in recent weeks, but not quite enough. At 7:30pm CET, the CDU stood at 5.3% and still risks missing the threshold altogether, which would be a political disaster for the party. The Left Party came in at 7.5%, just ahead of the Greens at 5.5%. And in case you were wondering: the FDP remains stuck in political no-man's-land at around 1%, out of yet another state parliament.
+
+## Berlin: housing wins elections
+In Berlin, the Left Party won for the first time ever with some 25%, doubling its 2023 result. The governing CDU came second at 20%, the Greens at 15% and the SPD at 12%. The AfD took around 14%. Together, the three left-wing parties are on course for a majority, opening the door to Berlin's first Governing Mayor from the Left Party. During the campaign, however, the SPD and Greens kept a clear distance, stressing their unwillingness to go along with the Left's core proposal to "socialise" the large housing corporations. On a personal note: as someone born in West Berlin, I do remember that the Left Party stands in the long line of succession from the SED, East Germany's ruling party.
+
+## The AfD's rise continues
+The AfD is now the largest party in three states: Thuringia, Saxony-Anhalt and now Mecklenburg-Vorpommern. In the two remaining eastern states, it finished a strong second at the last elections. But there is more to the AfD than protest votes in the East. Since the federal election in February last year, it has risen to become the largest party in Germany in national polls, consistently close to 30%.
+
+## The coalition maths
+In both states, forming a stable government will be a challenge. In Mecklenburg-Vorpommern, it currently looks as if the SPD will try to lead the next government, but it would need two partners. The AfD will also try to build one. In Berlin, the Left Party could, in theory, lead a coalition with the SPD and Greens, if it can live without the expropriation of large landlords that neither partner has been willing to support.
+
+## Implications for the federal government
+This is the regional story. The federal one matters more. Tonight's results clearly echo the low popularity of the entire federal government, and of Chancellor Friedrich Merz in particular. How combustible the situation has become was illustrated by Merz himself, who gave a short speech once the ballots closed and the first exit polls were out. That is unprecedented: comments from national government figures on state election results normally come later in the evening, if at all. Merz stressed the need to implement the announced reforms. Read the appearance for what it was, an attempt to choke off the speculation about his possible resignation that has been building in recent weeks.
+
+These elections were not a referendum on structural reform. In Berlin especially, the result was probably driven above all by the lack of affordable housing, with distinct echoes of last year's New York mayoral race. But they do reflect the standing of the federal government, and they will bring new tensions. The CDU faces a more intense internal debate about how to handle the AfD, while on substance it will push ahead with reforms, knowing that it will only regain popularity if the economy finds momentum. The SPD, meanwhile, may be tempted to reopen the reform package — particularly on pensions — hoping to win votes back by shifting left.
+
+All in all, another reminder of an increasingly fragmented political landscape: a win for a right-wing populist party in one state, a win for a left-wing populist party in the other. Years of economic stagnation helped produce that fragmentation. Now the fragmentation will make the stagnation harder to escape.`,
+  },
+  {
     id: 'n1',
     slug: 'morning-dispatch-fed-hike-boe-iran-sep-17-2026',
     section: 'news',
