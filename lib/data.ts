@@ -109,6 +109,114 @@ export const articles: Article[] = [];
 // ============================================================
 export const newsItems: NewsItem[] = [
   {
+    id: 'n3',
+    slug: 'morning-briefing-tuesday-22-09-risk-sentiment-rallies-on-bond-yields-and-oil',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'Morning Briefing — Tuesday 22.09: Risk Sentiment Rallies as Bond Yields Ease and Oil Retreats',
+    excerpt: 'Equities surged on Monday as bond yields dropped, oil softened, and Bitcoin powered above $86k; traders now watch fresh diplomacy and central bank speakers for the next directional move.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'September 22, 2026',
+    tags: ['Macro', 'Equities', 'Oil', 'Bitcoin', 'Treasuries', 'Trump-Xi', 'Fed', 'ECB'],
+    dataTag: 'LIVE WIRE',
+    featured: true,
+    body: `## Morning Briefing · Tuesday, September 22, 2026
+
+**MORNING INDICES FLEW ON MONDAY AS BOND YIELDS DROPPED AND MIDDLE EAST AND STEVE BESSENT HAD GOOD MEETINGS WITH THE CHINESE.**
+
+Both gold and oil suffered, but Bitcoin just zoomed all day hitting $87,000 which was 7% on the session. I don't trade cryptos, but what a move. Nasdaq flew from Wall Street's bell and rallied over 500 ticks on the session. Equities were helped by a sweet combination of tech momentum and lower oil prices. The Nasdaq was up over 3%. More optimism surrounding a potential meeting between Trump and the Iranian President on the sidelines of the UNGA this week sent oil lower; however, Tuesday morning we have news that differs and halted the moves, sending oil up to $93.43 a barrel. We mentioned not being too greedy on trades and views, and this is the reason why.
+
+After Monday's moves, we could see a more settled morning, and Japan is still on holiday. We have several ECB members on the wires this morning, and I wonder if we will hear perhaps who may replace Lagarde in 2027 and perhaps who will be in charge of Germany too.
+
+### TASNIM NEWS
+Qatar is working to facilitate a US agreement, including a possible short-term deal.
+
+### NOUR NEWS
+A Yemeni Houthi official warns that Egypt, Turkey and Pakistan will likely be targeted in the next stages.
+
+US Treasury Secretary discussed tariffs with China; there is a chance there could be another two meetings with Trump & Xi. Talks included some deliverables; they discussed AI and economics.
+
+Bitcoin ripped higher and topped $85,000, extending the rally that began last week and reaching its highest level since January. The cryptocurrency was supported by improving overall market sentiment, continued declines in oil prices, progress on the regulatory front and renewed institutional inflows.
+
+### News from the Trenches
+
+- China and US discuss AI and investment on 2nd day of trade talks
+- China and EU should avoid trade clash; Beijing's top diplomat says
+- UK to provide military support to Saudi Arabia in its fight with Houthis
+- Trump presses Zelenskyy to stop hitting Russian refineries
+- Fed's Musalem says more rate hikes likely needed to cool prices
+- RBA set to hike rates next week as energy costs spiral
+- Oil steadies after a 4-day drop as traders look to Hormuz flows
+
+- [Fed’s Musalem Says More Rate Hikes May Be Needed to Tame Inflation - Bloomberg](https://www.bloomberg.com/news/articles/2026-09-21/fed-s-musalem-says-more-rate-hikes-likely-needed-to-cool-prices)
+- [South Korea confirms first project under $350 billion US investment pact despite viability concerns | Reuters](https://www.reuters.com/world/asia-pacific/south-korea-brief-lawmakers-us-investment-package-amid-profitability-concerns-2026-09-21/?taid=6ab1ecde14be170001b9180a&utm_campaign=trueAnthem:+Trending+Content&utm_medium=trueAnthem&utm_source=twitter)
+- [US Treasury Secretary Bessent says all Iranian airlines to shut down worldwide by September 23](https://www.fxstreet.com/news/us-treasury-secretary-bessent-says-all-iranian-airlines-to-shut-down-worldwide-by-september-23-202609220112)
+- [Macron and Trump Discuss Kyiv and Moscow Halting Energy Strikes - Bloomberg](https://www.bloomberg.com/news/articles/2026-09-21/macron-and-trump-discuss-kyiv-and-moscow-halting-energy-strikes)
+- [EXCLUSIVE: Trump approval falls to record low of 32% as high costs bite, Reuters/Ipsos poll finds | Reuters](https://www.reuters.com/world/us/trump-approval-falls-career-low-32-high-costs-bite-reutersipsos-poll-finds-2026-09-21/)
+- [Treasury Yields Change Little Despite Falling Oil Prices - WSJ](https://www.wsj.com/finance/citi-raises-10-year-u-s-treasury-yield-forecast-ee0a5651)
+- [Latest Oil Market News and Analysis for Sept. 22 - Bloomberg](https://www.bloomberg.com/news/articles/2026-09-21/latest-oil-market-news-and-analysis-for-sept-22)
+- [Bitcoin (BTC) Retreats From Eight-Month High After Dizzying 13% Rally - Bloomberg](https://www.bloomberg.com/news/articles/2026-09-22/bitcoin-retreats-from-eight-month-high-after-dizzying-13-rally)
+- [Bitcoin rallies near $86K on improving markets ahead of quarterly options expiry](https://www.fxstreet.com/cryptocurrencies/news/bitcoin-rallies-near-86k-on-improving-markets-ahead-of-quarterly-options-expiry-202609212219)
+
+## Europe and US Previews
+
+Tuesday sees the release of Spanish Trade balance, UK CBI Ind Trend orders, US ADP (weekly), Philly Fed Non-Mfg and Richmond Fed Mfg. Central bank speakers scheduled include ECB's Kaasik, Nagel, Sleijpen, Kocher, Lagarde & Simkus and FED's Williams, Jefferson & Barkin, while supply comes from UK (5y Gilt), Germany (5y Bobl), Italy (12y Green syndication) and US (2y T-note).
+
+## Asian Overview
+
+Another quiet APAC session unfolded with Japan still closed and little on the data calendar. Risk sentiment remained constructive as Asian equities tracked Wall Street higher, led by semiconductor stocks after optimism surrounding Meta's latest AI agent boosted expectations for chip demand. South Korea's Kospi rose 1.6%, Taiwan equities hit a fresh intraday record, while Samsung and SK Hynix paced regional gains. The S&P 500 and Nasdaq 100 posted their strongest sessions since early August, with Nasdaq futures extending gains. Elsewhere, Brent crude edged back above $101/bbl after four consecutive declines. Bitcoin eased around 1.5% following Monday's 7% surge. Attention is increasingly turning to this week's Trump-Xi summit, with trade, AI and broader geopolitical issues expected to dominate discussions after officials concluded two days of preparatory talks in New York. Trump is also due to address the UN General Assembly later today and could meet Iran's President Pezeshkian on the sidelines.
+
+### Focus Events, Tue 22nd
+
+#### EU Session
+- 07:00 – UK: Public Sector Borrowing
+- 07:45 – FRA: Retail Sales
+- 09:00 – ECB Kaasik (Hawk)
+- 09:30 – ECB Nagel (Hawk)
+- 10:00 – ECB Sleijpen (Hawk)
+- 10:10 – ECB Kocher (Hawk)
+- 11:00 – UK: CBI Ind Trends
+- 12:00 – ECB Lagarde (No Known Bias)
+- 13:30 – ECB Sleijpen (Hawk)
+- 15:00 – EUR: Consumer Conf
+- 15:10 – ECB Simkus (NV, No Known Bias)
+- 20:30 – ECN Nagel (Hawk)
+
+#### US Session
+- 13:15 – US: ADP Weekly Employ
+- 13:30 – US: Philly Fed Non Manf
+- 15:00 – US: Richmond Fed Manf
+- 15:05 – Fed Williams (Dove)
+- 15:20 – Fed Jefferson (Dove)
+- 18:00 – Fed Barkin (NV, No Known Bias)
+- 21:30 – US: API Crude Oil Stock
+
+#### Bond Supply Events
+- 10:00 – UK: 5y Gilt £4.75BN
+- 10:30 – GER: 5y Bobl €5.00BN
+- 18:00 – US: New 2y Note $69.00BN
+
+### Tuesday's Papers
+
+- [The Guardian](https://www.theguardian.com): Airlines have called for 'action and accountability' over the UK's air traffic control services after a technical issue led to flights being disrupted for the second time in a fortnight.
+- [The Times](https://www.thetimes.co.uk): Global equities rallied and pressure on sovereign bonds eased as oil prices fell back below $100 a barrel on hopes of diplomatic progress toward ending the Iran war.
+- [The Guardian](https://www.theguardian.com): Unions, thinktanks, environmental groups and charities have come together to call on ministers to boost the financial firepower of the national wealth fund to empower it to invest more in Britain and rebalance the country's economy.
+- [Financial Times](https://www.ft.com): Andy Brnham will call for international efforts to control AI in his first big speech on the world stage today, days after King Charles warned of the 'existential threats' it poses.
+- [The Daily Telegraph](https://www.telegraph.co.uk): Nvidia founder Jensen Huang has said there is '0% chance' AI causes the end of the world by 2030.
+- [Financial Times](https://www.ft.com): CNN, MS Now and Politico have said they are suing the Trump administration after the US president banned the new outlets from the White House.
+- [The Times](https://www.thetimes.co.uk): Volkswagen has been ejected from Europe's blue chip index of major publicly listed companies.
+- [The Times](https://www.thetimes.co.uk): JD Sports Fashion is planning to open more than 140 stores in Mexico through a new franchise deal as it attempts to restore its fortunes.
+- [Financial Times](https://www.ft.com): The Bank of England and US Federal Reserve have stepped up scrutiny of bank exposures to trading firms after turmoil at an AI-focused hedge fund led to big losses at Jane Street.
+
+The key takeaway is that markets remain highly sensitive to a mix of geopolitics, tariffs and AI-led tech momentum. The macro backdrop is constructive while the tape remains fluid, but traders should remain measured rather than overly greedy as the next wave of headlines arrives.
+`,
+  },
+  {
     id: 'n2',
     slug: 'european-briefing-monday-21-09',
     section: 'news',
