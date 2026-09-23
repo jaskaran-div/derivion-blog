@@ -1118,8 +1118,6 @@ Trading in derivative instruments involves substantial risk of loss and is not s
     dispatches: 7,
     body: `In traditional academic instruction, the study of economics and finance has long depended on theoretical models and archetype postulations. These concepts make up most of the "copybook" information used to explain market mechanics. While these foundational theories provide a necessary baseline, they frequently fail in practice because they assume markets operate strictly through rational equations. In reality, human sentiment in markets represents the crucial missing link in understanding true financial behavior.
 
-![Behavioral economics and modern business education](/images/blogs/blog-image.png)
-
 ### The Biological and Psychological Reality of Markets
 The formal recognition that economic theory must account for human psychology came when Richard Thaler was awarded the Nobel Prize in Economics. Thaler's work built a vital bridge between the economic and psychological analyses of individual decision-making, cementing the field of behavioral economics.
 
@@ -1145,6 +1143,8 @@ Real-world financial management demonstrates that outcomes depend far more on di
 
 ### Aligning Academia with Modern CFO Priorities
 For university Deans, Department Heads, and faculty, incorporating behavioral insights is not merely an academic exercise—it directly addresses a major talent shortage flagged by corporate executives. In recent surveys, 60% of Chief Financial Officers (CFOs) identified strategic planning and long-term resource allocation as their top priorities. However, when evaluating their own organizations, CFOs report that their biggest roadblocks are demanding workloads and a severe lack of relevant capabilities among finance staff.
+
+<img src="/images/blogs/blog-image.png" alt="Behavioral economics and modern business education" />
 
 To close this gap, business education must train graduates to perform the true role of a financial professional:
 
