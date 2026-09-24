@@ -99,6 +99,39 @@ export interface SpecialReport {
   tags?: string[];
 }
 
+const monthMap: Record<string, number> = {
+  January: 0, February: 1, March: 2, April: 3, May: 4, June: 5,
+  July: 6, August: 7, September: 8, October: 9, November: 10, December: 11,
+};
+
+function parseContentDate(dateValue: string): number {
+  const value = dateValue.trim();
+  if (!value) return 0;
+
+  const direct = Date.parse(value);
+  if (!Number.isNaN(direct)) return direct;
+
+  const monthMatch = value.match(/^([A-Za-z]+)(?:\s+(\d{1,2}))?,?\s+(\d{4})$/);
+  if (monthMatch) {
+    const month = monthMap[monthMatch[1]] ?? 0;
+    const day = monthMatch[2] ? Number(monthMatch[2]) : 1;
+    const year = Number(monthMatch[3]);
+    return new Date(year, month, day).getTime();
+  }
+
+  const shortMonthMatch = value.match(/^([A-Za-z]+)\s+(\d{4})$/);
+  if (shortMonthMatch) {
+    const month = monthMap[shortMonthMatch[1]] ?? 0;
+    return new Date(Number(shortMonthMatch[2]), month, 1).getTime();
+  }
+
+  return 0;
+}
+
+function sortByDateDesc<T extends { date: string }>(items: T[]): T[] {
+  return [...items].sort((a, b) => parseContentDate(b.date) - parseContentDate(a.date));
+}
+
 // ============================================================
 // ARTICLES (Cleared as requested - gathering latest info)
 // ============================================================
@@ -107,7 +140,66 @@ export const articles: Article[] = [];
 // ============================================================
 // NEWS ITEMS
 // ============================================================
-export const newsItems: NewsItem[] = [
+export const newsItems: NewsItem[] = sortByDateDesc([
+  {
+    id: 'n4',
+    slug: 'morning-briefing-thursday-24-09-bond-vigilantes-bessent-and-yield-shock',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'Morning Briefing — Thursday 24.09: Bond Vigilantes Turn Up the Heat on Bessent as Yields Surge',
+    excerpt: 'Global bonds went into reverse as hotter PMIs, oil, and a weak five-year Treasury auction pushed 10-year yields to fresh highs while traders braced for a volatile Thursday session.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'September 24, 2026',
+    tags: ['Macro', 'Bonds', 'Treasuries', 'Oil', 'Iran', 'Fed', 'ECB', 'Global Risk'],
+    dataTag: 'LIVE WIRE',
+    featured: true,
+    body: `## Morning Briefing · Thursday, September 24, 2026
+
+**MORNING; THURSDAY AND INDICES ARE IN THE RED AS BOND YIELDS CONTINUE TO FLARE.**
+
+Wednesday was about bond yields, and they flew to the moon. UK Gilts and German Bunds were hammered after the PMI prints and never recovered, while other markets caught the same “COVID” bond shock. Indices took a beating too — it felt almost like blood on the street.
+
+The bond market is now acting as the real macro pressure valve. A hotter growth-and-inflation mix is keeping yields elevated, with the 5-year Treasury above 5% for the first time since 2007 and the 10-year yield hitting fresh highs. Oil rose for the first time in six sessions as traders weighed conflicting reports on a diesel export ban, while the dollar climbed and stocks slid as the yield curve steepened.
+
+### News from the Trenches
+
+- SNB set to hold as low inflation keeps rate hikes at bay
+- Bessent says US and China agreed to extend trade truce to Jan 10
+- UK and Germany among economies most exposed to China
+- Iran and the US remain far apart as Pezeshkian vows no surrender
+- Global bond sell-off deepens as oil holds above $100
+- US 10-year yields hit highest since 2007
+- Inflation pressures raise prospect of further rate hikes
+
+- [Trump says talks with Iran are still being negotiated as markets route risk away from oil](https://www.linkedin.com/posts/charles-henry-monchau-cfa-cmt-caia-4003096_trump-were-negotiating-with-iran-im-going-ugcPost-7508567756271714305-MGYc/)
+- [SNB set to hold as low inflation keeps rate hikes at bay](https://www.livesquawk.com/report/special_snb-set-to-hold-as-low-inflation-keeps-rate-hikes-at-bay)
+- [US says China trade truce extended as Trump welcomes Xi | Reuters](https://www.reuters.com/world/china/trump-plans-grand-spectacle-potentially-tense-xi-talks-2026-09-23/)
+- [Iran, US still far apart in peace talks, Iranian official says; Pezeshkian vows no surrender | Reuters](https://www.reuters.com/world/middle-east/hope-progress-after-us-iran-hold-first-shuttle-talks-months-2026-09-23/)
+- [US stocks fall as 10-year Treasury yield hits highest since 2007 | Reuters](https://www.reuters.com/world/china/global-markets-global-markets-2026-09-23/)
+- [JPY/USD: Japanese Yen Intervention Risk Re-Emerges as 160 Per Dollar Level Nears - Bloomberg](https://www.bloomberg.com/news/articles/2026-09-24/yen-intervention-risk-re-emerges-as-160-per-dollar-level-nears)
+- [Gold Holds Drop as Higher Oil and Hot US Data Fan Rate-Hike Bets - Bloomberg](https://www.bloomberg.com/news/articles/2026-09-24/gold-holds-drop-as-higher-oil-and-hot-us-data-fan-rate-hike-bets)
+
+### The real market message
+
+The US Treasury's $70 billion 5-year auction tailed to 5.033%, the highest since 2006 and above the WI yield, while the bid-to-cover was 2.21 vs a 2.33 average. That weak auction was a tell: the bond vigilantes are pushing back against the Treasury and may have a lot more ammunition left.
+
+The market is now also pricing that inflation and rates will remain sticky for longer. We continue to believe the next stretch of sessions could be volatile; if you are positioned in risk assets, it pays to remain measured and aware of the Treasury yield path.
+
+### European and US previews
+
+The data focus today includes French business climate, Spanish PPI, German Ifo, and the ECB Economic Bulletin. Across the Atlantic, Canada releases manufacturing and retail sales, while the US sees Building Permits, Current Account, Initial Jobless Claims, New Home Sales and the Kansas Manufacturing Index.
+
+### Asian overview
+
+The bond sell-off spilled into Asia after firm US data and a weak five-year auction lifted Treasury yields sharply. Japan's 10-year yield hit a 30-year high, while Australian and New Zealand yields rose. Regional equities mostly fell, although Japanese shares outperformed. Brent eased modestly but remained near $102.50/bbl.
+
+The market takeaway is simple: the market is not yet prepared to accept a soft inflation narrative. The pressure on sovereign bonds and yields remains the key macro story, and until that eases, traders should expect turbulence.
+` },
   {
     id: 'n3',
     slug: 'morning-briefing-tuesday-22-09-risk-sentiment-rallies-on-bond-yields-and-oil',
@@ -288,7 +380,6 @@ A quiet start to the week, with Japanese markets closed and little on the data c
 N/A;
 
 
-
 ## German state elections: Two states, two extremes
 The AfD has won Mecklenburg-Vorpommern, the Left Party has won Berlin. Neither vote was a referendum on Friedrich Merz's reform agenda – but both make that agenda harder to deliver
 
@@ -463,7 +554,7 @@ An early decline in crude proved short-lived, triggered by the Axios report that
 
 *Market data and intelligence sourced from Bloomberg, Reuters, Livesquawk, Axios, and The Hedge Front desk. This dispatch is for informational purposes only and does not constitute investment advice.*`,
   },
-];
+]);
 
 
 // ============================================================
@@ -479,7 +570,7 @@ export const specialReports: SpecialReport[] = [];
 // ============================================================
 // BLOGS (Curated 5 Active Hedge Front Publications)
 // ============================================================
-export const blogs: BlogColumn[] = [
+export const blogs: BlogColumn[] = sortByDateDesc([
   {
     id: 'blog-1',
     slug: 'why-forex-dreams-need-a-legal-reality-check',
@@ -1160,7 +1251,7 @@ By integrating behavioral economics alongside quantitative modeling, higher educ
 #### Disclaimers
 This article is strictly for educational and informational purposes and does not constitute financial, investment, or trading advice. Readers should conduct their own research or consult a qualified professional before making any strategic or financial decisions. This publication operates independently, with no affiliate, revenue-sharing, or promotional links to any regulated entities or brokerages.`,
   },
-];
+]);
 
 // ============================================================
 // HELPERS

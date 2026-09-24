@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 
 export default function NewsPage() {
   const categories = ['All Feeds', 'Macro Policy', 'Regulatory Briefs', 'Risk Infrastructure', 'Market Watch'];
+  const leadItem = newsItems[0];
 
   return (
     <div style={{ background: 'var(--bg-page)', minHeight: '100vh', padding: '36px 0 80px' }}>
@@ -38,28 +39,31 @@ export default function NewsPage() {
 
         {newsItems.length > 0 ? (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            {newsItems.map((item) => (
-              <Link
-                key={item.id}
-                href={`/news/${item.slug}`}
-                style={{ textDecoration: 'none', display: 'block' }}
-              >
-                <article style={{
-                  background: '#ffffff',
-                  border: '1px solid var(--border-light)',
-                  borderRadius: 'var(--radius-lg)',
-                  overflow: 'hidden',
-                  boxShadow: 'var(--shadow-card)',
-                  transition: 'box-shadow 0.2s ease, transform 0.2s ease',
-                  display: 'grid',
-                  gridTemplateColumns: '5px 1fr',
-                }}
-                  className="news-list-card"
+            {newsItems.map((item, index) => {
+              const isLead = index === 0 || item.id === leadItem?.id;
+              return (
+                <Link
+                  key={item.id}
+                  href={`/news/${item.slug}`}
+                  style={{ textDecoration: 'none', display: 'block' }}
                 >
-                  {/* Accent stripe */}
-                  <div style={{ background: 'var(--ochre)', flexShrink: 0 }} />
+                  <article style={{
+                    background: '#ffffff',
+                    border: isLead ? '2px solid rgba(234, 179, 8, 0.55)' : '1px solid var(--border-light)',
+                    borderRadius: 'var(--radius-lg)',
+                    overflow: 'hidden',
+                    boxShadow: isLead ? '0 16px 38px rgba(15, 23, 42, 0.12)' : 'var(--shadow-card)',
+                    transition: 'box-shadow 0.2s ease, transform 0.2s ease',
+                    display: 'grid',
+                    gridTemplateColumns: '5px 1fr',
+                    position: 'relative',
+                  }}
+                    className="news-list-card"
+                  >
+                    {/* Accent stripe */}
+                    <div style={{ background: isLead ? 'linear-gradient(180deg, #f59e0b, #d97706)' : 'var(--ochre)', flexShrink: 0 }} />
 
-                  <div style={{ padding: 'clamp(20px,3vw,30px)' }}>
+                    <div style={{ padding: 'clamp(20px,3vw,30px)' }}>
                     {/* Top row: category + date + tag */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px', flexWrap: 'wrap' }}>
                       <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--ochre-dark)', background: 'var(--ochre-bg)', border: '1px solid var(--ochre-border)', padding: '3px 10px', borderRadius: '999px' }}>
@@ -69,6 +73,11 @@ export default function NewsPage() {
                         <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.08em', color: '#fff', background: '#1d4ed8', padding: '3px 10px', borderRadius: '999px', display: 'flex', alignItems: 'center', gap: '5px' }}>
                           <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#7dd3fc', display: 'inline-block' }} />
                           {item.dataTag}
+                        </span>
+                      )}
+                      {isLead && (
+                        <span style={{ fontSize: '9px', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#7c2d12', background: '#fef3c7', border: '1px solid #facc15', padding: '4px 8px', borderRadius: '999px' }}>
+                          Latest
                         </span>
                       )}
                       <span style={{ marginLeft: 'auto', fontSize: '10.5px', color: 'var(--ink-muted)', fontWeight: 500 }}>{item.date}</span>
@@ -108,10 +117,11 @@ export default function NewsPage() {
                         Read Dispatch →
                       </span>
                     </div>
-                  </div>
-                </article>
-              </Link>
-            ))}
+                    </div>
+                  </article>
+                </Link>
+              );
+            })}
           </div>
         ) : (
           /* No items yet */

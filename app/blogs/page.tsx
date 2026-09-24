@@ -145,6 +145,9 @@ export default function CreatorBlogsPage() {
                       <span className="featured-blog-badge">
                         {featuredBlog.columnName}
                       </span>
+                      <span style={{ fontSize: '9px', fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#7c2d12', background: '#fef3c7', border: '1px solid #facc15', padding: '4px 8px', borderRadius: '999px' }}>
+                        Latest
+                      </span>
                       <span style={{ fontSize: '11px', color: 'var(--ink-muted)' }}>
                         {featuredBlog.date}
                       </span>
