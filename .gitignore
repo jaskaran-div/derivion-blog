@@ -1,0 +1,15 @@
+# Dependencies and generated Next.js output
+node_modules/
+.next/
+out/
+build/
+.vercel/
+
+# Local environment files; keep the example template versioned
+.env*
+!.env.example
+
+# Local tooling output
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
