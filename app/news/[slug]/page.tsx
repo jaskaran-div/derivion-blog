@@ -76,9 +76,10 @@ function renderMarkdown(md: string): React.ReactNode[] {
     if (imageMatch) {
       const src = imageMatch[2];
       const alt = imageMatch[1] || 'Article image';
+      const preserveImageRatio = src.endsWith('/12th-news-1.png');
       nodes.push(
         <figure key={i} style={{ margin: '22px 0', padding: '0', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '16px', overflow: 'hidden' }}>
-          <img src={src} alt={alt} style={{ display: 'block', width: '100%', maxHeight: '420px', objectFit: 'cover', background: '#f8fafc' }} />
+          <img src={src} alt={alt} style={{ display: 'block', width: preserveImageRatio ? 'auto' : '100%', maxWidth: '100%', height: 'auto', maxHeight: preserveImageRatio ? '515px' : '420px', objectFit: preserveImageRatio ? 'contain' : 'cover', background: '#f8fafc' }} />
         </figure>
       );
       i++;
