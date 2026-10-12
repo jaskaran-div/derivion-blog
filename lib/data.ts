@@ -143,6 +143,202 @@ export const articles: Article[] = [];
 // ============================================================
 export const newsItems: NewsItem[] = sortByDateDesc([
   {
+    id: 'n15',
+    slug: 'morning-briefing-monday-12-10-oil-ukraine-earnings',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'Morning Briefing — Monday 12.10: Oil, Ukraine and Earnings',
+    excerpt: 'Markets open the week cautiously higher as traders assess a reported Russia-Ukraine energy ceasefire, shifting oil prices and geopolitical risks. U.S. and Canadian holidays thin trading ahead of U.S. CPI, earnings and Chair Warsh’s final remarks before the FOMC blackout.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'October 12, 2026',
+    tags: ['Macro', 'Markets', 'Oil', 'Bonds', 'Geopolitics', 'Ukraine', 'Earnings'],
+    dataTag: 'LIVE WIRE',
+    featured: true,
+    body: `## Morning Briefing · Monday, October 12, 2026
+
+MORNING
+
+Hope you had a good weekend. We wake up to Monday and markets are reacting positively to Trump's actions on oil and a semi-truce in Ukraine; however, today is a bank holiday in the U.S. and also in Canada.
+
+![Week-ahead earnings calendar](/images/news/12th-news.png)
+
+We mentioned in the weekend missive in more detail what events could move markets this week. My headlines are Warsh's last speech before the FOMC blackout on Wednesday or Thursday in Thailand, and the CPI prints in America.
+
+We begin the start of earnings season. Wall Street is expecting decent results, and they have to be.
+
+Europe burns with riots and marches in the U.K., France, Spain, Belgium and Germany. Weekend news of Houthis attacking airports is also a negative.
+
+### Focus events · Monday, October 12
+
+**Holiday:** U.S. — Columbus Day; Canada — Thanksgiving.
+
+**EU session:** 10:30 — BoE's Breeden (dove); 13:5.
+
+**U.S. session:** 17:10 — Fed's Hammack (hawk).
+
+**Bond supply events:** None.
+
+### Early Monday markets
+
+Wall Street was up 180, the S&P up 25, the Nikkei up 250, FX unchanged, Bitcoin up 450, WTI down 1.67%, gold flat and most bonds slightly higher. All a bit muted on a Monday morning.
+
+## Europe and U.S. previews
+
+No U.S. Treasury trading due to the Japan and U.S. holidays, but futures are open and steady to marginally higher. RX +37, G +42, E-minis +0.33%, WTI -1.62% at $90.36 and gold +0.13%. Monday has no data releases or supply, but central-bank speakers are scheduled from the BoE's Breeden and Mann and the Fed's Hammack.
+
+## Asian overview
+
+A quiet start to the week in Asia amid market holidays in the U.S. and Japan left geopolitics firmly in focus. Middle East tensions remained elevated after another strike on Riyadh's King Khalid International Airport, the latest in a series of attacks raising concerns over regional escalation. A drone strike on an oil tanker near the Strait of Hormuz underscored risks to global energy flows.
+
+Markets were also weighing Trump's claim that Russia and Ukraine had agreed to an immediate energy ceasefire, alongside growing scrutiny of the administration's decision to temporarily suspend sanctions on Russian diesel exports. Oil initially jumped as trading opened, with Brent briefly rising above $105 a barrel. The move proved short-lived in holiday-thinned liquidity, and prices later reversed, with Brent around $102.50 despite no major fresh headlines.
+
+Risk sentiment improved as the session progressed, with U.S. equity futures advancing, Treasury futures recovering earlier losses and the dollar little changed, while Asian equities were mixed.
+
+## News from the trenches
+
+- Trump: Putin agrees a deal for Russia to release diesel onto the market.
+- Iran says the U.S. response on reopening Hormuz is insufficient.
+- Putin relayed an Iran war proposal to Trump, the Kremlin says.
+- Iran sets a supertanker ablaze after the U.S. takes out a ship breaking the blockade; Saudi airport hit again as Riyadh prepares to host major conferences.
+- Houthis claim attacks on Aramco facilities at Riyadh and Khurais.
+- Trump says Russia and Ukraine agreed to an energy ceasefire.
+- Trump says Ukraine needs a new leader who can deal with Putin.
+- Zelensky says he will organize elections if Russia agrees to a 60-day ceasefire.
+- Bessent will likely cut U.S. long-bond sales next month, Citi says.
+- Germany warns the EU that €150 billion in budget cuts are not enough.
+- Healey plans short-term U.K. budget giveaways to limit fiscal pain.
+- IEA urges more diesel releases as the global market tightens.
+- NATO should prepare for a deadly Russian "hybrid" attack, Poland says.
+
+## Further reading
+
+- [Bessent Will Likely Cut US Long Bond Sales Next Month, Says Citi — Bloomberg](https://www.bloomberg.com/news/articles/2026-10-09/bessent-will-likely-cut-us-long-bond-sales-next-month-says-citi)
+- [Iran says US response on reopening Hormuz 'insufficient' — Iran International](https://www.iranintl.com/en/202610111620)
+- [Saudi Airport Hit Again as Riyadh Set to Host Major Events — Bloomberg](https://www.bloomberg.com/news/articles/2026-10-11/saudi-arabia-s-main-riyadh-airport-comes-under-further-attack)
+- [Russia, Ukraine Reach 'Energy Ceasefire,' Trump Says — Bloomberg](https://www.bloomberg.com/news/articles/2026-10-11/trump-says-russia-and-ukraine-agreed-to-energy-ceasefire-mv3wxxro)
+- [Zelenskiy says he will organize elections if Russia agrees to a 60-day ceasefire — Reuters](https://www.reuters.com/world/europe/ukraines-zelenskiy-tells-abc-he-will-organize-elections-if-russia-agrees-60-day-2026-10-11/)
+- [Germany warns EU that €159B budget cuts are not enough — POLITICO](https://www.politico.eu/article/friedrich-merz-germany-warns-eu-e159b-budget-cuts-not-enough/)
+- [ECB Unlikely to Intervene in French Bond Selloff — WSJ](https://www.wsj.com/finance/ecb-unlikely-to-intervene-in-french-bond-selloff-ab7ca520)
+- [Dollar stays near 18-month high as Middle East conflict and inflation data loom — Reuters](https://www.reuters.com/world/asia-pacific/dollar-stays-near-18-month-high-mideast-conflict-inflation-data-focus/)
+- [Latest Oil Market News and Analysis for Oct. 12 — Bloomberg](https://www.bloomberg.com/news/articles/2026-10-11/latest-oil-market-news-for-oct-12)
+- [Gold Edges Up as Lower Oil Prices Pare Rate-Hike Expectations — Bloomberg](https://www.bloomberg.com/news/articles/2026-10-12/gold-edges-up-as-traders-weigh-russia-ukraine-energy-ceasefire)
+
+![Earnings calendar for the week of October 12](/images/news/12th-news-1.png)`,
+  },
+  {
+    id: 'n14',
+    slug: 'morning-briefing-saturday-10-10-us-inflation-european-bonds',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'Morning Briefing — Saturday 10.10: U.S. Inflation and European Bond Stress',
+    excerpt: 'A topsy-turvy week across global markets gives way to a busy outlook for U.S. inflation and the IMF meetings, while widening French bond spreads raise questions about fiscal credibility and the future of European support.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'October 10, 2026',
+    tags: ['Macro', 'Markets', 'Bonds', 'Yields', 'Inflation', 'Oil', 'Europe', 'France'],
+    dataTag: 'WEEK AHEAD',
+    featured: true,
+    body: `## Morning Briefing · Saturday, October 10, 2026
+
+MORNING
+
+That was a topsy-turvy week in most markets and a tricky one to trade. What went down in the morning almost reversed by mid-afternoon, or vice versa. Yields screamed higher earlier in the week and later found support, especially UK gilts and French OATs. Every market had its story to tell, from oil, copper and gold, all of which made serious moves.
+
+Monday sees a semi-bank holiday in America for Columbus Day, which I believe closes bond markets, but not those in Europe that are causing the damage. I've written briefly about my views on the European bond markets below.
+
+On Friday, U.S. Treasuries trimmed losses and oil dropped after President Trump said Russia agreed to release diesel into the markets (must be an election soon?). Yields on the 10-year note fell for the first week in six, implying that long-end rates may have reached self-limiting levels after touching their highest in more than two decades. The dollar briefly advanced to its highest level since 2025 after weeks of gains.
+
+Equities gained even as consumer sentiment hit a five-month low and midterm election risks threatened resilience in technology names. Gold rallied. The Canadian dollar hit its weakest level since April 2025.
+
+Trump said he held a "highly successful" discussion with Putin, securing an agreement for Russia to supply diesel to U.S. and global markets: over 300 tons immediately, followed by 500 tons in November and another 1 million tons thereafter.
+
+**Iranian media, quoting President Pezeshkian:** "Negotiations only have meaning when based on mutual respect and commitment, and when pressure and threats are set aside."
+
+Oil ticked higher as the prospect of a wave of Russian diesel reaching global markets competed with mounting supply risks, from tanker attacks in the Strait of Hormuz to a hurricane in the U.S. WTI rose 0.2% to $91.67 a barrel.
+
+There is not much scheduled for Monday, but not all markets are shut in America; Europe and Asia are open.
+
+## The global week ahead: U.S. inflation and IMF Annual Meetings
+
+### Through the week: IMF Annual Meetings
+
+The IMF Annual Meetings will be held in Bangkok, beginning Monday and running through the week. Alongside the release of the World Economic Outlook and Fiscal Monitor reports, key policymakers from across the globe will make scheduled appearances, with ad hoc comments and interviews also possible.
+
+The primary focus is likely to be Chair Warsh, who will participate in a fireside chat with IMF Managing Director Georgieva on Thursday or Friday, just before the FOMC's pre-meeting blackout period begins. It is a final opportunity for the Chair to steer expectations for the October 28 decision, but he is very likely to avoid overt forward guidance as usual. Markets have already taken heed of other senior Fed officials' lack of urgency over a hike. Attention will be on how he characterizes the latest inflation data and the monetary policy consequences of the run-up in bond yields since the September FOMC.
+
+### Wednesday: China September inflation and trade data
+
+Markets will watch for signs that the reflationary pulse from higher energy and factory-gate (PPI) costs last month continues and whether it has translated into broader CPI, or whether the underlying domestic consumption outlook continues to offset it.
+
+Consensus forecasts call for both PPI and CPI to pick up from August: PPI at +4.3% year over year (prior +3.8%) and CPI at +1.0% (prior +0.8%).
+
+The lack of pass-through from PPI to CPI this year reflects overall weakness in consumption. The forecast uptick is holiday-related, with expectations that demand grew during the week-long break. Last month, the Ministry of Finance and the People's Bank of China implemented targeted measures, including capped mortgage subsidies, reduced financing costs and expanded quotas for directed investments. These will take time to work through the system.
+
+A stronger-than-expected CPI reading could offer short-term support for the ailing Chinese yuan (CNY) and signal modest stabilization. A softer-than-expected print may heighten concerns over prolonged domestic disinflation, given the expected impact from National Day celebrations. Eyes will also be on China's oil imports, which may have inflated CPI.
+
+### Wednesday / Thursday: U.S. September CPI and PPI
+
+This is the big mid-month figure, arriving at a good time for markets to digest it a week before the FOMC meeting.
+
+MNI's early, unrounded analyst consensus for the September core CPI print is 0.22% month over month, in a range of 0.19%–0.24%, with headline at 0.58%. A headline figure in line with consensus would be one of the three highest monthly prints since 2022 (0.4% in August) and would largely reflect resurgent energy prices. August's higher-than-expected 0.29% core reading was largely driven by an idiosyncratic jump in communications-services prices. That category is expected to have retreated sharply last month, helping cool supercore substantially from August's 0.51%.
+
+September PPI is expected to be elevated but relatively steady in aggregate (0.5% month over month after 0.4%, with core ex-food, energy and trade at 0.4% after 0.3%). The details should not affect the PCE implications. Estimates seen are basically in line with core CPI, at 0.22% month over month (0.25% prior). In turn, that should keep the year-over-year core PCE gauge around 3% and the six-month annualized rate at 2.7% for another month. While massively above the Fed's 2% headline target, this would maintain expectations for an October rate hold.
+
+![U.S. inflation and rate outlook](/images/news/10th-news-0.png)
+
+### Focus events · Monday, October 12
+
+**Holiday:** U.S. — Columbus Day; Canada — Thanksgiving.
+
+**EU session:** 10:30 — BoE's Breeden (dove); 13:5.
+
+**U.S. session:** 17:10 — Fed's Hammack (hawk).
+
+**Bond supply events:** None.
+
+## France's fiscal pressures and political chaos
+
+The weekend question is whether France's fiscal pressures and political chaos threaten more than its own creditworthiness.
+
+The Bund/OAT spread above 150 basis points almost makes French debt junk status. This is a red alert in markets, as we have seen before in Greece and Italy. It would challenge the eurozone's existence on its own. Before this, we would look to Germany, with its economic strength and fiscal capacity to support the eurozone, but Germany is also currently on its knees. The two coming together signal worrying implications.
+
+History tells us to consider Italy's historical spread over Germany: Italian spreads previously exceeded 500 basis points during the sovereign-debt crisis. That is not a forecast for France, but it demonstrates how far spreads can move when markets lose confidence in fiscal sustainability and the credibility of European support. France's own trading history may be a poor measure of its potential in a different regime.
+
+My issue is simple: if the ECB provides support — bazooka payments and the like — to France, would the other European countries expect the ECB to also repair their public finances? But if the ECB withholds support, does the risk of higher borrowing costs worsening the fiscal position transmit stress and chaos across the monetary union?
+
+The riots in Europe this week make clear that the problem is out of control. Despite elections in 2027 in several countries, the eurozone is in a mess. The Transmission Protection Instrument (TPI) was introduced as a tool to address unwarranted, disorderly market pressures. The French finance minister mentioned this tool this week.
+
+In my view, huge support is required to restore fiscal credibility and confidence in the eurozone. As a British flag-bearer, I'm glad we exited in 2016. The approaching presidential election complicates the issue. European institutions need confidence that the government is making commitments it can deliver and that its successor will honour them. Currently, Marine Le Pen has said the opposite. There is no formal requirement for the ECB to wait until the election, but political clarity may be necessary before meaningful conditions can be sustained.
+
+Germany's changing position also makes this more difficult. It has an election in 2027, where the far right looks like it is gaining power. I've been brought up to believe Germany has always been the safe haven within Europe; in fact, it was central to the bailout of Greece. Bund outperformance during a crisis would not prove that the capacity for collective rescue is unlimited. "Do whatever it takes" may not work this time.
+
+**Spain is also in trouble:** it has a debt-to-GDP ratio of 100% and is governed by a minority government that called a snap election this week. France at 150 basis points may look cheap against yesterday's France, but this is a different France in 2026 and the bubble looks likely to pop. Investors should be extremely cautious about assuming that yesterday is coming back.
+
+![Long bonds and hedging cartoon](/images/news/10th-news-1.png)
+
+## Further reading
+
+- [BSEE: MMA monitors Gulf response](https://www.bsee.gov/newsroom/latest-news/statements-and-releases/press-releases/mma-monitors-gulf-response-isaias3)
+- [China and Europe agree to cut Chinese hybrid vehicle exports by over half — CNBC](https://www.cnbc.com/2026/10/09/china-europe-hybrid-vehicle-exports-deal.html)
+- [Navigating the Crosscurrents of a Changing World Economy — IMF](https://www.imf.org/en/news/articles/2026/10/07/sp100726-2026-annual-meetings-curtain-raiser)
+- [Trump reacts to the Nobel Peace Prize — The Independent](https://www.independent.co.uk/news/world/americas/us-politics/trump-nobel-prize-reaction-post-b3064241.html)
+- [Treasury yields steady as traders wrap up volatile week — CNBC](https://www.cnbc.com/2026/10/09/us-treasurys-bond-yields-midterms.html)
+- [Bessent taps Judy Shelton to advise on China — Politico](https://www.politico.com/news/2026/10/09/judy-shelton-treasury-china-01113453)
+- [Massive debt puts France in a bind as investor doubts deepen — France 24](https://www.france24.com/en/live-news/20261009-massive-debt-puts-france-in-a-bind-as-investor-doubts-deepen)
+- [The dollar has lost momentum after a four-week rally — FXStreet](https://www.fxstreet.com/analysis/the-dollar-has-lost-momentum-after-a-four-week-rally-202610091428)
+- [U.S. Treasury's Bessent to skip IMF-World Bank meetings in Bangkok — Reuters](https://www.reuters.com/world/asia-pacific/us-treasurys-bessent-skip-imf-world-bank-meetings-bangkok-2026-10-09/)
+- [Blockchain.com seeks CFTC approval for prediction markets — CNBC](https://www.cnbc.com/2026/10/09/blockchain-com-cftc-prediction-markets.html)`,
+  },
+  {
     id: 'n13',
     slug: 'morning-briefing-friday-09-10-bond-rebound-iran-ai',
     section: 'news',

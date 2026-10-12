@@ -18,7 +18,7 @@ export default async function NewsletterUnsubscribePage({
       <p className="eyebrow-text">THE HEDGE FRONT / EMAIL PREFERENCES</p>
       <h1 className="page-title">Unsubscribe from the newsletter</h1>
       <p style={{ marginTop: 12, color: 'var(--ink-secondary)' }}>
-        Confirm below to stop receiving the weekly market briefing.
+        Would you like us to remove your email address from the subscriber database and stop sending you the weekly market briefing?
       </p>
       <NewsletterUnsubscribe token={token ?? ''} />
     </section>
