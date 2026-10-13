@@ -7,9 +7,6 @@ import NewsletterSignup from '@/components/NewsletterSignup';
 const navItems = [
   { label: 'Creator Blogs', href: '/blogs' },
   { label: 'News & Insights', href: '/news' },
-  { label: 'Longform Articles', href: '/articles' },
-  { label: 'The Magazine', href: '/magazine' },
-  { label: 'Special Reports', href: '/special-reports' },
 ];
 
 export default function Navbar() {
@@ -201,8 +198,8 @@ export default function Navbar() {
         }
 
         .da-navbar__link {
-          font-size: 12px;
-          font-weight: 500;
+          font-size: 14px;
+          font-weight: 600;
           color: var(--ink-secondary);
           padding: 6px 12px;
           border-radius: 6px;

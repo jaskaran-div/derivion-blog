@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useId, useState } from 'react';
+import { FormEvent, useEffect, useId, useState } from 'react';
 
 type SubscribeResponse = {
   message?: string;
@@ -11,6 +11,19 @@ export default function NewsletterSignup({ variant = 'default' }: { variant?: 'd
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    if (status !== 'success' && status !== 'error') {
+      return undefined;
+    }
+
+    const timer = window.setTimeout(() => {
+      setStatus('idle');
+      setMessage('');
+    }, 4000);
+
+    return () => window.clearTimeout(timer);
+  }, [status]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

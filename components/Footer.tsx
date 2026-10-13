@@ -13,9 +13,6 @@ const departments = [
 const quickLinks = [
   { name: 'Creator Blogs', href: '/blogs' },
   { name: 'News & Insights', href: '/news' },
-  { name: 'Longform Treatises', href: '/articles' },
-  { name: 'The Magazine', href: '/magazine' },
-  { name: 'Special Reports', href: '/special-reports' },
 ];
 
 export default function Footer() {

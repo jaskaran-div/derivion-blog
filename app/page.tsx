@@ -142,9 +142,8 @@ export default function HomePage() {
 
         <nav aria-label="More from Derivion" className="home-more-sections">
           <span className="home-more-label">Explore the journal</span>
-          <Link href="/magazine">The Magazine</Link>
-          <Link href="/articles">Longform Articles</Link>
-          <Link href="/special-reports">Special Reports</Link>
+          <Link href="/blogs">Creator Blogs</Link>
+          <Link href="/news">News &amp; Insights</Link>
         </nav>
       </div>
     </div>
