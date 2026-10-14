@@ -2087,6 +2087,80 @@ export const specialReports: SpecialReport[] = [];
 // ============================================================
 export const blogs: BlogColumn[] = sortByDateDesc([
   {
+    id: 'blog-10',
+    slug: 'executive-capacity-two-years-experience-entry-roles-problem',
+    section: 'blogs',
+    columnName: 'The Hedge Front',
+    frequency: 'Academic & Policy Dispatch',
+    readership: 'University Faculty & Finance Students',
+    readTime: '7 min read',
+    title: 'Executive Capacity: The 2-Years of Experience for Entry Roles Problem',
+    subtitle: 'Why hands-on business experience belongs in the curriculum before graduation.',
+    excerpt: 'Employers need graduates who can do more than explain frameworks. Experiential learning helps business students build practical analytical, communication, and decision-making skills before their first day on the job.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Academic & Financial Education Desk',
+      bureau: 'Academic Policy Bureau',
+    },
+    date: 'October 14, 2026',
+    tags: ['Financial Education', 'Experiential Learning', 'Career Readiness', 'Financial Modeling', 'Business Education'],
+    featured: true,
+    dispatches: 10,
+    body: `Picture this: you spend two years in business school mastering pristine financial formulas, memorizing theoretical strategy frameworks, and acing every case study exam. You graduate feeling like a corporate genius.
+
+Then, on your very first day at work, your manager hands you a messy, real-time dataset, asks you to build a financial model under tight deadlines, and wants an executive briefing by 4:00 PM on how a sudden interest rate shift or supply chain disruption could affect company profit margins.
+
+Suddenly, that textbook definition you memorized feels very far away.
+
+This disconnect is precisely why business education is undergoing a shift. In today's fast-moving corporate environment, theoretical knowledge is merely the price of admission. The real competitive advantage belongs to graduates who have gained genuine hands-on experience before stepping onto the graduation stage.
+
+### 1. Closing the Executive "Capabilities Gap"
+If you ask corporate leaders what keeps them up at night, it is rarely a lack of software or technology. In surveys of Chief Financial Officers, executives consistently report that shortages of relevant capabilities and overworked teams are major roadblocks to creating long-term value.
+
+Companies are investing heavily in digital tools and generative AI, but they need more than graduates who know how to prompt an AI model. They need professionals who can use technology to streamline routine tasks and step up to support strategic planning, resource allocation, and high-level decision-making.
+
+When business students participate in corporate residencies, live consulting projects, or student-led investment funds while still in school, they can begin bridging this capabilities gap before taking their first full-time job.
+
+### 2. Moving From "Copybook" Formulas to Business Execution
+In traditional academic instruction, concepts are often taught using neat "copybook" information and archetypal models. These frameworks assume ideal conditions, predictable data, and perfectly rational actors.
+
+In the real business world, an analyst or manager serves as a vital funnel between unrefined numbers and actual business decisions. A typical day may involve:
+
+- **Dissecting financial statements:** Looking past surface-level revenue figures to analyze cash flow, debt exposure, and underlying profitability.
+- **Building dynamic models:** Constructing flexible numerical representations of a business to test scenarios, such as how a raw material cost increase or sales decline affects the bottom line.
+- **Double-checking under pressure:** Recognizing that a misplaced decimal point in an Excel formula can derail a business strategy, and applying the focus and accuracy needed to catch errors.
+
+Hands-on projects teach students that business execution is rarely clean or linear. It requires comfort with ambiguity, trial and error, and the discipline to double-check calculations before presenting them to leadership.
+
+### 3. Mastering the Art of Data Translation
+Technical skills like quantitative analysis and financial modeling are essential, but they lose their power if you cannot explain your findings to non-specialist stakeholders.
+
+Consider a financial analyst reporting on liquidity:
+
+- **The technical way:** "Our current ratio fell from 2.1 to 1.6."
+- **The plain-language way:** "We may struggle to pay our short-term bills because our cash reserves have dropped."
+
+Live client projects and team consultancies give students a chance to practice this translation. They learn to strip away confusing jargon and deliver clear, actionable insights that help executives make informed choices quickly.
+
+### 4. Developing Human Skills That Slide Decks Cannot Teach
+Technical tools can be taught in a lecture hall or through online tutorials, but critical soft skills require real-world practice. Recruiters consistently highlight the importance of candidates who demonstrate:
+
+- **Communication and influence:** Expressing complex ideas clearly, negotiating across departments, and persuading skeptical stakeholders.
+- **Adaptability and grit:** Handling unexpected project setbacks, navigating shifting deadlines, and adjusting when initial assumptions turn out to be wrong.
+- **Team dynamics:** Collaborating effectively with diverse colleagues who bring different working styles and perspectives.
+
+Working on live business challenges—whether running an incubator venture, managing an actual portfolio, or consulting for an international firm—exposes students to interpersonal friction and workplace unpredictability in a supportive, educational environment.
+
+### 5. Fostering a "Learning Machine" Mindset
+Markets, technology, and economic policies evolve at a dizzying pace. Static degrees and fixed course syllabi can quickly become outdated. Investor Charlie Munger described successful people as "learning machines" who go to bed every night a little wiser than when they woke up.
+
+Experiential learning instills this habit of continuous development. When students take ownership of real projects, learn from execution mistakes, and adapt to live feedback, they build the curiosity and resilience required for lifelong professional adaptability.
+
+### The Closing Bell
+The ultimate goal of business school is not simply to confer a degree, but to prepare leaders who can create immediate value in a complex world. By embedding hands-on, practice-based learning into the core curriculum, educational institutions can transform students from passive consumers of theory into confident, day-one business leaders.`,
+  },
+  {
     id: 'blog-9',
     slug: 'the-domino-effect-how-one-central-bank-decision-touches-everything',
     section: 'blogs',
