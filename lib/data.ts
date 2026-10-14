@@ -143,6 +143,337 @@ export const articles: Article[] = [];
 // ============================================================
 export const newsItems: NewsItem[] = sortByDateDesc([
   {
+    id: 'n17',
+    slug: 'morning-briefing-wednesday-14-10-cpi-oil-and-gold',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'Morning Briefing — Wednesday 14.10: CPI, Oil and Gold',
+    excerpt: 'Markets look to U.S. CPI after a cautious session marked by renewed Middle East attacks, a rebound in oil, pressure on chipmakers and a flatter Treasury curve. The report also covers the Fed outlook, European speakers, Asian data and the relationship between long-term yields and gold.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'October 14, 2026',
+    tags: ['Macro', 'Markets', 'CPI', 'Inflation', 'Oil', 'Bonds', 'Gold', 'Geopolitics'],
+    dataTag: 'LIVE WIRE',
+    featured: true,
+    body: `## Morning Briefing · Wednesday, October 14, 2026
+
+MORNING
+
+This is the figure — CPI — the market has been waiting for and hopefully it will move the indices out of range trading. Markets have been cautious as concerns persist around the AI trade and WTI oil rebounded sharply from morning lows, while the S&P was little changed. The Euro Stoxx has closed at almost the same price for three straight days.
+
+Attacks in the Middle East have intensified, keeping the geopolitical inflation tail firmly in oil. Chipmakers extended their sell-off, with the sector down for a fifth straight session as investors questioned the financing of the AI boom. Bank earnings offered a split message: lending remained strong, but trading revenue was more mixed.
+
+Treasuries caught a bid farther out on the curve even as front-end yields rose, flattening the curve ahead of Wednesday's CPI. The dollar softened after four sessions of gains, with the euro, sterling, yen and loonie firmer, as New York Fed President Williams said he sees one more hike this year as appropriate.
+
+We have the IMF conference in Thailand this week, and the key speaker is Warsh. I expect government debt to be high on the agenda and expect some answers from central bankers. Traders will await the monthly CPI data and see how much energy prices have affected inflation.
+
+I am still short Euro Stoxx from last Friday and will look to run the position over CPI.
+
+## Europe and U.S. previews
+
+Wednesday brings German wholesale prices, U.S. MBA mortgage applications, U.S. September CPI and the Fed Beige Book. Canada also releases building permits. A raft of central-bank speakers is scheduled, including BoE's Bailey and Pill, BoC's Macklem, ECB's Elderson, Lagarde, Pereira, Escriva and Schnabel, and Fed's Bowman, Barkin and Goolsbee.
+
+Supply is scheduled from the U.K. (4-year gilt), Portugal (10-year and 26-year PGBs), Germany (21-year and 30-year Bunds) and Canada (33-year GCAN).
+
+## Asian overview
+
+Asian markets traded firmer, with regional equities rebounding from recent losses as investors looked ahead to U.S. CPI for further guidance on the Fed outlook. Treasury yields were little changed and the dollar softened modestly, while comments from Fed Governor Waller and New York Fed President Williams reinforced expectations that policy is nearing its peak despite lingering inflation risks.
+
+Oil remained supported by renewed Middle East tensions and uncertainty surrounding Persian Gulf energy flows, helping to underpin longer-dated yields. China was a key focus after mixed inflation data highlighted persistent weakness in domestic demand. CPI rose 0.9% year over year, undershooting expectations, while PPI accelerated to 5.0% year over year as higher energy and commodity costs pushed upstream prices sharply higher.
+
+Trade data separately surprised to the upside, with strong export and import growth driven largely by technology-related trade and processing imports linked to the export sector, rather than an improvement in domestic demand. Meanwhile, the CSI 300 slipped closer to bear-market territory as investors remained sceptical about the prospects for significant policy support.
+
+## News from the trenches
+
+- Trump and Netanyahu face a dilemma: strike Iran before elections or wait.
+- Iran is shifting tactics to step up attacks on shipping before the U.S. vote.
+- Trump may ask Turkey to join the response in Yemen.
+- Aramco headquarters hit during a Houthi attack on Saudi Arabia.
+- Houthis are building an advanced missile with Chinese parts.
+- Fed's Williams currently sees no need for a rate hike in 2027.
+- Fed's Collins sees higher rates likely this year to tame prices.
+- Fed's Barkin says persistent inflation warrants policy action.
+- Healey set to pay for budget giveaways without more borrowing.
+- Chancellor targets online marketplaces in a £1 billion tax crackdown.
+- U.S. CPI seen rising, with energy costs adding to the Fed's policy dilemma.
+- How much will ASML stock move after earnings?
+
+### Further reading
+
+- [U.S. CPI Seen Rising With Energy Costs Adding to Fed's Policy Dilemma — LiveSquawk](https://www.livesquawk.com/report/special_us-cpi-seen-rising-with-energy-costs-adding-to-fed-s-policy-dilemma)
+- [How Much Is ASML Stock Expected to Move After Earnings? — Investopedia](https://www.investopedia.com/here-is-how-much-asml-stock-is-expected-to-move-after-earnings-12166433)
+- [Inside Trump, Netanyahu's dilemma: Strike Iran before elections or wait — Axios](https://www.axios.com/2026/10/13/netanyahu-trump-iran-war-elections)
+- [Aramco headquarters hit during Houthi attacks on Saudi Arabia — Bloomberg](https://www.bloomberg.com/news/articles/2026-10-13/aramco-headquarters-hit-during-houthi-attacks-on-saudi-arabia)
+- [Five-Year JGB Yield Pares Gains After Auction Draws Solid Demand — WSJ](https://www.wsj.com/finance/jgbs-edge-lower-amid-higher-oil-prices-e3255ed1)
+- [Dollar languishes as focus turns to CPI and Fed speakers — Reuters](https://www.reuters.com/world/asia-pacific/dollar-languishes-focus-turns-cpi-fed-speakers-2026-10-14/)
+- [Oil prices climb as traders weigh Saudi supply risk and Russian diesel flow — Reuters](https://www.reuters.com/business/energy/oil-prices-climb-traders-weigh-saudi-supply-risk-russian-diesel-flow-2026-10-14/)
+
+## Focus events · Wednesday, October 14
+
+### European session
+
+- 03:10 — ECB's Lagarde (no known bias).
+- 04:30 — ECB's Zigman (no known bias, hawk).
+- 04:30 — BoE's Breeden (dove).
+- 04:45 — ECB's Moulin (dove).
+- 06:30 — BoE's Bailey (dove).
+- 07:00 — Germany: Wholesale Price Index.
+- 07:00 — BoE's Pill (hawk).
+- 08:00 — Spain: CPI.
+- 09:00 — ECB's Elderson (no known bias).
+- 09:30 — ECB's Lagarde (no known bias).
+- 09:30 — ECB's Pereira (no known bias).
+- 10:20 — ECB's Escrivá (no known bias).
+- 17:15 — ECB's Schnabel (super hawk).
+
+### U.S. session
+
+- 07:05 — BoC Governor Macklem.
+- 10:40 — Fed's Bowman (dove).
+- 12:00 — U.S.: MBA Mortgage Applications.
+- 13:30 — Canada: Building Permits.
+- 13:30 — U.S.: CPI and Core CPI.
+- 18:30 — Fed's Barkin (no known bias).
+- 19:00 — U.S.: Fed Beige Book.
+- 21:30 — U.S.: API Crude Oil Stocks.
+
+### Bond supply events
+
+- 10:00 — U.K.: 4-year gilt, £5.00 billion (equivalent G 18k).
+- 10:30 — Germany: 21-year Bund, €1.00 billion (equivalent RX 14k).
+- 10:30 — Germany: 30-year Bund, €1.50 billion (equivalent RX 25k).
+
+![U.S. CPI and Core CPI components](/images/news/14th-1.png)
+
+## U.S. September CPI and PPI
+
+The big mid-month figure arrives at a good time for markets to digest it, a week before the FOMC meeting.
+
+MNI's early, unrounded analyst consensus for September core CPI is 0.22% month over month, in a range of 0.19%–0.24%, with headline at 0.58%. A headline figure in line with consensus would be one of the three highest monthly prints since 2022 (0.4% in August) and would largely reflect resurgent energy prices. August's higher-than-expected 0.29% core reading was largely driven by an idiosyncratic jump in communications-services prices. That category is expected to have retreated sharply last month, helping cool supercore substantially from August's 0.51%.
+
+September PPI is expected to be elevated but relatively steady in aggregate (0.5% month over month after 0.4%, with core excluding food, energy and trade at 0.4% after 0.3%). The details should not affect the PCE implications. Estimates seen are basically in line with core CPI, at 0.22% month over month (0.25% prior). In turn, that should keep year-over-year core PCE around 3% and the six-month annualized rate at 2.7% for another month. While massively above the Fed's 2% headline target, this would maintain expectations for an October rate hold.
+
+September CPI comes out tomorrow morning, and the headline number is very likely to look bad.
+
+Forecasters expect consumer prices to have risen around 0.6% in the month, pushing annual inflation from 3.4% up to somewhere around 3.6% or 3.7%. That's the number that will lead every headline by 8:31.
+
+It's also the least useful number in the report.
+
+![Expected U.S. September CPI and core CPI measures](/images/news/14th-2.png)
+
+Headline inflation is expected to jump on fuel. Monthly core is the line that shows whether it is spreading. Oil has stayed high, with Brent above $100 and fresh attacks in the region over the weekend pushing it up again. Core inflation, which strips out food and energy, is expected to rise just 0.2% on the month and hold near 2.4% to 2.5% on the year. The Cleveland Fed's own estimate lands in the same place.
+
+Tomorrow's report will probably say two different things at once. Prices people pay at the pump are rising fast. Prices for almost everything else aren't.
+
+That gap is the whole question for the Fed right now, and it's one I wrote about the week before the September hike. No interest rate produces another barrel of oil. The textbook response to an energy shock is to look through it, unless it starts leaking into other prices through freight, delivery and expectations. Governor Waller warned last week that persistent inflation risks becoming embedded in what people expect, which is exactly that concern.
+
+If you only look at one number tomorrow, make it monthly core. Around 0.2% fits the story that this is an energy problem. A 0.3% or higher would suggest the leak has started, and that changes the conversation going into the October 27 and 28 meeting.
+
+### Last week in the markets
+
+[Last week I wrote](https://www.linkedin.com/pulse/feds-case-got-weaker-10-year-didnt-care-sajad-mostafavi-n5ilc/) that long-term yields were rising even as the Fed's case for more hikes weakened, and that I'd be watching whether the gap kept widening. It didn't. The 10-year peaked at 5.31% on the Monday close, then slipped back to 5.24% by Friday after strong demand at the 10-year and 30-year auctions. Buyers showed up above 5.2%, which matters. It suggests there's a level where long-dated debt starts to look attractive again.
+
+Gold noticed straight away.
+
+![Thirty-year Treasury yields and gold futures](/images/news/14th-3.png)
+
+The 30-year yield peaked at 5.67% on October 7. That same day, gold closed at $4,141, its lowest in this stretch. As yields eased, gold climbed back to around $4,210. For two weeks now it has held a floor roughly between $4,140 and $4,220, which looks like the market accepting that range rather than breaking through it. Gold isn't trading off the Fed's decisions at the moment. It's trading off the long end of the bond market.
+
+One cross-market detail worth filing away: the dollar has been rising with oil, not against it, and is close to its strongest level in about 18 months. That runs against the old habit of assuming a higher oil price means a weaker dollar. For USD/CAD it creates a tug of war: oil supports the Canadian dollar, while the broader dollar bid pushes the other way.
+
+After CPI tomorrow, producer prices land Thursday, and then it is a quiet stretch into the Fed decision on the 28th.
+
+I don't know which way tomorrow's core number goes. What I'd avoid is reacting to the headline before reading the second line. The headline tells you what happened at the pump. Core tells you whether it's spreading.
+
+## Wednesday's papers
+
+- [The Times](https://www.thetimes.com/): Ministers are to announce a tax crackdown on online retailers as John Healey pledges a budget for the "white van man" and the "high street beautician".
+- [The Guardian](https://www.theguardian.com/): Semiconductor shares fell after Broadcom's chief compared many AI investors to casino gamblers and Chinese memory-chip maker CXMT reported progress on a new chip architecture.
+- [The Times](https://www.thetimes.com/): The U.K.'s strong economic growth is boosting the case for an interest-rate rise this year, a Bank of England rate-setter said.
+- [Financial Times](https://www.ft.com/): Andy Burnham told Britain's business leaders he wanted to run the most pro-business country in the world, with chief executives expecting no new tax raids.
+- [The Guardian](https://www.theguardian.com/): The IMF's top economist urged John Healey to stay the course and continue repairing the U.K.'s public finances after the fund lifted its growth forecast for Britain.
+- [Financial Times](https://www.ft.com/): Anthropic warned that rogue AI worms may soon hijack smart-home devices such as ovens and TVs, creating a cybersecurity threat that will be difficult to contain.
+- [The Times](https://www.thetimes.com/): BP chief executive Meg O'Neill is to set out a new strategy in December after high oil and gas prices helped the company reduce its debt sooner than expected.
+- [Financial Times](https://www.ft.com/): U.S. bank bosses played down investor concerns about a slowdown in trading, reporting strong quarterly profits supported by equities businesses even as fixed-income units weakened.
+- [The Guardian](https://www.theguardian.com/): TFG London, owner of Phase Eight, Hobbs and Whistles, said a cyberattack hit its websites and IT systems and may have compromised customers' personal data.
+- [The Times](https://www.thetimes.com/): Bellway will build fewer houses and report lower profits this year, partly because some first-time buyers are delaying purchases until the government's Your First Home support scheme launches.
+- [Financial Times](https://www.ft.com/): A British court ruling strengthened the country's chances of retaining much of a £3.8 billion criminal bitcoin haul, after finding Chinese fraud victims could not rely on English law to claim it.
+- [The Daily Telegraph](https://www.telegraph.co.uk/): Aldi's sales growth slumped to its lowest level in more than two years as a supermarket price war hit its expansion across Britain.
+- [Financial Times](https://www.ft.com/): Ships in the Strait of Hormuz are facing the most intense period of Iranian attacks since U.S.-Israeli strikes against Iran began.`,
+  },
+  {
+    id: 'n16',
+    slug: 'morning-briefing-tuesday-13-10-oil-france-and-inflation',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'Morning Briefing — Tuesday 13.10: Oil, France and Inflation',
+    excerpt: 'Oil rose as fresh attacks in Saudi Arabia and uncertainty over the Russia-Ukraine energy ceasefire threatened supply. Markets are also weighing Fed hawkishness, France’s credit outlook, German inflation, U.S. housing and business data, and policy signals from Japan, Australia and China.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'October 13, 2026',
+    tags: ['Macro', 'Markets', 'Oil', 'Bonds', 'Inflation', 'Geopolitics', 'Federal Reserve', 'Asia'],
+    dataTag: 'LIVE WIRE',
+    featured: true,
+    body: `## Morning Briefing · Tuesday, October 13, 2026
+
+MORNING
+
+On Monday, oil rallied as Saudi Arabia said it was dealing with new drone and cruise-missile attacks, following weekend strikes that were the deadliest since the U.S.-Iran war began. Ukraine also said it would continue strikes against Russia, following the "energy ceasefire" touted by Trump.
+
+Despite a 0.2% decline, the S&P 500 held near a record high as market breadth improved. Treasuries were closed for a holiday. The dollar edged higher against most G10 peers, while the euro and yen both fell.
+
+We remain short Euro Stoxx since Friday and would look to add if French issues continue, or if the French economy is downgraded to BBB+. OAT bonds are fragile, and I suspect that if the Bund/OAT spread breaks 150 basis points, we will see some action.
+
+### Fed's Hammack
+
+Interest rates need to be higher, Hammack said, citing widespread inflation pressures. Demand-side pressures from AI are not self-correcting, and there is a risk of an inflationary mindset becoming ingrained. A restrictive approach is needed to achieve 2% inflation.
+
+Oil rose on threats to supply as Ukraine cast doubt on the "energy ceasefire" touted by Trump. In the Middle East, Saudi Arabia suffered its deadliest strikes since the Iran war began. WTI rose 1.5% to $93.23 a barrel.
+
+**ECB's Stournaras:** The ECB may continue raising rates gradually.
+
+**Fitch Ratings:** France's A+ credit rating is under pressure from rising government debt, weak economic growth and political instability.
+
+Tuesday brings a raft of speakers but no major figures. Attention is elsewhere as Europe sees riots, the Middle East exchanges missiles and the war in Ukraine continues. The diesel deal looks weak: it is probably not enough to fill many cars, and the oil price has hardly surrendered its gains.
+
+## Europe and U.S. previews
+
+### Germany: Final September CPI
+
+**Forecast:** 0.60% month over month, unchanged from the prior reading; 3.30% year over year, unchanged from the prior reading.
+
+Germany's final September CPI is expected to confirm gains of 0.6% month over month and 3.3% year over year. Annual inflation accelerated from 2.9% in August, primarily reflecting energy inflation rising to 14.9% from 10.5%. Core CPI remained at 2.4%, while services inflation eased to 2.7% from 2.8%, suggesting limited evidence of broader inflation persistence so far.
+
+The release should therefore reinforce an energy-led squeeze on household purchasing power rather than signal stronger demand. An unchanged final print would offer little fresh market impetus; revisions to core or services prices would be more consequential for ECB expectations, Bund yields and the euro.
+
+### U.S.: September NFIB Small Business Optimism
+
+**Forecast:** 98.2, compared with 98.7 previously.
+
+Small-business sentiment likely softened modestly in September, weighed down by higher financing costs and diesel prices. The September NFIB jobs report showed declines in hiring activity and job openings. Hiring plans were unchanged, however, while unfilled positions remained well above historical norms. Finding qualified workers continues to be the main constraint on hiring.
+
+### U.S.: September Existing Home Sales
+
+**Forecast:** 3.95 million, compared with 3.98 million previously; month-over-month forecast -0.50%, compared with -2.00% previously.
+
+Pending home sales edged higher in August after two consecutive monthly declines, but more recent indicators suggest renewed weakness. The MBA purchase index, which tracks mortgage applications for home purchases, fell 2.1% in the week ended October 2 to its lowest level in more than a year.
+
+Higher mortgage rates are adding to the pressure. The average 30-year fixed mortgage rate rose 19 basis points to 7.49%, its highest level since November 2023. Rates have climbed roughly half a percentage point over the past three weeks — the fastest increase since early 2023 — further eroding affordability and likely weighing on home sales in the coming months.
+
+## Asian overview
+
+### Japan: Cooling headline PPI favours an October pause, but import costs keep December live
+
+September's PPI report offered little encouragement for an earlier increase. Annual inflation slowed to 6.8% from 7.6%, against expectations for an unchanged reading. Prices surprised to the downside, falling 0.3% month over month against forecasts for a 0.5% gain. The figures suggest some easing in pipeline pressures, although still-elevated annual inflation and the stronger Tokyo core CPI reading of 2.7% leave the broader normalization case intact ahead of national CPI data next Thursday.
+
+Bank lending, including trusts, rose 5.3% year over year in September, unchanged from the prior month's downwardly revised pace, while growth excluding trusts eased to 5.7% from 5.8%. Credit growth therefore remains firm but provides little fresh evidence of acceleration.
+
+### Australia: RBA minutes show inflation risks materialising as business confidence weakens
+
+The September RBA minutes released earlier today reinforced a hawkish bias, showing that policymakers increasingly view several of the upside inflation risks identified earlier in the year as already materialising rather than merely prospective.
+
+The Board judged that inflation remains too high and that waiting for further confirmation could prove costly. Members noted that the Middle East conflict has broadened, oil prices are substantially above assumptions used in earlier forecasts, and global cost pressures linked to the AI investment boom are continuing to build. Officials also saw growing evidence that Australian capacity pressures may be more extensive than previously assumed.
+
+The minutes suggest the Board is becoming less comfortable relying on the existing degree of restraint to return inflation to target. Members acknowledged that financial conditions are restrictive, but noted that some indicators imply the restriction may only be modest.
+
+For the path ahead, the RBA retained an explicit willingness to tighten again if required. The outlook depends on the Middle East conflict, external demand, domestic capacity and whether cost pressures begin influencing inflation expectations more persistently.
+
+Separately, the NAB business confidence index for September fell to -13 from a downwardly revised -9 in August, while the business conditions index was unchanged at -1. Small improvements in trading conditions and profitability were offset by a three-point decline in employment to its weakest level in five years, at -1.
+
+### China: Regional banks face tighter bond limits as Beijing redirects balance sheets towards lending
+
+Cailian reporting indicated that Chinese regional banks in several provinces have been instructed to keep growth in financial investments below the pace of loan growth. The guidance also requires the average maturity of newly added bond investments to remain shorter than that of banks' existing holdings.
+
+The reported measures appear intended to discourage smaller lenders from using deposits and wholesale funding to accumulate long-duration bonds in search of capital gains. They are consistent with the PBoC's broader effort to incorporate banks' bond and fund exposures into its macroprudential framework following the sharp rally in government debt.
+
+The restrictions could reduce marginal demand for longer-dated bonds and put some upward pressure on long-end yields as affected banks shorten portfolio duration. They may also redirect balance sheets towards lending to the real economy, aligning asset growth more closely with Beijing's credit-policy objectives.
+
+## News from the trenches
+
+- Trump does not believe China and Russia are helping Iran.
+- Saudi Arabia says a Houthi ballistic missile was intercepted over Riyadh and Khamis Mushait.
+- Supertankers turn from a Gulf oil-transfer hub amid Iran's attacks.
+- Kyiv says Russia hit energy targets despite Trump's ceasefire announcement.
+- Mortgage shock sends U.S. pending home sales to a near 12-year low.
+- Hammack backs restrictive policy, saying it is better if it comes relatively quickly.
+- Germany and Italy request emergency-brake powers to stop new EU laws.
+- U.K. shoppers remain cautious as fuel costs bite, a survey shows.
+- Andy Burnham plans to push for new post-Brexit deals at the EU summit.
+- Wall Street revives the case for scrapping the U.S. 20-year bond.
+- Nvidia's China AI-chip share falls as Huawei closes the gap, a report finds.
+
+## Focus events · Tuesday, October 13
+
+### Asia-Pacific session
+
+- 01:30 — Australia: RBA minutes.
+
+### European session
+
+- 04:00 — BoE's Greene (hawk).
+- 07:00 — Germany: CPI.
+- 08:15 — ECB's Elderson (no known bias).
+- 09:30 — ECB's Pereira (no known bias).
+- 17:00 — BoE's Dhingra (dove).
+- 19:30 — ECB's Lane (dove).
+
+### U.S. session
+
+- 08:45 — Fed's Waller (no known bias).
+- 11:00 — U.S.: NFIB Business Optimism.
+- 15:00 — U.S.: Existing Home Sales.
+- 18:00 — Fed's Barkin (no known bias).
+- 19:00 — U.S.: Monthly Budget.
+- 21:00 — Fed's Collins (no known bias).
+
+### Bond supply events
+
+- 10:00 — Italy: 3-year, 7-year and 15-year BTPs, total €7.00 billion.
+- 10:30 — Germany: 5-year Bobl, €5.00 billion (equivalent O/E 44k).
+
+## U.K. and European developments
+
+**Bank of England:** Megan Greene said faster-than-expected economic growth in the U.K. and a resilient jobs market are evidence that the Bank of England is not doing enough to bear down on inflation.
+
+**Retail:** U.K. retail sales rose by a below-average 1.3% year over year in September, versus growth of 2.3% a year ago, with a slowdown in all major sectors, according to the British Retail Consortium.
+
+**Fiscal outlook:** The U.K. Chancellor's headroom against the government's fiscal rules halved to £12 billion from the March fiscal forecasts, the Resolution Foundation said. The IMF has warned the U.K. to use cost-of-living support sparingly or risk reigniting inflation, recommending that debt-burdened countries limit relief to targeted and temporary measures.
+
+**U.K. growth:** The IMF upgraded its U.K. growth forecast, with Britain expected to grow at the second-fastest rate in the G7 this year after better-than-expected results so far.
+
+**EU relations:** Andy Burnham told MPs he will push for new post-Brexit deals with the EU at a summit next month. He said deeper cooperation on youth mobility, food and drink, and energy could help drive U.K. economic growth.
+
+**Security:** The U.K. Foreign Secretary summoned Iran's ambassador over alleged threats on British soil, saying the U.K. would not tolerate attempts to undermine its security through criminal networks, proxy groups and state-backed activity.
+
+**EU legislation:** Germany, Italy and Belgium called for EU capitals to have the power to intervene to stop new legislation they consider too burdensome for governments and businesses.
+
+**EU and Russia:** European leaders are preparing to demand tougher sanctions on Russia at a Thursday summit, putting them at odds with Trump days after his agreement with Putin to ease restrictions on Russian diesel exports.
+
+**Ukraine:** Zelensky said Russia struck six Ukrainian energy facilities hours after Trump announced an energy ceasefire, including gas facilities, energy infrastructure and other sites.
+
+**Germany and Ukraine:** German Chancellor Friedrich Merz and Ukrainian President Volodymyr Zelenskyy spoke by telephone and agreed Russia must accept a mutual ceasefire on attacks against energy infrastructure.
+
+**France:** Emmanuel Macron said the French navy intercepted and boarded an oil tanker suspected of involvement in illegal fuel trafficking. Ukraine's Main Directorate of Intelligence said the vessel, DF Peak, transports Russian crude and is associated with Sovcomflot.
+
+## Further reading
+
+- [U.K. shoppers stay cautious as fuel costs bite — Reuters](https://www.reuters.com/world/uk/uk-retail-sales-growth-slows-4-month-low-august-brc-says-2026-09-07/)
+- [Saudi-led coalition says Houthi ballistic missile intercepted over Riyadh — Anadolu Agency](https://www.aa.com.tr/en/middle-east/saudi-led-coalition-says-houthi-ballistic-missile-intercepted-over-riyadh/4086568)
+- [Trump says Putin 'wants to make a deal' — New York Post](https://nypost.com/2026/10/12/us-news/trump-says-putin-wants-to-make-a-deal-as-he-knocks-ukraines-zelensky/)
+- [Fed's Hammack backs restrictive policy — Reuters](https://www.reuters.com/markets/us/feds-hammack-backs-restrictive-policy-says-better-if-it-comes-relatively-quickly-2026-10-12/)
+- [Surging bond yields are top risk to financial system, IMF says — Bloomberg](https://www.bloomberg.com/news/articles/2026-10-13/surging-bond-yields-are-top-risk-to-financial-system-imf-says)
+- [Oil falls as Russia diesel supply prospects counter Gulf supply risks — Reuters](https://www.reuters.com/business/energy/oil-ticks-lower-russia-diesel-supply-prospects-counter-gulf-supply-risks-2026-10-13/)
+- [Copper and aluminum drop as AI selloff saps appetite for risk — Bloomberg](https://www.bloomberg.com/news/articles/2026-10-13/copper-and-aluminum-drop-as-ai-selloff-saps-appetite-for-risk)`,
+  },
+  {
     id: 'n15',
     slug: 'morning-briefing-monday-12-10-oil-ukraine-earnings',
     section: 'news',
