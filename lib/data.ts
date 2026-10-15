@@ -143,6 +143,136 @@ export const articles: Article[] = [];
 // ============================================================
 export const newsItems: NewsItem[] = sortByDateDesc([
   {
+    id: 'n18',
+    slug: 'morning-briefing-thursday-15-10-cpi-iran-volatility',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'Morning Briefing — Thursday 15.10: CPI, Iran and Volatility',
+    excerpt: 'Hotter U.S. inflation unsettled rates, precious metals and technology stocks, while renewed Iran headlines drove haven demand in Asia. Markets now turn to U.S. PPI, retail sales and a packed global data calendar.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'October 15, 2026',
+    tags: ['Macro', 'Markets', 'CPI', 'Inflation', 'Bonds', 'Iran', 'Asia', 'Federal Reserve'],
+    dataTag: 'LIVE WIRE',
+    featured: true,
+    coverImage: '/images/news/15th%20Oct.png',
+    body: `## Morning Briefing · Thursday, October 15, 2026
+
+MORNING
+
+U.S. CPI did not disappoint in terms of market impact: trading reacted quickly, although some confusion remains around the details. Several markets were hit hard. Silver fell more than 6%, Bitcoin dropped 2% and the Nasdaq declined 2%.
+
+SOFR futures briefly priced an almost 0.2 percentage-point rate increase, but pared that move to near unchanged by the close. Most bond markets followed a similar path: yields jumped on the inflation figures before returning to around unchanged by the end of the U.S. session. Gasoline prices rose 9% on the month, accounting for more than half of the increase in headline CPI. Energy prices overall climbed 5.2%, following a 2.1% rise in August.
+
+Attention now turns to Thursday's PPI report for evidence of pipeline inflation pressures, particularly whether higher diesel and transportation costs are feeding through to producer prices. Fed swaps reflected about a 35% chance of a rate increase later this month, up from 20% on Tuesday.
+
+Stocks fell, with information technology and communication services among the weakest sectors as red flags were raised around the AI trade. Gold and silver also declined as higher consumer prices and a jump in real yields reduced the appeal of non-yielding precious metals.
+
+However, we wake up to Thursday, normally our busiest day, amid fresh turmoil. Trump is reportedly considering the use of the "Mother of All Bombs" on Iran, prompting safe-haven positioning. Bonds rallied and Asian indices initially fell, but recovered from their worst levels. Since writing this email, indices have picked up from 5:30 a.m., as stops were triggered in low-liquidity Asian markets. I have always said that opening markets 24/7 is a dangerous ploy.
+
+![The 15 October market briefing image](/images/news/15th%20Oct.png)
+
+It is safe to say that today is likely to be very volatile across most markets. Traders will be listening closely to the news, not just at the IMF conference in Thailand.
+
+## Europe and U.S. previews
+
+Thursday's releases include U.K. monthly GDP for August, industrial and manufacturing production, services, trade and construction; final French HICP; eurozone industrial and manufacturing production; Canadian manufacturing and wholesale sales and capacity utilization; and U.S. retail sales, PPI, Empire State manufacturing, Philadelphia Fed manufacturing, jobless claims and business inventories.
+
+Central-bank speakers include BoE's Breeden and Fed's Goolsbee and Hammack. Bond supply is scheduled from Spain (2-year, 5-year and 7-year SPGBs), France (4-year to 7-year OATs and 6-year to 14-year inflation-linked bonds), Ireland (10-year bond) and Canada (new 5-year GCAN).
+
+## Asian overview
+
+The technology sell-off deepened through the Asian session, with chip stocks leading regional losses after another heavy U.S. session. Treasuries rallied on haven demand and the dollar softened with yields, while Brent fell as concerns over Middle East supply eased. Nasdaq 100 futures were 1% lower and European futures pointed to a weaker open.
+
+The Kospi fell 7.7%, heading for its weakest close since April, with a sidecar triggered. Samsung Electronics and SK Hynix both fell more than 9%. MSCI's Asia-Pacific gauge lost 2.9% and was heading for its lowest close since July as markets digested the U.S. CPI report and reassessed the AI narrative.
+
+Treasuries extended gains, with 10-year yields down 7.7 basis points to 5.11% and 2-year yields down 7 basis points to 4.72%. They had initially sold off after the CPI print, then recovered most of the losses as buyers stepped in near multi-year yield highs. Australian labour-market figures were soft, while BoJ's Koeda and RBNZ's Conway both sounded hawkish at separate appearances.
+
+## Focus events · Thursday, October 15
+
+### Asia-Pacific session
+
+- 01:30 — Australia: Unemployment Rate.
+
+### European session
+
+- 02:35 — ECB's Pereira (no known bias).
+- 04:35 — BoE's Pill (hawk).
+- 04:35 — ECB's Kocher (hawk).
+- 05:30 — ECB's Moulin (dove).
+- 07:00 — U.K.: GDP, trade balance and industrial production.
+- 07:45 — France: CPI.
+- 07:45 — BoE's Greene (hawk).
+- 09:30 — Italy: General government debt.
+- 09:45 — BoE's Breeden (dove).
+- 10:00 — Eurozone: Industrial production.
+
+### U.S. session
+
+- 03:35 — Fed's Bowman (dove).
+- 10:00 — BoC's Rogers.
+- 13:30 — U.S.: Retail sales, PPI, Philadelphia Fed survey and initial jobless claims.
+- 15:00 — Fed's Goolsbee (no known bias).
+- 17:00 — U.S. Department of Energy crude inventories.
+- 21:30 — Fed's Hammack (hawk).
+
+### Bond supply events
+
+- 09:30 — Spain: 2-year, 5-year and 7-year SPGBs, total €5.50 billion.
+- 09:50 — France: 4-year, 5-year and 7-year OATs, total €12.00 billion.
+- 10:50 — France: 6-year, 12-year and 14-year inflation-linked OATs, total €1.25 billion.
+- 17:00 — Canada: New 5-year GCAN, CAD 5.00 billion.
+
+## News from the trenches
+
+- Hotter U.S. inflation raises pressure on the Fed ahead of the midterms.
+- Netanyahu says he is not seeking to attack Iran again before Israel's elections.
+- Iran's parliament speaker says the country will both fight and negotiate to reach its goals.
+- Saudi Arabia says it has zero intention of backing down against the Houthis.
+- Citi expects a December rate hike after the upside inflation surprise.
+- Fed's Barkin says CPI ran too hot and keeps the October decision open.
+- Fed's Bowman says there is time to "wait and see" before taking further action.
+- Gold drops 2% as hot inflation data boosts rate-hike expectations.
+- Trump plays Russian roulette on the eve of the midterms.
+- OpenAI alleges that a former employee who left for Apple took files about an unreleased device.
+- The Fed's Beige Book says economic activity grew modestly.
+- ECB's Simkus says inflation pressures point to further tightening.
+- BoE hawk Pill is sceptical of market pricing for four U.K. rate hikes.
+- The 10-year Treasury yield jumps after September core inflation comes in hotter than expected.
+- Traders bet the Fed may now need to hike twice or increase rates by 0.5 percentage points in December.
+
+### Further reading
+
+- [Hotter U.S. Inflation Raises Pressure on Fed Ahead of Midterms — LiveSquawk](https://www.livesquawk.com/report/special_hotter-us-inflation-raises-pressure-on-fed-ahead-of-midterms)
+- [Trump Plays Russian Roulette on Eve of Midterms — Axios](https://www.axios.com/2026/10/14/trump-putin-diesel-deal-midterms-russia)
+- [Citi Expects December Fed Rate Hike After Upside Inflation Surprise — Zawya](https://www.zawya.com/en/world/citi-expects-december-fed-rate-hike-after-upside-inflation-surprise-1662580)
+- [Fed news — Breaking The News](https://breakingthenews.net/Article/Fed)
+- [ECB May Need to Raise Rates Again as Inflation Pressures Build, Simkus Says — Bloomberg](https://www.bloomberg.com/news/articles/2026-10-14/ecb-simkus-says-inflation-pressures-point-to-more-tightening)
+- [BoE Hawk Pill Sceptical of Market Pricing Four U.K. Rate Hikes — Yahoo Finance](https://uk.finance.yahoo.com/news/boe-hawk-pill-skeptical-market-072157743.html)
+- [Fed May Now Have to Hike Twice or Increase by a Half Point in December, Traders Bet — CNBC](https://www.cnbc.com/2026/10/14/fed-may-now-have-to-hike-twice-or-increase-by-a-half-point-in-december-traders-bet.html)
+- [Gold Drops Over 1% as Hot U.S. Inflation Data Boosts Fed Hike Bets — CNBC](https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html)
+
+## Thursday's papers
+
+- **The Times:** U.S. government borrowing costs rose sharply after consumer-price inflation accelerated to a five-month high, driven by petrol and energy costs.
+- **The Times:** Business leaders urged the Chancellor to partially reverse Rachel Reeves's £25 billion payroll-tax rise, saying it could generate more than 40,000 jobs for young people amid historically high youth unemployment.
+- **The Guardian:** Two container ships near the Strait of Hormuz sank after missile strikes, amid the sharpest rise in Iranian attacks on shipping since the start of the U.S.-Israel war with Iran.
+- **The Times:** The Bank of England is unlikely to deliver the four interest-rate rises priced by markets, its chief economist said.
+- **The Times:** Bank of America's third-quarter profit fell after it set aside $1.2 billion to cover potential U.S. regulatory fines over failures to detect money laundering and other illicit activity.
+- **The Times:** President Zelensky said he felt "betrayed" by the U.S. after access to Elon Musk's satellite communications system was restricted as Russia attacked Ukraine with missiles and drones.
+- **The Times:** BlackRock's assets under management rose to a record $15.5 trillion in the third quarter after it attracted $205 billion of new money.
+- **The Guardian:** Netflix is laying off 6% of its workforce, roughly 1,000 employees, in its biggest cuts since 2022 as it faces competition from legacy rivals and YouTube.
+- **The Times:** ASML reported a 138% year-on-year rise in third-quarter net profit and plans to expand production as demand for its chipmaking products outstrips supply.
+- **The Daily Telegraph:** Nvidia's chief executive warned that Britain lacks a "growth culture" and is too focused on the risk of failure.
+- **The Daily Telegraph:** Goldman Sachs said rejoining the EU single market could boost the U.K. economy by as much as £150 billion.
+- **The Guardian:** Scotland's secretary said Britain would benefit from closer trading relations with the EU, even if that meant giving up the ability to negotiate free-trade agreements.
+- **The Financial Times:** Kemi Badenoch joined investors in warning that higher bank taxes would hurt growth and damage the financial sector's competitiveness.`,
+  },
+  {
     id: 'n17',
     slug: 'morning-briefing-wednesday-14-10-cpi-oil-and-gold',
     section: 'news',
