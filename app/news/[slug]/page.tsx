@@ -76,7 +76,7 @@ function renderMarkdown(md: string): React.ReactNode[] {
     if (imageMatch) {
       const src = imageMatch[2];
       const alt = imageMatch[1] || 'Article image';
-      const preserveImageRatio = src.endsWith('/12th-news-1.png') || src.endsWith('/15th%20Oct.png') || /^\/images\/news\/14th-[123]\.png$/.test(src);
+      const preserveImageRatio = src.endsWith('/12th-news-1.png') || src.endsWith('/15th%20Oct.png') || src.endsWith('/16th-news.png') || /^\/images\/news\/14th-[123]\.png$/.test(src);
       nodes.push(
         <figure key={i} style={{ margin: '22px 0', padding: '0', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '16px', overflow: 'hidden' }}>
           <img src={src} alt={alt} style={{ display: 'block', width: preserveImageRatio ? 'auto' : '100%', maxWidth: '100%', height: 'auto', maxHeight: src.endsWith('/12th-news-1.png') ? '515px' : preserveImageRatio ? 'none' : '420px', objectFit: preserveImageRatio ? 'contain' : 'cover', background: '#f8fafc' }} />

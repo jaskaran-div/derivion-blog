@@ -143,6 +143,143 @@ export const articles: Article[] = [];
 // ============================================================
 export const newsItems: NewsItem[] = sortByDateDesc([
   {
+    id: 'n19',
+    slug: 'morning-briefing-friday-16-10-opex-and-market-resilience',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'Morning Briefing — Friday 16.10: OPEX, Resilience and a Friday Joke',
+    excerpt: 'Markets enter options expiry after Thursday’s sharp reversal, with resilient U.S. consumers, falling long-end yields and a broad Asian rebound setting the tone. Today’s briefing covers the data calendar, geopolitics and a little Friday humor.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'October 16, 2026',
+    tags: ['Macro', 'Markets', 'OPEX', 'Inflation', 'Bonds', 'Asia', 'Equities', 'Geopolitics'],
+    dataTag: 'LIVE WIRE',
+    featured: true,
+    coverImage: '/images/news/16th-news.png',
+    body: `## Morning Briefing · Friday, October 16, 2026
+
+MORNING
+
+> “We do not do our asses on a Friday as it ruins the weekend!”
+
+Today is about OPEX — options expiry — so anything can happen. Early this morning, indices are bid after a strong close on Thursday night.
+
+Mr Warsh’s speech was boring: he did not comment on monetary policy or his outlook for the U.S. economy. Glad I got up for that!
+
+On Thursday, long-end yields led another position-driven rally even as a hot PPI report and rising WTI added to the inflation picture. The S&P clawed back losses as resilient consumers, seen through robust retail sales, eased tail risks. Equity trading looked more like rotation than capitulation. Thirty-year yields extended their decline to 5.37%, the lowest in more than three weeks, despite signs of mixed mainstream price pressures. Dislocations in U.S. swaps and mortgage-backed securities prompted models to short-cover Treasuries and accelerated the move.
+
+The dollar retreated and gold advanced more than 1%. WTI gained more than 3%, reaching its highest level in about a month amid ongoing supply risks.
+
+The Producer Price Index surged 1.3% month over month, its sharpest increase since Russia’s invasion of Ukraine began in March 2022 and the second-highest reading on record. That was far above market expectations for a 0.5% increase, yet markets largely ignored the figure. U.S. retail sales rose 0.8% month over month in September, following an upwardly revised 1.3% gain in August and well above forecasts for a 0.3% rise. Retail sales are not adjusted for inflation.
+
+France’s Moulin said the deficit can be cut to 3.0% in three years and expressed confidence in French financial stability. He does not think higher borrowing costs are linked to a change in fiscal approach. CNN reported that the U.S. is considering using its largest non-nuclear weapon against Iran, with a deployment possible before or after the midterms. The ECB appears to be growing impatient for Lagarde to clarify her plans.
+
+Friday is light on figures. Bailey, Warsh and Nagel have already spoken this morning in Thailand. We covered our STOXX shorts yesterday and are waiting for OPEX. Our view is simple: the market wants to make people’s puts worth zero. We are looking to reintroduce our shorts this evening.
+
+## Europe and U.S. previews
+
+### Eurozone
+
+**September finalized CPI:** year-over-year forecast 3.80%, prior 3.80%.
+
+September’s final HICP report will provide the detail needed to identify the drivers of the pickup in core and services inflation. Airfares were likely a key contributor, which should cause limited concern at the ECB given monetary policy’s limited influence over these volatile prices. Core inflation edged up to 2.5% year over year from 2.4%, while services inflation rose to 3.2% from 3.0%. Headline inflation increased to 3.8% from 3.2%, largely driven by energy, whose contribution rose 0.4 percentage points from the previous month.
+
+Airfares typically fall sharply in September after the summer holiday season. This year’s decline was likely smaller than in September 2025, however, as fares had already begun falling in August 2026. The resulting base effect likely pushed annual inflation higher. Despite September’s sharp rise, inflation remains broadly consistent with the ECB’s latest projections. Headline and core inflation averaged 3.3% and 2.5%, respectively, in the third quarter, matching the quarterly forecasts in the ECB staff’s September baseline.
+
+### United States
+
+#### September import prices
+
+**Import Price Index:** month-over-month forecast 0.90%, prior 0.70%. **Excluding petroleum:** forecast 0.50%, prior 0.80%.
+
+Import prices likely rose 0.9% in September, lifting the annual rate to 8.1% from 7.0%. Petroleum-related import prices surprised to the downside in August, suggesting the rebound in global energy prices from their July trough has yet to pass through fully.
+
+Excluding petroleum, prices likely increased 0.5%, after a 0.8% rise in August. This would lift the year-over-year rate to 5.1% from 4.5%. Robust demand tied to the AI infrastructure buildout likely sustained upward pressure on imported semiconductors and other advanced-technology products, pushing capital-goods prices higher.
+
+#### September industrial production
+
+**Industrial Production:** month-over-month forecast 0.40%, prior 0.00%. **Manufacturing Production:** forecast 0.30%, prior -0.30%. **Capacity Utilization:** forecast 76.50%, prior 76.30%.
+
+Consensus expects industrial production to edge up 0.4% in September, while Bloomberg Economics sees a smaller 0.1% rise, again supported by gains in mining and utilities. Bloomberg Economics also expects manufacturing output to decline 0.2% (versus consensus for a 0.3% gain), following August’s 0.3% decline, with weakness across durable and nondurable goods. It expects capacity utilization to slip to 76.2% from 76.3%, against consensus for 76.5%.
+
+Transportation equipment, particularly motor vehicles, is expected to be the sole bright spot in manufacturing. Mining output likely rose 0.3%, led by crude-oil extraction and mining support activities. Rig counts, a useful proxy for support activity, have increased since late April and historically lead oil extraction by around five to seven months, suggesting additional production should begin to come online.
+
+## Asian overview
+
+Asian stocks rebounded as dip-buyers stepped in, driving broad-based sector gains and strong breadth. Geopolitical nerves remain elevated: Ukraine resumed strikes on Russian oil refineries after abandoning Trump’s energy ceasefire, and a Singapore-flagged container ship was confirmed sunk in the Strait of Hormuz by an Iranian projectile. Brent was unfazed, rangebound around $105.
+
+Fed Chair Warsh, speaking at the IMF-World Bank Annual Meetings in Bangkok, said AI is the “most consequential change” to the global economy in his lifetime, adding that the global economy is showing “more than expected resilience”.
+
+![KFC sign, accompanying the Friday market briefing](/images/news/16th-news.png)
+
+MSCI APAC rose 1.50%, helped by bargain hunting in technology as well as broader cyclicals, resources, materials and software, among the biggest gainers. Nvidia’s Huang defended CoreWeave, helping address recent jitters, while Korean export data underpinned the demand story as semiconductor shipments pushed Seoul’s exports to record highs. Rebounds in semiconductors and memory drove outperformance in Japan, South Korea and Taiwan.
+
+Greater China was led by Hong Kong, with HSTECH and property segments paving the rally. Alibaba advanced alongside other internet platforms on strong Singles Day data. China was reportedly on course for a second straight quarter of below-target growth. The state-backed “National Team” signalled a return to the market as heavy ETF inflows pointed to renewed support. Australian gains were led by miners; India took a breather. Singapore’s export growth doubled consensus, driven by a surge in electronics shipments. Indonesia stood out among smaller emerging markets: the JCI slumped 11% after MSCI said the country no longer merits emerging-market status. U.S. futures edged higher, while Euro Stoxx futures saw stronger overnight gains.
+
+## Friday’s Friday humor
+
+It’s Friday, and a tricky but successful week deserves a little humor: fast-food chain KFC is dumping Pepsi-Cola for Coca-Cola!
+
+> I ordered a Jack and Coke and the bartender asked, “Is Pepsi okay?” I said yeah, and he gave me a Coke and Pepsi.
+
+## News from the trenches
+
+- Trump muses on a future Iran strike with the “Mother of All Bombs”; deployment could be before or after the midterms.
+- South Korea weighs expanding its naval mission to the Gulf of Oman.
+- Russia’s Putin vows revenge for Ukraine’s attacks on energy sites.
+- Ukraine runs out of Patriot interceptor missiles as Zelensky and Trump clash; the U.K. sends more missiles to Ukraine to hit Russian sites.
+- Iran tells Hezbollah to increase readiness and prepare for potential conflict.
+- Fed’s Warsh says he would deliver price stability but will not prejudge meetings.
+- The EU begins assessing additional sectors for China trade quotas (Bloomberg).
+- Investors temper Anthropic IPO valuation expectations over a slowdown in revenue growth, sources say (Reuters).
+- ECB’s Nagel says he cannot exclude the possibility that the ECB may need to hike again (Bloomberg).
+- Bank of England Governor Bailey sees “quite subdued” second-round price pressures so far (Reuters).
+- Most Japanese government bonds rise, tracking gains in U.S. Treasuries (Wall Street Journal).
+- Oil heads for a weekly gain amid Middle East supply risks (Reuters).
+- Gold falls as investors await the Fed chairman’s remarks (Wall Street Journal).
+- KFC will switch its U.S. restaurants to Coca-Cola, ending its PepsiCo partnership (Bloomberg).
+
+## Focus events · Friday, October 16
+
+### European session
+
+- 03:00 — BoE Governor Bailey (dove).
+- 03:30 — ECB’s Nagel (hawk).
+- 07:30 — Eurozone: Bloomberg Eco Survey.
+- 07:35 — Germany: Bloomberg Eco Survey.
+- 07:40 — France: Bloomberg Eco Survey.
+- 07:45 — Italy: Bloomberg Eco Survey.
+- 08:30 — U.K.: Bloomberg Eco Survey.
+- 10:00 — Eurozone: CPI and trade balance.
+- 10:00 — Italy: CPI.
+
+### U.S. session
+
+- 04:30 — Fed Chair Warsh (no known bias).
+- 05:15 — Bank of Canada Governor Macklem.
+- 10:00 — Canada: Home sales.
+- 13:00 — Bank of Canada’s Alexopoulos.
+- 13:30 — U.S.: Import and export prices.
+- 14:15 — U.S.: Industrial production and manufacturing production.
+- 19:00 — U.S.: Monthly budget.
+
+### Bond supply events
+
+- None scheduled.
+
+## Friday’s papers
+
+- **The Times:** John Healey is set to increase taxes on Britain’s banks to help fill a hole in government finances caused by rising borrowing costs.
+- **The Guardian:** The White House’s unilateral effort to negotiate an energy ceasefire between Russia and Ukraine has collapsed. Moscow sent a record swarm of drones overnight to attack infrastructure in central Ukraine, while Kyiv appeared to resume strikes on Russian oil refineries.
+- **The Times:** The U.K. economy unexpectedly expanded in August and grew faster over the summer than first estimated, according to official figures.
+- **The Times:** Credit default swap prices for U.S. technology companies have risen to unprecedented levels as concerns grow over the durability of AI spending and rising debt-interest costs.
+- **The Financial Times:** Investors predict the price of gold will hit record highs within 24 months, as data show central banks’ bullion buying in September reached its highest level in almost two years.`,
+  },
+  {
     id: 'n18',
     slug: 'morning-briefing-thursday-15-10-cpi-iran-volatility',
     section: 'news',
