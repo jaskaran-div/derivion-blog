@@ -214,8 +214,6 @@ Asian stocks rebounded as dip-buyers stepped in, driving broad-based sector gain
 
 Fed Chair Warsh, speaking at the IMF-World Bank Annual Meetings in Bangkok, said AI is the “most consequential change” to the global economy in his lifetime, adding that the global economy is showing “more than expected resilience”.
 
-![KFC sign, accompanying the Friday market briefing](/images/news/16th-news.png)
-
 MSCI APAC rose 1.50%, helped by bargain hunting in technology as well as broader cyclicals, resources, materials and software, among the biggest gainers. Nvidia’s Huang defended CoreWeave, helping address recent jitters, while Korean export data underpinned the demand story as semiconductor shipments pushed Seoul’s exports to record highs. Rebounds in semiconductors and memory drove outperformance in Japan, South Korea and Taiwan.
 
 Greater China was led by Hong Kong, with HSTECH and property segments paving the rally. Alibaba advanced alongside other internet platforms on strong Singles Day data. China was reportedly on course for a second straight quarter of below-target growth. The state-backed “National Team” signalled a return to the market as heavy ETF inflows pointed to renewed support. Australian gains were led by miners; India took a breather. Singapore’s export growth doubled consensus, driven by a surge in electronics shipments. Indonesia stood out among smaller emerging markets: the JCI slumped 11% after MSCI said the country no longer merits emerging-market status. U.S. futures edged higher, while Euro Stoxx futures saw stronger overnight gains.
@@ -223,6 +221,8 @@ Greater China was led by Hong Kong, with HSTECH and property segments paving the
 ## Friday’s Friday humor
 
 It’s Friday, and a tricky but successful week deserves a little humor: fast-food chain KFC is dumping Pepsi-Cola for Coca-Cola!
+
+![KFC sign, accompanying the Friday market briefing](/images/news/16th-news.png)
 
 > I ordered a Jack and Coke and the bartender asked, “Is Pepsi okay?” I said yeah, and he gave me a Coke and Pepsi.
 
