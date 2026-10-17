@@ -143,6 +143,118 @@ export const articles: Article[] = [];
 // ============================================================
 export const newsItems: NewsItem[] = sortByDateDesc([
   {
+    id: 'n20',
+    slug: 'morning-briefing-saturday-17-10-reversal-yields-and-leverage-warning',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'Morning Briefing — Saturday 17.10: Post-OPEX Reversal, 5.10% Yields and a Leverage Warning',
+    excerpt: 'A fast reversal in indices after OPEX capped a week of sticky inflation, rising geopolitical skirmishes and mounting debt concerns. We stay bearish, warn about leverage, and preview next week’s inflation data and flash PMIs.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'October 17, 2026',
+    tags: ['Macro', 'Markets', 'Inflation', 'Bonds', 'Oil', 'Central Banks', 'PMIs', 'Geopolitics'],
+    dataTag: 'LIVE WIRE',
+    featured: true,
+    coverImage: '/images/news/17th-news.png',
+    body: `## Morning Briefing · Saturday, October 17, 2026
+
+MORNING
+
+What a week in the markets. On Friday, after OPEX, we saw a fast reversal in indices following a week in which inflation was more than sticky, skirmishes in the Middle East and Russia increased, and debt issues in several countries looked to be growing.
+
+My view is bearish on indices, but it has been hard to run a short — and indeed in bond yields — as volatility is rife. We mentioned before about not being greedy and leaving something on the table for others, and that advice helped this week.
+
+Also, a word of warning to those who trade with leverage: in these volatile markets, managing risk is difficult, and trading with leverage is like carrying an open hand grenade around. I expect several funded prop shops to go bust if markets explode this winter.
+
+![Market chart accompanying the 17 October briefing](/images/news/17th-news.png)
+
+Trump’s row with Zelensky has intensified, and it looks like Trump will waive several sanctions on Putin’s Russia — hence why we have seen some more safe-haven plays in the marketplace.
+
+On Friday, yields and oil advanced as import data rounded off this week’s hot inflation reports. WTI rose for the seventh straight day to above $101 per barrel as Iranian attacks on tankers persist and risks lie ahead for the Trump/Putin diesel deal.
+
+Ten-year yields rose to around 5.10% after Chair Warsh’s refusal to give signals about the October FOMC forced traders to reprice the inflation problem out to December. Stocks traded defensively, with a volatility gauge rising sharply before retreating. The Nasdaq 100 racked up a loss of more than 5% as AI inference shifts drove a repricing of winners and losers.
+
+The U.S. federal budget deficit widened to nearly $2 trillion for the 2026 fiscal year, serving as a fresh reminder of the scale of government borrowing needs and leaving the nation on track for a record-high debt burden in coming years. For the fiscal year through September, the deficit widened to $1.99 trillion — about a 12% increase on the $1.78 trillion gap recorded last year.
+
+**WSJ (Timiraos):** Fed Chair Warsh declined to signal whether the central bank will raise interest rates at its October meeting, stating that the Fed is no longer in the business of previewing its policy decisions.
+
+**ECB’s Wunsch:** The rise in long-term yields does not mean the ECB is done hiking; further hikes are reasonable, but uncertainty prevents commitment. A shift from three priced hikes to zero would require some change.
+
+**German Chancellor Merz:** The European budget must be cut further; he hopes an agreement can be made by year-end but is not sure that could happen.
+
+## What’s on the agenda next week? Inflation and flash PMIs
+
+### United Kingdom
+
+We expect things to ramp up on the domestic front in the U.K. over the next few weeks, with labour-market data (Tuesday), inflation and public-finance data (Wednesday), and the flash PMIs and retail sales (both Friday).
+
+CPI is expected to be the main event, with early consensus looking for headline inflation to pick up to 3.4–3.5% year over year in September (from 3.09% in August), with the majority of the increase due to energy (auto fuel and heating oil).
+
+I think we will pay less attention to wage data at this point of the year (most U.K. wage settlements are in Q1/April), so we will focus more on the quantity side: a payrolls print (negative expected, but less so than last month) and a subdued LFS employment change, with early consensus looking for the unemployment rate to remain steady at 4.9%.
+
+Governor Bailey (zzzzz) will speak on Wednesday in a fireside chat at OMFIF. His comments earlier this morning opened optionality for the November meeting a little, so we will be watching to see whether he repeats that language or is more explicit. We also expect budget news to continue to hit during the week, ahead of the October 28 event.
+
+### Monday — Canada September inflation and BoC Quarterly Business Survey
+
+Monday provides important updates with the September CPI report and Bank of Canada business and consumer surveys ahead of the BoC decision on October 28. OIS currently prices 8bp of hikes for that meeting, broadly similar to the 9–10bp after last month’s decision to leave rates on hold at 2.25% for a seventh consecutive meeting, but with clear precedence given to upside inflation risks. Instead, there is greater market confidence in a quarterly cadence of rate hikes, with rough pricing for December, March and June, chiming with Fed and ECB pricing out to March at least.
+
+Bloomberg consensus currently looks for headline CPI inflation to accelerate to 3.2% year over year in September from 3.0% in August (which Governor Macklem called “too high”), matching the recent high from May. However, a range of core metrics are expected to hold closer to the 2% target, with ex-food and energy at 2.1%, median at 2.0% and trim at 1.9% all seen unchanged. Recent run rates have been somewhat hotter — not so much for trim and median (averaging 2.2% annualized on both three- and six-month measures), but with ex-food running at 3.6%/2.3% over three and six months. Released later in the day at 11:30 ET, the BOS/CSCE surveys will help gauge Canadians’ outlook for inflation and spending, watched for signs of resilience to see whether the Bank can continue to put greater weight on inflation risks.
+
+### Thursday — New Zealand Q3 CPI
+
+Q3 CPI prints on Thursday, October 22, including the RBNZ’s sector factor model estimate of core, which has held below the 3% top of the target band. CPI inflation printed at 4.1% in Q2, and the RBNZ projected it to moderate slightly to 3.9% in Q3 in its September staff forecasts. Given ongoing elevated fuel prices, there is now a risk that both Q3 and Q4 could be higher than expected. Like other central banks, the RBNZ is focused on second-round effects from higher costs, so data on underlying trends will be monitored closely.
+
+### Friday — Japan September inflation
+
+September CPI is expected to firm relative to August, with all inflation metrics forecast to return above 2% year over year. This is consistent with firmer Tokyo CPI pressures for the same month. While upstream price pressures in the PPI are off recent highs, a large wedge remains between headline CPI and PPI outcomes. This would support the BoJ’s broader view of inflation being close to the 2% target on a sustainable, medium-term basis. It will likely take a strong upside surprise to push near-term BoJ pricing firmer, though. Services inflation will be the other watch point.
+
+### Friday — Eurozone October flash PMIs
+
+The October flash PMIs will indicate whether turmoil in French and broader European bond markets at the start of the month dented sentiment. The baseline expectation is little impact, with analysts expecting the French composite PMI to fall a little to 50.5 (versus 51.1 prior) — still in expansionary territory. The German composite is seen consolidating September’s strong rise to 53.8, expected at 53.5. That leaves the Eurozone composite expected at 52.7 (versus 53.1 prior), with small moderations expected in both manufacturing and services.
+
+ECB officials have guided towards an October hold in recent weeks, in part due to the growth-negative impact of tighter financial conditions. However, an implicit hiking bias remains intact, and another set of PMIs above 50 would reinforce that stance. Markets currently price 25bp of hikes through December.
+
+## Focus events · Monday, October 19
+
+### European session
+
+- 00:01 — U.K.: Rightmove house prices.
+- 02:00 — ECB’s Sleijpen (hawk).
+- 03:15 — ECB’s Lane (dove).
+- 06:50 — ECB’s Elderson (no known bias).
+
+### U.S. session
+
+- 13:00 — Canada: Bloomberg Nanos confidence.
+- 13:30 — Canada: CPI and core CPI.
+- 15:00 — U.S.: NAHB Housing Market Index.
+- 15:30 — Canada: BoC Business Outlook Survey.
+
+### Bond supply events
+
+- None scheduled.
+
+## News from the trenches
+
+- [Trump denies Musk claim he ordered Starlink restrictions in Ukraine (CNBC)](https://www.cnbc.com/2026/10/16/trump-denies-musk-claim-he-ordered-starlink-restrictions-in-ukraine.html)
+- Katie Zacharia, Trump’s new press secretary, is ousted after five days (New York Times).
+- Healey weighs a new U.K. investor visa for wealthy foreigners in budget plan (Bloomberg).
+- Zelensky warns a gas deal will follow the U.S.-Russia diesel pact (Breaking The News).
+- Brazen Russian attacks are testing NATO (Wall Street Journal).
+- Iran vows to push U.S. warships further away (Breaking The News).
+- Saudis intercept a ballistic missile launched toward Yanbu (Breaking The News).
+- BoJ’s Ueda says he cannot tolerate inflation rising above 2% (Bloomberg).
+- U.S. Treasury yields waver as traders wrap up a volatile week.
+- Dollar Index slips as Fed Chair Warsh won’t prejudge October.
+- Bitcoin hovers near $81K as analysts see a potential market bottom.
+- Brent surges above $110 as supply risks intensify on geopolitical tensions (Bloomberg).
+- Gold set for a weekly drop as traders assess Fed signals (Reuters).`,
+  },
+  {
     id: 'n19',
     slug: 'morning-briefing-friday-16-10-opex-and-market-resilience',
     section: 'news',
