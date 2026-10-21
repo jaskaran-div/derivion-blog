@@ -143,6 +143,220 @@ export const articles: Article[] = [];
 // ============================================================
 export const newsItems: NewsItem[] = sortByDateDesc([
   {
+    id: 'n22',
+    slug: 'morning-briefing-tuesday-20-10-france-budget-vote-short-oat-long-bunds',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'Morning Briefing — Tuesday 20.10: France’s Budget Vote, Short OATs vs Bunds and Oil at a 5-Month High',
+    excerpt: 'France burns ahead of a huge budget vote as OATs sell off and widen versus Bunds. Treasury yields climb towards 5.15%, oil hits a five-month high on Hormuz threats, and the euro slides towards $1.12.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'October 20, 2026',
+    tags: ['Macro', 'Markets', 'Europe', 'France', 'Bonds', 'Oil', 'FX', 'Central Banks', 'Geopolitics'],
+    dataTag: 'LIVE WIRE',
+    featured: true,
+    coverImage: '/images/news/20th-1.png',
+    body: `## Morning Briefing · Tuesday, October 20, 2026
+
+MORNING
+
+![Market chart accompanying the 20 October briefing](/images/news/20th-1.png)
+
+France burns, their economy is suffering, and they have a huge vote on Tuesday on their budget! French OATs (bonds) see little confidence, and both OATs and the CAC 40 headed south for the week — and probably brought other markets down with them.
+
+On Monday we saw the Nasdaq rise 1.3% and the S&P advance 0.5% in the afternoon. Treasury yields rose sharply across the curve, sending 10-year yields back towards 5.15%. The market absorbed an earlier advance in oil prices, which retraced later in the session. The dollar trimmed earlier gains and gold fell 0.5%, while the VIX dropped and Bitcoin stuttered higher by 1%.
+
+## European and US Previews
+
+- **UK labour data:** private earnings ex-bonus 3.00% y/y (prior 2.90%), unemployment 4.90%, payrolls -8k.
+- **Germany PPI:** +1.6% m/m, +6.3% y/y; ZEW expectations seen slipping to 30.0 from 34.7.
+- **ECB's Lane** speaks in Shanghai, 02:30 GMT, ahead of the October 29 meeting.
+- **US housing:** starts 1,300k, permits 1,385k; pending home sales -0.50% m/m.
+
+## Asian Overview
+
+- **Japan:** BoJ unlikely to hike this month, December seen more probable; Ueda says inflation nears 2% target with wage increases re-emerging; 20Y JGB auction yields fell to 3.710% on strong demand.
+- **Australia:** RBA held at 4.6% in September, but unemployment rose to 4.7%, softening the case for further tightening; Kent flags a weakening labour market and historically low consumer confidence.
+- **New Zealand:** Q3 CPI expected to ease slightly to 3.8% y/y; RBNZ's Conway says both a hold and a 25bp hike remain under consideration; September trade deficit widened.
+- **China:** PBOC held rates for a 17th month; industrial production and retail sales rebounded, though household demand and loan growth remain subdued; housing price declines are moderating.
+- **South Korea:** USD/KRW fell to 1,328.15 ahead of the BOK meeting; September CPI met expectations at 2.9% y/y; BOK to maintain a tight stance until inflation aligns with target.
+- **ASEAN:** Indonesia's Q3 FDI surged 27.5% y/y to IDR 270.2 trillion, led by base metals.
+
+## Iran, Oil and the French Bond Sell-Off
+
+**Al-Araby Al-Jadeed sources:** A breakthrough agreement between Washington and Tehran could be announced this week. Negotiators are reportedly working to narrow differences and secure mutual concessions to prevent renewed military escalation. No agreement has been officially confirmed.
+
+**FT:** Iranian hardliners say the time for nuclear weapons has come; the killing of Supreme Leader Ali Khamenei, who prohibited atomic bombs, has prompted calls to weaponise the enrichment programme.
+
+US Treasury futures drifted lower over the US session as oil rallied to a five-month high after Iran said it has "no choice" but to assert control over the Strait of Hormuz. European bonds were very much in focus, with French debt continuing to underperform and widening vs Bunds following a weekend of violent protests. Volume was low, about 65% of the 20-day average — rumoured that school half term was to blame.
+
+The euro weakened towards $1.12, remaining near multi-month lows as escalating unrest in France heightened concerns over the country's fiscal outlook, while tensions between Ukraine, Russia and the US added to geopolitical uncertainty. Protesters across French cities erupted into clashes with police, potentially complicating efforts to implement austerity measures ahead of the 2027 elections and further undermining investor confidence.
+
+**France PM:** Furlough measures in effect from Tuesday for firms affected by protests; "I am fully resolved to restore public order"; asking some local authorities to impose partial curfews; "if declaring a state of emergency is considered necessary, we would do it!"
+
+**Hence why we are short OATs and long German Bunds as a trade!**
+
+![French bond spreads and euro weakness amid the unrest](/images/news/20th-2.png)
+
+The euro heads to zero as an unwanted currency — will we see the lira, Deutsche Mark and peseta back in circulation in 2027?
+
+Gilts were down 0.7%, Bunds down 0.4% and OATs down 1%, with T-Bonds unchanged on the day. Gold was off $20 and Brent oil holding at $107.00. EUR/USD hit 1.1182 and was struggling for buyers.
+
+## News From the Trenches
+
+- Trump open to a summit with Xi and Putin to discuss nuclear disarmament.
+- US envoys to hold fresh Ukraine talks; energy crunch looms over the midterms.
+- Zelenskyy says US decisions on Ukraine are hard to explain.
+- Merz warns Europe is underestimating the Russian threat.
+- Iran's IRGC: blockade could extend to the Bab al-Mandeb Strait and Suez Canal.
+- Fed sees AI boom adding to inflation pressures.
+- Bank of Canada rate-hike bets rise as inflation expectations climb.
+- German ZEW investor outlook set to fall as energy costs rise.
+- French bond sell-off intensifies after riots and looting.
+- Musk pledges one SpaceX share for every child in America.
+
+**Sources:** LiveSquawk — German ZEW Investor Outlook Set To Slip As Energy Costs Rise · Reuters — Ukraine's Zelenskiy says US decisions on Ukraine hard to explain · Investing.com — China keeps benchmark lending rates steady for 17th straight month in Oct · WSJ — Marine Le Pen Seizes on French Chaos to Present Herself as Leader in Waiting · Reuters — UK's Healey rules out capital gains tax increase in budget, Times reports · Reuters — Dollar and euro drift, yen slips as markets seek direction · Bloomberg — Gold Holds Decline as Energy-Led Inflation Weighs on Rate Path
+
+## Focus Events, Tue 20th
+
+**EU Session:**
+- 07:00 — GER: PPI.
+- 07:00 — UK: Unemployment Rate, Avg Earnings.
+- 09:00 — EUR: ECB Current A/C.
+- 10:00 — GER: ZEW.
+- 10:00 — EUR: ZEW, Construction Output.
+- 10:05 — ECB Rehn (Super Dove).
+- 18:00 — BoE Greene (Hawk).
+
+**US Session:**
+- 13:15 — US: ADP Weekly Employment Change.
+- 13:30 — US: Building Permits, Housing Starts.
+- 15:00 — US: Pending Home Sales.
+- 21:30 — US: API Crude Oil Stock Change.
+
+**Bond Supply Events:**
+- 10:00 — UK: 10y Gilt £4.25BN (Equiv G 34k).
+
+## Tuesday's Papers
+
+- **The Guardian:** A majority of first-time UK buyers now pay more towards their monthly mortgage bills than they used to pay in rent, the estate agent Hamptons has found.
+- **The Daily Telegraph:** Government borrowing costs have risen across Europe after riots in France sent ripples through financial markets; the yield on 10-year French government bonds rose from 4.80pc to 4.93pc on Monday.
+- **The Times:** Barclays’ shares have taken a hit after it was reported that the bank had drawn scrutiny from the Bank of England for possibly understating the risks posed by financial derivatives used to fund private credit lending.
+- **The Daily Telegraph:** Profit warnings have jumped to a near two-year high ahead of John Healey’s Budget, exposing the fragility of UK business as the Chancellor prepares to raise taxes.
+- **Daily Mail:** Elon Musk has pledged to give one SpaceX share to ‘every kid in America’ next year in a move that would cost him around £8bn.
+- **The Guardian:** Andy Burnham has told officials to rip up their plans for how to fix Thames Water and present him with more radical options for what to do with the stricken company.
+- **The Times:** A cryptocurrency investor is bringing a £20m court claim against Bitmex that the business offered crypto derivative products to investors in the UK, despite not being regulated or approved by the Financial Conduct Authority.
+- **The Times:** Chinese economic growth picked up speed over the last quarter to within the ruling Communist Party’s target range as booming exports offset sluggish domestic consumer spending.
+- **Financial Times:** CME Group is preparing to launch a futures contract for tungsten as global remilitarisation and soaring prices drive western companies to race to secure supplies of the critical mineral.
+- **The Times:** Andy Burnham’s reindustrialisation strategy risks becoming a ‘hollow slogan’ without more state support for food producers facing surging energy costs and a looming grocery price shock, the boss of one of Britain’s largest food companies has warned.
+- **The Daily Telegraph:** China has been blamed for the loss of half a million German factory jobs since 2019, as experts have warned that Europe’s manufacturing engine is losing momentum.`,
+  },
+  {
+    id: 'n21',
+    slug: 'morning-briefing-monday-19-10-france-unrest-budget-vote-and-relief-rally',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'Morning Briefing — Monday 19.10: France Burns, a Make-or-Break Budget Vote and a Relief Rally',
+    excerpt: 'France’s worst unrest in years puts Europe’s debt question front and centre, while US indices bounce on renewed peace hopes. We preview flash PMIs, UK CPI and Tuesday’s critical French budget vote.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'October 19, 2026',
+    tags: ['Macro', 'Markets', 'Europe', 'France', 'Bonds', 'Oil', 'Central Banks', 'PMIs', 'Geopolitics'],
+    dataTag: 'LIVE WIRE',
+    featured: true,
+    coverImage: '/images/news/19th-1.png',
+    body: `## Morning Briefing · Monday, October 19, 2026
+
+**Bank of England governor walks out of IMF summit in protest against Russia** — AOL
+
+MORNING
+
+Hope the weekend was enjoyed. We saw France and its cities burn over the weekend, and it looks like Europe and its economies are in trouble — indeed, the debt question is finally being queried. The bond markets have been asking that question all year!
+
+![Market chart accompanying the 19 October briefing](/images/news/19th-1.png)
+
+Monday morning and indices are posting a sea of green, with both Nasdaq and Wall Street up after Friday’s sell-off. News from Trump and others that peace is still on the cards has covered a lot of the safe-haven plays from Friday.
+
+## Europe and US Previews
+
+- **ECB's Panetta** speaks in Manila at 05:00 GMT today — watch for any signal on the October vs. December hike debate given recent Brent strength and EUR softness.
+- **Eurozone Flash PMIs (week ahead):** Manufacturing and services expected to remain in expansion but cool slightly; Germany's services PMI seen hitting an eight-month high even as ZEW sentiment slips after five consecutive gains.
+- **UK CPI (week ahead):** Consensus at 3.4% YoY (nine-month high), core at 2.7%; Rightmove data already shows mortgage affordability tightening (2Y fixed rate up to 5.55% from 5.29%), reinforcing the case for sustained BoE restrictiveness.
+- **UK Labour Market (week ahead):** Unemployment seen rising to 5.0%; wage growth expected at its weakest since 2020 — a key input for the BoE's inflation-persistence assessment.
+- **US Flash PMIs (week ahead):** Expected to show mild slowdown but resilient growth; final Michigan sentiment and housing data (permits steady ~1.40M, starts up to ~1.30M) also due.
+- **Canada CPI (week ahead):** Consensus +0.2% m/m rebound; core steady at 2.6%.
+- **US Fed communications blackout:** In effect from October 17 through October 29 (FOMC on October 28).
+
+## Asian Overview
+
+- **Australia:** RBA Assistant Governor Kent acknowledged the labour market is loosening faster than the Bank forecast, raising the hurdle for an immediate follow-up hike at the November 3 meeting.
+- **New Zealand:** The September goods trade deficit widened to NZD 1.97B (imports NZD 8.44B, exports NZD 6.47B), with annual imports rising 18% vs. exports +12% — the deterioration primarily driven by higher petroleum import costs rather than export weakness.
+- **China:** Q3 GDP expanded 4.5% YoY (consensus 4.4%, Q2: 4.3%) and 1.2% QoQ (consensus 1.0%), though cumulative 9M growth of 4.6% merely matched expectations. September activity data was firm: retail sales accelerated to 1.1% YoY (strongest since June), industrial production rose 5.5% (six-month high), and the surveyed unemployment rate fell to 5.2%. The principal weakness remains investment.
+
+## Focus Events, Mon 19th
+
+**EU Session:**
+- 06:50 — ECB Elderson (No Known Bias).
+
+**US Session:**
+- 13:00 — CAN: BBG Nanos Conf.
+- 13:30 — CAN: CPI, Core CPI.
+- 15:00 — US: NAHB Housing Market Index.
+- 15:30 — CAN: BoC Biz Outlook.
+
+**Bond Supply Events:** N/A.
+
+## News From the Trenches
+
+- China's Q3 GDP growth accelerates to 4.5%, beating estimates.
+- BoJ Governor Ueda says underlying inflation is quite close to the 2% target.
+- IMF says the BoJ may need to tighten faster if inflation exceeds forecasts.
+- Putin floats a summit with Trump and Xi to decide Ukraine's fate.
+- Zelenskyy says Trump is pushing Ukraine to capitulate to Russia.
+- Rubio says Trump may take up to 60 days to decide on Russian sanctions.
+- Oil tumbles as Trump's Russian sanctions waiver raises supply prospects.
+- France faces the aftermath of its worst unrest in years as Macron urges calm.
+- ECB's Lagarde says the bond sell-off will slow inflation.
+- Euro weakens as French protests and Russia risks weigh on sentiment.
+- US futures rise ahead of a busy earnings week.
+
+**Sources:** Earnings Whispers — Earnings Expectations, Calendar & Analysis · WSJ — Putin Floats a Summit With Trump and Xi to Discuss Ukraine Deal · CNBC — China's economic growth quickens as exports surge, stimulus rolls out · Bloomberg — Trump Pressed Ukraine to Capitulate to Russia, Zelenskyy Says · Bloomberg — Lagarde Sends Message to Putin at IMF That War Harms Prosperity · WSJ — French Leaders Trade Blame After Rioting Sweeps the Nation · Reuters — ECB's Lagarde says bond selloff will slow inflation · Reuters — Dollar firmer, euro weakens as French protests turn violent · Reuters — Oil tumbles as Trump's Russia sanctions waiver may lead to more fuel supplies · Bloomberg — Stock market today: Dow, S&P live updates
+
+## The French Fiasco Continues
+
+### The Upcoming Budget Vote & Political Stalemate
+
+The National Assembly opened debate on the revenue portion of the budget amidst chaotic political fracturing.
+
+- **The Make-or-Break Vote:** The first critical vote on the 2027 budget is scheduled for Tuesday (20 October).
+- **The Risk of Collapse:** Because the July 2024 snap elections left the parliament divided into three adversarial, uncooperative blocs (the far-right National Rally, the left-wing New Popular Front, and Lecornu’s center-right group), the government lacks a stable majority. If the opposition unites to defeat the budget or tables a successful no-confidence motion, the government could collapse.
+
+![French political stalemate and budget vote coverage](/images/news/19th-2.png)
+
+![Further coverage of the French unrest and budget risks](/images/news/19th-3.png)
+
+## Monday's Papers
+
+- **The Times:** The tough economic backdrop to John Healey’s first budget will be laid bare this week with new data set to show rising inflation, tens of billions of pounds of government borrowing and historic levels of youth joblessness.
+- **The Guardian:** British steelmakers have been pushed further behind European rivals on electricity costs after the US-Israeli war on Iran caused a surge in global gas prices.
+- **The Times:** President Macron has blamed an ‘unprecedented’ wave of violence in France on ‘ultra-left’ rebels seeking to overthrow the state as well as criminals engaged in looting.
+- **Financial Times:** Cracks are appearing in America’s debt-laden $10tn AI infrastructure boom amid project delays and a public backlash; at least 47 large datacentre projects have been delayed this year, according to RegLayer, a regulatory intelligence company.
+- **Daily Mail:** Banks are set to post bumper results as John Healey eyes a £7bn windfall tax raid on their profits in a bid to repair the public finances.
+- **The Guardian:** Profits at Condé Nast’s UK arm slumped by more than a third last year, according to figures published shortly after the billionaire family that owns the luxury magazine group and titles from Vogue to GQ ruled out a sale.
+- **Financial Times:** The City of London Corporation is considering tax rises and cuts to services as the governing body for the Square Mile tackles an expected £70m budget shortfall.
+- **The Guardian:** The development of a huge AI datacentre at Loughton in Essex hailed by the UK government has received a fresh setback after Microsoft pulled out of the project over concerns about power supplies.
+- **The Daily Telegraph:** Britain could bend its fiscal rules in the future to keep funding net zero projects amid looming Whitehall spending cuts, the Energy Secretary has suggested.
+- **The Daily Telegraph:** Toyota has warned it could scale back sales in Britain because of ‘unrealistic’ electric car targets.`,
+  },
+  {
     id: 'n20',
     slug: 'morning-briefing-saturday-17-10-reversal-yields-and-leverage-warning',
     section: 'news',
