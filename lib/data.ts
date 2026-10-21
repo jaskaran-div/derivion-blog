@@ -143,6 +143,114 @@ export const articles: Article[] = [];
 // ============================================================
 export const newsItems: NewsItem[] = sortByDateDesc([
   {
+    id: 'n23',
+    slug: 'morning-briefing-wednesday-21-10-game-of-two-halves-uk-cpi-and-bailey',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'Morning Briefing — Wednesday 21.10: A Game of Two Halves, UK CPI and a Busy Central-Bank Slate',
+    excerpt: 'Markets groaned on bad news from France before bouncing at the Wall Street bell. Chipmakers drag the Nasdaq 100, oil whipsaws on Iran headlines, and UK CPI, Bailey and Lagarde headline Wednesday.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'October 21, 2026',
+    tags: ['Macro', 'Markets', 'Inflation', 'Bonds', 'Oil', 'ECB', 'BOE', 'Equities', 'Geopolitics'],
+    dataTag: 'LIVE WIRE',
+    featured: true,
+    coverImage: '/images/news/21st-1.png',
+    body: `## Morning Briefing · Wednesday, October 21, 2026
+
+MORNING
+
+Tuesday was a game of two halves, as markets groaned on bad news in Europe — especially France — but bounced as the Wall Street bell rang in the afternoon!
+
+Shares of chipmakers led declines on the Nasdaq 100, which is on track for its sixth day of losses in the past seven sessions. The declines followed a dismal debut for South Korean neocloud Elice in Asia.
+
+Oil whipsawed, with Brent retreating after touching a five-month high as traders weighed conflicting headlines on US-Iran talks — underscoring just how vulnerable price action remains to soundbites. Gold fell as ETF flows leave a growing position imbalance. Treasuries mostly rallied along with global bond markets, though French sovereigns underperformed as protests continued. The dollar fell against all G10 peers, though the loonie's gains will confront uncertainty in the BoC tightening path.
+
+![Market chart accompanying the 21 October briefing](/images/news/21st-1.png)
+
+USTs edged lower in early Asian trade before steadying and trading in tight lower-bound ranges, with the yield curve leaning steeper. RX -17, G -26, E-minis +0.30%, WTI +1.25% @ $99.05 and Gold -0.19%. Data released Wednesday is limited to UK inflation and PPI for September, the UK house price index and US MBA mortgage apps. Central-bank speakers scheduled include ECB's Nagel, Cipollone and Lagarde and BoE's Bailey, while supply comes only from the US (20-year bond). Elsewhere, it is the third day of Italy’s dual BTP Valore deal with €8.586bn raised already, and META and TSLA release results after the market close.
+
+## Europe and US Previews
+
+### UK September CPI, 06:00 GMT
+
+Consensus expects UK headline CPI to accelerate to 3.4% y/y (prior 3.1%), with m/m at +0.3% (prior +0.5%). Core CPI is seen at 2.8% y/y (prior 2.6%) and services at 3.6% y/y (prior 3.4%).
+
+The driver is fuel: petrol prices are estimated to have risen 5.3% in September versus a 0.2% decline in the same month of 2025, creating a sharp base effect. Indirect pass-through from energy into food, core goods and services is expected to be modest but present. Bloomberg Economics sees CPI peaking at 4.1% in Q1 2027, largely on household energy bills set to rise more than 20% in January. The upstream pipeline is already flashing: PPI Input is seen at +7.6% y/y (prior 6.1%) and PPI Output at +4.4% y/y (prior 3.7%). An upside surprise, particularly in services, would complicate the BoE's November calculus and add pressure on gilts ahead of Chancellor Healey's October 28 Budget.
+
+### Central Bank Communications
+
+- **ECB Lane, 04:15 GMT (Shanghai):** The ECB's Chief Economist, Philip Lane, is set to speak early in the day, highlighting the importance of his comments regarding inflation assessment after September's unexpected CPI rise to 3.7% y/y. The anticipation centres on the upcoming meeting on October 29, with expectations of no rate hike then and a 25bp move to 2.75% anticipated in December.
+- **ECB Cipollone, 08:00 GMT (Online):** Cipollone sits at the dovish end of the Governing Council and is unlikely to move the needle on rate expectations. His focus at this online event is expected to remain on supervisory and climate-related risk themes. The December 25bp hike to 2.75% is the base case across the GC — Cipollone is not the voice that will disturb that sequencing.
+- **BoE Bailey, 13:00 GMT (Fireside Chat):** BoE Governor Andrew Bailey's upcoming fireside chat is critical, occurring just before the Chancellor's Budget announcement and the BoE's November meeting. Recent UK CPI data at 3.4% y/y offers Bailey a context for assessing future rate decisions, particularly in light of evolving fiscal conditions.
+- **ECB Lagarde, 16:00 GMT (Wiesbaden):** Lagarde's recent remarks highlighted that the ECB has not yet observed second-round effects from energy inflation, with September eurozone flash CPI at 3.7% y/y versus 3.2% prior. With an October 29 hike carrying a ~7% market probability, December remains the primary expectation. Lagarde may validate the December hike narrative or offer insights on the growth-inflation trade-off, especially in light of recent commentary about the bond market's tightening effects.
+
+### US
+
+1. **MBA Mortgage Applications (week of October 16), 11:00 GMT:** The prior reading was -2.7%. Elevated mortgage rates continue to weigh on affordability, and applications for home purchases have declined since June. No consensus estimate is available for this release, but the directional trend is clear: the Fed's September hike to 3.75–4.00% has pushed financing costs higher, and builder sentiment remains weak. Watch for any sequential improvement as a signal that the housing market is finding a floor.
+2. **US Treasury Secretary Scott Bessent, 20:45 GMT:** Bessent is slated to give an off-the-record address at the annual JPMorgan/Robin Hood Investors Conference in New York City. His recent messaging has centred on the view that high Treasury yields are a "global phenomenon" driven by the energy shock, and that the US can "very quickly" bend the debt curve through growth and spending restraint. That framing has met scepticism from the IMF, the CBO and markets. Citi expects Bessent to cut long-bond auction sizes at the next quarterly refunding. Any commentary on the fiscal trajectory, Treasury issuance or the energy shock's inflation implications will be closely watched given the 10-year yield at 5.12%.
+
+## Asian Overview
+
+- Russia opens active sabotage campaign against European infrastructure.
+- Musk orders Starlink slowdown for Ukraine; Trump draws bipartisan backlash on Russia sanctions waiver.
+- UK deploys RAF Typhoons to Saudi Arabia to counter Houthi threat.
+- Iran peace proposal triggers Brent drop of more than 3% to ~$107; diplomat denies imminent deal.
+- S&P 500 +0.28%, Dow +1.02%; Nasdaq flat as the AI trade bifurcates.
+- Treasuries twist-flatten overnight; 10-year at 5.117%; options target 5.3% by month-end.
+- Korea Exchange triggers sidecar as Kospi 200 futures surge 5.22%.
+- Bank Indonesia brings rate decision forward to 06:30 GMT; rupiah under pressure.
+- Japan's Economy Minister Katayama: no daylight between government and BoJ — wage-driven inflation is "almost there".
+- Japan exports surge 16.7% for a 13th straight month — AI chip hunger is doing the heavy lifting.
+
+## Iran, Bessent and the ZEW
+
+**Sources:** Iran is deliberately prolonging talks with the US to try to weaken President Trump ahead of the midterms. Tehran fears a new US bombing campaign; disputes over sequencing keep Iran-US talks deadlocked.
+
+**Trump on Iran:** "I must make a final decision which way to win; will be strong on budget this year. Russia would like to get it done after the latest Ukraine talks; we want Zelenskyy to make a deal."
+
+US Treasury Secretary Bessent said he doesn't anticipate a spillover from the French bond market: "I don't anticipate a spillover from what's happening in France. The French have a tough hand, but President Macron's economic team, whom I know very well, are first rate." (Currently, most bond traders disagree!)
+
+Germany's ZEW indicator of economic sentiment fell to 28.1 in October, down from September's seven-month high of 34.7 and below expectations of 30. This reflects renewed concerns over the strength of the recovery.
+
+## News From the Trenches
+
+- Witkoff to present Putin peace proposal after Zelenskyy talks.
+- Iran FM: Strait of Hormuz to remain closed until an agreement is reached.
+- Israeli PM Netanyahu pushes to resume Israeli strikes against Iran.
+- ECB's Lane: greater global euro use may help the ECB control inflation.
+- BoE's Greene calls for a November rate hike as UK wage pressures persist.
+- BoJ seen raising rates to 1.5% in December, maintaining its quarterly pace.
+- Goldman now sees the RBA raising rates by 25bp to 4.85% in November.
+- Netflix revenue growth slows as it overhauls programming units.
+- SpaceX profit beats estimates on a big jump in AI business revenue.
+
+![Additional market coverage from the 21 October briefing](/images/news/21st-2.png)
+
+**Sources:** Bloomberg — BoE’s Greene Says UK Labor Market Is Not as Weak as Thought · Reuters — Australian central banker says inflation outlook worse, unsure about November rate hike · Japan exports post huge miss in September as growth slows to 16.7% · POLITICO — US to offer Putin face-to-face talks with Zelenskyy and Trump · Mehr News Agency — US, Iran give approval to new proposal, Arab media claim · Bloomberg — Zelenskyy Touts Positive US Talks as Trump Puts Pressure on Kyiv · Bloomberg — Lane Says Greater Global Euro Use May Help ECB Control Inflation · WSJ — Treasury Yields Fall Amid Fed’s Blackout Period, Lower Oil Prices · Bloomberg — Gold Steadies as Conflicting Iran Signals Cloud Path for Rates · Reuters — Netflix co-CEO Sarandos says 'we could do better' after weak forecast · FXStreet — Bitcoin resumes Nasdaq correlation as macro pressures threaten $82,500 support
+
+## Focus Events, Wed 21st
+
+**EU Session:**
+- 07:00 — UK: CPI, Core CPI, RPI, PPI Output/Input.
+- 09:00 — ECB Cipollone (Dove).
+- 09:30 — UK: House Price Index.
+- 10:00 — EUR: Govt Debt/GDP Ratio.
+- 14:00 — BoE Bailey (Dove).
+- 17:00 — ECB Lagarde (No Known Bias).
+
+**US Session:**
+- 12:00 — US: MBA Mortgage Applications.
+- 15:30 — US: DoE Crude Inventories.
+
+**Bond Supply Events:**
+- 18:00 — US: 20y Bond $13.00BN (Equiv US 121k).`,
+  },
+  {
     id: 'n22',
     slug: 'morning-briefing-tuesday-20-10-france-budget-vote-short-oat-long-bunds',
     section: 'news',
