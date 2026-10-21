@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import { getNewsCategories } from '@/lib/newsCategories';
 import Image from 'next/image';
 import Link from 'next/link';
 import { newsItems } from '@/lib/data';
@@ -229,9 +230,11 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
             <div style={{ background: 'var(--navy-deep)', padding: 'clamp(24px,4vw,40px)', color: '#ffffff' }}>
               {/* Category + Tag */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.15)', color: '#93c5fd', padding: '4px 12px', borderRadius: '999px' }}>
-                  {item.category}
-                </span>
+                {getNewsCategories(item).map(category => (
+                  <span key={category} style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.15)', color: '#93c5fd', padding: '4px 12px', borderRadius: '999px' }}>
+                    {category}
+                  </span>
+                ))}
                 {item.dataTag && (
                   <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.1em', background: '#2563eb', color: '#ffffff', padding: '4px 10px', borderRadius: '999px', display: 'flex', alignItems: 'center', gap: '5px' }}>
                     <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#7dd3fc', display: 'inline-block', animation: 'pulse 1.5s infinite' }} />

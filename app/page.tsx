@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { getNewsCategories } from '@/lib/newsCategories';
 import Image from 'next/image';
 import Link from 'next/link';
 import { blogs, newsItems } from '@/lib/data';
@@ -56,7 +57,7 @@ export default function HomePage() {
             </Link>
             <div className="home-feature-copy">
               <div className="home-meta-line">
-                <span className="home-category">{featuredNews.category}</span>
+                <span className="home-category">{getNewsCategories(featuredNews).join(' · ')}</span>
                 <span>{featuredNews.date}</span>
               </div>
               <h2>{featuredNews.title}</h2>
@@ -94,7 +95,7 @@ export default function HomePage() {
                 </div>
                 <div className="home-dispatch-copy">
                   <div className="home-meta-line">
-                    <span className="home-category">{item.category}</span>
+                    <span className="home-category">{getNewsCategories(item).join(' · ')}</span>
                     <span>{item.date}</span>
                   </div>
                   <h3>{item.title}</h3>

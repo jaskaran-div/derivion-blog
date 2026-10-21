@@ -5,25 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { NewsItem } from '@/lib/data';
 import Pagination from '@/components/Pagination';
+import { newsCategories as categories, matchesCategory, getNewsCategories, type NewsCategory } from '@/lib/newsCategories';
 
-const categories = ['All Feeds', 'Macro Policy', 'Regulatory Briefs', 'Risk Infrastructure', 'Market Watch'] as const;
-type NewsCategory = typeof categories[number];
 const ITEMS_PER_PAGE = 8;
-
-const categoryTags: Record<Exclude<NewsCategory, 'All Feeds'>, string[]> = {
-  'Macro Policy': ['Macro'],
-  'Regulatory Briefs': ['Fed', 'Federal Reserve', 'ECB', 'RBA', 'BOE', 'SNB', 'RBI', 'SEBI'],
-  'Risk Infrastructure': ['Risk', 'Global Risk'],
-  'Market Watch': ['Markets', 'Market Outlook', 'Equities', 'Oil', 'Bitcoin', 'FX', 'Treasuries', 'Bonds', 'Gold', 'Dollar'],
-};
-
-function matchesCategory(item: NewsItem, category: NewsCategory): boolean {
-  if (category === 'All Feeds') return true;
-  if (category === 'Macro Policy' && item.category === category) return true;
-
-  const expectedTags = categoryTags[category].map(tag => tag.toLowerCase());
-  return item.tags.some(tag => expectedTags.includes(tag.toLowerCase()));
-}
 
 export default function NewsFeed({ items }: { items: NewsItem[] }) {
   const [activeCategory, setActiveCategory] = useState<NewsCategory>('All Feeds');
@@ -78,22 +62,27 @@ export default function NewsFeed({ items }: { items: NewsItem[] }) {
                   }}
                 >
                   <div style={{ background: isLead ? 'linear-gradient(180deg, #f59e0b, #d97706)' : 'var(--ochre)', flexShrink: 0 }} />
-                  <div style={{ padding: 'clamp(20px,3vw,30px)' }}>
+                  <div className={`news-card-body${item.coverImage ? ' has-thumb' : ''}`}>
                     {item.coverImage && (
-                      <div style={{ position: 'relative', aspectRatio: '16 / 7', overflow: 'hidden', borderRadius: 'var(--radius-md)', marginBottom: '20px' }}>
+                      <div className="news-card-thumb">
                         <Image
                           src={item.coverImage}
                           alt={`${item.title} cover image`}
                           fill
-                          sizes="(max-width: 768px) 100vw, 760px"
+                          sizes="(max-width: 640px) 100vw, 240px"
                           style={{ objectFit: 'cover' }}
                         />
                       </div>
                     )}
+                    <div style={{ minWidth: 0 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px', flexWrap: 'wrap' }}>
-                      <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--ochre-dark)', background: 'var(--ochre-bg)', border: '1px solid var(--ochre-border)', padding: '3px 10px', borderRadius: '999px' }}>
-                        {item.category}
-                      </span>
+                      {getNewsCategories(item)
+                        .sort((a, b) => Number(b === activeCategory) - Number(a === activeCategory))
+                        .map(category => (
+                          <span key={category} style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--ochre-dark)', background: category === activeCategory ? 'var(--ochre-border)' : 'var(--ochre-bg)', border: '1px solid var(--ochre-border)', padding: '3px 10px', borderRadius: '999px' }}>
+                            {category}
+                          </span>
+                        ))}
                       {item.dataTag && (
                         <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.08em', color: '#fff', background: '#1d4ed8', padding: '3px 10px', borderRadius: '999px', display: 'flex', alignItems: 'center', gap: '5px' }}>
                           <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#7dd3fc', display: 'inline-block' }} />
@@ -135,6 +124,7 @@ export default function NewsFeed({ items }: { items: NewsItem[] }) {
                       </div>
                       <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--ochre-dark)' }}>Read Dispatch →</span>
                     </div>
+                    </div>
                   </div>
                 </article>
               </Link>
@@ -160,6 +150,31 @@ export default function NewsFeed({ items }: { items: NewsItem[] }) {
         .news-list-card:hover {
           box-shadow: var(--shadow-hover) !important;
           transform: translateY(-2px);
+        }
+        .news-card-body {
+          padding: clamp(18px, 2.5vw, 26px);
+        }
+        .news-card-body.has-thumb {
+          display: grid;
+          grid-template-columns: 240px 1fr;
+          gap: 22px;
+          align-items: start;
+        }
+        .news-card-thumb {
+          position: relative;
+          aspect-ratio: 4 / 3;
+          overflow: hidden;
+          border-radius: var(--radius-md);
+          background: #f1f5f9;
+        }
+        @media (max-width: 640px) {
+          .news-card-body.has-thumb {
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+          .news-card-thumb {
+            aspect-ratio: 16 / 7;
+          }
         }
       `}</style>
     </>
