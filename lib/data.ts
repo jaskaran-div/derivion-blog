@@ -143,6 +143,87 @@ export const articles: Article[] = [];
 // ============================================================
 export const newsItems: NewsItem[] = sortByDateDesc([
   {
+    id: 'n24',
+    slug: 'morning-briefing-thursday-22-10-earnings-or-the-middle-east-war',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'Morning Briefing — Thursday 22.10: Earnings or the Middle East War?',
+    excerpt: 'Wednesday’s rally proves short-lived as the Nasdaq and Nikkei slide on reports of US embassy departures in the Middle East. Jobless claims, ECB speakers and a busy Asian central-bank slate headline Thursday.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'October 22, 2026',
+    tags: ['Macro', 'Markets', 'Equities', 'Oil', 'Gold', 'Treasuries', 'ECB', 'Geopolitics'],
+    dataTag: 'LIVE WIRE',
+    featured: true,
+    coverImage: '/images/news/22nd.png',
+    body: `## Morning Briefing · Thursday, October 22, 2026
+
+MORNING
+
+Wednesday's rally in indices has been short-lived: Thursday morning we see markets off, with the Nasdaq off 400 pips and the Nikkei down 1,400, partly on the rumor that the US was removing staff from embassies in the Middle East — later toned down to Saudi Arabia only.
+
+The question we ask: are we following earnings or the Middle East war? My money is on the explosions!
+
+We have noticed markets are moving at different times of the day: early morning around 1am UK time, again at 3pm, and just in time for supper a move around 6pm... Any trader will tell you timing is key to a day trader's P&L.
+
+On Wednesday we witnessed strong results from SpaceX and saw the Nasdaq rise 1.4% and chipmakers gain 2.3%. US equity breadth was less convincing, with several sectors lower despite solid index-level gains. Treasuries were little changed, even as the 20-year auction tailed and stopped at the highest yield since 2020. Geopolitical risks shifted modestly towards diplomacy as Russia signaled a willingness to resume Ukraine talks and Iran reiterated conditions for negotiations with the US. Oil's geopolitical premium remains elevated, though Middle East crude flows are proving more resilient than the rise in shipping attacks might imply. Gold was slightly higher but was hit on news of American embassy staff leaving the Middle East.
+
+Not much out on Thursday in terms of figures, but it is normally our busiest day of the week and I suspect this afternoon will be punchy.
+
+## Europe and US Previews
+
+- **Eurozone:** Preliminary October consumer confidence: consensus -17.0 (prior -16.5), a second straight decline signalling deepening household caution.
+- **Central-bank speakers:** ECB's Kocher (09:30 GMT) is expected to reaffirm the December 25bp hike narrative; Riksbank's Jansson (13:00 GMT) is pivotal for SEK ahead of a November hike; ECB's Panetta (14:15 GMT) stays cautious on the growth-inflation trade-off; BdP's Pereira and BdE's Escrivá (16:00 GMT) focus on Iberian structural themes with limited rate signal.
+- **US:** Initial jobless claims: consensus 200k (prior 199k), with continuing claims seen at 1,710k; Conference Board Leading Index: consensus -0.1% m/m, a second straight flat decline; Kansas City Fed manufacturing activity: consensus 12 (prior 14), though Bloomberg sees a rise to 15 on data-center and defense demand.
+
+## Asian Overview
+
+- **Japan:** A Bloomberg survey shows 83% of BOJ watchers now expect the next hike at the December 18 meeting (up from 35% last month), with all 53 respondents forecasting a hold on October 30; USD/JPY holds near 158.10 as the Nikkei falls ~0.5% on mixed US megacap earnings.
+- **Australia:** RBA Deputy Governor Hauser described the policy juncture as a "central bankers' nightmare," warning some businesses now treat 3-3.5% as a new inflation floor; surging cocoa prices (above $5,600/tonne) are flagged as a more persistent inflation risk than energy.
+- **New Zealand:** Q3 CPI printed at +3.7% y/y, below consensus and the RBNZ's own 3.9% forecast, driven partly by lower fuel prices; Westpac still expects a 25bp hike to 3.00% at the October 28 meeting, with inflation seen re-accelerating above 4% by year-end; NZD/USD slipped to 0.5691 on the release.
+- **China:** The PBOC injected a net CNY 48bn via 7-day reverse repo, up from CNY 24bn Wednesday; equities fell broadly (CSI 300 -1.2%, Hang Seng -1.8%), with Bloomberg Intelligence cautioning that state-backed buying may be insufficient to sustain a recovery.
+- **South Korea:** The BOK held its repo rate at 3.00% after two consecutive hikes, maintaining a tightening bias as Governor Shin flagged concerns over rising chip prices; 2026-27 growth forecasts were upgraded on exports and investment.
+- **ASEAN:** The Philippines' BSP is expected to hike 25bp to 5.25% today, a fourth consecutive increase on El Niño-driven food inflation; Indonesia's BI held at 5.75% while cutting the reserve requirement ratio, raising rupiah weakness risk amid an MSCI downgrade proposal; the SGD is gaining traction as a carry-trade funding currency following MAS's surprise hold.
+
+## News from the Trenches
+
+- US and Israel draw up plans for renewed strikes on Iran after the midterms.
+- Putin agrees to trilateral talks with Ukraine; US to end war.
+- Ukraine's Zelenskyy says he supports a ceasefire and trilateral talks.
+- IRGC says it is preparing to unveil the "Mother of All Bombs".
+- Reports say Pakistan's army chief Munir relayed a US warning to Tehran.
+- US State Department ordered departures for non-emergency US government employees and their family members in Saudi Arabia only.
+
+**Sources:** Bloomberg — BOJ Seen Raising Interest Rates in December as Most Economists Forecast Hike · Reuters · The New York Times — US, Israel plan renewed Iran strikes · NBC News — US troops, diplomats evacuating Middle East posts, sources say · Reuters — Dip: dollar takes breather with Fed focus · Bloomberg — Latest Oil Market News and Analysis for Oct. 22 · Bloomberg — Gold edges lower as traders weigh Mideast signals, Fed rate path · Bloomberg — Stock market today: Dow, S&P live updates
+
+I will be here Friday afternoon for a look and chatter.
+
+![Market chart accompanying the 22 October briefing](/images/news/22nd.png)
+
+## Focus Events, Thu 22nd
+
+**EU Session:**
+- 07:45 — FRA: Biz/Mfg Conf.
+- 10:30 — ECB Kocher (NV, Hawk).
+- 11:00 — UK: CBI Ind Trends.
+- 15:15 — ECB Panetta (Super Dove).
+- 17:00 — ECB Pereira (No Known Bias).
+
+**US Session:**
+- 13:00 — CAN: CFIB Biz Barometer.
+- 13:30 — CAN: Ind Product Price.
+- 13:30 — US: Initial Jobless.
+- 15:00 — US: CB Leading Index.
+- 16:00 — US: Kansas Fed Mfg Index.
+
+**Bond Supply Events:**
+- 17:00 — CAN 2y GCAN CAN$5.50BN (Equiv TY 17k).`,
+  },
+  {
     id: 'n23',
     slug: 'morning-briefing-wednesday-21-10-game-of-two-halves-uk-cpi-and-bailey',
     section: 'news',
