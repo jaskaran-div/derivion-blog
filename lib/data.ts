@@ -144,6 +144,134 @@ export const articles: Article[] = [];
 export const newsItems: NewsItem[] = sortByDateDesc([
   {
     id: 'n24',
+    slug: 'morning-briefing-friday-23-10-ai-unwind-yields-below-5-and-brent-at-113',
+    section: 'news',
+    category: 'Macro Policy',
+    title: 'Morning Briefing — Friday 23.10: AI Unwind, 10-Year Yields Below 5% and Brent at $113',
+    excerpt: 'A massive Thursday saw bond yields post their biggest drop in over a year, the SOX slide 6% and Meta fall nearly 8% as Brent zoomed to $113. We preview flash PMIs, UK retail sales and Michigan sentiment.',
+    author: {
+      name: 'The Hedge Front / ISFT',
+      initials: 'HF',
+      role: 'Market Intelligence Desk',
+      bureau: 'Global Macro Bureau',
+    },
+    date: 'October 23, 2026',
+    tags: ['Macro', 'Markets', 'Equities', 'Bonds', 'Oil', 'Gold', 'ECB', 'Fed', 'PMIs', 'Geopolitics'],
+    dataTag: 'LIVE WIRE',
+    featured: true,
+    coverImage: '/images/news/common-pic-news.png',
+    body: `## Morning Briefing · Friday, October 23, 2026
+
+MORNING
+
+*"We do not do our asses on a Friday as it ruins the weekend!"*
+
+Thursday was a massive day in most markets, and whether it was down to geopolitical risk or a worry in AI stocks, we saw volatility in most markets. Going into the weekend, most traders will want to have a flat book, and I think we saw some of that action yesterday.
+
+Friday morning and markets are unchanged from the Wall Street close, despite the huge storms that kept us awake in the UK last night.
+
+![Markets briefing illustration for 23 October](/images/news/common-pic-news.png)
+
+On Thursday we saw bond yields fall by double-digit basis points — their biggest declines in more than a year — and stocks dropped in a risk-off move as semiconductors were ensnared in a cross-market unwind. Haven currencies outperformed and emerging markets took a beating, even with higher oil prices. Bitcoin got walloped 4%. Yields on the benchmark 10-year note fell below 5% for the first time in nearly a month, amid a more than 3% drop in the Nasdaq 100 and a 6%+ decline in the SOX index, led by AI-exposed stocks. Shares of Meta dropped nearly 8% as surging AI capital expenditures and uncertain returns became the new test for the trade, keeping the financing maths in doubt.
+
+The VIX halted a three-day downtrend to trade near 20. The dollar fell, and the yen and Swiss franc were among the outperformers. Brent oil zoomed to $113 a barrel, the highest since May (thank God I got a motorbike!), amid reports the US and Israel are drawing up plans for renewed strikes on Iran.
+
+Remember, both ECB and Fed members are currently in blackout before their meetings next week — hence the silence!
+
+**Trump:** "Iran is doing everything it can to drive up the price of oil prior to the US midterm election. They are even making fake hits, mines and everything else, because oil is coming through the Strait of Hormuz more now than it did before the conflict started. It is truly an evil regime."
+
+**Netanyahu:** "I will not ask Trump for the green light to strike Iran."
+
+**Iran Army Chief:** Prepared for asymmetric warfare and have the equipment required.
+
+**The only position we have is short OATs and long German Bunds, which we have held for over a week now.**
+
+Gold declined to the lowest in more than two months as escalating Middle East hostilities sent oil surging ahead of the Fed rate meeting, while a sell-off in equities added to broader market volatility. The shiny stuff fell as much as 2.3% to trade below $4,050 an ounce.
+
+**France President Macron:** Seditious ultra-left-wing groups were behind Saturday's riots and planned to bring down the Republic; will ban protests not organised by unions in the coming days. (I thought the French were allowed to protest!)
+
+## Europe and US Previews
+
+### UK September Retail Sales, 06:00 GMT
+
+Consensus: -0.2% m/m (prior +0.5%) / +1.0% y/y (prior +2.4%). Ex-fuel: -0.1% m/m (prior +0.6%) / +1.4% y/y (prior +2.7%).
+
+The sequential deterioration is the story — the prior month's +0.5% m/m print was already flagged as a potential high-water mark given the energy cost backdrop, and September's expected reversal would confirm that UK consumers are beginning to pull back as higher fuel costs and mortgage repricing erode real purchasing power. The y/y deceleration from +2.4% to +1.0% is sharp and, if confirmed, will reinforce the stagflationary framing that has dominated UK macro commentary since September's CPI print (3.4% y/y, services 3.6%). A downside surprise would lean sterling-negative and add complexity to the BoE's November calculus — the 6-3 hold vote is already under pressure from Lombardelli's recent hawkish lean, and weak retail data would argue against a near-term hike even as inflation accelerates.
+
+### France, Germany, Eurozone, UK Flash PMIs, 07:15–08:30 GMT
+
+The October flash PMIs are the most important data cluster of the day and the last major activity read before the ECB's October 29 meeting.
+
+Germany is the standout — manufacturing consensus of 54.0 (prior 53.9) would mark a continued expansion in the bloc's industrial engine, supported by defence and infrastructure spending. The Eurozone composite at 53.1 would represent a modest step-down from 53.0 but remains comfortably expansionary. For the ECB, PMIs holding above 50 across the board reduce the urgency of any dovish pivot — a December 25bp hike to 2.75% remains the base case. A sharp downside miss in services (the stickier inflation driver) would be the most market-moving outcome, as it would raise questions about whether the energy shock is beginning to bite into domestic demand more broadly.
+
+ECB quiet period in effect (October 22–28).
+
+### North America
+
+- **US Flash PMIs (October), 13:45 GMT:** Consensus: Manufacturing 55.6 (prior 55.9) / Services 57.9 (prior 58.8) / Composite 58.4. The US PMI picture remains dramatically stronger than Europe — a composite near 58 would underscore the US exceptionalism narrative that has kept the Fed on a hiking path while other central banks debate the growth-inflation trade-off. Services deceleration from 58.8 to 57.9 is the key watch: any reading below 57 would attract attention given the Fed's sensitivity to demand-side inflation drivers. The gap between US and European composites (~5 points) is itself a macro signal — it supports USD strength and argues against any near-term Fed pivot. Watch for the prices-paid subcomponents, which have been running hot and will be read directly into the November FOMC calculus.
+- **US University of Michigan Consumer Sentiment (October Final), 14:00 GMT:** Consensus: 46.3 (prior 46.3). 1-year inflation expectations: 4.7% (prior 4.7%). 5-year inflation expectations: 3.5% (prior 3.5%). An unchanged final reading would confirm that the preliminary print, already at historically depressed levels, has stabilised rather than deteriorated further. The inflation expectations components are the Fed's primary focus: 5-year expectations at 3.5% remain well above the 2% target and above the pre-Hormuz baseline, keeping the December hike narrative intact. A surprise uptick in either inflation expectations measure would be the most hawkish outcome for rates markets.
+- **Canada August Retail Sales, 12:30 GMT:** Consensus: +1.3% m/m (prior -0.7%) / ex-autos +1.0% m/m (prior -0.7%). A sharp rebound from July's weakness; if confirmed, it would ease concerns about Canadian consumer resilience and reduce pressure on the BoC to pivot. Limited direct market impact for European readers but relevant for CAD positioning.
+
+## Asian Overview
+
+### Japan
+
+- September national CPI (ex-fresh food) at +2.1% y/y is in line with consensus and up sharply from +1.7% in August, marking the first reading above the BoJ's 2% target this year and reinforcing the case for a December rate hike. The broader ex-fresh food, ex-energy measure came in at +2.4% y/y, a touch above the +2.3% estimate.
+- October flash PMIs were mixed: manufacturing eased to 53.3 (from 54.1, lowest since March) on softer new orders and output, while services ticked up to 52.0 (from 51.3), leaving the composite unchanged at 52.3. Separately, JGB yields are rallying sharply in a flight-to-safety bid; the 10-year fell more than 10bp to 2.76%, with the 4% handle on the long end no longer available on-the-run; USD/JPY is approaching the 155 handle.
+- Growth policy minister Kiuchi cautioned that any government declaration of an end to deflation requires careful consideration of underlying price trends, declining to comment on whether such a declaration would alter the BoJ-government joint statement framework.
+
+### Australia
+
+- October flash composite PMI fell sharply to 47.7 (from 51.3 in September), the lowest since March, driven by higher prices and rising interest rates — the first contractionary reading in several months and a potential complication for the RBA's November rate decision, which markets currently price as a coin toss.
+- Treasurer Chalmers signalled that growth will likely undershoot the 1.75% forecast in the May budget, with the mid-year budget review in December expected to incorporate softer growth and slightly higher unemployment projections.
+
+### New Zealand
+
+- ANZ Bank revised its RBNZ call, now expecting rate hikes at each of the next three meetings (starting October 28), removing a previously anticipated December pause; the revision follows firmer-than-expected Q3 core inflation data and an upward revision to the Q4 CPI forecast to 4.5%. ASB Bank similarly now sees the OCR reaching 3.5% by February 2027.
+- Market-implied probability of a hike at the October 28 meeting stands at ~88%, with over 20bp priced; the RBNZ OCR is currently at 2.75%.
+
+### China
+
+- The PBOC conducted a net CNY25bn reverse repo injection this morning, maintaining stable interbank liquidity conditions ahead of the weekend.
+- A PBOC official speaking at the Financial Street Forum 2026 in Beijing reiterated that RMB internationalisation is market-driven and anchored in serving the real economy, with no indication of a shift in the pace or framework of the process.
+
+### ASEAN
+
+- Fitch downgraded Pos Indonesia's notes to default following a missed coupon payment, adding to sovereign-adjacent credit stress in the region. Indonesia is separately reported to be eyeing a $1.5 billion Panda bond issuance as it navigates MSCI index inclusion risk.
+- Private home prices in Singapore increased by 1.4% in Q3 2026, the highest since Q4 2024, with landed property prices climbing 2.9% and non-landed prices rebounding 1.0%. Private residential rents also grew by 1.3%, the largest gain in over three years. The government plans to maintain a high housing supply, with 9,320 units on the 2026 Confirmed List, exceeding the 10-year average by more than 50%.
+
+## News From the Trenches
+
+- ECB set to raise rates in December after pause, economists say.
+- US is prepared for a long stand-off with Iran, says Trump envoy.
+- Yen hits one-month high as tech rout revives haven appeal.
+- Putin says peace talks must address the security of Russia, Ukraine and Europe.
+- Oil holds biggest weekly gain as Saudi attacks renew supply fears.
+- UK consumer confidence in slump as big as Brexit shock, GfK says.
+- Japan's September inflation rises to 2.1%, above the BoJ target.
+
+**Sources:** Bloomberg — UK Consumer Confidence in Slump as Big as Brexit Shock, GfK Says · Reuters — Japan's core inflation exceeds BOJ target, cements near-term rate hike chance · Bloomberg — Russia looking to escalate war, not end it, Romanian leader says · Bloomberg — ECB set to raise rates in December after pause, economists say · Reuters — France's Macron tightens curbs on protests, blaming hard-left unrest · Bloomberg — Traders Pay Record Premiums to Hedge Against Further Treasuries Rally · Bloomberg — Yen hits one-month high as US tech rout revives haven appeal · Bloomberg — Gold Dips Below $4,000 as Deepening Stock Rout Fuels Volatility · Bloomberg — Latest oil market news and analysis for Oct. 23 · FXStreet — Bitcoin falls 4% as chip stocks plunge and oil surges
+
+## Focus Events, Fri 23rd
+
+**EU Session:**
+- 07:00 — UK: Retail Sales.
+- 08:15 — FRA: Mfg/Serv/Comp PMI.
+- 08:30 — GER: Mfg/Serv/Comp PMI.
+- 09:00 — EUR: Mfg/Serv/Comp PMI, 1y & 3y CPI expectations.
+- 09:30 — UK: Mfg/Serv/Comp PMI.
+- 15:00 — ECB Cipollone (Dove).
+
+**US Session:**
+- 11:00 — US: BBG Eco Survey.
+- 13:00 — CAN: BBG Eco Survey.
+- 13:30 — CAN: Retail Sales.
+- 14:45 — US: Mfg/Serv/Comp PMI.
+- 15:00 — US: Uni Mich Sentiment, 1y & 5-10y inflation expectations.
+- 16:00 — US: Kansas City Fed Services.`,
+  },
+  {
+    id: 'n24',
     slug: 'morning-briefing-thursday-22-10-earnings-or-the-middle-east-war',
     section: 'news',
     category: 'Macro Policy',
