@@ -3,7 +3,12 @@ import { getNewsCategories } from '@/lib/newsCategories';
 import Image from 'next/image';
 import Link from 'next/link';
 import { newsItems } from '@/lib/data';
+import { fetchMarketSnapshot, formatSnapshotTime, sourceSummary, toMarketLevels } from '@/lib/marketSnapshot';
 import type { Metadata } from 'next';
+
+// Cache the page snapshot for 12 hours; the market snapshot fetch (5 minutes) shortens
+// this so the sidebar follows the backend's scheduled updates.
+export const revalidate = 43200;
 
 interface Params { slug: string; }
 
@@ -193,10 +198,15 @@ function renderMarkdown(md: string): React.ReactNode[] {
   return nodes;
 }
 
+
 export default async function NewsDetailPage({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
   const item = newsItems.find(n => n.slug === slug);
   if (!item) notFound();
+  const marketSnapshot = await fetchMarketSnapshot();
+  const marketLevels = toMarketLevels(marketSnapshot);
+  const marketStatus = marketSnapshot?.status ?? 'unavailable';
+  const marketUpdatedAt = formatSnapshotTime(marketSnapshot?.snapshotUpdatedAt ?? null);
 
   return (
     <div style={{ background: 'var(--bg-page)', minHeight: '100vh', padding: '36px 0 80px' }}>
@@ -304,23 +314,83 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
                 <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#2563eb', display: 'inline-block' }} />
                 KEY MARKET LEVELS
               </div>
+              {marketStatus !== 'ok' && (
+                <div style={{ fontSize: '9.5px', fontWeight: 600, color: marketStatus === 'partial' ? '#64748b' : '#b45309', marginBottom: '10px' }}>
+                  {marketStatus === 'unavailable'
+                    ? 'Market data is currently unavailable.'
+                    : marketStatus === 'stale'
+                      ? 'Stale: the scheduled update has not succeeded recently.'
+                      : 'Some values are unavailable or could not be refreshed.'}
+                </div>
+              )}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {[
-                  { label: '2Y Treasury Yield', value: '4.72%', change: '+2bps from high', up: false },
-                  { label: 'Brent Crude', value: '$105.70', change: 'Recovered', up: true },
-                  { label: 'Gold (XAU)', value: '~$4,300', change: 'Modestly +ve', up: true },
-                  { label: 'WTI Crude', value: '>$102', change: 'Recovered', up: true },
-                  { label: 'S&P 500 Futures', value: '+0.5%+', change: 'Rebounding', up: true },
-                  { label: 'Oct Hike Prob.', value: '50%', change: 'Money Markets', up: false },
-                ].map((item, i) => (
-                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '8px', borderBottom: i < 5 ? '1px solid #f1f5f9' : 'none' }}>
-                    <div style={{ fontSize: '11px', color: '#475569' }}>{item.label}</div>
-                    <div style={{ textAlign: 'right' }}>
-                      <div style={{ fontSize: '12px', fontWeight: 800, color: '#0f172a' }}>{item.value}</div>
-                      <div style={{ fontSize: '9.5px', color: item.up ? '#16a34a' : '#dc2626', fontWeight: 600 }}>{item.change}</div>
+                {marketLevels.map((marketItem, i) => {
+                  const isUnavailable = marketItem.up === null;
+
+                  return (
+                    <div
+                      key={marketItem.id}
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        gap: '12px',
+                        paddingBottom: '8px',
+                        borderBottom:
+                          i < marketLevels.length - 1
+                            ? '1px solid #f1f5f9'
+                            : 'none',
+                      }}
+                    >
+                      <div style={{ fontSize: '11px', color: '#475569' }}>
+                        {marketItem.label}
+                      </div>
+
+                      <div style={{ textAlign: 'right' }}>
+                        <div style={{ fontSize: '12px', fontWeight: 800, color: '#0f172a' }}>
+                          {marketItem.value}
+                        </div>
+
+                        <div
+                          style={{
+                            fontSize: '9.5px',
+                            color: isUnavailable
+                              ? '#64748b'
+                              : marketItem.up
+                                ? '#16a34a'
+                                : '#dc2626',
+                            fontWeight: 600,
+                          }}
+                        >
+                          {marketItem.change}
+                        </div>
+
+                        {marketItem.dataDate && (
+                          <div style={{ fontSize: '9px', color: marketItem.stale ? '#b45309' : '#94a3b8', marginTop: '3px' }}>
+                            Data date: {marketItem.dataDate}
+                            {marketItem.sourceStatus === 'provisional' ? ' · provisional' : ''}
+                            {marketItem.stale ? ' · stale' : ''}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
+
+                <div style={{ fontSize: '9px', color: '#64748b', paddingTop: '4px' }}>
+                  Source:{' '}
+                  <a
+                    href="https://snapdata.dev/docs/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: '#2563eb' }}
+                  >
+                    SnapData
+                  </a>
+                  {sourceSummary(marketSnapshot)}
+                  {' · '}Daily closing and benchmark values, not live quotes.
+                  {marketUpdatedAt && <> Snapshot updated {marketUpdatedAt}.</>}
+                </div>
               </div>
             </div>
 
