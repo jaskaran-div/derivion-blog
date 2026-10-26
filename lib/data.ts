@@ -401,7 +401,7 @@ ECB quiet period in effect (October 22–28).
 - 16:00 — US: Kansas City Fed Services.`,
   },
   {
-    id: 'n24',
+    id: 'n23',
     slug: 'morning-briefing-thursday-22-10-earnings-or-the-middle-east-war',
     section: 'news',
     category: 'Macro Policy',
