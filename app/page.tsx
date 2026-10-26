@@ -3,6 +3,7 @@ import { getNewsCategories } from '@/lib/newsCategories';
 import Image from 'next/image';
 import Link from 'next/link';
 import { blogs, newsItems } from '@/lib/data';
+import MarketChartsSection from '@/components/MarketChartsSection';
 
 export const metadata: Metadata = {
   title: 'DerivionAcademy.in - The Hedge Front & Quantitative Intelligence',
@@ -72,6 +73,8 @@ export default function HomePage() {
             </div>
           </section>
         )}
+
+        <MarketChartsSection />
 
         <section aria-labelledby="home-dispatches-title" className="home-dispatches">
           <div className="home-section-heading home-dispatches-heading">
