@@ -1,14 +1,18 @@
 import Link from 'next/link';
-import { newsItems } from '@/lib/data';
+import { getAllNewsItems } from '@/lib/autoNews';
 import NewsFeed from '@/components/NewsFeed';
 import type { Metadata } from 'next';
+
+// Automated posts from the backend appear within five minutes, without a rebuild.
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: 'News & Insights | DerivionAcademy.in',
   description: 'Real-time regulatory dispatches, central bank communications, and systemic market intelligence from the ISFT research desk.',
 };
 
-export default function NewsPage() {
+export default async function NewsPage() {
+  const newsItems = await getAllNewsItems();
   return (
     <div style={{ background: 'var(--bg-page)', minHeight: '100vh', padding: '36px 0 80px' }}>
       <div className="container">

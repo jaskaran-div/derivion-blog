@@ -3,18 +3,21 @@ import { getNewsCategories } from '@/lib/newsCategories';
 import Image from 'next/image';
 import Link from 'next/link';
 import { newsItems } from '@/lib/data';
+import { findNewsItem } from '@/lib/autoNews';
 import { fetchMarketSnapshot, formatSnapshotTime, sourceSummary, toMarketLevels } from '@/lib/marketSnapshot';
 import type { Metadata } from 'next';
 
 // Cache the page snapshot for 12 hours; the market snapshot fetch (5 minutes) shortens
 // this so the sidebar follows the backend's scheduled updates.
 export const revalidate = 43200;
+// Curated slugs are prerendered; automated (database) slugs render on first request.
+export const dynamicParams = true;
 
 interface Params { slug: string; }
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params;
-  const item = newsItems.find(n => n.slug === slug);
+  const item = await findNewsItem(slug);
   if (!item) return { title: 'Not Found' };
   return {
     title: item.title,
@@ -229,8 +232,10 @@ function renderMarkdown(md: string): React.ReactNode[] {
 
 export default async function NewsDetailPage({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
-  const item = newsItems.find(n => n.slug === slug);
+  const item = await findNewsItem(slug);
   if (!item) notFound();
+  // Automated posts carry HTML the backend already sanitized; it is rendered as-is, not as Markdown.
+  const bodyHtml = 'bodyHtml' in item ? item.bodyHtml : undefined;
   const marketSnapshot = await fetchMarketSnapshot();
   const marketLevels = toMarketLevels(marketSnapshot);
   const marketStatus = marketSnapshot?.status ?? 'unavailable';
@@ -253,7 +258,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
           {/* ── MAIN ARTICLE ── */}
           <article style={{ background: '#ffffff', border: '1px solid var(--border-light)', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-card)' }}>
 
-            {item.coverImage && !item.body.includes(item.coverImage) && (
+            {item.coverImage && !bodyHtml && !item.body.includes(item.coverImage) && (
               <Image
                 src={item.coverImage}
                 alt={`${item.title} cover image`}
@@ -319,7 +324,9 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
 
             {/* Body */}
             <div style={{ padding: 'clamp(24px,4vw,40px)' }}>
-              {renderMarkdown(item.body)}
+              {bodyHtml !== undefined
+                ? <div className="auto-news-body" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+                : renderMarkdown(item.body)}
             </div>
 
             {/* Footer */}
@@ -483,6 +490,34 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
           .news-detail-grid {
             grid-template-columns: 1fr !important;
           }
+        }
+        /* Imported email HTML: match the article typography and keep fixed-width email layouts inside the column. */
+        .auto-news-body {
+          font-size: 13.5px;
+          color: #334155;
+          line-height: 1.75;
+          overflow-wrap: anywhere;
+          overflow-x: auto;
+        }
+        .auto-news-body p { margin-bottom: 14px; }
+        .auto-news-body h1, .auto-news-body h2, .auto-news-body h3, .auto-news-body h4 {
+          color: #0f172a;
+          font-weight: 800;
+          line-height: 1.25;
+          margin: 26px 0 10px;
+        }
+        .auto-news-body ul, .auto-news-body ol { margin: 0 0 16px 20px; }
+        .auto-news-body ul { list-style: disc; }
+        .auto-news-body ol { list-style: decimal; }
+        .auto-news-body a { color: #2563eb; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+        .auto-news-body img { max-width: 100% !important; height: auto !important; border-radius: 8px; }
+        .auto-news-body table { max-width: 100% !important; border-collapse: collapse; }
+        .auto-news-body blockquote {
+          border-left: 3px solid #2563eb;
+          background: #eff6ff;
+          padding: 14px 18px;
+          border-radius: 0 8px 8px 0;
+          margin: 20px 0;
         }
       `}</style>
     </div>

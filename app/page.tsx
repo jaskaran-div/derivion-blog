@@ -2,8 +2,12 @@ import type { Metadata } from 'next';
 import { getNewsCategories } from '@/lib/newsCategories';
 import Image from 'next/image';
 import Link from 'next/link';
-import { blogs, newsItems } from '@/lib/data';
+import { blogs } from '@/lib/data';
+import { getAllNewsItems } from '@/lib/autoNews';
 import MarketChartsSection from '@/components/MarketChartsSection';
+
+// Picks up automated News & Insights posts within five minutes, without a rebuild.
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: 'DerivionAcademy.in - The Hedge Front & Quantitative Intelligence',
@@ -15,7 +19,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const newsItems = await getAllNewsItems();
   const featuredNews = newsItems[0];
   const secondaryNews = newsItems.slice(1, 4);
   const latestBlogs = blogs.slice(0, 3);
