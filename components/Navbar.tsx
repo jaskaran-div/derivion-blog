@@ -65,7 +65,7 @@ export default function Navbar() {
               The Hedge Front
             </Link>
 
-            <Link href="/blogs/executive-capacity-two-years-experience-entry-roles-problem" id="navbar-cta" className="da-navbar__cta-btn">
+            <Link href="/blogs/the-great-indian-liquidity-seesaw-navigating-the-cash-squeeze" id="navbar-cta" className="da-navbar__cta-btn">
               Latest Dispatch →
             </Link>
 
@@ -140,7 +140,7 @@ export default function Navbar() {
                 <NewsletterSignup />
               </div>
               <Link
-                href="/blogs/executive-capacity-two-years-experience-entry-roles-problem"
+                href="/blogs/the-great-indian-liquidity-seesaw-navigating-the-cash-squeeze"
                 className="da-navbar__mobile-cta"
                 onClick={() => setMobileOpen(false)}
               >
