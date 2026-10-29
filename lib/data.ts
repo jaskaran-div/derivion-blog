@@ -3143,7 +3143,7 @@ export const blogs: BlogColumn[] = sortByDateDesc([
       role: 'Academic & Financial Education Desk',
       bureau: 'Academic Policy Bureau',
     },
-    date: 'October 29, 2026',
+    date: 'October 28, 2026',
     tags: ['RBI', 'Liquidity', 'Monetary Policy', 'Money Markets', 'Banking', 'Indian Markets'],
     featured: true,
     dispatches: 12,
