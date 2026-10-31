@@ -34,7 +34,7 @@ export default function NewsletterUnsubscribe({ token }: { token: string }) {
       }
 
       const result: UnsubscribeResponse = {
-        message: 'Your email address has been removed. You will no longer receive the weekly newsletter.',
+        message: 'You have been unsubscribed. You will no longer receive the weekly newsletter.',
       };
       setIsComplete(true);
       setMessage(result.message || 'You have been unsubscribed from the weekly newsletter.');
@@ -62,7 +62,7 @@ export default function NewsletterUnsubscribe({ token }: { token: string }) {
               opacity: isSubmitting ? 0.7 : 1,
             }}
           >
-            {isSubmitting ? 'Removing your email…' : 'Yes, unsubscribe me'}
+            {isSubmitting ? 'Unsubscribing…' : 'Yes, unsubscribe me'}
           </button>
           <button
             type="button"

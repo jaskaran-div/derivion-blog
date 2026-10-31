@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { newsItems } from '@/lib/data';
 import { findNewsItem } from '@/lib/autoNews';
-import { fetchMarketSnapshot, formatSnapshotTime, sourceSummary, toMarketLevels } from '@/lib/marketSnapshot';
+import { SIDEBAR_MARKET_IDS, fetchMarketSnapshot, formatSnapshotTime, sourceSummary, toMarketLevels } from '@/lib/marketSnapshot';
 import type { Metadata } from 'next';
 
 // Cache the page snapshot for 12 hours; the market snapshot fetch (5 minutes) shortens
@@ -237,7 +237,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
   // Automated posts carry HTML the backend already sanitized; it is rendered as-is, not as Markdown.
   const bodyHtml = 'bodyHtml' in item ? item.bodyHtml : undefined;
   const marketSnapshot = await fetchMarketSnapshot();
-  const marketLevels = toMarketLevels(marketSnapshot);
+  const marketLevels = toMarketLevels(marketSnapshot, SIDEBAR_MARKET_IDS);
   const marketStatus = marketSnapshot?.status ?? 'unavailable';
   const marketUpdatedAt = formatSnapshotTime(marketSnapshot?.snapshotUpdatedAt ?? null);
 
@@ -422,7 +422,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
                   >
                     SnapData
                   </a>
-                  {sourceSummary(marketSnapshot)}
+                  {sourceSummary(marketSnapshot, SIDEBAR_MARKET_IDS)}
                   {' · '}Daily closing and benchmark values, not live quotes.
                   {marketUpdatedAt && <> Snapshot updated {marketUpdatedAt}.</>}
                 </div>

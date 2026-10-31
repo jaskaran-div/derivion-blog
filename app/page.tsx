@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { blogs } from '@/lib/data';
 import { getAllNewsItems } from '@/lib/autoNews';
 import MarketChartsSection from '@/components/MarketChartsSection';
+import { fetchMarketSnapshot } from '@/lib/marketSnapshot';
 
 // Picks up automated News & Insights posts within five minutes, without a rebuild.
 export const revalidate = 300;
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  const newsItems = await getAllNewsItems();
+  const [newsItems, marketSnapshot] = await Promise.all([getAllNewsItems(), fetchMarketSnapshot()]);
   const featuredNews = newsItems[0];
   const secondaryNews = newsItems.slice(1, 4);
   const latestBlogs = blogs.slice(0, 3);
@@ -79,7 +80,7 @@ export default async function HomePage() {
           </section>
         )}
 
-        <MarketChartsSection />
+        <MarketChartsSection snapshot={marketSnapshot} />
 
         <section aria-labelledby="home-dispatches-title" className="home-dispatches">
           <div className="home-section-heading home-dispatches-heading">

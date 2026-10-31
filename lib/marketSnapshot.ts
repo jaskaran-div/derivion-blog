@@ -36,20 +36,32 @@ export type MarketLevel = {
   dataDate: string | null;
   sourceStatus: string | null;
   stale: boolean;
+  numericValue: number | null;
+  numericPrevious: number | null;
+  previousValue: string | null;
+  sourceName: string | null;
+  sourceUrl: string | null;
 };
 
-// Shown before the backend has stored a snapshot, so the sidebar never invents figures.
-const DEFAULT_LABELS: Array<[string, string]> = [
-  ['UST2Y', '2Y Treasury Yield'],
-  ['BRENT', 'Brent Crude'],
-  ['WTI', 'WTI Crude'],
-  ['GOLD_IN_24K', 'Gold 24K (IBJA)'],
-];
+// Instruments the backend stores, in display order. Labels are shown before the backend has
+// stored a snapshot, so the page never invents figures.
+export const MARKET_LABELS: Record<string, string> = {
+  UST2Y: '2Y Treasury Yield',
+  UST10Y: '10Y Treasury Yield',
+  BRENT: 'Brent Spot (EIA)',
+  WTI: 'WTI Spot (EIA)',
+  USDINR: 'USD / INR',
+  EURUSD: 'EUR / USD',
+  GBPUSD: 'GBP / USD',
+  USDJPY: 'USD / JPY',
+};
+
+export const SIDEBAR_MARKET_IDS = ['UST2Y', 'BRENT', 'WTI', 'USDINR'];
 
 const SOURCE_LABELS: Record<string, string> = {
   treasury: 'US Treasury',
   eia: 'EIA',
-  ibja: 'IBJA',
+  ecb: 'ECB reference rates',
 };
 
 function finite(value: unknown): number | null {
@@ -84,6 +96,8 @@ export async function fetchMarketSnapshot(): Promise<MarketSnapshot | null> {
 
 function formatValue(item: MarketInstrument, value: number): string {
   if (item.unit === 'percent') return `${value.toFixed(2)}%`;
+  // FX pairs: USD-quoted majors to 4 decimals, INR and JPY quotes to 2.
+  if (item.unit === 'rate') return value.toFixed(item.currency === 'USD' ? 4 : 2);
   if (item.currency === 'INR') {
     const amount = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 0 }).format(value);
     return `₹${amount}${item.unit === 'gram' ? '/g' : ''}`;
@@ -124,38 +138,55 @@ export function formatSnapshotTime(value: string | null): string | null {
   }).format(parsed)} IST`;
 }
 
-export function toMarketLevels(snapshot: MarketSnapshot | null): MarketLevel[] {
-  if (!snapshot || snapshot.instruments.length === 0) {
-    return DEFAULT_LABELS.map(([id, label]) => ({
-      id,
-      label,
-      value: 'Data unavailable',
-      change: 'Awaiting data',
-      up: null,
-      dataDate: null,
-      sourceStatus: null,
-      stale: false,
-    }));
-  }
-  return snapshot.instruments.map((item) => {
-    const value = item.status === 'unavailable' ? null : finite(item.value);
-    const change = value === null ? null : finite(item.change);
+export function toMarketLevels(
+  snapshot: MarketSnapshot | null,
+  ids: string[] = Object.keys(MARKET_LABELS),
+): MarketLevel[] {
+  const byId = new Map((snapshot?.instruments ?? []).map((item) => [item.id, item]));
+  return ids.map((id) => {
+    const item = byId.get(id);
+    const value = !item || item.status === 'unavailable' ? null : finite(item.value);
+    if (!item || value === null) {
+      return {
+        id,
+        label: item?.name ?? MARKET_LABELS[id] ?? id,
+        value: 'Data unavailable',
+        change: 'Awaiting data',
+        up: null,
+        dataDate: null,
+        sourceStatus: null,
+        stale: false,
+        numericValue: null,
+        numericPrevious: null,
+        previousValue: null,
+        sourceName: null,
+        sourceUrl: null,
+      };
+    }
+    const change = finite(item.change);
+    const previous = finite(item.previousClose);
     return {
-      id: item.id,
+      id,
       label: item.name,
-      value: value === null ? 'Data unavailable' : formatValue(item, value),
-      change: value === null ? 'Awaiting data' : formatChange(item),
+      value: formatValue(item, value),
+      change: formatChange(item),
       up: change === null || change === 0 ? null : change > 0,
       // A gap-filled value is shown with the date it was originally observed.
-      dataDate: value === null ? null : formatDataDate(item.filledFrom ?? item.dataDate),
-      sourceStatus: value === null ? null : item.sourceStatus,
+      dataDate: formatDataDate(item.filledFrom ?? item.dataDate),
+      sourceStatus: item.sourceStatus,
       stale: item.status === 'stale',
+      numericValue: value,
+      numericPrevious: previous,
+      previousValue: previous === null ? null : formatValue(item, previous),
+      sourceName: item.source ? SOURCE_LABELS[item.source.id] ?? item.source.name ?? item.source.id : null,
+      sourceUrl: item.source?.url ?? null,
     };
   });
 }
 
-export function sourceSummary(snapshot: MarketSnapshot | null): string {
+export function sourceSummary(snapshot: MarketSnapshot | null, instrumentIds?: string[]): string {
   const ids = [...new Set((snapshot?.instruments ?? [])
+    .filter((item) => !instrumentIds || instrumentIds.includes(item.id))
     .map((item) => item.source?.id)
     .filter((id): id is string => Boolean(id)))];
   const labels = ids.map((id) => SOURCE_LABELS[id] ?? id);
