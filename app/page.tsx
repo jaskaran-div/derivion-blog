@@ -11,13 +11,9 @@ import { fetchMarketSnapshot } from '@/lib/marketSnapshot';
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-  title: 'DerivionAcademy.in - The Hedge Front & Quantitative Intelligence',
-  description: 'The authoritative digital chronicle and research bureau providing institutional analysis, quantitative derivative intelligence, and sovereign market reports.',
-  icons: {
-    icon: '/icon.png',
-    shortcut: '/icon.png',
-    apple: '/icon.png',
-  },
+  title: { absolute: 'DerivionAcademy – Market Briefings & Trading Education' },
+  description: 'Daily market briefings, regulatory explainers and trading education from the ISFT research desk.',
+  alternates: { canonical: '/' },
 };
 
 export default async function HomePage() {

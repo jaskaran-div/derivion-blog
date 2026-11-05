@@ -463,9 +463,15 @@ button {
   background: #f8fafc;
   border-color: #cbd5e1;
 }
-.page-btn:disabled {
+.page-btn:disabled,
+.page-btn[aria-disabled="true"] {
   cursor: not-allowed;
   opacity: 0.5;
+}
+a.page-btn,
+span.page-btn {
+  display: inline-block;
+  text-decoration: none;
 }
 
 /* ============================================================

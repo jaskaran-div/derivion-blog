@@ -21,7 +21,7 @@ const AUTOMATED_AUTHOR = {
   name: 'The Hedge Front / ISFT',
   initials: 'HF',
   role: 'Market Intelligence Desk',
-  bureau: 'Global Macro Bureau',
+  bureau: 'ISFT research desk',
 };
 
 function apiUrl(): string {
@@ -48,6 +48,14 @@ function formatDate(iso: string): string {
   }).format(new Date(iso));
 }
 
+// Per-subscriber MNI newsletter links (enews.marketnews.com) in posts imported before the backend
+// started dropping them: remove the href, keep the link text.
+const SUBSCRIBER_LINK = /\s+href="https?:\/\/(?:[a-z0-9-]+\.)*enews\.marketnews\.com[^"]*"/gi;
+
+function withoutSubscriberLinks(html: string): string {
+  return html.replace(SUBSCRIBER_LINK, '');
+}
+
 function toNewsItem(post: AutoNewsPost): AutomatedNewsItem {
   return {
     id: `auto-${post.slug}`,
@@ -57,7 +65,7 @@ function toNewsItem(post: AutoNewsPost): AutomatedNewsItem {
     title: post.title,
     excerpt: post.excerpt,
     body: '',
-    bodyHtml: typeof post.html === 'string' ? post.html : undefined,
+    bodyHtml: typeof post.html === 'string' ? withoutSubscriberLinks(post.html) : undefined,
     coverImage: post.coverImageUrl?.startsWith('https://res.cloudinary.com/') ? post.coverImageUrl : undefined,
     author: AUTOMATED_AUTHOR,
     date: formatDate(post.publishedAt),

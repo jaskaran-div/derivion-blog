@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { blogs } from '@/lib/data';
+import { blogs, type BlogColumn } from '@/lib/data';
+import { PUBLISHER_NAME, absoluteUrl, isoDate, jsonLd, seoTitle } from '@/lib/site';
 import type { Metadata } from 'next';
 
 interface Params {
@@ -10,17 +11,44 @@ interface Params {
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params;
   const item = blogs.find((b) => b.slug === slug);
-  if (!item) return { title: 'Not Found | Derivion Academy' };
+  if (!item) return { title: 'Not Found', robots: { index: false } };
+  const path = `/blogs/${item.slug}`;
+  // og:image and twitter:image come from the generated opengraph-image.tsx in this folder.
   return {
-    title: `${item.title} – ${item.columnName}`,
+    title: seoTitle(item.title),
     description: item.excerpt.substring(0, 160),
+    alternates: { canonical: path },
     openGraph: {
+      type: 'article',
+      url: path,
       title: item.title,
       description: item.excerpt,
-      type: 'article',
-      publishedTime: item.date,
+      publishedTime: isoDate(item.date),
       authors: [item.author.name],
+      section: item.columnName,
+      tags: item.tags,
     },
+    twitter: { card: 'summary_large_image', title: item.title, description: item.excerpt },
+  };
+}
+
+function blogPostingSchema(item: BlogColumn) {
+  const url = absoluteUrl(`/blogs/${item.slug}`);
+  const published = isoDate(item.date);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: item.title.slice(0, 110),
+    description: item.excerpt,
+    image: [absoluteUrl(`/blogs/${item.slug}/opengraph-image`)],
+    datePublished: published,
+    dateModified: published,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    url,
+    author: { '@type': 'Organization', name: item.author.name },
+    publisher: { '@type': 'Organization', name: PUBLISHER_NAME, logo: { '@type': 'ImageObject', url: absoluteUrl('/icon.png') } },
+    keywords: item.tags.join(', '),
+    ...(item.promotional ? { sponsor: { '@type': 'Organization', name: 'ISFT' } } : {}),
   };
 }
 
@@ -95,6 +123,12 @@ function renderBlogContent(body: string) {
 
   const formatInline = (text: string) => {
     return text
+      // [label](https://… or /path) links, used for sources. External links open in a new tab.
+      .replace(/\[([^\]]+)\]\(((?:https?:\/\/|\/)[^)\s"]+)\)/g, (_match, label: string, href: string) => (
+        href.startsWith('/')
+          ? `<a class="hf-link" href="${href}">${label}</a>`
+          : `<a class="hf-link" href="${href}" target="_blank" rel="noopener noreferrer">${label}</a>`
+      ))
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\*(.*?)\*/g, '<em>$1</em>')
       .replace(/`(.*?)`/g, '<code class="hf-code">$1</code>');
@@ -160,6 +194,20 @@ function renderBlogContent(body: string) {
       continue;
     }
 
+    // Blockquote, used for "Update" notes on revised posts
+    if (trimmed.startsWith('> ')) {
+      flushList(`list-${i}`);
+      flushTable(`table-${i}`);
+      elements.push(
+        <blockquote
+          key={`quote-${i}`}
+          className="hf-update-note"
+          dangerouslySetInnerHTML={{ __html: formatInline(trimmed.replace(/^>\s+/, '')) }}
+        />
+      );
+      continue;
+    }
+
     // Heading 4 (Disclaimers etc.)
     if (trimmed.startsWith('#### ')) {
       elements.push(
@@ -220,6 +268,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<Param
 
   return (
     <div className="blog-detail-viewport">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(blogPostingSchema(item)) }} />
       <div className="container">
         {/* Top Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="blog-breadcrumb">
@@ -265,6 +314,12 @@ export default async function BlogDetailPage({ params }: { params: Promise<Param
             </div>
           </header>
 
+          {item.promotional && (
+            <p className="hedge-front-promo-label" role="note">
+              <strong>Promotional:</strong> {item.promotional}
+            </p>
+          )}
+
           {/* Subtitle / Teaser in italic serif */}
           {item.subtitle && (
             <div className="hedge-front-subtitle-box">
@@ -298,9 +353,9 @@ export default async function BlogDetailPage({ params }: { params: Promise<Param
             </div>
             <div className="hedge-front-author-info">
               <div className="hedge-front-author-name">{item.author.name}</div>
-              <div className="hedge-front-author-role">{item.author.role} • {item.author.bureau || 'The Hedge Front'}</div>
+              <div className="hedge-front-author-role">{item.author.role} • {item.author.bureau || 'ISFT research desk'}</div>
               <div className="hedge-front-author-desc">
-                Official research dispatch published under the Derivion Academy syndicate. Verified financial analysis, econometric investigations, and market structures.
+                Published by the ISFT research desk. Commentary and education only, not investment advice.
               </div>
             </div>
           </footer>
@@ -554,6 +609,17 @@ export default async function BlogDetailPage({ params }: { params: Promise<Param
         }
 
         /* Subtitle Box in Italic Serif */
+        .hedge-front-promo-label {
+          margin: 0 0 20px;
+          padding: 10px 14px;
+          border: 1px solid #f59e0b;
+          border-radius: 6px;
+          background: #fffbeb;
+          color: #78350f;
+          font-size: 13px;
+          line-height: 1.5;
+        }
+
         .hedge-front-subtitle-box {
           margin-bottom: 32px;
           padding: 16px 20px;
@@ -635,6 +701,21 @@ export default async function BlogDetailPage({ params }: { params: Promise<Param
         .hf-ordered-list li,
         .hf-unordered-list li {
           line-height: 1.7;
+        }
+
+        .hf-update-note {
+          margin: 0 0 24px;
+          padding: 12px 16px;
+          border-left: 4px solid #1d4ed8;
+          background: rgba(29, 78, 216, 0.06);
+          font-size: 14px;
+          line-height: 1.6;
+        }
+
+        .hf-link {
+          color: #1d4ed8;
+          text-decoration: underline;
+          text-underline-offset: 2px;
         }
 
         .hf-code {

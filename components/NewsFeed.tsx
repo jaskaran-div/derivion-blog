@@ -1,17 +1,22 @@
 'use client';
 
 import { useState } from 'react';
+import { NEWS_PAGE_SIZE as ITEMS_PER_PAGE, newsPageHref } from '@/lib/site';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { NewsItem } from '@/lib/data';
 import Pagination from '@/components/Pagination';
 import { newsCategories as categories, matchesCategory, getNewsCategories, type NewsCategory } from '@/lib/newsCategories';
 
-const ITEMS_PER_PAGE = 8;
-
-export default function NewsFeed({ items }: { items: NewsItem[] }) {
+/**
+ * `page` is the server-rendered page of the unfiltered feed (/news/page/N), so crawlers get real
+ * links to older posts. While a category filter is active, paging happens in the browser.
+ */
+export default function NewsFeed({ items, page = 1 }: { items: NewsItem[]; page?: number }) {
   const [activeCategory, setActiveCategory] = useState<NewsCategory>('All Feeds');
-  const [currentPage, setCurrentPage] = useState(1);
+  const [filteredPage, setFilteredPage] = useState(1);
+  const isFiltered = activeCategory !== 'All Feeds';
+  const currentPage = isFiltered ? filteredPage : page;
   const filteredItems = items.filter(item => matchesCategory(item, activeCategory));
   const pageItems = filteredItems.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
 
@@ -28,7 +33,7 @@ export default function NewsFeed({ items }: { items: NewsItem[] }) {
               aria-pressed={activeCategory === category}
               onClick={() => {
                 setActiveCategory(category);
-                setCurrentPage(1);
+                setFilteredPage(1);
               }}
             >
               {category} <span aria-hidden="true">({count})</span>
@@ -142,7 +147,8 @@ export default function NewsFeed({ items }: { items: NewsItem[] }) {
         totalItems={filteredItems.length}
         currentPage={currentPage}
         pageSize={ITEMS_PER_PAGE}
-        onPageChange={setCurrentPage}
+        onPageChange={setFilteredPage}
+        hrefForPage={isFiltered ? undefined : newsPageHref}
         scrollTargetId="news-feed-results"
       />
 

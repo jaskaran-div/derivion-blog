@@ -2,24 +2,26 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { DEFAULT_OG_IMAGE, PUBLISHER_NAME, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    template: '%s | DerivionAcademy.in',
-    default: 'DerivionAcademy – Institutional Intelligence & Quantitative Analysis',
+    template: `%s | ${SITE_NAME}`,
+    default: `${SITE_NAME} – Market Briefings & Trading Education`,
   },
-  description: 'DerivionAcademy is an authoritative digital chronicle and research bureau providing institutional analysis, quantitative intelligence, and sovereign market intelligence.',
-  keywords: ['sovereign debt', 'quantitative analysis', 'institutional intelligence', 'geopolitics', 'monetary policy'],
-  authors: [{ name: 'DerivionAcademy Editorial Board' }],
-  icons: {
-    icon: '/icon.png',
-    shortcut: '/icon.png',
-    apple: '/icon.png',
+  description: SITE_DESCRIPTION,
+  authors: [{ name: PUBLISHER_NAME }],
+  // No canonical here: it would be inherited by every page. Each page sets its own.
+  alternates: {
+    types: { 'application/rss+xml': [{ url: '/rss.xml', title: `${SITE_NAME} – News & Blogs` }] },
   },
   openGraph: {
-    siteName: 'DerivionAcademy.in',
+    siteName: SITE_NAME,
     type: 'website',
+    images: [DEFAULT_OG_IMAGE],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 interface LayoutProps {

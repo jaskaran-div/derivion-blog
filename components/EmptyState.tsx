@@ -56,11 +56,6 @@ export default function EmptyState({
         </Link>
       </div>
 
-      <div className="da-empty-state__footer">
-        <span>Verified Editorial Dispatch Pipeline</span>
-        <span>•</span>
-        <span>ISSN 2841-9042</span>
-      </div>
 
       <style jsx>{`
         .da-empty-state {
@@ -203,20 +198,6 @@ export default function EmptyState({
           border-color: #cbd5e1;
         }
 
-        .da-empty-state__footer {
-          margin-top: 36px;
-          padding-top: 20px;
-          border-top: 1px solid var(--border-faint);
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          font-size: 10px;
-          color: var(--ink-muted);
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
       `}</style>
     </div>
   );

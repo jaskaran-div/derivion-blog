@@ -62,6 +62,8 @@ export interface BlogColumn {
   featured?: boolean;
   dispatches: number;
   readTime?: string;
+  /** Set on posts that promote ISFT's own programmes; shown as a label above the post. */
+  promotional?: string;
 }
 
 export interface MagazineIssue {
@@ -153,7 +155,7 @@ export const newsItems: NewsItem[] = sortByDateDesc([
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 25, 2026',
     tags: ['Macro', 'Markets', 'Central Banks', 'Fed', 'ECB', 'BOE', 'BOJ', 'UK Budget', 'Earnings', 'Inflation'],
@@ -162,95 +164,95 @@ export const newsItems: NewsItem[] = sortByDateDesc([
     coverImage: '/images/news/25th-2.jpg',
     body: `## Morning Briefing – Sunday, October 25, 2026
 
-HOPE WEEKEND GOING WELL AND FOLKS REMEMBERED TO PUT CLOCKS BACK AN HOUR IN EUROPE AND UK . USA CLOCKS GO BACK NEXT WEEK SO WALL STREET OPEN 1.30PM AND SHUTS 8PM  FOR A WEEK !
+HOPE WEEKEND GOING WELL AND FOLKS REMEMBERED TO PUT CLOCKS BACK AN HOUR IN EUROPE AND UK. USA CLOCKS GO BACK NEXT WEEK SO WALL STREET OPEN 1.30PM AND SHUTS 8PM FOR A WEEK !
 
-LAST WEEK WAS EVENTFUL AND ALTHOUGH LACKING IN NEWS FIGURES WE HAD PLENTLY OF ISSUES WITH EARNINGS AND GEOP POLITICAL  ISSUES . HAS AI HIT A BUBBLE IS THE FRENCH SAGA AND DEBT ISSUES MOVING THE MARKET OR AS I SUSPECT ADDED TO STRAIT OF HORMUZ ITS A COMBINATION OF NOT BRILLIANT NEWS THAT DICTATED MARKET PROFILES LAST WEEK .
+LAST WEEK WAS EVENTFUL AND ALTHOUGH LACKING IN NEWS FIGURES WE HAD PLENTY OF ISSUES WITH EARNINGS AND GEOPOLITICAL ISSUES. HAS AI HIT A BUBBLE IS THE FRENCH SAGA AND DEBT ISSUES MOVING THE MARKET OR AS I SUSPECT ADDED TO STRAIT OF HORMUZ ITS A COMBINATION OF NOT BRILLIANT NEWS THAT DICTATED MARKET PROFILES LAST WEEK.
 
-NOT BEING GREEDY AS A DAY TRADER AND BANKING PROFITS HELPED BUILD OUR ACCOUNTS LAST WEEK ........  WHAT ON THE HORIZON NEXT WEEK APART FROM THE STORMS IN THE UK ?
+NOT BEING GREEDY AS A DAY TRADER AND BANKING PROFITS HELPED BUILD OUR ACCOUNTS LAST WEEK ....... WHAT ON THE HORIZON NEXT WEEK APART FROM THE STORMS IN THE UK ?
 
-THEY HAVE BEEN ON BLACKOUT FOR A WEEK BUT WE HAVE SEVERAL CENTRAL BANKS MEETINGS AND A UK BUDGET TO DIGEST WITH ADDED  EARNINGS FROM THE STATES .
+THEY HAVE BEEN ON BLACKOUT FOR A WEEK BUT WE HAVE SEVERAL CENTRAL BANKS MEETINGS AND A UK BUDGET TO DIGEST WITH ADDED EARNINGS FROM THE STATES.
 
 ![Earnings Announcements - Week of Oct. 26](/images/news/25th-1.png)
 
-NEXT WEEK WE SEE THE RELEASE OF 3 IMPORTANT ECB SURVEYS , 2 OF WHICH WILL BE RELEASED BEFORE THE ECB'S OCTOBER DECISION . THE Q3 SAFE (MONDAY ) AND CTS (FRIDAY ) WILL CONTAIN IMPORTANT WAGE SIGNALS TO GUAGE SECOND ROUND EFFECT RISKS , WHILE THE BLS (TUESDAY ) WILL PROVIDE AN INSIGHT IN THE ONGOING TRANSMISSION OF MONETARY POLICY , INCLUDING THE 2 HIKES DELIVERED SO FAR THIS YEAR .
+NEXT WEEK WE SEE THE RELEASE OF 3 IMPORTANT ECB SURVEYS, 2 OF WHICH WILL BE RELEASED BEFORE THE ECB'S OCTOBER DECISION. THE Q3 SAFE (MONDAY) AND CTS (FRIDAY) WILL CONTAIN IMPORTANT WAGE SIGNALS TO GAUGE SECOND ROUND EFFECT RISKS, WHILE THE BLS (TUESDAY) WILL PROVIDE AN INSIGHT IN THE ONGOING TRANSMISSION OF MONETARY POLICY, INCLUDING THE 2 HIKES DELIVERED SO FAR THIS YEAR.
 
-EUROZONE FLASH Q3 GDP IS DUE FRIDAY MORNING ; WITH THE MEDIAN ANALYST FORECAST AT 0.2% Q/Q . THE ECB PROJECTED 0.3% Q/Q IN ITS SEPTEMBER PROJECTIONS , BUT HAVE SINCE FLAGGED DOWNSIDE RISKS OWING TO TIGHTER REGIONAL FINANCIAL CONDITIONS .
+EUROZONE FLASH Q3 GDP IS DUE FRIDAY MORNING; WITH THE MEDIAN ANALYST FORECAST AT 0.2% Q/Q. THE ECB PROJECTED 0.3% Q/Q IN ITS SEPTEMBER PROJECTIONS, BUT HAVE SINCE FLAGGED DOWNSIDE RISKS OWING TO TIGHTER REGIONAL FINANCIAL CONDITIONS.
 
-FLASH OCTOBER INFLATION DATA FROM FRANCE ,SPAIN ,GERMANY AND ITALY ARE ALSO DUE ON FRIDAY . THE GERMAN HEADLINE READING IS EXPECTED TO FALL BACK DUE TO THE EXTENSION OF THE FUEL TAX CUT .  FOCUS ACROSS THE REGION WILL BE ON CORE ,AND FOOD CATEGORIES ; IN ORDER TO GUAGE HOW THE ENERGY PRICE SHOCK IS BROADENING .
+FLASH OCTOBER INFLATION DATA FROM FRANCE, SPAIN, GERMANY AND ITALY ARE ALSO DUE ON FRIDAY. THE GERMAN HEADLINE READING IS EXPECTED TO FALL BACK DUE TO THE EXTENSION OF THE FUEL TAX CUT. FOCUS ACROSS THE REGION WILL BE ON CORE, AND FOOD CATEGORIES; IN ORDER TO GAUGE HOW THE ENERGY PRICE SHOCK IS BROADENING.
 
 ### Wednesday - RBNZ Decision
 
 THE DECISION IS ON 28TH OCTOBER AND THERE ARE GROWING EXPECTATIONS OF ANOTHER HIKE WITH WESTPAC NOW FORECASTING 0.25% AND MARKET PRICING IS AROUND 0.2%.
 
-CHIEF ECONOMIST SAID THAT HIGHER OIL PRICES AND WEAKER NZD ARE DRIVING NEAR TERM UPSIDE RISKS TO INFLATION BUT THE RBNZ IS CONFIDENT THAT IT WILL BE WITHIN BAND IN 2027 .
+CHIEF ECONOMIST SAID THAT HIGHER OIL PRICES AND WEAKER NZD ARE DRIVING NEAR TERM UPSIDE RISKS TO INFLATION BUT THE RBNZ IS CONFIDENT THAT IT WILL BE WITHIN BAND IN 2027.
 
-Q3 CPI WAS BETTER THAN EXPECTED AND UNDERLYING MEASURES HELD WITHIN THE 1-3% RBNZ BAND ; HOWEVER , THE FOCUS IS ON INFLATION WHICH HAS DETERIORATED .
+Q3 CPI WAS BETTER THAN EXPECTED AND UNDERLYING MEASURES HELD WITHIN THE 1-3% RBNZ BAND; HOWEVER, THE FOCUS IS ON INFLATION WHICH HAS DETERIORATED.
 
 ### Wednesday - UK Budget
 
-AFTER WEEKS OF SPECULATION ; EXPECTATIONS FOR CHANCELLOR HEALEY TO DELIVERY A GAME CHANGING BUDGET HAVE RECEDED SOMEWHAT . PRESS REPORTS NOW SUGGEST THAT AS WELL AS STICKING TO THE MANIFESTO PLEDGES OF NO INCREASES TO INCOME TAX , VAT OR EMPLOYEE NICS (national insurance ) )THAT CAPITAL GAINS TAX WILL ALSO BE LEFT UNCHANGED .HOWEVER , THERE IS A NEED TO RAISE REVENUE AS INTEREST RATES (and hence the governments interest bill)HAS RISEN . WE THINK THAT HE WILL RAISE THE BANK SURCHARGE TO 8% FROM ITS CURRENT 3% LEVEL (=an extra corporation tax paid by banks )  RHETORIC FROM SENIOR MINISTERS HAS ALSO FOCUSED ON SUPPORTING SMALL BUSINESSES (quite possibly at the expense of larger businesses ) WITH POTENTIAL CHANGES TO BUSINESS RATES . THERE IS ALSO NEED TO FUND EXTRA DEFENCE SPENDING (that has already been committed to but not fully funded )
+AFTER WEEKS OF SPECULATION; EXPECTATIONS FOR CHANCELLOR HEALEY TO DELIVER A GAME CHANGING BUDGET HAVE RECEDED SOMEWHAT. PRESS REPORTS NOW SUGGEST THAT AS WELL AS STICKING TO THE MANIFESTO PLEDGES OF NO INCREASES TO INCOME TAX, VAT OR EMPLOYEE NICS (national insurance))THAT CAPITAL GAINS TAX WILL ALSO BE LEFT UNCHANGED .HOWEVER, THERE IS A NEED TO RAISE REVENUE AS INTEREST RATES (and hence the governments interest bill)HAS RISEN. WE THINK THAT HE WILL RAISE THE BANK SURCHARGE TO 8% FROM ITS CURRENT 3% LEVEL (=an extra corporation tax paid by banks) RHETORIC FROM SENIOR MINISTERS HAS ALSO FOCUSED ON SUPPORTING SMALL BUSINESSES (quite possibly at the expense of larger businesses) WITH POTENTIAL CHANGES TO BUSINESS RATES. THERE IS ALSO NEED TO FUND EXTRA DEFENCE SPENDING (that has already been committed to but not fully funded)
 
-CHANCELLOR HEALEY HAS COMMITTED TO MAINTAINING THE FISCAL RULES OF THE STARMER /REEVES PREMIERSHIP BUT REDUCED FISCAL HEADROOM IS EXPECTED .    THE OBR'S UPDATED FORECASTS WILL BE PUBLISHED IN FULL UPON THE END OF HEALEY'S SPEECH ,AS WILL AN UPDATE TO THE DMO'S GILT REMIT FOR FY26/27 . ALTHOUGH ONLY A SMALL INCREASE IN THE REMIT IS EXPECTED , THERE IS EXPECTED TO BE FURTHER SKEW AWAY FROM THE LONG-END .  WE WILL DISCUSS THIS ALL IN MORE DETAIL IN THE MNI BUDGET PREVIEW THAT IS DUE TO BE PUBLISHED ON TUESDAY MORNING .
+CHANCELLOR HEALEY HAS COMMITTED TO MAINTAINING THE FISCAL RULES OF THE STARMER/REEVES PREMIERSHIP BUT REDUCED FISCAL HEADROOM IS EXPECTED. THE OBR'S UPDATED FORECASTS WILL BE PUBLISHED IN FULL UPON THE END OF HEALEY'S SPEECH, AS WILL AN UPDATE TO THE DMO'S GILT REMIT FOR FY26/27. ALTHOUGH ONLY A SMALL INCREASE IN THE REMIT IS EXPECTED, THERE IS EXPECTED TO BE FURTHER SKEW AWAY FROM THE LONG-END. WE WILL DISCUSS THIS ALL IN MORE DETAIL IN THE MNI BUDGET PREVIEW THAT IS DUE TO BE PUBLISHED ON TUESDAY MORNING.
 
 ### Wednesday - BOC Decision
 
-THE BANK OF CANADA IS WIDELY THOUGH NOT UNANIMOUSLY (80% ois-implied ) ANTICIPATED TH HIKE THE OVERNIGHT RATE BY 0.25% TO 2.50% AT ITS OCTOBER MEETING . AS OF MID OCTOBER , A HIKE LOOKED A MORE DISTANT PROSPECT , WITH CORE INFLATION REMAINING TAME AND THE US- CANADA TRADE DISPUTE FLARING UP AGAIN .  BUT IMPLIED RATE HIKE PROBABILITIES HAVE INCREASED AS POLICYMAKERS HAVE SUGGESTED RISING DISCOMFORT WITH WAITING TO SEE WHETHER HIGHER ENERGY PRICES BLEED INTO INTO BROADER INFLATIONARY PRESSURES .
+THE BANK OF CANADA IS WIDELY THOUGH NOT UNANIMOUSLY (80% ois-implied) ANTICIPATED TO HIKE THE OVERNIGHT RATE BY 0.25% TO 2.50% AT ITS OCTOBER MEETING. AS OF MID OCTOBER, A HIKE LOOKED A MORE DISTANT PROSPECT, WITH CORE INFLATION REMAINING TAME AND THE US- CANADA TRADE DISPUTE FLARING UP AGAIN. BUT IMPLIED RATE HIKE PROBABILITIES HAVE INCREASED AS POLICYMAKERS HAVE SUGGESTED RISING DISCOMFORT WITH WAITING TO SEE WHETHER HIGHER ENERGY PRICES BLEED INTO INTO BROADER INFLATIONARY PRESSURES.
 
-SHOULD THE BOC HIKE ; ATTENTION WILL BE ON ANY GUIDANCE ON FUTURE INCREASES (it would be a surprise if they did not keep the door wide open to a follow-up hike in december or january )  , AS WELL AS ON THE LATEST SET OF MONETARY REPORT PROJECTIONS .
+SHOULD THE BOC HIKE; ATTENTION WILL BE ON ANY GUIDANCE ON FUTURE INCREASES (it would be a surprise if they did not keep the door wide open to a follow-up hike in december or january), AS WELL AS ON THE LATEST SET OF MONETARY REPORT PROJECTIONS.
 
 ### Wednesday - FOMC Decision
 
-WE DO EXPECT THE FOMC TO HOLD RATES AT ITS 3.75-4% FED FUNDS RATE ; THIS IS ALREADY 90% IMPLIED .
+WE DO EXPECT THE FOMC TO HOLD RATES AT ITS 3.75-4% FED FUNDS RATE; THIS IS ALREADY 90% IMPLIED.
 
-THE MAIN DEBATE ON THE COMMITTEE AT THIS STAGE IS NOT ABOUT WHETHER SOME FURTHER TIGHTENING IS APPROPRIATE TO ENSURE INFLATION RETURNS TO TARGET ; BUT RATHER ABOUT TIMING AND EXTENT .
+THE MAIN DEBATE ON THE COMMITTEE AT THIS STAGE IS NOT ABOUT WHETHER SOME FURTHER TIGHTENING IS APPROPRIATE TO ENSURE INFLATION RETURNS TO TARGET; BUT RATHER ABOUT TIMING AND EXTENT.
 
-WITH THE 3 MOST HAWKISK COMMITTEE MEMBERS ONLY SEEING ABOUT 3 TOTAL HIKES IN THIS CYCLE (including the 1 delivered in september ) , THOUGH , THE SENTIMENT EXPRESSED BY NUMOROUS OFFICIALS IS THAT THEY'RE COMFORTABLE DEFERRING UNTIL DECEMBER TO HAVE MORE DATA IN HAND ; AND OBVIOUSLY AFTER THE MID TERM ELECTIONS .
+WITH THE 3 MOST HAWKISH COMMITTEE MEMBERS ONLY SEEING ABOUT 3 TOTAL HIKES IN THIS CYCLE (including the 1 delivered in september), THOUGH, THE SENTIMENT EXPRESSED BY NUMEROUS OFFICIALS IS THAT THEY'RE COMFORTABLE DEFERRING UNTIL DECEMBER TO HAVE MORE DATA IN HAND; AND OBVIOUSLY AFTER THE MID TERM ELECTIONS.
 
-WE BELIEVE THE MAIN FOCUS OF THE FOMC WILL BE THE REASONING BEHIND THE DECISION AND ANY SIGNALLING OF DECEMBER REMAINING THE COMMITTEE'S APPARENT BASE CASE FOR NEXT HIKE .
+WE BELIEVE THE MAIN FOCUS OF THE FOMC WILL BE THE REASONING BEHIND THE DECISION AND ANY SIGNALLING OF DECEMBER REMAINING THE COMMITTEE'S APPARENT BASE CASE FOR NEXT HIKE.
 
-CHAIR WARSH'S DESCRIPTION OF THE COMMITTEE'S PERCEPTION OF CURRENT POLICY RESTRICTIVENESS COULD BE THE KEY TO THE MARKET REACTION IN THIS RESPECT ; WHILE WE WILL BE WATCHING FOR THE CHARACTERIZATION OF THE LATEST DATA TRENDS INCLUDING ELEVATED INFLATION READINGS IN SEPTEMBER .
+CHAIR WARSH'S DESCRIPTION OF THE COMMITTEE'S PERCEPTION OF CURRENT POLICY RESTRICTIVENESS COULD BE THE KEY TO THE MARKET REACTION IN THIS RESPECT; WHILE WE WILL BE WATCHING FOR THE CHARACTERIZATION OF THE LATEST DATA TRENDS INCLUDING ELEVATED INFLATION READINGS IN SEPTEMBER.
 
-WARSH IS LIKELY TO REPEAT SOME OF THE SENTIMENTS CONVEYED IN JULY AND SEPTEMBER ABOUT PATIENCE AND DATA TREND WATCHING ,WHILE ONCE AGAIN REAFFIRMMING THE COMMITTEE'S COMMITMENT TO BRINGING INFLATION BACK TO TARGET . WE EXPECT ANY CHANGES TO THE STATEMENT TO BE LIMITED ; THOUGH THERE IS LIKELY TO BE A COUPLE OF HAWKISH DISSENTS IN FAVOR OF A HIKE .
+WARSH IS LIKELY TO REPEAT SOME OF THE SENTIMENTS CONVEYED IN JULY AND SEPTEMBER ABOUT PATIENCE AND DATA TREND WATCHING, WHILE ONCE AGAIN REAFFIRMING THE COMMITTEE'S COMMITMENT TO BRINGING INFLATION BACK TO TARGET. WE EXPECT ANY CHANGES TO THE STATEMENT TO BE LIMITED; THOUGH THERE IS LIKELY TO BE A COUPLE OF HAWKISH DISSENTS IN FAVOR OF A HIKE.
 
 ### Thursday - ECB Decision
 
-THE ECB IS EXPECTED TO HOLD RATES AT 2.5% ; ALTHOUGH ENERGY PRICES HAVE CONTINUED TO GRIND HIGHER SINCE THEIR LAST SEPTEMBER DECISION ;THE EMERGENCE OF DOWNSIDE GROWTH RISKS FROM TIGHTER REGIONAL FINANCIAL CONDITIONS HAVE REDUCED THE URGENCY TO DELIVER CONSECUTIVE RATE HIKES .
+THE ECB IS EXPECTED TO HOLD RATES AT 2.5%; ALTHOUGH ENERGY PRICES HAVE CONTINUED TO GRIND HIGHER SINCE THEIR LAST SEPTEMBER DECISION; THE EMERGENCE OF DOWNSIDE GROWTH RISKS FROM TIGHTER REGIONAL FINANCIAL CONDITIONS HAVE REDUCED THE URGENCY TO DELIVER CONSECUTIVE RATE HIKES.
 
-HOW THE GOVERNING COUNCIL IS WEIGHING UPSIDE INFLATION RISKS AGAINST DOWNSIDE GROWTH RISKS WILL BE A KEY FOCUS FOR MARKETS . ALTHOUGH 2ND ROUND INFLATION EFFECTS ARE STILL YET TO BE OBSERVED IN THE DATA ., POLICY MAKERS REMAIN VERY VIGILANT OF THESE RISKS WHILE HEADLINE INFLATION IS STIL RISING . THAT IS LIKELY TO SEE A HIKING BIAS RETAINED , MAINTAINING EXPECTATIONS FOR A DECEMBER HIKE .
+HOW THE GOVERNING COUNCIL IS WEIGHING UPSIDE INFLATION RISKS AGAINST DOWNSIDE GROWTH RISKS WILL BE A KEY FOCUS FOR MARKETS. ALTHOUGH 2ND ROUND INFLATION EFFECTS ARE STILL YET TO BE OBSERVED IN THE DATA, POLICY MAKERS REMAIN VERY VIGILANT OF THESE RISKS WHILE HEADLINE INFLATION IS STILL RISING. THAT IS LIKELY TO SEE A HIKING BIAS RETAINED, MAINTAINING EXPECTATIONS FOR A DECEMBER HIKE.
 
-PRESIDENT LAGARGE WILL LIKELY FACE QUESTIONS ON ECB MARKET TURMOIL - PARTICULARLY IN FRANCE - IN THE PRESS CONFERENCE .
+PRESIDENT LAGARDE WILL LIKELY FACE QUESTIONS ON ECB MARKET TURMOIL - PARTICULARLY IN FRANCE - IN THE PRESS CONFERENCE.
 
-ANALYSTS ARE MAINLY IN AGREEMENT THAT THE BAR TO ACTUAL INTERVENTION (eg through tpi , or pausing of QT ,OMT )is very high, and this has also been the signal from the ecb speakers . . LAGARDE IS LIKELY TO STRESS THAT THE ECB MONITORS MARKETS CLOSELY AND HAS THE TOOLS TO RESPOND IF REQUIRED ; BUT THE "PRIMARY " AND FIRST SOLUTION LIES AT HOME IN FRANCE .
+ANALYSTS ARE MAINLY IN AGREEMENT THAT THE BAR TO ACTUAL INTERVENTION (eg through tpi, or pausing of QT, OMT)is very high, and this has also been the signal from the ecb speakers. LAGARDE IS LIKELY TO STRESS THAT THE ECB MONITORS MARKETS CLOSELY AND HAS THE TOOLS TO RESPOND IF REQUIRED; BUT THE "PRIMARY " AND FIRST SOLUTION LIES AT HOME IN FRANCE.
 
 WE MAY ALSO HEAR ABOUT LAGARDE'S EXIT PLANS AND THE RESELECTION OF HER SUCCESSOR ?
 
 ### Thursday - US Q3 Advance GDP and September PCE
 
-INTERESTING AS THIS REPORT COMES A DAY AFTER THE FOMC DECISION  ;BUT IS SET TO KEEP THE FED FIRMLY CONSIDERING FURTHER RATE HIKES .   CPI &  PPI DETAILS FOR THE MONTH POINT TO AN UNROUNDED CORE PCE INFLATION FIGURE OF ROUGHLY 0.33% M/M( bloomberg rounded median consensus id 0.3% ); for headline we looking at 0.5% m/m , WHICH WOULD BE A 5 MONTH HIGH , ON ENERGY PRICES  . THIS IS OBVIOUSLY ALOT HIGHER THAN THE FED'S 2% TARGEY .
+INTERESTING AS THIS REPORT COMES A DAY AFTER THE FOMC DECISION; BUT IS SET TO KEEP THE FED FIRMLY CONSIDERING FURTHER RATE HIKES. CPI & PPI DETAILS FOR THE MONTH POINT TO AN UNROUNDED CORE PCE INFLATION FIGURE OF ROUGHLY 0.33% M/M(bloomberg rounded median consensus id 0.3%); for headline we looking at 0.5% m/m, WHICH WOULD BE A 5 MONTH HIGH, ON ENERGY PRICES. THIS IS OBVIOUSLY A LOT HIGHER THAN THE FED'S 2% TARGET.
 
-MEANWHILE ON THE PERSONAL CONSUMPTION SIDE OF THE REPORT , NOMINAL SPENDING IS SEEN REMAINING ELEVATED (0.6% m/m after 0.9% ) , but less impressive on an inflation -adjusted basis 0.1% real .
+MEANWHILE ON THE PERSONAL CONSUMPTION SIDE OF THE REPORT, NOMINAL SPENDING IS SEEN REMAINING ELEVATED (0.6% m/m after 0.9%), but less impressive on an inflation-adjusted basis 0.1% real.
 
-ahead of the initial q3 gdp reading out alongside monthly pce thursday ; the atlanta fed's latest gdp now update shows a 3.5% q/q SAAR growth estimate for the quarter .
+ahead of the initial q3 gdp reading out alongside monthly pce thursday; the atlanta fed's latest gdp now update shows a 3.5% q/q SAAR growth estimate for the quarter.
 
-bloomberg consensus is a little optimistic (3%) but either way it would be an acceleration fronm the 2.2% in q2 and on  a solid underlying basis .
+bloomberg consensus is a little optimistic (3%) but either way it would be an acceleration from the 2.2% in q2 and on a solid underlying basis.
 
 ### Friday - BOJ Decision
 
-THE BOJ IS EXPECTED TO HOLD ITS POLICY RATE STEADY AT 1.25% AT THE OCTOBER MEETING . OFFICIALS SEE LITTLE NEED FOR A ACK-TO-BACK RATE HIKE FOLLOWING SEPTEMBER'S INCREASE ;THOUGH FURTHER MORE TIGHTENING IS ANTICIPATED IN DECEMBER OR EARLY 2027 .
+THE BOJ IS EXPECTED TO HOLD ITS POLICY RATE STEADY AT 1.25% AT THE OCTOBER MEETING. OFFICIALS SEE LITTLE NEED FOR A BACK-TO-BACK RATE HIKE FOLLOWING SEPTEMBER'S INCREASE; THOUGH FURTHER TIGHTENING IS ANTICIPATED IN DECEMBER OR EARLY 2027.
 
-MORE THAN 80% OF BOJ WATCHERS SURVEYED BY BLOOMBERG EXPECT THE NEXT RATE HIKE AT 18TH DECEMBER MEETING .
+MORE THAN 80% OF BOJ WATCHERS SURVEYED BY BLOOMBERG EXPECT THE NEXT RATE HIKE AT 18TH DECEMBER MEETING.
 
-WE DO QUESTION WHETHER THE BOJ WILL TONE DOWN THEIR RHETORIC OF WARNINGS RIKS TO PRICES . WE EXPECT OFFICIALS TO DEBATE WHETHER THEY NEED TO RAISE RATES ANOTHER 3 TIMES OR ONLY TWICE IN THIS CYCLE .
+WE DO QUESTION WHETHER THE BOJ WILL TONE DOWN THEIR RHETORIC OF WARNINGS OF RISKS TO PRICES. WE EXPECT OFFICIALS TO DEBATE WHETHER THEY NEED TO RAISE RATES ANOTHER 3 TIMES OR ONLY TWICE IN THIS CYCLE.
 
 ### Friday - UK DMP and Agent Surveys
 
-WITH THE B UDGET FINALLY OUT OF THE WAY , FOCUS WILL BE SWIFTLY SWITCHED BACK TO BOE POLICY AND THE FINAL 2 HUGELY SIGNIFICANT RELEASES AHEAD OF MPC BANK RATE DECISION THAT IS DUE ON THURSDAY 5TH NOVEMBER .
+WITH THE BUDGET FINALLY OUT OF THE WAY, FOCUS WILL BE SWIFTLY SWITCHED BACK TO BOE POLICY AND THE FINAL 2 HUGELY SIGNIFICANT RELEASES AHEAD OF MPC BANK RATE DECISION THAT IS DUE ON THURSDAY 5TH NOVEMBER.
 
-NEITHER THE DECISON MAKER PANEL SURVEY NOR THE AGENT'S (ASBC) SURVEY HAVE SHOWN ANY INDICATIONS OF 2ND ROUND EFFECTS IN THE DATA THUS FAR BIT IF EITHER DID THAT WOULD BE HUGLEY SIGNIFICANT FOR THE MONETARY POLICY OUTLOK .
+NEITHER THE DECISION MAKER PANEL SURVEY NOR THE AGENT'S (ASBC) SURVEY HAVE SHOWN ANY INDICATIONS OF 2ND ROUND EFFECTS IN THE DATA THUS FAR, BUT IF EITHER DID THAT WOULD BE HUGELY SIGNIFICANT FOR THE MONETARY POLICY OUTLOOK.
 
-FOR THE DMP SURVEY ; WAGE GROWTH EXPECTATIONS ON THE SINGLE MONTH PRINT WERE 3.5% Y/Y IN SEPTEMBER (remaining in the range , of between 3.32% -3.52% since january ) THE SINGLE MONTH PRINT FOR EXPECTED PRICE GROWTH ROSE TO 3.86% Y/Y IN SEPTEMBER FROM 3.59% IN AUGUST AND 3.67% IN JULY ..
+FOR THE DMP SURVEY; WAGE GROWTH EXPECTATIONS ON THE SINGLE MONTH PRINT WERE 3.5% Y/Y IN SEPTEMBER (remaining in the range, of between 3.32% -3.52% since january) THE SINGLE MONTH PRINT FOR EXPECTED PRICE GROWTH ROSE TO 3.86% Y/Y IN SEPTEMBER FROM 3.59% IN AUGUST AND 3.67% IN JULY.
 
-THE AGENT'S SURVEY NOTED THAT 2027 PAY SETTLEMENTS WERE LOOKING TO BE "SIMILAR TO  OR SLIGHTLY LOWER THAN 2026 "  . IF ANY OF THESE WERE TO INCREASE IN THE UPCOMING SURVEYS ; TGHAT WOULD IN OUR OPINION BE MASSIVELY SIGNIFICANT .
+THE AGENT'S SURVEY NOTED THAT 2027 PAY SETTLEMENTS WERE LOOKING TO BE "SIMILAR TO OR SLIGHTLY LOWER THAN 2026 ". IF ANY OF THESE WERE TO INCREASE IN THE UPCOMING SURVEYS; THAT WOULD IN OUR OPINION BE MASSIVELY SIGNIFICANT.
 
 ![Fall Back 2026 clock change announcement](/images/news/25th-2.jpg)
 
@@ -283,7 +285,7 @@ THE AGENT'S SURVEY NOTED THAT 2027 PAY SETTLEMENTS WERE LOOKING TO BE "SIMILAR T
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 23, 2026',
     tags: ['Macro', 'Markets', 'Equities', 'Bonds', 'Oil', 'Gold', 'ECB', 'Fed', 'PMIs', 'Geopolitics'],
@@ -372,13 +374,13 @@ ECB quiet period in effect (October 22–28).
 
 ## News From the Trenches
 
-- ECB set to raise rates in December after pause, economists say.
-- US is prepared for a long stand-off with Iran, says Trump envoy.
-- Yen hits one-month high as tech rout revives haven appeal.
-- Putin says peace talks must address the security of Russia, Ukraine and Europe.
-- Oil holds biggest weekly gain as Saudi attacks renew supply fears.
-- UK consumer confidence in slump as big as Brexit shock, GfK says.
-- Japan's September inflation rises to 2.1%, above the BoJ target.
+- Economists expect the ECB to resume hiking in December after its pause.
+- A Trump envoy says Washington is ready for a drawn-out standoff with Iran.
+- The yen climbs to a one-month high as the tech sell-off lifts demand for havens.
+- Putin says any peace deal has to cover security for Russia, Ukraine and Europe.
+- Oil keeps its largest weekly rise as Saudi attacks revive supply worries.
+- GfK says UK consumer confidence has fallen about as far as after the Brexit vote.
+- Japan's inflation reaches 2.1% in September, above the BoJ's goal.
 
 **Sources:** Bloomberg — UK Consumer Confidence in Slump as Big as Brexit Shock, GfK Says · Reuters — Japan's core inflation exceeds BOJ target, cements near-term rate hike chance · Bloomberg — Russia looking to escalate war, not end it, Romanian leader says · Bloomberg — ECB set to raise rates in December after pause, economists say · Reuters — France's Macron tightens curbs on protests, blaming hard-left unrest · Bloomberg — Traders Pay Record Premiums to Hedge Against Further Treasuries Rally · Bloomberg — Yen hits one-month high as US tech rout revives haven appeal · Bloomberg — Gold Dips Below $4,000 as Deepening Stock Rout Fuels Volatility · Bloomberg — Latest oil market news and analysis for Oct. 23 · FXStreet — Bitcoin falls 4% as chip stocks plunge and oil surges
 
@@ -411,7 +413,7 @@ ECB quiet period in effect (October 22–28).
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 22, 2026',
     tags: ['Macro', 'Markets', 'Equities', 'Oil', 'Gold', 'Treasuries', 'ECB', 'Geopolitics'],
@@ -426,7 +428,7 @@ Wednesday's rally in indices has been short-lived: Thursday morning we see marke
 
 The question we ask: are we following earnings or the Middle East war? My money is on the explosions!
 
-We have noticed markets are moving at different times of the day: early morning around 1am UK time, again at 3pm, and just in time for supper a move around 6pm... Any trader will tell you timing is key to a day trader's P&L.
+We have noticed markets are moving at different times of the day: early morning around 1am UK time, again at 3pm, and just in time for supper a move around 6pm.. Any trader will tell you timing is key to a day trader's P&L.
 
 On Wednesday we witnessed strong results from SpaceX and saw the Nasdaq rise 1.4% and chipmakers gain 2.3%. US equity breadth was less convincing, with several sectors lower despite solid index-level gains. Treasuries were little changed, even as the 20-year auction tailed and stopped at the highest yield since 2020. Geopolitical risks shifted modestly towards diplomacy as Russia signaled a willingness to resume Ukraine talks and Iran reiterated conditions for negotiations with the US. Oil's geopolitical premium remains elevated, though Middle East crude flows are proving more resilient than the rise in shipping attacks might imply. Gold was slightly higher but was hit on news of American embassy staff leaving the Middle East.
 
@@ -449,12 +451,12 @@ Not much out on Thursday in terms of figures, but it is normally our busiest day
 
 ## News from the Trenches
 
-- US and Israel draw up plans for renewed strikes on Iran after the midterms.
-- Putin agrees to trilateral talks with Ukraine; US to end war.
-- Ukraine's Zelenskyy says he supports a ceasefire and trilateral talks.
-- IRGC says it is preparing to unveil the "Mother of All Bombs".
-- Reports say Pakistan's army chief Munir relayed a US warning to Tehran.
-- US State Department ordered departures for non-emergency US government employees and their family members in Saudi Arabia only.
+- The US and Israel are reportedly planning fresh strikes on Iran once the midterms are over.
+- Putin accepts three-way talks with Ukraine as the US pushes to end the war.
+- Zelenskyy backs a ceasefire and three-way talks.
+- The IRGC says it will soon unveil what it calls the "Mother of All Bombs".
+- Pakistan's army chief Munir reportedly passed a US warning to Tehran.
+- The State Department has ordered non-emergency US government staff and their families to leave Saudi Arabia.
 
 **Sources:** Bloomberg — BOJ Seen Raising Interest Rates in December as Most Economists Forecast Hike · Reuters · The New York Times — US, Israel plan renewed Iran strikes · NBC News — US troops, diplomats evacuating Middle East posts, sources say · Reuters — Dip: dollar takes breather with Fed focus · Bloomberg — Latest Oil Market News and Analysis for Oct. 22 · Bloomberg — Gold edges lower as traders weigh Mideast signals, Fed rate path · Bloomberg — Stock market today: Dow, S&P live updates
 
@@ -492,7 +494,7 @@ I will be here Friday afternoon for a look and chatter.
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 21, 2026',
     tags: ['Macro', 'Markets', 'Inflation', 'Bonds', 'Oil', 'ECB', 'BOE', 'Equities', 'Geopolitics'],
@@ -558,15 +560,15 @@ Germany's ZEW indicator of economic sentiment fell to 28.1 in October, down from
 
 ## News From the Trenches
 
-- Witkoff to present Putin peace proposal after Zelenskyy talks.
-- Iran FM: Strait of Hormuz to remain closed until an agreement is reached.
-- Israeli PM Netanyahu pushes to resume Israeli strikes against Iran.
-- ECB's Lane: greater global euro use may help the ECB control inflation.
-- BoE's Greene calls for a November rate hike as UK wage pressures persist.
-- BoJ seen raising rates to 1.5% in December, maintaining its quarterly pace.
-- Goldman now sees the RBA raising rates by 25bp to 4.85% in November.
-- Netflix revenue growth slows as it overhauls programming units.
-- SpaceX profit beats estimates on a big jump in AI business revenue.
+- Witkoff will put a peace proposal to Putin following talks with Zelenskyy.
+- Iran's foreign minister says Hormuz stays shut until there is a deal.
+- Netanyahu is pressing for Israel to restart strikes on Iran.
+- ECB's Lane argues wider global use of the euro could help the bank contain inflation.
+- BoE's Greene wants a November hike, citing persistent UK wage pressure.
+- The BoJ is expected to lift rates to 1.5% in December, keeping a quarterly pace.
+- Goldman now forecasts a 25bp RBA hike to 4.85% in November.
+- Netflix's revenue growth cools as it reorganises its programming units.
+- SpaceX beats profit forecasts on a sharp rise in AI-related revenue.
 
 ![Additional market coverage from the 21 October briefing](/images/news/21st-2.png)
 
@@ -600,7 +602,7 @@ Germany's ZEW indicator of economic sentiment fell to 28.1 in October, down from
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 20, 2026',
     tags: ['Macro', 'Markets', 'Europe', 'France', 'Bonds', 'Oil', 'FX', 'Central Banks', 'Geopolitics'],
@@ -655,16 +657,16 @@ Gilts were down 0.7%, Bunds down 0.4% and OATs down 1%, with T-Bonds unchanged o
 
 ## News From the Trenches
 
-- Trump open to a summit with Xi and Putin to discuss nuclear disarmament.
-- US envoys to hold fresh Ukraine talks; energy crunch looms over the midterms.
-- Zelenskyy says US decisions on Ukraine are hard to explain.
-- Merz warns Europe is underestimating the Russian threat.
-- Iran's IRGC: blockade could extend to the Bab al-Mandeb Strait and Suez Canal.
-- Fed sees AI boom adding to inflation pressures.
-- Bank of Canada rate-hike bets rise as inflation expectations climb.
-- German ZEW investor outlook set to fall as energy costs rise.
-- French bond sell-off intensifies after riots and looting.
-- Musk pledges one SpaceX share for every child in America.
+- Trump says he is open to a three-way summit with Xi and Putin on nuclear arms control.
+- US envoys plan new Ukraine talks while an energy squeeze hangs over the midterms.
+- Zelenskyy calls some US decisions on Ukraine hard to understand.
+- Merz says Europe is not taking the Russian threat seriously enough.
+- The IRGC says its blockade could widen to Bab al-Mandeb and the Suez Canal.
+- The Fed sees the AI boom adding to inflation pressure.
+- Markets add to Bank of Canada hike bets as inflation expectations rise.
+- Rising energy costs are expected to drag down Germany's ZEW investor survey.
+- Selling in French bonds accelerates after riots and looting.
+- Musk promises a SpaceX share for every child in the US.
 
 **Sources:** LiveSquawk — German ZEW Investor Outlook Set To Slip As Energy Costs Rise · Reuters — Ukraine's Zelenskiy says US decisions on Ukraine hard to explain · Investing.com — China keeps benchmark lending rates steady for 17th straight month in Oct · WSJ — Marine Le Pen Seizes on French Chaos to Present Herself as Leader in Waiting · Reuters — UK's Healey rules out capital gains tax increase in budget, Times reports · Reuters — Dollar and euro drift, yen slips as markets seek direction · Bloomberg — Gold Holds Decline as Energy-Led Inflation Weighs on Rate Path
 
@@ -713,7 +715,7 @@ Gilts were down 0.7%, Bunds down 0.4% and OATs down 1%, with T-Bonds unchanged o
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 19, 2026',
     tags: ['Macro', 'Markets', 'Europe', 'France', 'Bonds', 'Oil', 'Central Banks', 'PMIs', 'Geopolitics'],
@@ -763,17 +765,17 @@ Monday morning and indices are posting a sea of green, with both Nasdaq and Wall
 
 ## News From the Trenches
 
-- China's Q3 GDP growth accelerates to 4.5%, beating estimates.
-- BoJ Governor Ueda says underlying inflation is quite close to the 2% target.
-- IMF says the BoJ may need to tighten faster if inflation exceeds forecasts.
-- Putin floats a summit with Trump and Xi to decide Ukraine's fate.
-- Zelenskyy says Trump is pushing Ukraine to capitulate to Russia.
-- Rubio says Trump may take up to 60 days to decide on Russian sanctions.
-- Oil tumbles as Trump's Russian sanctions waiver raises supply prospects.
-- France faces the aftermath of its worst unrest in years as Macron urges calm.
-- ECB's Lagarde says the bond sell-off will slow inflation.
-- Euro weakens as French protests and Russia risks weigh on sentiment.
-- US futures rise ahead of a busy earnings week.
+- China's growth picks up to 4.5% in Q3, ahead of forecasts.
+- BoJ Governor Ueda says underlying inflation is now near 2%.
+- The IMF says the BoJ may have to tighten faster if inflation overshoots.
+- Putin suggests a summit with Trump and Xi to settle Ukraine's future.
+- Zelenskyy says Trump is pressing Ukraine to give in to Russia.
+- Rubio says Trump could take up to 60 days to decide on sanctions against Russia.
+- Oil falls sharply as a US waiver on Russian sanctions points to more supply.
+- France deals with the fallout from its worst unrest in years; Macron appeals for calm.
+- Lagarde says the bond sell-off will help slow inflation.
+- The euro slips on French protests and Russia-related risk.
+- US stock futures gain ahead of a heavy week of earnings.
 
 **Sources:** Earnings Whispers — Earnings Expectations, Calendar & Analysis · WSJ — Putin Floats a Summit With Trump and Xi to Discuss Ukraine Deal · CNBC — China's economic growth quickens as exports surge, stimulus rolls out · Bloomberg — Trump Pressed Ukraine to Capitulate to Russia, Zelenskyy Says · Bloomberg — Lagarde Sends Message to Putin at IMF That War Harms Prosperity · WSJ — French Leaders Trade Blame After Rioting Sweeps the Nation · Reuters — ECB's Lagarde says bond selloff will slow inflation · Reuters — Dollar firmer, euro weakens as French protests turn violent · Reuters — Oil tumbles as Trump's Russia sanctions waiver may lead to more fuel supplies · Bloomberg — Stock market today: Dow, S&P live updates
 
@@ -814,7 +816,7 @@ The National Assembly opened debate on the revenue portion of the budget amidst 
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 17, 2026',
     tags: ['Macro', 'Markets', 'Inflation', 'Bonds', 'Oil', 'Central Banks', 'PMIs', 'Geopolitics'],
@@ -857,7 +859,7 @@ CPI is expected to be the main event, with early consensus looking for headline 
 
 I think we will pay less attention to wage data at this point of the year (most U.K. wage settlements are in Q1/April), so we will focus more on the quantity side: a payrolls print (negative expected, but less so than last month) and a subdued LFS employment change, with early consensus looking for the unemployment rate to remain steady at 4.9%.
 
-Governor Bailey (zzzzz) will speak on Wednesday in a fireside chat at OMFIF. His comments earlier this morning opened optionality for the November meeting a little, so we will be watching to see whether he repeats that language or is more explicit. We also expect budget news to continue to hit during the week, ahead of the October 28 event.
+Governor Bailey will speak on Wednesday in a fireside chat at OMFIF. His comments earlier this morning opened optionality for the November meeting a little, so we will be watching to see whether he repeats that language or is more explicit. We also expect budget news to continue to hit during the week, ahead of the October 28 event.
 
 ### Monday — Canada September inflation and BoC Quarterly Business Survey
 
@@ -902,18 +904,18 @@ ECB officials have guided towards an October hold in recent weeks, in part due t
 ## News from the trenches
 
 - [Trump denies Musk claim he ordered Starlink restrictions in Ukraine (CNBC)](https://www.cnbc.com/2026/10/16/trump-denies-musk-claim-he-ordered-starlink-restrictions-in-ukraine.html)
-- Katie Zacharia, Trump’s new press secretary, is ousted after five days (New York Times).
-- Healey weighs a new U.K. investor visa for wealthy foreigners in budget plan (Bloomberg).
-- Zelensky warns a gas deal will follow the U.S.-Russia diesel pact (Breaking The News).
-- Brazen Russian attacks are testing NATO (Wall Street Journal).
-- Iran vows to push U.S. warships further away (Breaking The News).
-- Saudis intercept a ballistic missile launched toward Yanbu (Breaking The News).
-- BoJ’s Ueda says he cannot tolerate inflation rising above 2% (Bloomberg).
-- U.S. Treasury yields waver as traders wrap up a volatile week.
-- Dollar Index slips as Fed Chair Warsh won’t prejudge October.
-- Bitcoin hovers near $81K as analysts see a potential market bottom.
-- Brent surges above $110 as supply risks intensify on geopolitical tensions (Bloomberg).
-- Gold set for a weekly drop as traders assess Fed signals (Reuters).`,
+- The New York Times reports that Katie Zacharia has been removed as Trump's press secretary after five days.
+- Bloomberg reports that Healey is considering a new UK investor visa for wealthy foreigners in the budget.
+- Breaking The News reports Zelensky's warning that a gas deal will follow the US-Russia diesel pact.
+- The Wall Street Journal says increasingly bold Russian attacks are testing NATO.
+- Breaking The News reports Iran's pledge to push US warships further out.
+- Breaking The News reports that Saudi forces intercepted a ballistic missile aimed at Yanbu.
+- Bloomberg reports Ueda saying he will not accept inflation running above 2%.
+- US Treasury yields drift as a volatile week draws to a close.
+- The dollar index eases after Fed Chair Warsh declines to pre-commit on October.
+- Bitcoin holds around $81K; some analysts think the market may be bottoming.
+- Bloomberg reports Brent above $110 as geopolitical supply risks grow.
+- Reuters reports gold heading for a weekly loss as traders weigh Fed signals.`,
   },
   {
     id: 'n19',
@@ -926,7 +928,7 @@ ECB officials have guided towards an October hold in recent weeks, in part due t
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 16, 2026',
     tags: ['Macro', 'Markets', 'OPEX', 'Inflation', 'Bonds', 'Asia', 'Equities', 'Geopolitics'],
@@ -1001,20 +1003,20 @@ It’s Friday, and a tricky but successful week deserves a little humor: fast-fo
 
 ## News from the trenches
 
-- Trump muses on a future Iran strike with the “Mother of All Bombs”; deployment could be before or after the midterms.
-- South Korea weighs expanding its naval mission to the Gulf of Oman.
-- Russia’s Putin vows revenge for Ukraine’s attacks on energy sites.
-- Ukraine runs out of Patriot interceptor missiles as Zelensky and Trump clash; the U.K. sends more missiles to Ukraine to hit Russian sites.
-- Iran tells Hezbollah to increase readiness and prepare for potential conflict.
-- Fed’s Warsh says he would deliver price stability but will not prejudge meetings.
-- The EU begins assessing additional sectors for China trade quotas (Bloomberg).
-- Investors temper Anthropic IPO valuation expectations over a slowdown in revenue growth, sources say (Reuters).
-- ECB’s Nagel says he cannot exclude the possibility that the ECB may need to hike again (Bloomberg).
-- Bank of England Governor Bailey sees “quite subdued” second-round price pressures so far (Reuters).
-- Most Japanese government bonds rise, tracking gains in U.S. Treasuries (Wall Street Journal).
-- Oil heads for a weekly gain amid Middle East supply risks (Reuters).
-- Gold falls as investors await the Fed chairman’s remarks (Wall Street Journal).
-- KFC will switch its U.S. restaurants to Coca-Cola, ending its PepsiCo partnership (Bloomberg).
+- Trump floats using the "Mother of All Bombs" on Iran, possibly before or after the midterms.
+- South Korea considers widening its naval mission to the Gulf of Oman.
+- Putin promises retaliation for Ukrainian strikes on Russian energy sites.
+- Ukraine has used up its Patriot interceptors amid a Zelensky–Trump dispute; the UK is sending more missiles for strikes on Russian sites.
+- Iran tells Hezbollah to raise its readiness for a possible conflict.
+- Fed Chair Warsh promises price stability but will not pre-judge meetings.
+- Bloomberg reports the EU is looking at more sectors for China trade quotas.
+- Reuters sources say investors are lowering their Anthropic IPO valuation hopes as revenue growth slows.
+- Bloomberg reports ECB's Nagel saying another hike cannot be ruled out.
+- Reuters reports BoE Governor Bailey describing second-round price effects as "quite subdued" so far.
+- The Wall Street Journal reports most JGBs gaining in line with Treasuries.
+- Reuters reports oil on track for a weekly rise on Middle East supply risk.
+- The Wall Street Journal reports gold slipping ahead of remarks from the Fed chair.
+- Bloomberg reports that KFC's US restaurants are moving from PepsiCo to Coca-Cola.
 
 ## Focus events · Friday, October 16
 
@@ -1063,7 +1065,7 @@ It’s Friday, and a tricky but successful week deserves a little humor: fast-fo
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 15, 2026',
     tags: ['Macro', 'Markets', 'CPI', 'Inflation', 'Bonds', 'Iran', 'Asia', 'Federal Reserve'],
@@ -1139,21 +1141,21 @@ Treasuries extended gains, with 10-year yields down 7.7 basis points to 5.11% an
 
 ## News from the trenches
 
-- Hotter U.S. inflation raises pressure on the Fed ahead of the midterms.
-- Netanyahu says he is not seeking to attack Iran again before Israel's elections.
-- Iran's parliament speaker says the country will both fight and negotiate to reach its goals.
-- Saudi Arabia says it has zero intention of backing down against the Houthis.
-- Citi expects a December rate hike after the upside inflation surprise.
-- Fed's Barkin says CPI ran too hot and keeps the October decision open.
-- Fed's Bowman says there is time to "wait and see" before taking further action.
-- Gold drops 2% as hot inflation data boosts rate-hike expectations.
-- Trump plays Russian roulette on the eve of the midterms.
-- OpenAI alleges that a former employee who left for Apple took files about an unreleased device.
-- The Fed's Beige Book says economic activity grew modestly.
-- ECB's Simkus says inflation pressures point to further tightening.
-- BoE hawk Pill is sceptical of market pricing for four U.K. rate hikes.
-- The 10-year Treasury yield jumps after September core inflation comes in hotter than expected.
-- Traders bet the Fed may now need to hike twice or increase rates by 0.5 percentage points in December.
+- Hotter US inflation adds to pressure on the Fed before the midterms.
+- Netanyahu says he does not plan another strike on Iran before Israel votes.
+- Iran's parliament speaker says Tehran will fight and negotiate at the same time.
+- Saudi Arabia says it will not back down against the Houthis.
+- Citi now expects a December hike after the inflation upside surprise.
+- Fed's Barkin calls the CPI print too hot and leaves October in play.
+- Fed's Bowman says the Fed can afford to wait and see.
+- Gold falls 2% as the hot inflation print lifts hike expectations.
+- Axios describes Trump as taking a high-stakes gamble just before the midterms.
+- OpenAI says a former employee who moved to Apple took files on an unreleased device.
+- The Fed's Beige Book reports modest growth in activity.
+- ECB's Simkus says price pressures argue for more tightening.
+- BoE's Pill doubts that the UK will see the four hikes markets are pricing.
+- The 10-year Treasury yield rises after a hotter-than-expected September core reading.
+- Traders now price two Fed hikes, or a single half-point move, in December.
 
 ### Further reading
 
@@ -1193,7 +1195,7 @@ Treasuries extended gains, with 10-year yields down 7.7 basis points to 5.11% an
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 14, 2026',
     tags: ['Macro', 'Markets', 'CPI', 'Inflation', 'Oil', 'Bonds', 'Gold', 'Geopolitics'],
@@ -1229,18 +1231,18 @@ Trade data separately surprised to the upside, with strong export and import gro
 
 ## News from the trenches
 
-- Trump and Netanyahu face a dilemma: strike Iran before elections or wait.
-- Iran is shifting tactics to step up attacks on shipping before the U.S. vote.
-- Trump may ask Turkey to join the response in Yemen.
-- Aramco headquarters hit during a Houthi attack on Saudi Arabia.
-- Houthis are building an advanced missile with Chinese parts.
-- Fed's Williams currently sees no need for a rate hike in 2027.
-- Fed's Collins sees higher rates likely this year to tame prices.
-- Fed's Barkin says persistent inflation warrants policy action.
-- Healey set to pay for budget giveaways without more borrowing.
-- Chancellor targets online marketplaces in a £1 billion tax crackdown.
-- U.S. CPI seen rising, with energy costs adding to the Fed's policy dilemma.
-- How much will ASML stock move after earnings?
+- Trump and Netanyahu weigh striking Iran before the elections against waiting.
+- Iran is changing tactics and attacking more ships ahead of the US vote.
+- Trump may ask Turkey to take part in the Yemen response.
+- Houthi strikes reach Aramco's headquarters in Saudi Arabia.
+- The Houthis are reportedly developing an advanced missile using Chinese components.
+- Fed's Williams sees no case for a hike in 2027 for now.
+- Fed's Collins expects rates to rise further this year to bring prices down.
+- Fed's Barkin says sticky inflation calls for a policy response.
+- Healey aims to fund budget giveaways without extra borrowing.
+- The chancellor plans a £1 billion tax crackdown on online marketplaces.
+- US CPI is expected to rise, with energy costs complicating the Fed's choices.
+- Options traders weigh how far ASML shares could move on earnings
 
 ### Further reading
 
@@ -1356,7 +1358,7 @@ I don't know which way tomorrow's core number goes. What I'd avoid is reacting t
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 13, 2026',
     tags: ['Macro', 'Markets', 'Oil', 'Bonds', 'Inflation', 'Geopolitics', 'Federal Reserve', 'Asia'],
@@ -1438,17 +1440,17 @@ The restrictions could reduce marginal demand for longer-dated bonds and put som
 
 ## News from the trenches
 
-- Trump does not believe China and Russia are helping Iran.
-- Saudi Arabia says a Houthi ballistic missile was intercepted over Riyadh and Khamis Mushait.
-- Supertankers turn from a Gulf oil-transfer hub amid Iran's attacks.
-- Kyiv says Russia hit energy targets despite Trump's ceasefire announcement.
-- Mortgage shock sends U.S. pending home sales to a near 12-year low.
-- Hammack backs restrictive policy, saying it is better if it comes relatively quickly.
-- Germany and Italy request emergency-brake powers to stop new EU laws.
-- U.K. shoppers remain cautious as fuel costs bite, a survey shows.
-- Andy Burnham plans to push for new post-Brexit deals at the EU summit.
-- Wall Street revives the case for scrapping the U.S. 20-year bond.
-- Nvidia's China AI-chip share falls as Huawei closes the gap, a report finds.
+- Trump says he does not think China and Russia are helping Iran.
+- Saudi Arabia reports intercepting a Houthi ballistic missile over Riyadh and Khamis Mushait.
+- Supertankers avoid a Gulf oil-transfer hub after Iranian attacks.
+- Kyiv says Russia struck energy sites despite the ceasefire Trump announced.
+- Higher mortgage rates push US pending home sales close to a 12-year low.
+- Hammack supports tight policy and says it is better delivered quickly.
+- Germany and Italy want emergency-brake powers to block new EU laws.
+- A survey finds UK shoppers still careful as fuel costs rise.
+- Andy Burnham will seek new post-Brexit agreements at the EU summit.
+- Wall Street renews calls to scrap the 20-year US Treasury bond.
+- A report finds Nvidia losing AI-chip share in China as Huawei catches up.
 
 ## Focus events · Tuesday, October 13
 
@@ -1524,7 +1526,7 @@ The restrictions could reduce marginal demand for longer-dated bonds and put som
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 12, 2026',
     tags: ['Macro', 'Markets', 'Oil', 'Bonds', 'Geopolitics', 'Ukraine', 'Earnings'],
@@ -1572,19 +1574,19 @@ Risk sentiment improved as the session progressed, with U.S. equity futures adva
 
 ## News from the trenches
 
-- Trump: Putin agrees a deal for Russia to release diesel onto the market.
-- Iran says the U.S. response on reopening Hormuz is insufficient.
-- Putin relayed an Iran war proposal to Trump, the Kremlin says.
-- Iran sets a supertanker ablaze after the U.S. takes out a ship breaking the blockade; Saudi airport hit again as Riyadh prepares to host major conferences.
-- Houthis claim attacks on Aramco facilities at Riyadh and Khurais.
-- Trump says Russia and Ukraine agreed to an energy ceasefire.
-- Trump says Ukraine needs a new leader who can deal with Putin.
-- Zelensky says he will organize elections if Russia agrees to a 60-day ceasefire.
-- Bessent will likely cut U.S. long-bond sales next month, Citi says.
-- Germany warns the EU that €150 billion in budget cuts are not enough.
-- Healey plans short-term U.K. budget giveaways to limit fiscal pain.
-- IEA urges more diesel releases as the global market tightens.
-- NATO should prepare for a deadly Russian "hybrid" attack, Poland says.
+- Trump says Putin has agreed to release Russian diesel onto the market.
+- Iran calls the US reply on reopening Hormuz inadequate.
+- The Kremlin says Putin passed an Iranian war proposal to Trump.
+- Iran sets a supertanker on fire after the US disables a ship running the blockade; a Saudi airport is hit again as Riyadh gets ready to host major conferences.
+- The Houthis say they attacked Aramco sites at Riyadh and Khurais.
+- Trump says Russia and Ukraine have agreed to stop striking energy targets.
+- Trump says Ukraine needs a leader who can negotiate with Putin.
+- Zelensky says he will hold elections if Russia accepts a 60-day ceasefire.
+- Citi expects Bessent to reduce long-bond issuance next month.
+- Germany tells the EU that €150 billion of budget cuts falls short.
+- Healey plans near-term budget giveaways to soften the fiscal squeeze.
+- The IEA calls for more diesel stock releases as the market tightens.
+- Poland says NATO should get ready for a lethal Russian "hybrid" attack.
 
 ## Further reading
 
@@ -1612,7 +1614,7 @@ Risk sentiment improved as the session progressed, with U.S. equity futures adva
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 10, 2026',
     tags: ['Macro', 'Markets', 'Bonds', 'Yields', 'Inflation', 'Oil', 'Europe', 'France'],
@@ -1720,7 +1722,7 @@ Germany's changing position also makes this more difficult. It has an election i
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 9, 2026',
     tags: ['Macro', 'Markets', 'Bonds', 'Yields', 'Oil', 'Iran', 'AI', 'Asia'],
@@ -1799,12 +1801,12 @@ Household spending fell by 3.1% year over year in August, an improvement from Ju
 
 ## News from the trenches
 
-- Pentagon draws up new Iran strike plans as Trump hesitates.
-- Trump says the US will not attack Iran before November's midterm elections.
-- Iran-backed Houthis seek to regain the upper hand in Hormuz with new attacks.
-- US moves to reassure Taiwan as Trump–Xi ties stall a major arms deal.
-- Hurricane Isaias threatens 500,000 barrels a day of refining capacity.
-- PIMCO says the US 10-year yield could hit 6% for the first time since 2000.
+- The Pentagon prepares new Iran strike options while Trump holds back.
+- Trump says there will be no US attack on Iran before the November midterms.
+- The Iran-backed Houthis launch new attacks to regain the advantage around Hormuz.
+- The US tries to reassure Taiwan as Trump–Xi relations hold up a large arms sale.
+- Hurricane Isaias puts about 500,000 barrels a day of refining capacity at risk.
+- PIMCO says the US 10-year yield could reach 6%, a level last seen in 2000.
 
 ### Further reading
 
@@ -1847,7 +1849,7 @@ No supply scheduled.`,
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 7, 2026',
     tags: ['Macro', 'Markets', 'Bonds', 'Yields', 'France', 'Oil', 'Geopolitics', 'Central Banks'],
@@ -1914,20 +1916,20 @@ Brent crude recovered modestly after Monday's near-2% decline, with higher Middl
 
 ## News from the trenches
 
-- US Vice President Vance says Iran must cut nuclear enrichment to end the war — [Reuters](https://www.reuters.com/world/interview-us-vice-president-vance-says-iran-must-cut-enrichment-end-war-2026-10-06/)
-- Iran ramps up ship attacks in the Strait of Hormuz as oil and gas flows climb
-- Trump resists a deeper US role in the Saudi Arabia–Houthi conflict — [Bloomberg](https://www.bloomberg.com/news/articles/2026-10-06/trump-resists-deeper-us-role-in-saudi-arabia-houthi-conflict)
-- Two Houthi missiles target Aden International Airport in southern Yemen
-- Zelenskyy says intelligence shows Russia is preparing a massive attack — [Reuters](https://www.reuters.com/world/ukraines-zelenskiy-says-intelligence-shows-russia-is-preparing-massive-attack-2026-10-06/)
-- A dovish BOJ dissenter signals support for future rate hikes — [Reuters](https://www.reuters.com/world/asia-pacific/bojs-sato-signals-support-future-rate-hikes-kyodo-reports-2026-10-06/)
-- Japan's real wages rise for an eighth month, aided by Takaichi relief measures — [Bloomberg](https://www.bloomberg.com/news/articles/2026-10-06/japan-real-wages-rise-for-eighth-month-aided-by-takaichi-relief)
-- Saudi-led coalition reports a Houthi ballistic missile interception — [FXStreet](https://www.fxstreet.com/news/saudi-led-coalition-says-houthi-ballistic-missile-intercepted-over-khamis-mushait-202610070218)
-- Yen softens as BOJ rate-hike expectations recede ahead of the FOMC minutes — [FXStreet](https://www.fxstreet.com/news/japanese-yen-softens-as-boj-rate-hike-expectations-recede-fomc-minutes-loom-202610070203)
-- Gold ticks lower as investors await the Fed meeting minutes — [The Wall Street Journal](https://www.wsj.com/finance/commodities-futures/gold-ticks-lower-as-investors-await-fed-meeting-minutes-1e95b0b1)
-- Latest oil-market news and analysis for October 7 — [Bloomberg](https://www.bloomberg.com/news/articles/2026-10-06/latest-oil-market-news-for-oct-7)
-- JPMorgan says distressed US loans rise to their highest level since the pandemic
-- Ray Dalio says the AI bubble may be nearing its bursting point — [Bloomberg](https://www.bloomberg.com/news/articles/2026-10-07/ray-dalio-warns-ai-bubble-is-approaching-burst-point)
-- Bitcoin fails to hold $85,000 as Ethereum downside risks rise and XRP momentum fades — [FXStreet](https://www.fxstreet.com/cryptocurrencies/news/top-3-price-prediction-bitcoin-ethereum-ripple-btc-fails-to-hold-85-000-eth-downside-risks-rise-xrp-momentum-fades-202610070338)
+- Vance says Iran has to scale back enrichment for the war to end — [Reuters](https://www.reuters.com/world/interview-us-vice-president-vance-says-iran-must-cut-enrichment-end-war-2026-10-06/)
+- Iran steps up attacks on shipping in Hormuz as oil and gas traffic increases
+- Trump is wary of a bigger US role in the Saudi–Houthi conflict — [Bloomberg](https://www.bloomberg.com/news/articles/2026-10-06/trump-resists-deeper-us-role-in-saudi-arabia-houthi-conflict)
+- Two Houthi missiles are aimed at Aden International Airport in southern Yemen
+- Zelenskyy says intelligence points to a large Russian attack in preparation — [Reuters](https://www.reuters.com/world/ukraines-zelenskiy-says-intelligence-shows-russia-is-preparing-massive-attack-2026-10-06/)
+- A BOJ board member who previously dissented dovishly now signals support for more hikes — [Reuters](https://www.reuters.com/world/asia-pacific/bojs-sato-signals-support-future-rate-hikes-kyodo-reports-2026-10-06/)
+- Japan's real wages rise for the eighth month running, helped by Takaichi's relief measures — [Bloomberg](https://www.bloomberg.com/news/articles/2026-10-06/japan-real-wages-rise-for-eighth-month-aided-by-takaichi-relief)
+- The Saudi-led coalition says it intercepted a Houthi ballistic missile — [FXStreet](https://www.fxstreet.com/news/saudi-led-coalition-says-houthi-ballistic-missile-intercepted-over-khamis-mushait-202610070218)
+- The yen eases as BOJ hike bets fade ahead of the FOMC minutes — [FXStreet](https://www.fxstreet.com/news/japanese-yen-softens-as-boj-rate-hike-expectations-recede-fomc-minutes-loom-202610070203)
+- Gold edges down ahead of the Fed minutes — [The Wall Street Journal](https://www.wsj.com/finance/commodities-futures/gold-ticks-lower-as-investors-await-fed-meeting-minutes-1e95b0b1)
+- Bloomberg's oil-market roundup for October 7 — [Bloomberg](https://www.bloomberg.com/news/articles/2026-10-06/latest-oil-market-news-for-oct-7)
+- JPMorgan says distressed US loans are at their highest since the pandemic
+- Ray Dalio warns the AI bubble may be close to bursting — [Bloomberg](https://www.bloomberg.com/news/articles/2026-10-07/ray-dalio-warns-ai-bubble-is-approaching-burst-point)
+- Bitcoin slips back below $85,000 while Ethereum and XRP lose momentum — [FXStreet](https://www.fxstreet.com/cryptocurrencies/news/top-3-price-prediction-bitcoin-ethereum-ripple-btc-fails-to-hold-85-000-eth-downside-risks-rise-xrp-momentum-fades-202610070338)
 
 ## Focus events · Wednesday, October 7
 
@@ -1975,7 +1977,7 @@ Brent crude recovered modestly after Monday's near-2% decline, with higher Middl
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 6, 2026',
     tags: ['Macro', 'Markets', 'Bonds', 'Yields', 'Debt', 'Oil', 'Gold', 'FX'],
@@ -1987,7 +1989,7 @@ MORNING; MONDAY WE SAW EQUITIES MOVE BROADLY HIGHER IN THE LATE AFTERNOON, LED B
 
 ### Iran and regional security
 
-IRANIAN ARMED FORCES MAJOR GENERAL ALI ABOLLAHI WARNED COUNTRIES HOSTING US FORCES IN THE REGION THAT THE CONTINUED PRESENCE OF AMERICAN TROOPS IS A MAIN SOURCE OF INSECURITY AND ECONOMIC PROBLEMS. HE WARNED THAT IF A NEW WAR AGAINST IRAN IS INITIATED, ITS FLAMES WILL ENGULF EVERYONE.
+IRANIAN ARMED FORCES MAJOR GENERAL ALI ABDOLLAHI WARNED COUNTRIES HOSTING US FORCES IN THE REGION THAT THE CONTINUED PRESENCE OF AMERICAN TROOPS IS A MAIN SOURCE OF INSECURITY AND ECONOMIC PROBLEMS. HE WARNED THAT IF A NEW WAR AGAINST IRAN IS INITIATED, ITS FLAMES WILL ENGULF EVERYONE.
 
 AXIOS REPORTED, CITING THREE US OFFICIALS, THAT TRUMP'S TOP NATIONAL SECURITY OFFICIALS MET FOR HOURS AT CAMP DAVID ON FRIDAY TO DISCUSS NEXT STEPS IN THE IRAN WAR AND THE SAUDI-YEMEN CONFLICT. THE MEETING WAS NOT PUBLICLY ANNOUNCED. SECRETARY OF STATE MARCO RUBIO CONFIRMED ON MONDAY THAT THE CAMP DAVID MEETING TOOK PLACE.
 
@@ -2011,11 +2013,11 @@ WE HAVE MENTIONED FOR A WHILE THAT “DEBT” IS BECOMING AN ISSUE WITH GOVERNME
 
 ### News from the trenches
 
-- Ray Dalio warns China and Japan may pull back from US Treasuries
-- US Treasury issues notice to foreign banks doing business with Iran
-- Japan's 10-year bond sale draws stronger demand than its 12-month average
-- Asia's buffers are too thin to keep absorbing the oil shock, World Bank says
-- Yemen says it has retaken Mocha as the battle for Bab el-Mandeb looms
+- Ray Dalio says China and Japan could cut their US Treasury holdings
+- The US Treasury warns foreign banks that deal with Iran
+- Demand at Japan's 10-year auction beats its 12-month average
+- The World Bank says Asia lacks the buffers to keep absorbing the oil shock
+- Yemen says it has recaptured Mocha ahead of a fight for Bab el-Mandeb
 
 ### More reading
 
@@ -2082,7 +2084,7 @@ US TREASURY YIELDS REMAINED NEAR MULTI-DECADE HIGHS, WITH THE 10-YEAR AT 5.32% A
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 5, 2026',
     tags: ['Macro', 'Markets', 'NFP', 'Employment', 'Bonds', 'Oil', 'PMI', 'Central Banks'],
@@ -2116,14 +2118,14 @@ PRESIDENT TRUMP TOLD REPORTERS HE WON'T BE “DOING THE EXPORT BAN” ON DIESEL:
 
 ### News from the trenches
 
-- Fed may skip October but pull the rate-hike trigger in December
-- BOJ deputy chief flags AI's possible impact on the neutral rate
-- Euro falls to a 17-month low on the region's fiscal and political risks
-- Wall Street tries to live with 5% yields as market cracks grow
-- Middle East oil exports exceed pre-war levels, but tanker attacks increase
-- OPEC+ agrees to keep oil output targets steady in November
-- Yemen launches operations to seize areas from Iran-backed Houthis
-- Russia strikes Kyiv as Germany's chancellor visits
+- The Fed could pass on October and hike in December
+- The BOJ's deputy governor points to AI as a possible influence on the neutral rate
+- The euro drops to a 17-month low on fiscal and political worries
+- Wall Street adjusts to 5% yields as signs of strain spread
+- Middle East oil exports top pre-war levels even as tanker attacks rise
+- OPEC+ leaves November output targets unchanged
+- Yemen starts operations to take territory from the Iran-backed Houthis
+- Russia hits Kyiv during a visit by Germany's chancellor
 
 ### More reading
 
@@ -2203,7 +2205,7 @@ WE HAVE TO REMEMBER THAT THIS MEETING WAS ALMOST A MONTH AGO; RECENT TURMOIL IN 
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 2, 2026',
     tags: ['Macro', 'Markets', 'NFP', 'Employment', 'Bonds', 'Oil', 'France', 'FX'],
@@ -2213,15 +2215,13 @@ WE HAVE TO REMEMBER THAT THIS MEETING WAS ALMOST A MONTH AGO; RECENT TURMOIL IN 
 
 **MORNING;**
 
-> “WE DO NOT DO OUR ASSES ON A FRIDAY AS IT RUINS THE WEEKEND!”
-
 THURSDAY DID NOT LET US DOWN. INDICES AND MARKETS GENERALLY HAD A ROLLER-COASTER DAY TO START THE MONTH OF OCTOBER.
 
 THE BIG NEWS WAS THE FRENCH FIASCO. FISCAL TURMOIL BOOSTED DEMAND FOR HAVENS, LIFTING THE DOLLAR AND TREASURIES, WITH SHORT-DATED YIELDS FALLING FASTEST AND A $6 BILLION BUYBACK SUPPORTING THE LONG END. FRENCH BONDS (OATS) WERE BATTERED AND UNDERPERFORMED UK (GILTS) AND GERMAN (BUND) DEBT, WHILE THE EURO WEAKENED.
 
 OIL SURGED MORE THAN 3% ON REPORTS OF POSSIBLE FRESH US STRIKES ON IRAN, AND EQUITIES EDGED HIGHER AS EXPECTATIONS OF AN IMMINENT FED RATE RISE FADED.
 
-PRESIDENT TRUMPTASTIC SAID RAMPING UP BOMBING OF IRAN AFTER THE MIDTERMS IS POSSIBLE. IRANIANS SUBMITTED AN OFFER TO REOPEN THE STRAIT. “I REVIEWED SOME ASPECTS OF IT, BUT SIMPLY PUT, IT'S NOT SUFFICIENT. LAST NIGHT WE TRANSPORTED THE LARGEST AMOUNT OF OIL THROUGH THE SOH.”
+PRESIDENT TRUMP SAID RAMPING UP BOMBING OF IRAN AFTER THE MIDTERMS IS POSSIBLE. IRANIANS SUBMITTED AN OFFER TO REOPEN THE STRAIT. “I REVIEWED SOME ASPECTS OF IT, BUT SIMPLY PUT, IT'S NOT SUFFICIENT. LAST NIGHT WE TRANSPORTED THE LARGEST AMOUNT OF OIL THROUGH THE SOH.”
 
 SOURCES SAY IRAN OFFERED TO ALLOW NUCLEAR INSPECTORS THROUGH THE SOH.
 
@@ -2233,7 +2233,7 @@ FED COLLINS: ECONOMIC GROWTH IS NEAR TREND, IF NOT MORE THAN THAT; THE LABOUR MA
 
 ### UK spending
 
-BLOOMBERG: THERE IS A BLACKHOLE OF £85 BILLION IN UK PM BURNHAM'S SPENDING PLAN. CHANGES TO THE TRIPLE LOCK SAVE £11 BILLION IN TODAY'S MONEY AND ARE NOWHERE CLOSE TO PAYING FOR THE PM'S PROPOSED FREE-AT-THE-POINT-OF-USE NATIONAL CARE SERVICE, WHILE HE HAS ALSO PROMISED NOT TO INCREASE TAXES OR CUT SPENDING.
+BLOOMBERG: THERE IS A BLACK HOLE OF £85 BILLION IN UK PM BURNHAM'S SPENDING PLAN. CHANGES TO THE TRIPLE LOCK SAVE £11 BILLION IN TODAY'S MONEY AND ARE NOWHERE CLOSE TO PAYING FOR THE PM'S PROPOSED FREE-AT-THE-POINT-OF-USE NATIONAL CARE SERVICE, WHILE HE HAS ALSO PROMISED NOT TO INCREASE TAXES OR CUT SPENDING.
 
 ### Nonfarm payrolls in focus
 
@@ -2247,17 +2247,17 @@ QUIET MORNING FOR FIGURES AND DATA. INDICES ARE IN THE GREEN APART FROM THE NIKK
 
 ### News from the trenches
 
-- US employment report set to reflect solid job growth
-- Fed officials push back on market bets for an October rate hike
-- Fed's Logan says policy rate must rise by another 50 bps or more
-- US sends more Patriot missiles to protect Saudi and Qatari energy sites
-- US may add an aircraft carrier and 100,000 troops to the Middle East
-- Iran offers to allow nuclear inspectors if sanctions are eased
-- France's crisis deepens as investors head for the exit
-- US pressures EU to tap emergency diesel stockpiles
-- Tokyo core inflation jumps in September, bolstering the case for further BOJ hikes
-- Putin says Russia may use its full arsenal if Kaliningrad is attacked
-- Hong Kong stocks slump most since March, leading losses in Asia
+- The US jobs report is expected to show steady hiring
+- Fed officials resist market pricing of an October hike
+- Fed's Logan says rates need to rise at least another 50bp
+- The US sends additional Patriot batteries to guard Saudi and Qatari energy sites
+- The US may send another aircraft carrier and 100,000 troops to the Middle East
+- Iran says it will admit nuclear inspectors if sanctions are relaxed
+- Investors pull out of France as its crisis worsens
+- The US urges the EU to release emergency diesel reserves
+- Tokyo core inflation jumps in September, supporting the case for more BOJ hikes
+- Putin says Russia could use every weapon it has if Kaliningrad is attacked
+- Hong Kong shares post their biggest drop since March and lead Asia lower
 
 ### Sources
 
@@ -2306,7 +2306,7 @@ QUIET MORNING FOR FIGURES AND DATA. INDICES ARE IN THE GREEN APART FROM THE NIKK
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 1, 2026',
     tags: ['Macro', 'Markets', 'Central Banks', 'Rates', 'Debt', 'ISM', 'Bonds'],
@@ -2320,15 +2320,15 @@ Big day ahead. Thursday is normally our busiest day of the week and today's cale
 
 ### News from the trenches
 
-- BOJ debated more rate hikes and scope for a faster move at its September meeting, the summary shows: [Reuters](https://www.reuters.com/world/asia-pacific/boj-debated-need-more-rate-hikes-september-meeting-summary-shows-2026-10-01/)
-- BOJ Tankan shows a sixth straight rise in manufacturer sentiment
-- Yen weakens as BOJ summary damps bets for back-to-back rate hikes
-- RBA downplays the risk from Bathla's collapse to financial stability: [Bloomberg](https://www.bloomberg.com/news/articles/2026-10-01/rba-downplays-risks-from-bathla-collapse-to-financial-stability)
-- Fed's Kashkari says inflation is “still too high” even after softer PCE data: [CNBC](https://www.cnbc.com/2026/09/30/watch-minneapolis-fed-president-neel-kashkari.html)
-- Iran says it received the US response to its latest proposal: [Reuters](https://www.reuters.com/world/us/iran-appeals-us-voters-american-troops-leave-iraq-2026-09-30/)
-- UK borrowing costs hit a new high after oil prices rise
-- AI debt surge raises the risk of a sharp market correction, Bank of England warns
-- Micron's forecast tops estimates as demand outstrips supply
+- The BOJ's September summary shows members discussed more hikes and a quicker pace: [Reuters](https://www.reuters.com/world/asia-pacific/boj-debated-need-more-rate-hikes-september-meeting-summary-shows-2026-10-01/)
+- The BOJ Tankan shows manufacturer sentiment improving for a sixth straight quarter
+- The yen weakens as the BOJ summary cools bets on consecutive hikes
+- The RBA says Bathla's collapse poses little risk to financial stability: [Bloomberg](https://www.bloomberg.com/news/articles/2026-10-01/rba-downplays-risks-from-bathla-collapse-to-financial-stability)
+- Fed's Kashkari says inflation remains "too high" despite a softer PCE print: [CNBC](https://www.cnbc.com/2026/09/30/watch-minneapolis-fed-president-neel-kashkari.html)
+- Iran says it has received Washington's reply to its latest proposal: [Reuters](https://www.reuters.com/world/us/iran-appeals-us-voters-american-troops-leave-iraq-2026-09-30/)
+- UK borrowing costs reach a new high as oil climbs
+- The Bank of England warns that rising AI-related debt increases the risk of a sharp correction
+- Micron's guidance beats forecasts as demand exceeds supply
 
 ### Also on the wire
 
@@ -2395,7 +2395,7 @@ Big day ahead. Thursday is normally our busiest day of the week and today's cale
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'September 30, 2026',
     tags: ['Macro', 'Consumer Confidence', 'Consumer Spending', 'PCE', 'Fed', 'Bonds', 'Oil', 'Markets'],
@@ -2411,18 +2411,18 @@ There is a busy agenda today, with German CPI figures through the morning and US
 
 ### News from the trenches
 
-- US core PCE set to test the Fed's rate-hike resolve
-- US forces exit Iraq, emboldening Iran's proxies and Islamic State
-- White House holds urgent talks on diesel export ban
-- Mediators push to break US-Iran deadlock
-- Fed's Williams hints the next rate increase can wait
-- Fed's Barr says more rate hikes likely to be needed to curb inflation
-- ECB's De Marco backs an October rate hike as core inflation stays firm
-- BoE's Taylor says the case for a rate hike is “not compelling”
-- UK PM Burnham: Brexit has done more harm than good
-- UK to drop pension triple lock to fund new social care service
-- 30-year Treasury bond yield scales to highest level since 2002
-- Traders now see about a 50/50 chance of an October Fed rate hike, versus about 70% previously
+- US core PCE will test how determined the Fed is to keep hiking
+- The US withdrawal from Iraq emboldens Iran's proxies and Islamic State
+- The White House holds emergency talks on banning diesel exports
+- Mediators try to end the US-Iran deadlock
+- Fed's Williams suggests the next hike is not urgent
+- Fed's Barr says further hikes will probably be needed to bring inflation down
+- ECB's De Marco supports an October hike as core inflation stays high
+- BoE's Taylor calls the case for a hike "not compelling"
+- UK PM Burnham says Brexit has done more harm than good
+- The UK plans to scrap the pension triple lock to pay for a new social care service
+- The 30-year Treasury yield reaches its highest level since 2002
+- Markets now put the odds of an October Fed hike near 50%, down from about 70%
 
 - [US Core PCE Set To Test Fed's Rate-Hike Resolve — LiveSquawk](https://www.livesquawk.com/report/special_us-core-pce-set-to-test-fed-s-rate-hike-resolve)
 - [White House looking to Europe to release diesel from strategic reserves — POLITICO](https://www.politico.com/news/2026/09/29/white-house-looking-to-europe-to-release-diesel-from-strategic-reserves-01096937)
@@ -2497,7 +2497,7 @@ We need churn in the jobs market to deliver wage growth. In a low-hire, low-fire
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'September 29, 2026',
     tags: ['Macro', 'Bonds', 'Treasuries', 'Oil', 'Gold', 'RBA', 'Iran', 'FX', 'Risk'],
@@ -2505,7 +2505,7 @@ We need churn in the jobs market to deliver wage growth. In a low-hire, low-fire
     featured: true,
     body: `## Morning Briefing · Tuesday, September 29, 2026
 
-**MORNING; MONDAY HAD THE YIELDS POPPING AND GOLD AND SILVER DIVING, ALONG WITH ANOTHER TRUMPTASTIC OFFER OF PEACE AND LOVE WITH IRAN. NOT EASY MARKETS!**
+**MORNING; MONDAY HAD THE YIELDS POPPING AND GOLD AND SILVER DIVING, ALONG WITH ANOTHER US PEACE OFFER TO IRAN. NOT EASY MARKETS!**
 
 Equities fell as the US-Iran standoff drove another rates shock. Treasury yields rose 7–8 basis points, the 10-year moved above 5.20%, Fed hike bets increased and the dollar firmed. Semiconductors slid and volatility rose. Crude pared an early spike, while gold sank 3.5%, silver nearly 5% and Bitcoin weakened, leaving bonds, precious metals and stocks under pressure.
 
@@ -2561,13 +2561,13 @@ Elsewhere, bond yields continued to probe multi-year highs, with the US 10-year 
 
 ### News from the trenches
 
-- Germany issues EU budget ultimatum to axe billions in planned spending
-- US warns Houthi ties with al-Shabaab threaten Red Sea trade
-- Oil prices and US Treasury yields show their tightest relationship since 1990
-- Gold trades near a seven-week low as rate-hike pressure mounts
-- RBA raises rates to a 15-year high as it fights sticky inflation
-- Japan's Katayama reiterates weak-yen concern after Bessent call
-- Shein drops to a record low after profit plunge in debut earnings
+- Germany gives the EU an ultimatum to cut billions from planned spending
+- The US warns that Houthi links with al-Shabaab endanger Red Sea shipping
+- Oil and US Treasury yields are moving more closely together than at any time since 1990
+- Gold sits near a seven-week low as hike pressure builds
+- The RBA lifts rates to a 15-year high to fight persistent inflation
+- Japan's Katayama repeats her concern about the weak yen after a call with Bessent
+- Shein falls to a record low after a steep profit drop in its first results
 
 - [New Zealand Sees Narrower Budget Deficits as Election Looms — Bloomberg](https://www.bloomberg.com/news/articles/2026-09-29/new-zealand-sees-narrower-budget-deficits-as-election-looms)
 - [Bond Yield Spike Drives Investors to Fixed-Income ETF Options at Record Pace — Bloomberg](https://www.bloomberg.com/news/articles/2026-09-28/soaring-yields-lead-traders-to-snap-up-options-on-blackrock-etfs)
@@ -2634,7 +2634,7 @@ Elsewhere, bond yields continued to probe multi-year highs, with the US 10-year 
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'September 28, 2026',
     tags: ['Macro', 'Bonds', 'Treasuries', 'Oil', 'Iran', 'Dollar', 'FX', 'Risk'],
@@ -2655,15 +2655,15 @@ However I would have thought markets would of reacted more to Trump's comments o
 
 ### News from the Trenches
 
-- Trump expects Iran talks this week after rejecting Tehran's Hormuz proposal
-- Iran says it won't soften demands after Trump rejects Hormuz offer
-- Oil rises as Iran says it won't soften Strait of Hormuz demands
-- Bond sell-off resumes as oil rises after Trump spurns Iran offer
-- Dollar firms as US-Iran tensions lift oil and hawkish bets
-- BOJ debated need for faster rate hikes - July minutes show
-- Japan's corporate services inflation hits 2 year high
-- RBA set to resume raising key rate as patience on prices erodes
-- Traders make biggest bets against sterling since Brexit vote
+- Trump expects talks with Iran this week despite rejecting its Hormuz proposal
+- Iran says it will not ease its demands after Trump turns down the Hormuz offer
+- Oil gains as Iran holds firm on its Hormuz demands
+- Bonds sell off again as oil rises following Trump's rejection of Iran's offer
+- The dollar strengthens as US-Iran tension lifts oil and hike bets
+- July BOJ minutes show debate over whether to hike faster
+- Japan's corporate services inflation reaches a two-year high
+- The RBA looks set to restart hikes as its patience on prices runs out
+- Traders build their largest bets against sterling since the Brexit vote
 
 - [Picking Up the Pieces After Prop Trading | LinkedIn](https://www.linkedin.com/pulse/picking-up-pieces-after-prop-trading-sonal-darbar-al4ae/)
 - [Instagram](https://www.instagram.com/reels/DdrTmH0oPwU/)
@@ -2707,7 +2707,7 @@ N/A
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'September 24, 2026',
     tags: ['Macro', 'Bonds', 'Treasuries', 'Oil', 'Iran', 'Fed', 'ECB', 'Global Risk'],
@@ -2723,13 +2723,13 @@ The bond market is now acting as the real macro pressure valve. A hotter growth-
 
 ### News from the Trenches
 
-- SNB set to hold as low inflation keeps rate hikes at bay
-- Bessent says US and China agreed to extend trade truce to Jan 10
-- UK and Germany among economies most exposed to China
-- Iran and the US remain far apart as Pezeshkian vows no surrender
-- Global bond sell-off deepens as oil holds above $100
-- US 10-year yields hit highest since 2007
-- Inflation pressures raise prospect of further rate hikes
+- The SNB is expected to hold, with low inflation keeping hikes off the table
+- Bessent says the US-China trade truce has been extended to January 10
+- The UK and Germany are among the economies most exposed to China
+- Iran and the US remain far apart; Pezeshkian says Iran will not surrender
+- The global bond sell-off deepens with oil above $100
+- The US 10-year yield reaches its highest level since 2007
+- Inflation pressure increases the chance of more hikes
 
 - [Trump says talks with Iran are still being negotiated as markets route risk away from oil](https://www.linkedin.com/posts/charles-henry-monchau-cfa-cmt-caia-4003096_trump-were-negotiating-with-iran-im-going-ugcPost-7508567756271714305-MGYc/)
 - [SNB set to hold as low inflation keeps rate hikes at bay](https://www.livesquawk.com/report/special_snb-set-to-hold-as-low-inflation-keeps-rate-hikes-at-bay)
@@ -2766,7 +2766,7 @@ The market takeaway is simple: the market is not yet prepared to accept a soft i
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'September 22, 2026',
     tags: ['Macro', 'Equities', 'Oil', 'Bitcoin', 'Treasuries', 'Trump-Xi', 'Fed', 'ECB'],
@@ -2792,13 +2792,13 @@ Bitcoin ripped higher and topped $85,000, extending the rally that began last we
 
 ### News from the Trenches
 
-- China and US discuss AI and investment on 2nd day of trade talks
-- China and EU should avoid trade clash; Beijing's top diplomat says
-- UK to provide military support to Saudi Arabia in its fight with Houthis
-- Trump presses Zelenskyy to stop hitting Russian refineries
-- Fed's Musalem says more rate hikes likely needed to cool prices
-- RBA set to hike rates next week as energy costs spiral
-- Oil steadies after a 4-day drop as traders look to Hormuz flows
+- China and the US discuss AI and investment on the second day of trade talks
+- Beijing's top diplomat says China and the EU should avoid a trade fight
+- The UK will give Saudi Arabia military support against the Houthis
+- Trump urges Zelenskyy to stop striking Russian refineries
+- Fed's Musalem says further hikes will probably be needed to cool prices
+- The RBA is expected to hike next week as energy costs surge
+- Oil stabilises after four days of losses as traders watch Hormuz flows
 
 - [Fed’s Musalem Says More Rate Hikes May Be Needed to Tame Inflation - Bloomberg](https://www.bloomberg.com/news/articles/2026-09-21/fed-s-musalem-says-more-rate-hikes-likely-needed-to-cool-prices)
 - [South Korea confirms first project under $350 billion US investment pact despite viability concerns | Reuters](https://www.reuters.com/world/asia-pacific/south-korea-brief-lawmakers-us-investment-package-amid-profitability-concerns-2026-09-21/?taid=6ab1ecde14be170001b9180a&utm_campaign=trueAnthem:+Trending+Content&utm_medium=trueAnthem&utm_source=twitter)
@@ -2853,7 +2853,7 @@ Another quiet APAC session unfolded with Japan still closed and little on the da
 - [The Guardian](https://www.theguardian.com): Airlines have called for 'action and accountability' over the UK's air traffic control services after a technical issue led to flights being disrupted for the second time in a fortnight.
 - [The Times](https://www.thetimes.co.uk): Global equities rallied and pressure on sovereign bonds eased as oil prices fell back below $100 a barrel on hopes of diplomatic progress toward ending the Iran war.
 - [The Guardian](https://www.theguardian.com): Unions, thinktanks, environmental groups and charities have come together to call on ministers to boost the financial firepower of the national wealth fund to empower it to invest more in Britain and rebalance the country's economy.
-- [Financial Times](https://www.ft.com): Andy Brnham will call for international efforts to control AI in his first big speech on the world stage today, days after King Charles warned of the 'existential threats' it poses.
+- [Financial Times](https://www.ft.com): Andy Burnham will call for international efforts to control AI in his first big speech on the world stage today, days after King Charles warned of the 'existential threats' it poses.
 - [The Daily Telegraph](https://www.telegraph.co.uk): Nvidia founder Jensen Huang has said there is '0% chance' AI causes the end of the world by 2030.
 - [Financial Times](https://www.ft.com): CNN, MS Now and Politico have said they are suing the Trump administration after the US president banned the new outlets from the White House.
 - [The Times](https://www.thetimes.co.uk): Volkswagen has been ejected from Europe's blue chip index of major publicly listed companies.
@@ -2874,7 +2874,7 @@ The key takeaway is that markets remain highly sensitive to a mix of geopolitics
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'September 21, 2026',
     tags: ['Europe', 'Macro', 'Oil', 'German Politics', 'Trump-Xi', 'Market Outlook'],
@@ -2894,22 +2894,22 @@ European Briefing - Monday 21.09
 
 Headlines
 
-- Oil Hits Over 1-week Low On Hopes Of Boost To Diplomacy In Iran War
-- Houthis Launch Missile At Saudi Capital In Escalation Of Hostilities
-- Iran Warns Against New Escalation By US And Its Allies
-- Ukraine’s Zelenskyy Will Meet Trump During UN Events In New York
-- Russia Moves To Expand Drone Factory In Tatarstan
-- Bessent Hails ‘Very Successful’ China Talks On AI Threats And Trade
-- Trump-Xi Talks Could Mean $6B Of US Natural Gas For China
-- China’s Selective Crop Buying Tests US Trade Truce Before Summit
-- China Keeps Loan Prime Rates Unchanged For 16th Month
-- Fed’s Kashkari Says Inflation Is Still Too High Across US Economy
-- Record Global Debt Requires Urgent Fiscal Action, IMF Chief Says
-- French Finance Ministry Expects Record Debt In 2026, Near 120% Of GDP
-- Merz Vows To Stay On After Worst-Ever German State Result
-- US Diesel Tops $6.50 A Gallon As Wars Worsen Global Fuels Crunch
-- SoftBank Seeks Over $11B In Junk Bond Deal For OpenAI Bet
-- Microsoft’s Nadella To Join OpenAI And Nvidia CEOs At Trump-Xi Meal
+- Oil falls to a one-week low on hopes that diplomacy can ease the Iran war
+- The Houthis fire a missile at the Saudi capital as fighting escalates
+- Iran warns the US and its allies against escalating further
+- Zelenskyy will meet Trump during the UN meetings in New York
+- Russia moves to enlarge a drone factory in Tatarstan
+- Bessent calls the China talks on AI risks and trade "very successful"
+- A Trump–Xi deal could include about $6 billion of US natural gas for China
+- China's selective crop purchases put the US trade truce to the test before the summit
+- China leaves its loan prime rates unchanged for a 16th month
+- Fed's Kashkari says inflation is still too high across the US economy
+- The IMF chief says record global debt calls for urgent fiscal action
+- France's finance ministry expects record debt in 2026, close to 120% of GDP
+- Merz says he will stay on after his party's worst-ever result in a German state election
+- US diesel tops $6.50 a gallon as wars tighten global fuel supply
+- SoftBank seeks more than $11 billion in junk bonds to fund its OpenAI bet
+- Microsoft's Nadella will join the OpenAI and Nvidia CEOs at the Trump–Xi dinner
 
 ### Europe and US Previews
 
@@ -2974,7 +2974,7 @@ All in all, another reminder of an increasingly fragmented political landscape: 
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Intelligence Desk',
-      bureau: 'Global Macro Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'September 17, 2026',
     tags: ['Federal Reserve', 'BOE', 'Iran', 'Rate Hike', 'Dollar', 'Treasuries', 'Gold', 'Macro'],
@@ -3021,13 +3021,13 @@ Bailey and the Bank of England face a nightmare job. Thursday's MPC decision is 
 
 | Headline | Source |
 |----------|--------|
-| BOE set to resist rate hike but pressure is mounting | [Livesquawk](https://www.livesquawk.com/report/special_boe-set-to-resist-the-urge-to-hike-but-pressure-is-mounting) |
-| Energy shock pushes UK inflation higher ahead of BOE decision | [Livesquawk](https://www.livesquawk.com/report/special_energy-shock-pushes-uk-inflation-higher-ahead-of-boe-rate-decision) |
-| Saudis pound Yemen; Houthis fire at Saudi as Middle East war spreads | Reuters |
-| Trump to hold talks with Gulf leaders next week | [Axios](https://www.axios.com/2026/09/16/trump-iran-talks-gulf-leaders-un) |
-| Rate hike puts Trump & Fed on collision course | [Bloomberg](https://www.bloomberg.com/news/articles/2026-09-16/the-fed-s-unanimous-25-basis-point-hike-puts-trump-and-warsh-on-collision-course) |
-| Global bonds recover as Warsh's inflation fight calms markets | Bloomberg |
-| BOJ faces higher bar to support yen after Fed's hawkish hike | [Bloomberg](https://www.bloomberg.com/news/articles/2026-09-17/boj-faces-higher-bar-to-support-yen-after-fed-s-hawkish-hike) |
+| The BOE is expected to hold off on a hike, though pressure is growing | [Livesquawk](https://www.livesquawk.com/report/special_boe-set-to-resist-the-urge-to-hike-but-pressure-is-mounting) |
+| An energy shock lifts UK inflation ahead of the BOE decision | [Livesquawk](https://www.livesquawk.com/report/special_energy-shock-pushes-uk-inflation-higher-ahead-of-boe-rate-decision) |
+| Saudi strikes on Yemen and Houthi fire at Saudi Arabia widen the Middle East war | Reuters |
+| Trump will meet Gulf leaders next week | [Axios](https://www.axios.com/2026/09/16/trump-iran-talks-gulf-leaders-un) |
+| The Fed's hike sets Trump and the central bank on a collision course | [Bloomberg](https://www.bloomberg.com/news/articles/2026-09-16/the-fed-s-unanimous-25-basis-point-hike-puts-trump-and-warsh-on-collision-course) |
+| Global bonds recover as Warsh's stance on inflation steadies markets | Bloomberg |
+| The BOJ faces a higher hurdle to support the yen after the Fed's hawkish hike | [Bloomberg](https://www.bloomberg.com/news/articles/2026-09-17/boj-faces-higher-bar-to-support-yen-after-fed-s-hawkish-hike) |
 
 ---
 
@@ -3141,7 +3141,7 @@ export const blogs: BlogColumn[] = sortByDateDesc([
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Academic & Financial Education Desk',
-      bureau: 'Academic Policy Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'November 4, 2026',
     tags: ['Discount Brokers', 'SEBI', 'F&O', 'Regulation', 'Retail Investors', 'Indian Markets'],
@@ -3202,7 +3202,7 @@ The era of hyper-cheap, high-volume speculation is giving way to a more mature, 
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Academic & Financial Education Desk',
-      bureau: 'Academic Policy Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 28, 2026',
     tags: ['RBI', 'Liquidity', 'Monetary Policy', 'Money Markets', 'Banking', 'Indian Markets'],
@@ -3334,7 +3334,7 @@ Looking ahead, the Reserve Bank of India is expected to maintain a fine balance.
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Academic & Financial Education Desk',
-      bureau: 'Academic Policy Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 21, 2026',
     tags: ['IPO', 'Equities', 'Derivatives', 'F&O', 'Career Readiness', 'Indian Markets'],
@@ -3409,7 +3409,7 @@ Whether you're looking to trade the listing-day breakout or land your dream role
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Academic & Financial Education Desk',
-      bureau: 'Academic Policy Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 14, 2026',
     tags: ['Financial Education', 'Experiential Learning', 'Career Readiness', 'Financial Modeling', 'Business Education'],
@@ -3483,7 +3483,7 @@ The ultimate goal of business school is not simply to confer a degree, but to pr
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Structure & Regulatory Intelligence',
-      bureau: 'Mumbai Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'October 7, 2026',
     tags: ['Financial Education', 'RBI Regulations', 'Markets', 'Commodities', 'Interest Rates', 'Inflation', 'Retail Trading'],
@@ -3558,7 +3558,7 @@ The Reserve Bank of India's rate hike marks a transition from easy credit to mon
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Market Structure & Regulatory Intelligence',
-      bureau: 'Mumbai Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'September 30, 2026',
     tags: ['F&O Trading', 'SEBI Regulations', 'CAS', 'Closing Auction Session', 'Retail Trading', 'STT', 'Derivatives', 'Market Structure'],
@@ -3660,7 +3660,7 @@ Until next time, keep learning, keep adapting and stay savvy. See you in the nex
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Financial & Regulatory Intelligence',
-      bureau: 'Mumbai Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'September 2026',
     tags: ['Forex', 'RBI Regulations', 'FEMA', 'Currency Derivatives', 'SEBI'],
@@ -3672,21 +3672,21 @@ Distribution of information surrounding trading forex and its derivatives in an 
 
 Finance social media is absolutely flooded with influencers in rented supercars showing running P&Ls with no realised gains talking about forex and the markets power. They aren't wrong, but they aren't honest either.
 
-The forex market is the largest financial playground on Earth, projected to grow by $582 billion by 2029, eclipsing the net values of crypto markets like stablecoin entirely. But in India, the Reserve Bank (RBI) is overprotective and won't let you go to this party unless they know exactly who is driving, what time you’ll be home, and if the driver has a SEBI registration.
+The forex market is the largest financial playground on Earth, and market researcher Technavio forecasts it will grow by about $582 billion between 2025 and 2029 ([Technavio press release](https://finanzen.net/nachricht/aktien/foreign-exchange-market-to-grow-by-usd-582-billion-from-2025-2029-driven-by-urbanization-digitalization-with-ai-redefining-market-trends-technavio-14217167)). But in India, the Reserve Bank (RBI) is overprotective and won't let you go to this party unless they know exactly who is driving, what time you’ll be home, and if the driver has a SEBI registration.
 
 But why is that the case? Why this overprotectiveness?
 
 ---
 
-### A ₹2,000 Crore Cautionary Tale
+### A Cautionary Tale
 
-Before we dive into the "how to," let’s look at the "how not to." Recently, a platform called TP Global FX became the poster child for the RBI's vindication. TP Global FX promised high returns, and looked incredibly polished.
+Before we dive into the "how to," let’s look at the "how not to." A platform called TP Global FX became the poster child for the RBI's caution. It promised high returns and looked incredibly polished.
 
-The reality? Allegedly pocketing over ₹2,000 crore illegally through dummy bank accounts. Now, 57 people are booked, and the Enforcement Directorate (ED) has frozen assets.
+The reality? The RBI put TP Global FX on its [Alert List](https://rbi.org.in/scripts/bs_viewcontent.aspx?Id=4235) of unauthorised forex platforms in September 2022. The Enforcement Directorate (ED) is investigating the platform for alleged money laundering, and by August 2025 the assets it had seized, frozen or attached in the case totalled about ₹291 crore ([Free Press Journal, 28 August 2025](https://www.freepressjournal.in/mumbai/ed-attaches-1878-crore-in-tp-global-fx-ix-global-forex-scam-total-seizures-hit-291-crore)). The allegations have not yet been tested in court.
 
-The moral of the story: If a platform isn't on the RBI's authorised list, it isn't a "trading opportunity"; it's a generous donation to a shady founder's early retirement. So stick to trustworthy platforms and only with your four legal friends.
+The moral of the story: If a platform isn't on the RBI's authorised list, it isn't a "trading opportunity"; it's a generous donation to a shady founder's early retirement. So stick to trustworthy platforms and to the currency pairs Indian exchanges actually list.
 
-*Meet Your Only Four Legal Friends: USD/INR (The Popular Kid), EUR/INR (The Alternative Choice), GBP/INR (The Moody One), and JPY/INR (The Vulnerable Veteran).*
+*Meet your four rupee friends: USD/INR (The Popular Kid), EUR/INR (The Alternative Choice), GBP/INR (The Moody One), and JPY/INR (The Vulnerable Veteran). Indian exchanges also list three cross-currency pairs (EUR/USD, GBP/USD and USD/JPY); see the [NSE currency derivatives page](https://www.nseindia.com/products/content/derivatives/currency/cd.htm) for the current list.*
 
 *But your friends alone are not enough! You need to trade them on the allowed platforms!*
 
@@ -3722,14 +3722,14 @@ If you still want to trade, do it the right way:
 
 Forex trading in India isn't illegal; it’s just highly disciplined and regulated. The "legal version" doesn't look like the flashy YouTube ads or Instagram influencers, but it’s safer, and won't result in your bank account being frozen by the ED.
 
-Start with the rules. Choose compliant platforms like ICICI Direct or Kotak Securities. Build a strategy within the framework the RBI has set up, it’s more capable than you think, and significantly less likely to end in a ₹2,000 crore scandal.
+Start with the rules. Choose a SEBI-registered broker that offers exchange-traded currency derivatives. Build a strategy within the framework the RBI has set up; it’s more capable than you think, and significantly less likely to end in an ED investigation.
 
 Stay savvy, stay legal, and I’ll see you in the next edition of The Hedge Front.
 
 ---
 
 #### Disclaimers
-This article is strictly for educational and informational purposes and does not constitute financial, investment, or trading advice. Neither the author nor 'The Hedge Front / ISFT' is a SEBI-registered Investment Adviser or Research Analyst. Readers should conduct their own research or consult a SEBI-registered professional before trading. This publication operates independently, with no affiliate, revenue-sharing, or promotional links to any SEBI-regulated entities or brokerages.
+This article is strictly for educational and informational purposes and does not constitute financial, investment, or trading advice. Neither the author nor 'The Hedge Front / ISFT' is a SEBI-registered Investment Adviser or Research Analyst. Readers should conduct their own research or consult a SEBI-registered professional before trading. This blog is published by ISFT, which sells trading education, and some posts describe ISFT programmes; those posts are labelled as promotional. Brokers or platforms named in a post are examples only, not recommendations.
 
 Trading in derivative instruments involves substantial risk of loss and is not suitable for all investors. 9 out of 10 individual traders in the F&O segment incur net losses. Readers should only trade with risk capital they can afford to lose entirely.
 
@@ -3750,7 +3750,7 @@ Forex trading in India is governed by the Foreign Exchange Management Act (FEMA)
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Capital Markets & Exchange Infrastructure',
-      bureau: 'Kolkata Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'September 2026',
     tags: ['Calcutta Stock Exchange', 'SEBI', 'Regional Exchanges', 'Capital Markets', 'WBPDCL IPO'],
@@ -3759,6 +3759,8 @@ Forex trading in India is governed by the Foreign Exchange Management Act (FEMA)
     body: `The 118-year-old bourse is making headlines as its unlisted shares double almost overnight. But there’s far more to this story than just speculative price spikes.
 
 A dormant 118-year-old financial institution attempting a historic comeback. Unlisted share prices have surged over 100% in three months, jumping from ~₹900 in early June 2026 to ₹2,100–₹2,175 by September 2026. Expect high speculative interest, a massive ₹300+ crore cash balance, and a fresh state-backed policy push.
+
+> **Update:** Our August post, [Why the Calcutta Stock Exchange Died so GIFT City Could Fly](/blogs/why-the-calcutta-stock-exchange-died-so-gift-city-could-fly), described the CSE's plan to exit as it stood then. This post covers the revival effort that followed. As of September 2026, the exit application is on hold, not withdrawn, and SEBI has not ruled on it ([Business Today, 13 July 2026](https://www.businesstoday.in/markets/stocks/story/calcutta-stock-exchange-revival-cse-says-future-course-depends-on-sebi-guidance-experts-flag-challenges-542540-2026-07-13)).
 
 **Why it matters:** The CSE represents the financial heartbeat of Eastern India. Its revival could lower trading costs, boost job creation, and offer small businesses a dedicated platform to raise capital.
 
@@ -3848,7 +3850,12 @@ We have seen similar speculative rallies before. For instance, unlisted shares o
 
 ### The Closing Bell
 
-The revival of the Calcutta Stock Exchange is more than a nostalgic nod to Lyons Range, it is a practical effort to democratize capital access across Eastern India. While regulatory hurdles remain, the combination of a ₹300+ crore balance sheet, state budget backing, and new state PSU listings gives this centenarian bourse a genuine fighting chance.`,
+The revival of the Calcutta Stock Exchange is more than a nostalgic nod to Lyons Range, it is a practical effort to democratize capital access across Eastern India. While regulatory hurdles remain, the combination of a ₹300+ crore balance sheet, state budget backing, and new state PSU listings gives this centenarian bourse a genuine fighting chance.
+
+---
+
+#### Sources
+- [Business Today, 13 July 2026](https://www.businesstoday.in/markets/stocks/story/calcutta-stock-exchange-revival-cse-says-future-course-depends-on-sebi-guidance-experts-flag-challenges-542540-2026-07-13)`,
   },
   {
     id: 'blog-3',
@@ -3859,40 +3866,41 @@ The revival of the Calcutta Stock Exchange is more than a nostalgic nod to Lyons
     readership: 'Risk Managers & Economists',
     readTime: '9 min read',
     title: 'Why the Calcutta Stock Exchange Died so GIFT City Could Fly',
-    subtitle: '"Good enough" risk management is just slow-motion suicide: Why 117 years of history collapsed to a single syndicate.',
+    subtitle: '"Good enough" risk management is just slow-motion suicide: how one payment crisis undid 117 years of history.',
     excerpt: '"Good enough" risk management is slow-motion suicide. How the 2001 Lyons Range collapse forged India’s modern institutional fortress at GIFT City.',
     author: {
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Systemic Risk & Clearing Architecture',
-      bureau: 'Kolkata & GIFT City',
+      bureau: 'ISFT research desk',
     },
     date: 'August 2026',
-    tags: ['GIFT City', 'CSE Collapse', 'K-10 Syndicate', 'SPAN Margin', 'Settlement Guarantee Fund'],
+    tags: ['GIFT City', 'CSE Collapse', '2001 Payment Crisis', 'SPAN Margin', 'Settlement Guarantee Fund'],
     featured: true,
     dispatches: 3,
-    body: `"Good enough" risk management is just slow-motion suicide: Why 117 years of history collapsed to a single syndicate.
+    body: `"Good enough" risk management is just slow-motion suicide: how one payment crisis undid 117 years of history.
+
+> **Updated September 2026:** This post describes the CSE's plan to exit the stock exchange business as it stood in August 2026. Since then, the CSE has asked SEBI to put its February 2025 exit application on hold, after the West Bengal government said it would back a revival; SEBI has not yet ruled on the application ([Business Today, 13 July 2026](https://www.businesstoday.in/markets/stocks/story/calcutta-stock-exchange-revival-cse-says-future-course-depends-on-sebi-guidance-experts-flag-challenges-542540-2026-07-13)). Read our follow-up, [How to resurrect a Stock Exchange; the Kolkata way](/blogs/how-to-resurrect-a-stock-exchange-the-kolkata-way).
 
 ### The Last Bell at Lyons Range
 
-As 2025 drew to a close, a century-old titan quietly prepared for its final exit. The Calcutta Stock Exchange (CSE), once the second-largest bourse in India and the rhythmic heart of eastern India’s economic aspirations, has officially hit the "sell" button on its own existence. Following an Extraordinary General Meeting (EGM) on April 25, 2025, shareholders formalised a voluntary exit from its 117-year-old licence.
+As 2025 drew to a close, a century-old titan quietly prepared for its final exit. The Calcutta Stock Exchange (CSE), once the second-largest bourse in India and the rhythmic heart of eastern India’s economic aspirations, had applied to SEBI to give up its licence as a stock exchange. Following an Extraordinary General Meeting (EGM) on April 25, 2025, shareholders formalised a voluntary exit from its 117-year-old licence.
 
 Founded in 1908, the CSE’s red-brick legacy at Lyons Range survived colonial transitions and world wars, only to be dismantled by its own structural rot. Today’s status, a mere holding entity awaiting a valuation by Rajvanshi & Associates, is the final whimper of a terminal decline. This systemic suicide was triggered in 2001 by a failure so spectacular it became the global case study for "counterparty contagion." To understand why the sleek glass towers of GIFT City represent India’s future, we have to deconstruct the villains who broke the past.
 
 ---
 
-### The K-10 Syndicate: A Masterclass in Circular Chaos
+### The K-10 Stocks: A Masterclass in Circular Chaos
 
-In the late 1990s, the CSE became the preferred playground for Mumbai’s "Big Bull," Ketan Parekh, and his local enablers; the infamous "Calcutta Syndicate." This wasn't just a few rogue brokers; it was an alliance featuring former CSE president Dinesh Singhania, Harish Biyani, and Ashok Poddar. They were joined by the likes of jute baron Arun Kumar Bajoria, who used Mega Stock Limited and five other managed companies as fronts for the scheme.
+In the late 1990s, the CSE became a major venue for trading in the "K-10" stocks associated with Mumbai broker Ketan Parekh, whom SEBI later barred from the securities market. The Joint Parliamentary Committee (JPC) that investigated the 2001 stock market scam found a nexus between Parekh, banks and corporate houses, and criticised the CSE for failing to apply a SEBI circular on outstanding positions before the crisis ([Report of the Joint Parliamentary Committee on the Stock Market Scam, 2002](https://drupal.the1991project.com/public-repository/report-joint-committee-stock-market-scam-and-matters-relating-thereto-2002)).
 
-The syndicate specialized in fictitious volume generation; a tape-shredding exercise where they traded a specific basket of Technology, Media, and Telecom (TMT) stocks back and forth to create an illusion of liquidity.
+Investigators described heavy, concentrated trading in a narrow basket of Technology, Media, and Telecom (TMT) stocks, which inflated prices and created an appearance of liquidity.
 
-#### The "K-10" Primary Tickers & Siphoning Tools:
-- **DSQ Industries:** The poster child for artificial price pumping (selling 7.2 lakh shares at an artificial Rs 340).
-- **HFCL & Zee Telefilms:** High-beta vehicles used to generate massive speculative leverage.
-- **The Siphoning Conduits:** The syndicate didn't just trade; they siphoned funds through the Madhavpura Mercantile Cooperative Bank (MMCB) and the Stock Holding Corporation of India (SHCIL).
+#### The "K-10" Stocks & Funding Channels:
+- **DSQ Industries, HFCL & Zee Telefilms:** Among the stocks named in the K-10 investigations.
+- **The Funding Channels:** The JPC examined how money reached the market through the Madhavpura Mercantile Cooperative Bank (MMCB) and the Stock Holding Corporation of India (SHCIL).
 
-By using the CSE as a high-leverage proxy, the syndicate built massive long positions without the capital to back them. The exchange became a concentrated risk bomb, tied entirely to the speculative fortunes of a single man’s portfolio.
+With the CSE acting as a high-leverage venue, some brokers built large long positions without the capital to back them. The exchange became a concentrated risk bomb, tied entirely to the speculative fortunes of a single man’s portfolio.
 
 ---
 
@@ -3904,7 +3912,7 @@ The engine powering this manipulation was "Badla"—an unofficial forward tradin
 - **Margining via Physical Cheques:** Yes, they actually accepted paper cheques for daily margins and held them for days instead of real-time digital debits.
 - **Capital Double-Counting:** Brokers were permitted to use their base membership capital—their "entry fee"—to meet regular margin requirements. There was zero actual safety buffer.
 - **No Separate Clearing Corporation:** This was the fatal flaw. The exchange was the direct counterparty to every trade. There was no isolation; a broker default was an exchange default.
-- **Non-existent Exposure Limits:** Authorities ignored individual broker trading caps, allowing the syndicate to accumulate positions that dwarfed the exchange's entire net worth.
+- **Weak Exposure Limits:** Brokers breached exposure limits, building positions far larger than the exchange's safety buffers could cover.
 
 The logic was as flimsy as the paper it was written on. In a limit-down market, a physical check is just a colorful souvenir of a bankruptcy.
 
@@ -3914,7 +3922,7 @@ The logic was as flimsy as the paper it was written on. In a limit-down market, 
 
 The spark was the 2001 global dotcom bust, coupled with an RBI probe into Global Trust Bank’s capital market exposure. As K-10 stocks plummeted by 70%, the CSE’s house of cards didn't just fall—it exploded.
 
-The exchange authorities, however, accelerated the fire. In a flagrant violation of exchange bye-laws, the administration leaked default details to the press before the official pay-in period ended and without informing the board. This premature leak shattered investor trust instantly, creating a self-fulfilling prophecy of panic that locked the market in a downward spiral.
+News of the defaults spread before the pay-in period had ended, and confidence collapsed. SEBI later criticised the exchange for not complying with pay-in norms ([Business Standard: CSE rapped for not complying with pay-in norms](https://www.business-standard.com/article/markets/cse-rapped-for-not-complying-with-pay-in-norms-101122901065_1.html)).
 
 To prevent a total blackout, the exchange cannibalized its safety net:
 - A **Rs 326-crore settlement** was required to clear the wreckage.
@@ -3944,7 +3952,7 @@ In GIFT City, the system doesn't wait for a check to clear. SPAN (Standard Portf
 
 ### Conclusion: Lessons from the Rubble
 
-The rhythmic clang of the trading bell at Lyons Range will soon be silent, its three-acre EM Bypass property sold to the Srijan group for Rs 253 crore to fund its transition into a holding company. The 2001 crisis proved that an exchange is only as strong as its weakest margin check.
+At the time of writing, the rhythmic clang of the trading bell at Lyons Range looked set to fall silent for good, its three-acre EM Bypass property sold to the Srijan group for Rs 253 crore to fund its transition into a holding company. The 2001 crisis proved that an exchange is only as strong as its weakest margin check.
 
 GIFT City isn't just a tax-neutral zone; it is a fortress built on the ruins of the CSE’s mismanagement. It has replaced "trust" in a broker's paper cheque with the "certainty" of automated, dollar-denominated risk protocols. For the modern trader, the evolution from the 1908 shouting floor to the 22-hour digital hub shows that in finance, "good enough" risk management is just another word for eventual disaster.
 
@@ -3958,8 +3966,15 @@ Ultimately, the iconic Lyons Range building and the historic CSE name will shift
 
 ---
 
+#### Sources
+- [Report of the Joint Parliamentary Committee on the Stock Market Scam, 2002](https://drupal.the1991project.com/public-repository/report-joint-committee-stock-market-scam-and-matters-relating-thereto-2002)
+- [Business Standard: CSE rapped for not complying with pay-in norms](https://www.business-standard.com/article/markets/cse-rapped-for-not-complying-with-pay-in-norms-101122901065_1.html)
+- [Business Today, 13 July 2026](https://www.businesstoday.in/markets/stocks/story/calcutta-stock-exchange-revival-cse-says-future-course-depends-on-sebi-guidance-experts-flag-challenges-542540-2026-07-13)
+
+---
+
 #### Disclaimers
-This article is strictly for educational and informational purposes and does not constitute financial, investment, or trading advice. Neither the author nor 'The Hedge Front / ISFT' is a SEBI-registered Investment Adviser or Research Analyst. Readers should conduct their own research or consult a SEBI-registered professional before trading. This publication operates independently, with no affiliate, revenue-sharing, or promotional links to any SEBI-regulated entities or brokerages. Trading in derivative instruments involves substantial risk of loss and is not suitable for all investors. 9 out of 10 individual traders in the F&O segment incur net losses. Readers should only trade with risk capital they can afford to lose entirely. All entities operating in securities markets are subject to registration under Section 12 of the SEBI Act, 1992.`,
+This article is strictly for educational and informational purposes and does not constitute financial, investment, or trading advice. Neither the author nor 'The Hedge Front / ISFT' is a SEBI-registered Investment Adviser or Research Analyst. Readers should conduct their own research or consult a SEBI-registered professional before trading. This blog is published by ISFT, which sells trading education, and some posts describe ISFT programmes; those posts are labelled as promotional. Brokers or platforms named in a post are examples only, not recommendations. Trading in derivative instruments involves substantial risk of loss and is not suitable for all investors. 9 out of 10 individual traders in the F&O segment incur net losses. Readers should only trade with risk capital they can afford to lose entirely. All entities operating in securities markets are subject to registration under Section 12 of the SEBI Act, 1992.`,
   },
   {
     id: 'blog-4',
@@ -3976,17 +3991,18 @@ This article is strictly for educational and informational purposes and does not
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Quantitative Education & Academic Policy',
-      bureau: 'New Delhi Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'August 2026',
     tags: ['Financial Education', 'Trading Desks', 'NAAC Benchmarks', 'NIRF Optimization', 'Vocational Trading'],
     featured: false,
+    promotional: 'This post describes the ISFT Advanced Certificate in Financial Trading (ACFT), a paid programme offered by ISFT, the publisher of this blog.',
     dispatches: 4,
     body: `As leaders of higher education institutions, our primary mandate is preparing students for successful, lifelong careers. Yet, in financial trading and quantitative finance, we face a persistent hurdle: the "Experience Paradox".
 
 Employers on global trading desks demand candidates with commercial awareness, practical capability, and immediate competence under pressure. However, traditional university education alone cannot provide this desk-readiness.
 
-The answer lies in integrating professional vocational standards, specifically the Advanced Certificate in Front Office (FO) Trading (equivalent to a UK Ofqual-regulated Level 5 Advanced Diploma). By utilizing an 8-week applied learning environment, institutions can generate the exact "proof of work" and "behavioural evidence" that top-tier employers demand. This not only makes students desk-ready but also strategically boosts key institutional benchmarks like NAAC, NIRF, and NIRC alignment.
+The answer lies in integrating professional vocational standards, specifically the ISFT Advanced Certificate in Financial Trading (ACFT). By utilizing an 8-week applied learning environment, institutions can generate the exact "proof of work" and "behavioural evidence" that top-tier employers demand. This not only makes students desk-ready but also strategically boosts key institutional benchmarks like NAAC, NIRF, and NIRC alignment.
 
 ---
 
@@ -4004,7 +4020,7 @@ As educators, we must recognize that academic knowledge alone is no longer a suf
 
 To break this paradox, we must provide an applied, immersive training ground. Just as commercial pilots spend hundreds of hours in flight simulators before stepping into a real cockpit, aspiring financial professionals need an institutional-grade sandbox.
 
-The Advanced Certificate in FO Trading provides exactly this. Delivered over 8 weeks, this intensive, technology-driven program trains students directly on industry-recognised platforms and live market feeds. By using demo trading accounts, students learn the practical pillars of trading—technical analysis, fundamental macro data, and robust risk management—without risking capital.
+The ACFT provides exactly this. Delivered over 8 weeks, this intensive, technology-driven program trains students directly on industry-recognised platforms and live market feeds. By using demo trading accounts, students learn the practical pillars of trading—technical analysis, fundamental macro data, and robust risk management—without risking capital.
 
 Guided by experienced active traders, students learn to navigate multiple asset classes, build personalized trading strategies, and adapt to shifting geopolitical and central bank actions in real time. This is not a theoretical seminar; it is active, hands-on execution.
 
@@ -4045,14 +4061,14 @@ For commerce and CA-focused departments, this training bridges the traditional d
 
 The labor market has fundamentally shifted. The most valuable credential in the modern economy is no longer a static piece of paper on a wall; it is the demonstrated ability to solve complex, real-world problems.
 
-By partnering with globally accredited providers to offer the Advanced Certificate in FO Trading, our institutions can bridge the experience paradox, build a strong community of achievers, and deliver the desk-ready professionals that global finance demands.
+By partnering with globally accredited providers to offer the ACFT, our institutions can bridge the experience paradox, build a strong community of achievers, and deliver the desk-ready professionals that global finance demands.
 
 Let us transform our classrooms from zones of rote memorization into active, value-generating trading floors. Our students—and our institutional standings—will thank us.
 
 ---
 
 #### Disclaimers
-This article is strictly for educational and informational purposes and does not constitute financial, investment, or trading advice. Neither the author nor 'The Hedge Front / ISFT' is a SEBI-registered Investment Adviser or Research Analyst. Readers should conduct their own research or consult a SEBI-registered professional before trading. This publication operates independently, with no affiliate, revenue-sharing, or promotional links to any SEBI-regulated entities or brokerages. Trading in derivative instruments involves substantial risk of loss and is not suitable for all investors. 9 out of 10 individual traders in the F&O segment incur net losses. Readers should only trade with risk capital they can afford to lose entirely. All entities operating in securities markets are subject to registration under Section 12 of the SEBI Act, 1992.`,
+This article is strictly for educational and informational purposes and does not constitute financial, investment, or trading advice. Neither the author nor 'The Hedge Front / ISFT' is a SEBI-registered Investment Adviser or Research Analyst. Readers should conduct their own research or consult a SEBI-registered professional before trading. This blog is published by ISFT, which sells trading education, and some posts describe ISFT programmes; those posts are labelled as promotional. Brokers or platforms named in a post are examples only, not recommendations. Trading in derivative instruments involves substantial risk of loss and is not suitable for all investors. 9 out of 10 individual traders in the F&O segment incur net losses. Readers should only trade with risk capital they can afford to lose entirely. All entities operating in securities markets are subject to registration under Section 12 of the SEBI Act, 1992.`,
   },
   {
     id: 'blog-5',
@@ -4069,7 +4085,7 @@ This article is strictly for educational and informational purposes and does not
       name: 'ISFT Editorial Desk',
       initials: 'IS',
       role: 'Derivative Research & Quantitative Education',
-      bureau: 'Academic Desk',
+      bureau: 'ISFT research desk',
     },
     date: 'July 2026',
     tags: ['F&O Trading', 'Career Development', 'Risk Psychology', 'Prop Desks', 'Nifty Spreads'],
@@ -4105,7 +4121,7 @@ More importantly, it trains your psychology. When you trade with low capital, yo
 
 Here is the real gold: learning F&O isn't about pocket money at all. It’s about building proof of capability.
 
-When you apply for top-tier finance roles, your verified P&L link on a platform like Zerodha is what separates you from thousands of generic finance graduates. Displaying a 1-to-2 year public track record of risk-adjusted returns, complete with individual metrics like Sharpe ratios and maximum drawdowns, acts as a golden ticket. Throw in a detailed, well-reasoned trading journal on your LinkedIn, and recruiters will actually pay attention.
+When you apply for top-tier finance roles, a verified P&L link from your broker is what separates you from thousands of generic finance graduates. Displaying a 1-to-2 year public track record of risk-adjusted returns, complete with individual metrics like Sharpe ratios and maximum drawdowns, acts as a golden ticket. Throw in a detailed, well-reasoned trading journal on your LinkedIn, and recruiters will actually pay attention.
 
 An institutional trader's job is brutal, but a deep, practical understanding of trading floors and market regulations opens doors everywhere:
 - **The Quants:** Proprietary trading firms like AlphaGrep, Graviton Research, NK Securities, and Tower Research actively hunt for top analytical talent directly from Indian campuses.
@@ -4123,7 +4139,7 @@ Stay savvy, stay disciplined, and I'll see you in the next edition of The Hedge 
 ---
 
 #### Disclaimers
-This article is strictly for educational and informational purposes and does not constitute financial, investment, or trading advice. Neither the author nor 'The Hedge Front / ISFT' is a SEBI-registered Investment Adviser or Research Analyst. Readers should conduct their own research or consult a SEBI-registered professional before trading. This publication operates independently, with no affiliate, revenue-sharing, or promotional links to any SEBI-regulated entities or brokerages.
+This article is strictly for educational and informational purposes and does not constitute financial, investment, or trading advice. Neither the author nor 'The Hedge Front / ISFT' is a SEBI-registered Investment Adviser or Research Analyst. Readers should conduct their own research or consult a SEBI-registered professional before trading. This blog is published by ISFT, which sells trading education, and some posts describe ISFT programmes; those posts are labelled as promotional. Brokers or platforms named in a post are examples only, not recommendations.
 
 Trading in derivative instruments involves substantial risk of loss and is not suitable for all investors. 9 out of 10 individual traders in the F&O segment incur net losses. Readers should only trade with risk capital they can afford to lose entirely.
 
@@ -4144,7 +4160,7 @@ All entities operating in securities markets are subject to registration under S
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Trading Psychology & Risk Strategy',
-      bureau: 'Mumbai Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'September 2026',
     tags: ['Trading Psychology', 'Drawdown Recovery', 'Risk Management', 'Anti-Fragility', 'Discipline'],
@@ -4256,7 +4272,7 @@ So stay disciplined, stay motivated, and I’ll see you on the next edition of T
 ---
 
 #### Disclaimers
-This article is strictly for educational and informational purposes and does not constitute financial, investment, or trading advice. Neither the author nor 'The Hedge Front / ISFT' is a SEBI-registered Investment Adviser or Research Analyst. Readers should conduct their own research or consult a SEBI-registered professional before trading. This publication operates independently, with no affiliate, revenue-sharing, or promotional links to any SEBI-regulated entities or brokerages.
+This article is strictly for educational and informational purposes and does not constitute financial, investment, or trading advice. Neither the author nor 'The Hedge Front / ISFT' is a SEBI-registered Investment Adviser or Research Analyst. Readers should conduct their own research or consult a SEBI-registered professional before trading. This blog is published by ISFT, which sells trading education, and some posts describe ISFT programmes; those posts are labelled as promotional. Brokers or platforms named in a post are examples only, not recommendations.
 
 Trading in derivative instruments involves substantial risk of loss and is not suitable for all investors. 9 out of 10 individual traders in the F&O segment incur net losses. Readers should only trade with risk capital they can afford to lose entirely. All entities operating in securities markets are subject to registration under Section 12 of the SEBI Act, 1992.`,
   },
@@ -4275,7 +4291,7 @@ Trading in derivative instruments involves substantial risk of loss and is not s
       name: 'The Hedge Front / ISFT',
       initials: 'HF',
       role: 'Academic & Financial Education Desk',
-      bureau: 'Academic Policy Bureau',
+      bureau: 'ISFT research desk',
     },
     date: 'September 2026',
     tags: ['Behavioral Economics', 'Financial Education', 'CFO Priorities', 'Cognitive Bias', 'Strategic Finance'],
@@ -4323,7 +4339,7 @@ By integrating behavioral economics alongside quantitative modeling, higher educ
 ---
 
 #### Disclaimers
-This article is strictly for educational and informational purposes and does not constitute financial, investment, or trading advice. Readers should conduct their own research or consult a qualified professional before making any strategic or financial decisions. This publication operates independently, with no affiliate, revenue-sharing, or promotional links to any regulated entities or brokerages.`,
+This article is strictly for educational and informational purposes and does not constitute financial, investment, or trading advice. Readers should conduct their own research or consult a qualified professional before making any strategic or financial decisions. This blog is published by ISFT, which sells trading education, and some posts describe ISFT programmes; those posts are labelled as promotional. Brokers or platforms named in a post are examples only, not recommendations.`,
   },
 ]);
 

@@ -1,11 +1,16 @@
 'use client';
 
+import Link from 'next/link';
+
 interface PaginationProps {
   totalItems: number;
   currentPage: number;
   pageSize: number;
-  onPageChange: (page: number) => void;
   scrollTargetId: string;
+  /** Client-side paging (used while a filter is active). */
+  onPageChange?: (page: number) => void;
+  /** Crawlable paging: each page is a real URL such as /news/page/2. Takes precedence over onPageChange. */
+  hrefForPage?: (page: number) => string;
 }
 
 export default function Pagination({
@@ -13,6 +18,7 @@ export default function Pagination({
   currentPage,
   pageSize,
   onPageChange,
+  hrefForPage,
   scrollTargetId,
 }: PaginationProps) {
   const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
@@ -25,11 +31,52 @@ export default function Pagination({
   function changePage(page: number) {
     if (page < 1 || page > totalPages || page === currentPage) return;
 
-    onPageChange(page);
+    onPageChange?.(page);
     document.getElementById(scrollTargetId)?.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
     });
+  }
+
+  function control(page: number, label: string, ariaLabel: string, extra: { active?: boolean } = {}) {
+    const disabled = page < 1 || page > totalPages || (page === currentPage && !extra.active);
+    const className = `page-btn${extra.active ? ' active' : ''}`;
+    const ariaCurrent = extra.active ? 'page' as const : undefined;
+
+    if (hrefForPage) {
+      if (disabled || extra.active) {
+        return (
+          <span key={`${label}-${page}`} className={className} aria-current={ariaCurrent} aria-disabled={disabled || undefined}>
+            {label}
+          </span>
+        );
+      }
+      return (
+        <Link
+          key={`${label}-${page}`}
+          href={hrefForPage(page)}
+          className={className}
+          aria-label={ariaLabel}
+          rel={page === currentPage - 1 ? 'prev' : page === currentPage + 1 ? 'next' : undefined}
+        >
+          {label}
+        </Link>
+      );
+    }
+
+    return (
+      <button
+        key={`${label}-${page}`}
+        type="button"
+        className={className}
+        onClick={() => changePage(page)}
+        disabled={disabled}
+        aria-label={ariaLabel}
+        aria-current={ariaCurrent}
+      >
+        {label}
+      </button>
+    );
   }
 
   return (
@@ -38,39 +85,12 @@ export default function Pagination({
         Showing {firstItem}–{lastItem} of {totalItems}
       </span>
       <div className="pagination-pages">
-        <button
-          type="button"
-          className="page-btn"
-          onClick={() => changePage(currentPage - 1)}
-          disabled={currentPage === 1}
-          aria-label="Go to previous page"
-        >
-          Previous
-        </button>
+        {control(currentPage - 1, 'Previous', 'Go to previous page')}
         {Array.from({ length: totalPages }, (_, index) => {
           const page = index + 1;
-          return (
-            <button
-              key={page}
-              type="button"
-              className={`page-btn${currentPage === page ? ' active' : ''}`}
-              onClick={() => changePage(page)}
-              aria-label={`Go to page ${page}`}
-              aria-current={currentPage === page ? 'page' : undefined}
-            >
-              {page}
-            </button>
-          );
+          return control(page, String(page), `Go to page ${page}`, { active: page === currentPage });
         })}
-        <button
-          type="button"
-          className="page-btn"
-          onClick={() => changePage(currentPage + 1)}
-          disabled={currentPage === totalPages}
-          aria-label="Go to next page"
-        >
-          Next
-        </button>
+        {control(currentPage + 1, 'Next', 'Go to next page')}
       </div>
     </nav>
   );

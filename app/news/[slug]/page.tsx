@@ -2,8 +2,9 @@ import { notFound } from 'next/navigation';
 import { getNewsCategories } from '@/lib/newsCategories';
 import Image from 'next/image';
 import Link from 'next/link';
-import { newsItems } from '@/lib/data';
-import { findNewsItem } from '@/lib/autoNews';
+import { newsItems, type NewsItem } from '@/lib/data';
+import { findNewsItem, type AutomatedNewsItem } from '@/lib/autoNews';
+import { DEFAULT_OG_IMAGE, PUBLISHER_NAME, absoluteUrl, firstBodyImage, isoDate, jsonLd, seoTitle } from '@/lib/site';
 import { SIDEBAR_MARKET_IDS, fetchMarketSnapshot, formatSnapshotTime, sourceSummary, toMarketLevels } from '@/lib/marketSnapshot';
 import type { Metadata } from 'next';
 
@@ -18,11 +19,50 @@ interface Params { slug: string; }
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params;
   const item = await findNewsItem(slug);
-  if (!item) return { title: 'Not Found' };
+  if (!item) return { title: 'Not Found', robots: { index: false } };
+  const path = `/news/${item.slug}`;
+  const image = newsImage(item);
+  const published = 'publishedAt' in item ? item.publishedAt : isoDate(item.date);
   return {
-    title: item.title,
+    title: seoTitle(item.title),
     description: item.excerpt.substring(0, 160),
-    ...(item.coverImage ? { openGraph: { images: [item.coverImage] } } : {}),
+    alternates: { canonical: path },
+    openGraph: {
+      type: 'article',
+      url: path,
+      title: item.title,
+      description: item.excerpt,
+      images: [image],
+      publishedTime: published,
+      authors: [item.author.name],
+      section: 'News & Insights',
+      tags: item.tags,
+    },
+    twitter: { card: 'summary_large_image', title: item.title, description: item.excerpt, images: [image] },
+  };
+}
+
+function newsImage(item: NewsItem | AutomatedNewsItem): string {
+  const html = 'bodyHtml' in item ? item.bodyHtml ?? '' : '';
+  return item.coverImage ?? firstBodyImage(item.body) ?? firstBodyImage(html) ?? DEFAULT_OG_IMAGE;
+}
+
+function newsArticleSchema(item: NewsItem | AutomatedNewsItem) {
+  const url = absoluteUrl(`/news/${item.slug}`);
+  const published = 'publishedAt' in item ? item.publishedAt : isoDate(item.date);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: item.title.slice(0, 110),
+    description: item.excerpt,
+    image: [absoluteUrl(newsImage(item))],
+    datePublished: published,
+    dateModified: published,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    url,
+    author: { '@type': 'Organization', name: item.author.name },
+    publisher: { '@type': 'Organization', name: PUBLISHER_NAME, logo: { '@type': 'ImageObject', url: absoluteUrl('/icon.png') } },
+    keywords: item.tags.join(', '),
   };
 }
 
@@ -243,6 +283,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
 
   return (
     <div style={{ background: 'var(--bg-page)', minHeight: '100vh', padding: '36px 0 80px' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(newsArticleSchema(item)) }} />
       <div className="container">
 
         {/* Breadcrumb */}
@@ -327,6 +368,9 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
               {bodyHtml !== undefined
                 ? <div className="auto-news-body" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
                 : renderMarkdown(item.body)}
+              <p role="note" style={{ marginTop: '28px', paddingTop: '16px', borderTop: '1px solid var(--border-light)', fontSize: '11.5px', lineHeight: 1.6, color: '#64748b' }}>
+                <strong>Disclaimer:</strong> This briefing is market commentary for education and information only. It is not investment, trading or financial advice, and it is not a recommendation to buy or sell any security or derivative. Neither DerivionAcademy nor ISFT is registered with SEBI as an Investment Adviser or Research Analyst. Trading derivatives carries a high risk of loss.
+              </p>
             </div>
 
             {/* Footer */}

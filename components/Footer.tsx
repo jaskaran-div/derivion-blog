@@ -26,12 +26,8 @@ export default function Footer() {
               DERIVIONACADEMY.IN
             </Link>
             <p className="da-footer__brand-desc">
-              An authoritative digital chronicle and research bureau providing institutional analysis, quantitative derivative intelligence, and sovereign market reports.
+              Market briefings, regulatory explainers and trading education from the ISFT research desk.
             </p>
-            <div className="da-footer__brand-badge">
-              <span className="dot-ochre" style={{ width: '6px', height: '6px' }} />
-              Verified Independent Intelligence
-            </div>
           </div>
 
           {/* Col 2: The Hedge Front Desks */}
@@ -66,23 +62,20 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Institutional Registry */}
+          {/* Col 4: Contact */}
           <div className="da-footer__col">
             <div className="da-footer__heading">
-              Institutional Registry
+              Contact
             </div>
             <p className="da-footer__reg-desc">
-              Official repository of sovereign risk treatises, peer-reviewed econometric models, and market infrastructure studies.
+              Commentary and education only, not investment advice. Neither DerivionAcademy nor ISFT is a SEBI-registered Investment Adviser or Research Analyst.
             </p>
             <div className="da-footer__card">
               <div className="da-footer__card-title">
-                The Hedge Front / ISFT Desk
+                ISFT research desk
               </div>
               <div className="da-footer__card-email">
                 info@derivion.in
-              </div>
-              <div className="da-footer__card-meta">
-                Ref: ISSN 2841-9042 · Global Edition
               </div>
             </div>
           </div>
@@ -100,7 +93,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="da-footer__bottom">
           <div>
-            © {new Date().getFullYear()} DERIVIONACADEMY.IN. All editorial rights reserved. ISSN 2841-9042.
+            © {new Date().getFullYear()} DERIVIONACADEMY.IN. All rights reserved.
           </div>
           <div>
             THE HEDGE FRONT · POWERED BY ISFT
@@ -139,16 +132,6 @@ export default function Footer() {
           line-height: 1.65;
           max-width: 320px;
           margin-bottom: 16px;
-        }
-
-        .da-footer__brand-badge {
-          font-size: 10px;
-          color: var(--ochre-dark);
-          letter-spacing: 0.06em;
-          font-weight: 700;
-          display: flex;
-          align-items: center;
-          gap: 6px;
         }
 
         .da-footer__heading {
@@ -206,12 +189,6 @@ export default function Footer() {
           font-size: 11px;
           color: var(--ochre-dark);
           font-weight: 600;
-        }
-
-        .da-footer__card-meta {
-          font-size: 9.5px;
-          color: var(--ink-muted);
-          margin-top: 2px;
         }
 
         .da-footer__newsletter {
