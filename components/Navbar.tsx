@@ -65,7 +65,7 @@ export default function Navbar() {
               The Hedge Front
             </Link>
 
-            <Link href="/blogs/the-end-of-free-trading-business-model-crisis-rocking-discount-brokers" id="navbar-cta" className="da-navbar__cta-btn">
+            <Link href="/blogs/why-your-brain-sabotages-your-trading-plan-and-how-to-fix-it" id="navbar-cta" className="da-navbar__cta-btn">
               Latest Dispatch →
             </Link>
 
@@ -140,7 +140,7 @@ export default function Navbar() {
                 <NewsletterSignup />
               </div>
               <Link
-                href="/blogs/the-end-of-free-trading-business-model-crisis-rocking-discount-brokers"
+                href="/blogs/why-your-brain-sabotages-your-trading-plan-and-how-to-fix-it"
                 className="da-navbar__mobile-cta"
                 onClick={() => setMobileOpen(false)}
               >
